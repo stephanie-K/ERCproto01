@@ -98,6 +98,64 @@ body p {
     }
 }
 
+//-------------------------------------------- Buttons --------------------------------------------------- //
+
+.button-primary {
+    background-color : #518418; 
+}
+
+.button-secondary {
+    background-color : #cecece ;
+    color: black;
+}
+
+.govuk-button:hover.button-secondary {
+    background-color : #bfc1c3 ;
+    color: black;
+}
+
+.govuk-button:focus.button-secondary {
+    background-color : #bfc1c3 ;
+    color: black;
+}
+
+.button-warning {
+    background-color : #b10e1e  ;
+}
+
+.govuk-button:hover.button-warning {
+    background-color : #df3034  ;
+}
+
+.govuk-button:focus.button-warning {
+    background-color : #df3034 ;
+}
+
+// -------------------------------------------- Helpers ------------------------------------------------- //
+
+.govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
+    color: $erc-text-blue;
+    margin-bottom: 2em;
+}
+
+.design-notes{
+    color: red;
+    font-style: italic;
+    display: none;
+  }
+  .design-notes-box{
+    border: solid 1px red;
+    padding: 10px;
+    margin: -10px;
+    display: none
+  }
+
+  .warning-tag {
+    background:red;
+   // display: none
+  }
+
+
 //---------------------------------------- BREADCRUMBS ------------------------------------------------//
 /* #breadcrumb-erc {
     margin-top: 8px;

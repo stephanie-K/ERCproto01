@@ -1,0 +1,56 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Buttons
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Buttons
+      </h1>
+      <p>
+        There are 3 types:
+      </p>
+      <p>
+        <ul class="govuk-list govuk-list--bullet erc-text-blue">
+          <li>primary buttons (green)</li>
+          <li>secondary buttons (grey)</li>
+          <li>warning buttons (red)</a></li>
+        </ul>
+      </p>
+
+      <p>
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Primary Button",
+            classes: "button-primary"
+          }) }}
+      </p>
+
+      <p>
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Secondary Button",
+            classes: "button-secondary"
+          }) }}
+      </p>
+
+      <p>
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Warning Button",
+            classes: "button-warning"
+          }) }}
+      </p>
+
+    </div>
+</div>
+
+{% endblock %}
