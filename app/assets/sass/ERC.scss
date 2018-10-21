@@ -109,15 +109,16 @@ body p {
     color: black;
 }
 
-.govuk-button:hover.button-secondary {
+.govuk-button:active.button-secondary, .govuk-button:link.button-secondary, .govuk-button:visited.button-secondary {
+    background-color :  #cecece ;
+    color: black;
+}
+
+.govuk-button:hover.button-secondary, .govuk-button:focus.button-secondary  {
     background-color : #bfc1c3 ;
     color: black;
 }
 
-.govuk-button:focus.button-secondary {
-    background-color : #bfc1c3 ;
-    color: black;
-}
 
 .button-warning {
     background-color : #b10e1e  ;

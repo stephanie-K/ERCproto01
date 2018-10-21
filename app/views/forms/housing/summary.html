@@ -1,0 +1,32 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Summary
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Check your answers
+      </h1>
+    
+      <p>This is where they would see their answers and get the possibility to modify them if needed.</p>
+
+      
+     
+      <h2 class="govuk-heading-m erc-text-blue">Now send your response</h2>
+      <p>By submitting you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      {{ govukButton({
+        text: "Accept and submit your answers",
+        href: "/forms/housing/confirmation.html",
+        classes: "button-primary"
+      }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

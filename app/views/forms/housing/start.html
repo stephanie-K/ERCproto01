@@ -1,0 +1,56 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Housing form start
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <!--div class="govuk-grid-column-two-thirds"-->
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Members of Household
+      </h1>
+      <p>
+          We need to know about you and each member of your household.  
+      </p>
+      <p>We will use this information to:
+          <ul class="govuk-list govuk-list--bullet erc-text-blue">
+            <li>verify your identity where required</li>
+            <li>contact you by post, email or telephone</li>
+            <li>maintain our tenancy records</li>
+         </ul>
+      </p>
+  
+      <p>
+          If you need help at anytime you can contact our office at 0141 577 3723 or 0141 577 3726.  
+      </p>
+
+      <p>
+          You can find out more about how we handle this information and your rights in respect of it by going to <a href="#">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
+      </p>
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/forms/housing/about-you.html",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-m erc-text-blue">Before you start</h2>
+      <p>
+        You need to have:
+      </p>
+      <ul class="govuk-list govuk-list--bullet erc-text-blue">
+        <li>the date of birth of each member of your household</li>
+        <li>their previous address if applicable</li>
+        <li>make sure that you tell them that you are giving their information to East Renfrewshire Council</li>
+      </ul>
+      <p>
+
+      </p>
+    <!--/div-->
+</div>
+
+{% endblock %}

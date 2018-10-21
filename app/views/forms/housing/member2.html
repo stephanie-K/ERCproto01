@@ -1,0 +1,79 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Member 2
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Member 2
+      </h1>
+    
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Their full name"
+        },
+        id: "full-name-member2",
+        name: "full-name-member2"
+      }) }}
+
+      {% from "textarea/macro.njk" import govukTextarea %}
+
+      {{ govukTextarea({
+        name: "previous-address-member2",
+        id: "previous-address-member2",
+        label: {
+          text: "What is their previous address? (if applicable)"
+        }
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "What is their relationship to you?"
+        },
+        id: "relation-member2",
+        name: "relation-member2",
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {% from "date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "dob-member2",
+        namePrefix: "dob-member2",
+        fieldset: {
+          legend: {
+            text: "What is their date of birth?"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        }
+      }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Add another member",
+        href: "/forms/housing/member3.html",
+        classes: "button-secondary"
+      }) }}
+      <br>
+
+      {{ govukButton({
+        text: "Next",
+        href: "/forms/housing/summary.html",
+        classes: "button-primary"
+      }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}
