@@ -1,0 +1,136 @@
+@import "node_modules/govuk-frontend/settings/all";
+
+// Override the govuk-frontend font stack - No: I want to keep the nta font
+// $govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Remove canvas background colour, as is used with the GOV.UK Footer.
+//$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// Import GOV.UK Frontend
+@import "node_modules/govuk-frontend/all";
+
+///////////////////////////////////////////////// from ------ >   application
+
+// Patterns that aren't in Frontend
+//@import "patterns/check-your-answers";
+//@import "patterns/task-list";
+//@import "patterns/related-items";
+
+// Components that aren't in Frontend
+// @import "components/cookie-banner";
+
+//////////////////////////////////////////////// end
+
+$erc-text-blue : #004269; 
+$erc-logo-blue: #0071BA;
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+//---------------------------------------- HEADER ------------------------------------------------//
+
+.erc-service-name {
+    font-size: 36px;
+    color: white; 
+    background-color: $erc-logo-blue;
+    padding: 5px 20px;
+    font-weight: 700;
+}
+
+//---------------------------------------- BREADCRUMBS ------------------------------------------------//
+#breadcrumb-erc {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    width: 940px;
+    height: auto;
+    overflow:auto;
+    text-align:left;
+    clear:both;
+    background: 0 0;
+    color: #004269;
+    li {
+        color: #004269;
+    }
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    #crumb-home-active {
+        width:74px;
+        overflow: hidden;
+    }
+    #crumb-home-active span{
+        float:left;
+        padding:6px 28px 6px 10px;
+        color:#fff;
+        background:url(../images/ERC/sprite.png) 0 -59px no-repeat #004269;
+        height:21px;
+        width:36px;
+        font-family: "nta", Arial, sans-serif;
+    }
+    .crumbs-erc {
+        height:100%;
+        display:inline;
+    }
+}
+//---------------------------------------- FOOTER ------------------------------------------------//
+footer {
+    .ft {
+        font-size: 16px;
+        color:  white; //#345663;
+    }
+    .ft-address {
+        border-top: 1px solid #99baca;
+        padding: 20px 0 0 20px;
+        margin-bottom: 20px;
+    }
+    .ft-right {
+        font-size: 16px;
+        color:  white; // #345663;
+        //text-align: right;
+        margin: 0 10px;
+    }
+}
+
+
+//---------------------------------------- BODY------------------------------------------------//
+
+body p {
+    color: $erc-text-blue;
+}
+
+.erc-text-blue {
+    color: $erc-text-blue;
+}
+
+.menu {
+    font-family: "nta", Arial, sans-serif;
+    margin-bottom: 4px;
+
+    summary{
+        font-weight: 300;
+        color: white;
+        padding: 5px 0 15px 1em;
+        //margin-bottom: 1em;
+        background-color:#004269;
+        max-width: 20em;
+    }
+    ul {
+        background-color:#ddebf1; 
+        max-width: 20em;
+        list-style: none;
+        padding-left: 16px;
+        margin-top: 0;
+    }
+    li {
+        border-bottom: 1px solid white;
+        color: #444;
+        padding-top: 5px;
+    }
+    a {
+        color: #004269;
+    }
+}
+
