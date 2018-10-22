@@ -6,6 +6,6 @@ usage-data-config.json
 .start.pid
 .port.tmp
 public
-node_modules/*
+#node_modules/*
 .tmuxp.*
 package-lock.json
