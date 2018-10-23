@@ -1,0 +1,91 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Errors
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Errors
+      </h1>
+      <p><a href="https://design-system.service.gov.uk/components/error-message/" target="_blank" rel="noopener">Reference GDS for error messages</a></p>
+      <p><a href="https://design-system.service.gov.uk/components/error-summary/" target="_blank" rel="noopener">Reference GDS for error summary</a></p>
+    
+      {% from "error-summary/macro.njk" import govukErrorSummary %}
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Date of birth must be in the past",
+            href: "#dob-error"
+          },
+          {
+            text: "Enter a postcode, like AA1 1AA",
+            href: "#postcode-error"
+          }
+        ]
+      }) }}
+
+      {% from "date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        fieldset: {
+          legend: {
+            text: "What is your date of birth?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        },
+        errorMessage: {
+          text: "Date of birth must be in the past"
+        },
+        id: "dob",
+        namePrefix: "dob",
+        items: [
+          {
+            classes: "govuk-input--width-2 erc-text-blue",
+            name: "day",
+            value: "6"
+          },
+          {
+            classes: "govuk-input--width-2 erc-text-blue",
+            name: "month",
+            value: "3"
+          },
+          {
+            classes: "govuk-input--width-4 govuk-input--error erc-text-blue",
+            name: "year",
+            value: "2076"
+          }
+        ]
+      }) }}
+
+      {% from "input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "National Insurance number"
+  },
+  hint: {
+    text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+  },
+  id: "national-insurance-number",
+  name: "national-insurance-number",
+  errorMessage: {
+    text: "Enter a National Insurance number in the correct format"
+  }
+}) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

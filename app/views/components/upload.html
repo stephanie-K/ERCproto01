@@ -1,0 +1,31 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Upload
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Upload
+      </h1>
+      <p><a href="https://design-system.service.gov.uk/components/file-upload/" target="_blank" rel="noopener">Reference GDS</a></p>
+      {% from "file-upload/macro.njk" import govukFileUpload %}
+
+      {{ govukFileUpload({
+        id: "file-upload-1",
+        name: "file-upload-1",
+        label: {
+          text: "Upload a file",
+          classes: "erc-text-blue"
+        }
+      }) }}
+    
+
+    </div>
+</div>
+
+{% endblock %}

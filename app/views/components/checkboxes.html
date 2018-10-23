@@ -1,0 +1,165 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Checkboxes
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Checkboxes
+      </h1>
+      <p><a href="https://design-system.service.gov.uk/components/checkboxes/" target="_blank" rel="noopener">Reference GDS</a></p>
+      
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "waste",
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "Which types of waste do you transport?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l erc-text-blue"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "carcasses",
+            text: "Waste from animal carcasses"
+          },
+          {
+            value: "mines",
+            text: "Waste from mines or quarries"
+          },
+          {
+            value: "farm",
+            text: "Farm or agricultural waste"
+          }
+        ]
+      }) }}
+    
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "input/macro.njk" import govukInput %}
+
+{% set emailHtml %}
+{{ govukInput({
+  id: "contact-by-email",
+  name: "contact-by-email",
+  type: "email",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Email address"
+  }
+}) }}
+{% endset -%}
+
+{% set phoneHtml %}
+{{ govukInput({
+  id: "contact-by-phone",
+  name: "contact-by-phone",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Phone number"
+  }
+}) }}
+{% endset -%}
+
+{% set textHtml %}
+{{ govukInput({
+  id: "contact-by-text",
+  name: "contact-by-text",
+  type: "tel",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Mobile phone number"
+  }
+}) }}
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "citizenship-conditional",
+  name: "citizen",
+  fieldset: {
+    legend: {
+      text: "How would you like to be contacted?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l erc-text-blue"
+    }
+  },  
+  hint: {
+    text: "Select all options that are relevant to you."
+  },
+  items: [
+    {
+      value: "email",
+      text: "Email",
+      conditional: {
+        html: emailHtml
+      }
+    },
+    {
+      value: "phone",
+      text: "Phone",
+      conditional: {
+        html: phoneHtml
+      }
+    },
+    {
+      value: "text message",
+      text: "Text message",
+      conditional: {
+        html: textHtml
+      }
+    }
+  ]
+}) }}
+
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  idPrefix: "nationality",
+  name: "nationality",
+  fieldset: {
+    legend: {
+      text: "What is your nationality?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l erc-text-blue"
+    }
+  },
+  hint: {
+    text: "If you have dual nationality, select all options that are relevant to you."
+  },
+  errorMessage: {
+    text: "Select if you are British, Irish or a citizen of a different country"
+  },
+  items: [
+    {
+      value: "british",
+      text: "British",
+      hint: {
+        text: "including English, Scottish, Welsh and Northern Irish"
+      }
+    },
+    {
+      value: "irish",
+      text: "Irish"
+    },
+    {
+      value: "other",
+      text: "Citizen of another country"
+    }
+  ]
+}) }}
+
+    </div>
+</div>
+
+{% endblock %}

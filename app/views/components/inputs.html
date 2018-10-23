@@ -1,0 +1,129 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Inputs
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Inputs
+      </h1>
+      <p><a href="https://design-system.service.gov.uk/components/text-input/" target="_blank" rel="noopener">Reference GDS</a></p>
+    
+      {% from "input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "Full name"
+  },
+  id: "name",
+  name: "name"
+}) }}
+
+
+
+{{ govukInput({
+  label: {
+    text: "National Insurance number"
+  },
+  hint: {
+    text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+  },
+  classes: "govuk-input--width-10",
+  id: "national-insurance-number",
+  name: "national-insurance-number"
+}) }}
+
+
+
+{{ govukInput({
+  label: {
+    text: "20 character width"
+  },
+  classes: "govuk-input--width-20",
+  id: "width-20",
+  name: "width-20"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "10 character width"
+  },
+  classes: "govuk-input--width-10",
+  id: "width-10",
+  name: "width-10"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "5 character width"
+  },
+  classes: "govuk-input--width-5",
+  id: "width-5",
+  name: "width-5"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "4 character width"
+  },
+  classes: "govuk-input--width-4",
+  id: "width-4",
+  name: "width-4"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "3 character width"
+  },
+  classes: "govuk-input--width-3",
+  id: "width-3",
+  name: "width-3"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "2 character width"
+  },
+  classes: "govuk-input--width-2",
+  id: "width-2",
+  name: "width-2"
+}) }}
+
+{% from "select/macro.njk" import govukSelect %}
+
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Sort by"
+  },
+  items: [
+    {
+      value: "published",
+      text: "Recently published"
+    },
+    {
+      value: "updated",
+      text: "Recently updated",
+      selected: true
+    },
+    {
+      value: "views",
+      text: "Most views"
+    },
+    {
+      value: "comments",
+      text: "Most comments"
+    }
+  ]
+}) }}
+
+    </div>
+</div>
+
+{% endblock %}

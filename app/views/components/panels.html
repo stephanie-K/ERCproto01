@@ -1,0 +1,28 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Panels
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Panels
+      </h1>
+      <p><a href="https://design-system.service.gov.uk/components/panel/" target="_blank" rel="noopener">Reference GDS</a></p>
+    
+      {% from "panel/macro.njk" import govukPanel %}
+
+      {{ govukPanel({
+        titleText: "Application complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+      
+    </div>
+</div>
+
+{% endblock %}
