@@ -156,6 +156,40 @@ body p {
    // display: none
   }
 
+//--------------------------------------- message boxes -----------------------------------------------//@at-root
+
+.ercError,
+.ercInformation,
+.ercSuccess,
+.ercWarning {
+  display: block;
+  margin: 15px !important;
+  padding: 15px 10px 15px 50px !important;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+.ercInformation {
+  color: #004269;
+  background: url(../images/ERC/erc_information.gif) 10px center no-repeat #bde5f8;
+  border: 1px solid #004269;
+}
+.ercSuccess {
+  color: #2d4f2a;
+  background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff2bf;
+  border: 1px solid #2d4f2a;
+}
+.ercWarning {
+  color: #782a06;
+  background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #feefb3;
+  border: 1px solid #782a06;
+}
+.ercError {
+  color: #333333;
+  background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
+  border: 1px solid #d8000c;
+}
+
 
 //---------------------------------------- BREADCRUMBS ------------------------------------------------//
 /* #breadcrumb-erc {

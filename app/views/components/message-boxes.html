@@ -1,0 +1,42 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Message boxes
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+        Message boxes
+      </h1>
+      <p>
+        There are 4 types:
+      </p>
+      <p>
+        <ul class="govuk-list govuk-list--bullet erc-text-blue">
+          <li>information (blue)</li>
+          <li>success (green)</li>
+          <li>error (red)</li>
+          <li>warning (yellow)</li>
+        </ul>
+      </p>
+
+      <div>
+          <p class="ercInformation">I am a message box I am a message box I am a message box I am a message box I am a message box</p>
+
+          <p class="ercSuccess">I am a message box I am a message box I am a message box I am a message box I am a message box</p>
+
+          <p class="ercWarning">I am a message box I am a message box I am a message box I am a message box I am a message box</p>
+ 
+          <p class="ercError">I am a message box I am a message box I am a message box I am a message box I am a message box</p>
+  
+      </div>
+
+
+    </div>
+</div>
+
+{% endblock %}
