@@ -151,10 +151,38 @@ body p {
     display: none
   }
 
-  .warning-tag {
-    background:red;
-   // display: none
+
+  .govuk-tag {
+      padding: 10px;
+      margin-right: 10px;
   }
+  .govuk-tag.black {
+    padding: 10px 10px 10px 60px;
+    background: url(../images/govuk-crown.png) 10px center no-repeat #000;
+  }
+
+  .govuk-tag.info {
+      background-color: $erc-logo-blue;
+  }
+
+  .govuk-tag.red {
+    background-color: #b10e1e;
+    margin-left: 10px;
+    padding: 5px;
+}
+  
+  .panel-warning {
+      background-color: #c67f0f;
+  }
+
+  .panel-information {
+    background-color: #005ea5;
+    }
+
+    .panel-error {
+        background-color: #B30000;
+    }
+
 
 //--------------------------------------- message boxes -----------------------------------------------//@at-root
 
@@ -190,7 +218,47 @@ body p {
   border: 1px solid #d8000c;
 }
 
+.ercInformation.bootstrap {
+    color: #31708f;
+    background: url(../images/ERC/erc_information.gif) 10px center no-repeat #d9edf7;
+    border: 1px solid #bcdff1;
+  }
+  .ercSuccess.bootstrap {
+    color: #3c763d ;
+    background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff0d8;
+    border: 1px solid #d0e9c6;
+  }
+  .ercWarning.bootstrap {
+    color: #8a6d3b ;
+    background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #fcf8e3;
+    border: 1px solid #faf2cc;
+  }
+  .ercError.bootstrap {
+    color: #a94442;
+    background: url(../images/ERC/erc_error.gif) 10px center no-repeat #f2dede;
+    border: 1px solid #ebcccc;
+  }
 
+  .ercInformation.no-border {
+    color: #004269;
+    background: url(../images/ERC/erc_information.gif) 10px center no-repeat #bde5f8;
+    border: 0px;
+  }
+  .ercSuccess.no-border {
+    color: #2d4f2a;
+    background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff2bf;
+    border: 0px;
+  }
+  .ercWarning.no-border {
+    color: #782a06;
+    background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #feefb3;
+    border: 0px;
+  }
+  .ercError.no-border {
+    color: #333333;
+    background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
+    border: 10px;
+  }
 //---------------------------------------- BREADCRUMBS ------------------------------------------------//
 /* #breadcrumb-erc {
     margin-top: 8px;

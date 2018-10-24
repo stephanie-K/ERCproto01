@@ -12,8 +12,10 @@
       <h1 class="govuk-heading-xl erc-text-blue">
         Inputs
       </h1>
-      <p><a href="https://design-system.service.gov.uk/components/text-input/" target="_blank" rel="noopener">Reference GDS</a></p>
-    
+      <p><strong class="govuk-tag black">GDS reference</strong><a href="https://design-system.service.gov.uk/components/text-input/" target="_blank" rel="noopener">Link to inputs</a></p>
+      <p><a href="https://design-system.service.gov.uk/components/select/" target="_blank" rel="noopener">Link to select</a></p>
+      <p><a href="https://design-system.service.gov.uk/components/textarea/" target="_blank" rel="noopener">Link to text area</a></p>
+      <hr class="govuk-section-break govuk-section-break--l">
       {% from "input/macro.njk" import govukInput %}
 
 {{ govukInput({
@@ -24,7 +26,7 @@
   name: "name"
 }) }}
 
-
+<hr class="govuk-section-break govuk-section-break--xl">
 
 {{ govukInput({
   label: {
@@ -38,7 +40,7 @@
   name: "national-insurance-number"
 }) }}
 
-
+<hr class="govuk-section-break govuk-section-break--xl">
 
 {{ govukInput({
   label: {
@@ -49,6 +51,7 @@
   name: "width-20"
 }) }}
 
+
 {{ govukInput({
   label: {
     text: "10 character width"
@@ -57,6 +60,7 @@
   id: "width-10",
   name: "width-10"
 }) }}
+
 
 {{ govukInput({
   label: {
@@ -67,6 +71,7 @@
   name: "width-5"
 }) }}
 
+
 {{ govukInput({
   label: {
     text: "4 character width"
@@ -75,6 +80,7 @@
   id: "width-4",
   name: "width-4"
 }) }}
+
 
 {{ govukInput({
   label: {
@@ -94,6 +100,7 @@
   name: "width-2"
 }) }}
 
+<hr class="govuk-section-break govuk-section-break--xl">
 {% from "select/macro.njk" import govukSelect %}
 
 {{ govukSelect({
@@ -121,6 +128,19 @@
       text: "Most comments"
     }
   ]
+}) }}
+<hr class="govuk-section-break govuk-section-break--xl">
+{% from "textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  label: {
+    text: "Can you provide more detail?"
+  },
+  hint: {
+    text: "Don’t include personal or financial information, eg your National Insurance number or credit card details."
+  }
 }) }}
 
     </div>

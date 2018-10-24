@@ -12,8 +12,9 @@
       <h1 class="govuk-heading-xl erc-text-blue">
         Errors
       </h1>
-      <p><a href="https://design-system.service.gov.uk/components/error-message/" target="_blank" rel="noopener">Reference GDS for error messages</a></p>
-      <p><a href="https://design-system.service.gov.uk/components/error-summary/" target="_blank" rel="noopener">Reference GDS for error summary</a></p>
+      <p><strong class="govuk-tag black">GDS reference</strong><a href="https://design-system.service.gov.uk/components/error-message/" target="_blank" rel="noopener">Link for error messages</a></p>
+      <p><a href="https://design-system.service.gov.uk/components/error-summary/" target="_blank" rel="noopener">Link for error summary</a></p>
+      <p><a href="https://github.com/alphagov/govuk-design-system-backlog/issues/47" target="_blank" rel="noopener">Link to Github</a></p>
     
       {% from "error-summary/macro.njk" import govukErrorSummary %}
 
@@ -30,7 +31,7 @@
           }
         ]
       }) }}
-
+      <hr class="govuk-section-break govuk-section-break--xl">
       {% from "date-input/macro.njk" import govukDateInput %}
 
       {{ govukDateInput({
@@ -69,7 +70,7 @@
       }) }}
 
       {% from "input/macro.njk" import govukInput %}
-
+      <hr class="govuk-section-break govuk-section-break--xl">
 {{ govukInput({
   label: {
     text: "National Insurance number"

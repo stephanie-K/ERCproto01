@@ -12,7 +12,8 @@
       <h1 class="govuk-heading-xl erc-text-blue">
         Radios buttons
       </h1>
-      <p><a href="https://design-system.service.gov.uk/components/radios/" target="_blank" rel="noopener">Reference GDS</a></p>
+      <p><strong class="govuk-tag black">GDS reference</strong><a href="https://design-system.service.gov.uk/components/radios/" target="_blank" rel="noopener">Link for radio buttons</a></p>
+      <hr class="govuk-section-break govuk-section-break--l">
       {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
@@ -41,6 +42,7 @@
         ]
       }) }}
     
+      <hr class="govuk-section-break govuk-section-break--xl">
 
       {{ govukRadios({
         idPrefix: "where-do-you-live",
@@ -49,7 +51,7 @@
           legend: {
             text: "Where do you live?",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--l erc-text-blue"
+            classes: "govuk-fieldset__legend--l erc-text-blue "
           }
         },
         items: [
@@ -72,7 +74,7 @@
         ]
       }) }}
 
-      {% from "radios/macro.njk" import govukRadios %}
+      <hr class="govuk-section-break govuk-section-break--xl">
 
 {{ govukRadios({
   classes: "govuk-radios--inline",

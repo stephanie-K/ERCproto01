@@ -12,13 +12,37 @@
       <h1 class="govuk-heading-xl erc-text-blue">
         Panels
       </h1>
-      <p><a href="https://design-system.service.gov.uk/components/panel/" target="_blank" rel="noopener">Reference GDS</a></p>
+      <p><strong class="govuk-tag black">GDS reference</strong><a href="https://design-system.service.gov.uk/components/panel/" target="_blank" rel="noopener">Link for panels</a></p>
+      <p><a href="https://design-system.service.gov.uk/patterns/page-not-found-pages/" target="_blank" rel="noopener">Link for page not found</a></p>
+      <p><a href="https://design-system.service.gov.uk/patterns/problem-with-the-service-pages/" target="_blank" rel="noopener">Link for problem with the service pages</a></p>
+      <p><a href="https://design-system.service.gov.uk/patterns/service-unavailable-pages/" target="_blank" rel="noopener">Link for service unavailable pages</a></p>
     
       {% from "panel/macro.njk" import govukPanel %}
 
       {{ govukPanel({
         titleText: "Application complete",
         html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+      <hr class="govuk-section-break govuk-section-break--xl">
+
+      {{ govukPanel({
+        titleText: "Application error",
+        html: "Unable to connect",
+        classes: "panel-error"
+      }) }}
+      <hr class="govuk-section-break govuk-section-break--xl">
+
+      {{ govukPanel({
+        titleText: "System Offline",
+        html: "The system is currently offline for maintenance.<br> Check again <strong>Monday 12 December</strong>",
+        classes: "panel-information"
+      }) }}
+      <hr class="govuk-section-break govuk-section-break--xl">
+
+      {{ govukPanel({
+        titleText: "Unauthorised Access",
+        html: "You do not have access to this area",
+        classes: "panel-warning"
       }) }}
 
       
