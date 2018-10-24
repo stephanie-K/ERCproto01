@@ -1,0 +1,58 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Colours
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+       Colours
+      </h1>
+      <p>We are using some GDS colours and some ERC specific colours.</p>
+      <p>I'll improve the display later to something similar to the GDS link below</p>
+
+      <h2 class="govuk-heading-m erc-text-blue">From GDS:</h2>
+      
+      <p><strong class="govuk-tag black">GDS reference</strong><a href="https://design-system.service.gov.uk/styles/colour/" target="_blank" rel="noopener">Link for colours</a></p>
+      <ul class="govuk-list ">
+        <li>Error:  #b10e1e</li>
+        <li>Link visited: #4c2c92</li>
+        <li>Link: default: #005ea5</li>
+        <li>Link active:  #2b8cc4</li>
+        <li>Link: hover #2b8cc4</li>
+        <li>Link: focus #0b0c0c and yellow background</li>
+        <li>Yellow focus: #ffbf47 –</li>
+        <li>Look for selected text color (white – blue bg)</li>
+        <li>Grey vertical for detail patter: #bfc1c3</li>
+        <li>Panels message: (see up and greenish is #28a197) Turquoise</li>
+      </ul>
+
+      <h2 class="govuk-heading-m erc-text-blue">ERC specific:</h2>
+      <ul class="govuk-list ">
+          <li>Text blue: #004269</li>
+          <li>Background blue (logo, footer tag) #004269</li>
+          <li>Panels: (turquoise is GDS)</li>
+          <li>Red: #B30000 – this is for errors too but not in this prototype</li>
+          <li>Blue: #005ea5</li>
+          <li>Yellow: #c67f0f</li>
+          <li>Button green: default, active, visited: #518418 hover, focus: #436c14</li>
+          <li>Red buttons: #b10e1e focus #df3034</li>
+          <li>Grey buttons: #cecece. If focus: #ddd</li>
+          <li>Disabled fields or readonly bg:  #ececec</li>
+          <li>Hint text is different colour in GDS</li>
+          <li>Message boxes:</li>
+          <li>Blue: bg #bde5f8, text and border is text blue color</li>
+          <li>Green #dff2bf , text and border is #2D4F2A</li>
+          <li>Yellow:  #feefb3 , text and border is #782A06</li>
+          <li>Red: #ffbaba  and text  #333333 and border is #d8000c</li>
+      </ul>
+
+
+    </div>
+</div>
+
+{% endblock %}
