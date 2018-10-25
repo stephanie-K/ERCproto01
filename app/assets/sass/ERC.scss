@@ -183,30 +183,22 @@ body p {
         background-color: #B30000;
     }
 // --------------------------------------- images - videos --------------------------------------------//
-/*
-.iframe{
+
+iframe{
     @media only screen and (max-width: 580px) { 
-        width: 280px;
-        height: 157px;
+        width: 100%;
+        height: auto;
 
     }
 }
 
-#frame{
-    @media only screen and (max-width: 580px) { 
-        width: 280px;
-        height: 157px;
-    }    
-}
-
-.img{
+img{
     @media only screen and (max-width: 580px) { 
         max-width: 100%;
         height: auto;
     }
 }
 
-*/
 //--------------------------------------- message boxes -----------------------------------------------//
 
 .ercError,
