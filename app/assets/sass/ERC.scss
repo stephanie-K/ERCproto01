@@ -182,9 +182,32 @@ body p {
     .panel-error {
         background-color: #B30000;
     }
+// --------------------------------------- images - videos --------------------------------------------//
+/*
+.iframe{
+    @media only screen and (max-width: 580px) { 
+        width: 280px;
+        height: 157px;
 
+    }
+}
 
-//--------------------------------------- message boxes -----------------------------------------------//@at-root
+#frame{
+    @media only screen and (max-width: 580px) { 
+        width: 280px;
+        height: 157px;
+    }    
+}
+
+.img{
+    @media only screen and (max-width: 580px) { 
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+*/
+//--------------------------------------- message boxes -----------------------------------------------//
 
 .ercError,
 .ercInformation,
