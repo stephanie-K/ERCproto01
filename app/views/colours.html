@@ -1,58 +1,478 @@
-
-{% extends "layout-ERC.html" %}
-
-{% block pageTitle %}
-  Colours
-{% endblock %}
-
-{% block content %}
+ {% extends "layout-ERC.html" %} {% block pageTitle %} Colours {% endblock %} {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl erc-text-blue">
-       Colours
-      </h1>
-      <p>We are using some GDS colours and some ERC specific colours.</p>
-      <p>I'll improve the display later to something similar to the GDS link below</p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl erc-text-blue">
+      Colours
+    </h1>
+    <p>We are using some GDS colours and some ERC specific colours.</p>
 
-      <h2 class="govuk-heading-m erc-text-blue">From GDS:</h2>
-      
-      <p><strong class="govuk-tag black">GDS reference</strong><a href="https://design-system.service.gov.uk/styles/colour/" target="_blank" rel="noopener">Link for colours</a></p>
-      <ul class="govuk-list ">
-        <li>Error:  #b10e1e</li>
-        <li>Link visited: #4c2c92</li>
-        <li>Link: default: #005ea5</li>
-        <li>Link active:  #2b8cc4</li>
-        <li>Link: hover #2b8cc4</li>
-        <li>Link: focus #0b0c0c and yellow background</li>
-        <li>Yellow focus: #ffbf47 –</li>
-        <li>Look for selected text color (white – blue bg)</li>
-        <li>Grey vertical for detail patter: #bfc1c3</li>
-        <li>Panels message: (see up and greenish is #28a197) Turquoise</li>
-      </ul>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <h2 class="govuk-heading-l erc-text-blue">From GDS:</h2>
 
-      <h2 class="govuk-heading-m erc-text-blue">ERC specific:</h2>
-      <ul class="govuk-list ">
-          <li>Text blue: #004269</li>
-          <li>Background blue (logo, footer tag) #004269</li>
-          <li>Panels: (turquoise is GDS)</li>
-          <li>Red: #B30000 – this is for errors too but not in this prototype</li>
-          <li>Blue: #005ea5</li>
-          <li>Yellow: #c67f0f</li>
-          <li>Button green: default, active, visited: #518418 hover, focus: #436c14</li>
-          <li>Red buttons: #b10e1e focus #df3034</li>
-          <li>Grey buttons: #cecece. If focus: #ddd</li>
-          <li>Disabled fields or readonly bg:  #ececec</li>
-          <li>Hint text is different colour in GDS</li>
-          <li>Message boxes:</li>
-          <li>Blue: bg #bde5f8, text and border is text blue color</li>
-          <li>Green #dff2bf , text and border is #2D4F2A</li>
-          <li>Yellow:  #feefb3 , text and border is #782A06</li>
-          <li>Red: #ffbaba  and text  #333333 and border is #d8000c</li>
-      </ul>
+    <p>
+      <strong class="govuk-tag black">GDS reference</strong>
+      <a href="https://design-system.service.gov.uk/styles/colour/" target="_blank" rel="noopener">Link for colours</a>
+    </p>
+
+    <table class="govuk-body app-colour-list" summary="Table of main colours">
+      <tbody>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Text
+            </h3>
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#6f777b"></span>
+            <code>Hint text</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #6f777b
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Links
+            </h3>
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#005ea5"></span>
+            <code>$govuk-link-colour</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #005ea5
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#2b8cc4"></span>
+            <code>$govuk-link-hover-colour</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #2b8cc4
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#4c2c92"></span>
+            <code>$govuk-link-visited-colour</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #4c2c92
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#0b0c0c"></span>
+            <code>$govuk-link-focus-colour</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #0b0c0c
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            With a Yellow background
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Vertical Border
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#bfc1c3"></span>
+            <code>$govuk-border-colour</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #bfc1c3
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Focus
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#ffbf47"></span>
+            <code>$govuk-focus-colour</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #ffbf47
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            Indicate which element is focussed on. For example, when a user tabs through.
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Errors
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#b10e1e"></span>
+            <code>$govuk-error-colour</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #b10e1e
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            Use for error messages
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Panels
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#28a197"></span>
+            <code>$govuk-turquoise</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #28a197
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l erc-text-blue">ERC specific:</h2>
+
+    <table class="govuk-body app-colour-list" summary="Table of main colours">
+      <tbody>
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m ">
+              Text
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#004269"></span>
+            <code>$erc-text-blue</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #004269
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m ">
+              Background - footer - This is a prototype tag
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#0071BA"></span>
+            <code>$erc-logo-blue</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #0071BA
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m ">
+              Inputs
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#ececec"></span>
+            <code>disabled or read-only</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #ececec
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Panels
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#B30000"></span>
+            <code>erc red</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #B30000
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            This should also be the colour for errors but not done yet.
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#005ea5"></span>
+            <code>panel blue</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #005ea5
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#c67f0f"></span>
+            <code>panel yellow</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #c67f0f
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Buttons
+            </h3>
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#518418 "></span>
+            <code>Green - primary one</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #518418
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            default, active, visited
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#436c14"></span>
+            <code>Green - primary one</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #436c14
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            hover, focus
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#cecece"></span>
+            <code>Grey - Secondary button</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #cecece
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            default, active, visited
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#ddd"></span>
+            <code>Grey - Secondary button</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #dddddd
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            hover, focus
+          </td>
+        </tr>
+
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#b10e1e"></span>
+            <code>Red - Warning button</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #b10e1e
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            default, active, visited
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#df3034"></span>
+            <code>Red - Warning button</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #df3034
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+            hover, focus
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <h3 class="govuk-heading-m govuk-!-padding-top-6">
+              Message boxes - alerts
+            </h3>
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#bde5f8"></span>
+            <code>Blue - information background</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #bde5f8
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#dff2bf "></span>
+            <code>Green - success background</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #dff2bf
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#2D4F2A "></span>
+            <code>Green - border and text</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #2D4F2A
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color: #feefb3 "></span>
+            <code>Yellow - warning background</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #feefb3
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#782A06"></span>
+            <code>Yellow - border and text</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #782A06
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:  #ffbaba  "></span>
+            <code>Red - error background</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #ffbaba
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#d8000c"></span>
+            <code>Red - border</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #d8000c
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
+        <tr class="app-colour-list-row">
+          <th class="app-colour-list-column app-colour-list-column--name" scope="row">
+            <span class="app-swatch " style="background-color:#333333 "></span>
+            <code>Red - text</code>
+          </th>
+          <td class="app-colour-list-column app-colour-list-column--colour">
+            #333333
+          </td>
+          <td class="app-colour-list-column app-colour-list-column--notes">
+          </td>
+        </tr>
 
 
-    </div>
+      </tbody>
+    </table>
+
+  </div>
 </div>
 
 {% endblock %}
