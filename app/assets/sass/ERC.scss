@@ -79,7 +79,7 @@ body p {
         color: white;
         padding: 5px 0 15px 1em;
         //margin-bottom: 1em;
-        background-color:#004269;
+        background-color: $erc-text-blue;
         max-width: 20em;
     }
     ul {
@@ -95,7 +95,7 @@ body p {
         padding-top: 5px;
     }
     a {
-        color: #004269;
+        color: $erc-text-blue;
     }
 }
 
@@ -104,6 +104,11 @@ body p {
 .button-primary {
     background-color : #518418; 
 }
+
+.govuk-button:hover.button-primary, .govuk-button:focus.button-primary  {
+    background-color : #436c14;
+}
+
 
 .button-secondary {
     background-color : #cecece ;
@@ -116,7 +121,7 @@ body p {
 }
 
 .govuk-button:hover.button-secondary, .govuk-button:focus.button-secondary  {
-    background-color : #bfc1c3 ;
+    background-color : #dddddd;
     color: black;
 }
 
@@ -135,6 +140,7 @@ body p {
 
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
+// back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
     color: $erc-text-blue;
     margin-bottom: 2em;
@@ -151,7 +157,6 @@ body p {
     margin: -10px;
     display: none
   }
-
 
   .govuk-tag {
       padding: 10px;
@@ -183,6 +188,14 @@ body p {
     .panel-error {
         background-color: #B30000;
     }
+
+    .panel-warning {
+        background-color: #c67f0f;
+    }
+
+    .panel-info {
+        background-color: #005ea5;
+    }
 // --------------------------------------- images - videos --------------------------------------------//
 
 iframe{
@@ -200,7 +213,7 @@ img{
     }
 }
 
-// ----------------------------------------  colours --------------------------------------------------//
+// ----------------------------------------  colours display--------------------------------------------------//
 
  .app-colour-list {
      width: 100%;

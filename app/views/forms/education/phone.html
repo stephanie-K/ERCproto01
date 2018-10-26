@@ -1,0 +1,33 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Phone
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+          What is your phone number?
+      </h1>
+
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone/Mobile number"
+        },
+        id: "phone",
+        name: "phone",
+        type: "tel",
+        classes: "govuk-input--width-20"
+      }) }}
+
+<p><strong class="govuk-tag red">coming soon</strong></p>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Postcode
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl erc-text-blue">
+          What is your address?
+      </h1>
+     
+     <noscript>
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              JavaScript is disabled on your device. Enable Javascript or use the link: My postcode is not recognised.
+            </strong>
+          </div>
+    </noscript>
+
+    {% from "input/macro.njk" import govukInput %}
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "postcode",
+        name: "postcode",
+        value: "G46 6LH"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Building number (optional)"
+        },
+        classes: "govuk-input--width-5",
+        id: "addr-number",
+        name: "addr-number",
+        value: "21"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Street"
+        },
+        classes: "govuk-input--width-20",
+        id: "addr-street",
+        name: "addr-street", 
+        value: "Forres Avenue"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town"
+        },
+        classes: "govuk-input--width-10",
+        id: "addr-town",
+        name: "addr-town",
+        value: "Giffnock"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "addr-postcode",
+        name: "addr-postcode", 
+        value: "G46 6LH"
+      }) }}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/parent-name.html"
+        }) }}
+      <p><a href="postcode.html">Change my address</a></p>
+
+    </div>
+</div>
+
+{% endblock %}
