@@ -10,29 +10,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-          What is your address?
+          Your address
       </h1>
-     
-     <noscript>
-        <div class="govuk-warning-text">
-            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-            <strong class="govuk-warning-text__text">
-              <span class="govuk-warning-text__assistive">Warning</span>
-              JavaScript is disabled on your device. Enable Javascript or use the link: My postcode is not recognised.
-            </strong>
-          </div>
-    </noscript>
+    
 
     {% from "input/macro.njk" import govukInput %}
-      {{ govukInput({
-        label: {
-          text: "Postcode"
-        },
-        classes: "govuk-input--width-10",
-        id: "postcode",
-        name: "postcode",
-        value: "G46 6LH"
-      }) }}
 
       {{ govukInput({
         label: {
