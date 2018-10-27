@@ -1,0 +1,39 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Date of Birth
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      {% from "date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: "What is the P1 child's date of birth?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "For example, 11 08 2014"
+        }
+      }) }}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/child-gender.html"
+        }) }}
+
+    </div>
+</div>
+
+{% endblock %}

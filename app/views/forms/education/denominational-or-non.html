@@ -1,0 +1,51 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  School selection
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "denominational-or-non",
+        name: "denominational-or-non",
+        fieldset: {
+          legend: {
+            text: "Select one school",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select the denominational or non denominational school for your catchment area."
+        },
+        items: [
+          {
+            value: "denom",
+            text: "Saint school example (denominational)"
+          },
+          {
+            value: "non-denom",
+            text: "School example (non denominational)"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/medical.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

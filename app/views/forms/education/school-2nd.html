@@ -1,0 +1,132 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  2nd school choice
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "select/macro.njk" import govukSelect %}
+
+      {{ govukSelect({
+        id: "2nd-school",
+        name: "2nd-school",
+        label: {
+          text: "Select a 2nd choice school",
+          classes: "govuk-!-font-size-36"
+        },
+        hint: {
+          text: "We will use this information if your catchment school is full."
+        },
+        items: [
+          {
+            value: "braidbar",
+            text: "Braidbar Primary School",
+            selected: true
+          },
+          {
+            value: "busby",
+            text: "Busby Primary School"
+          },
+          {
+            value: "carlibar",
+            text: "Carlibar Primary School"
+          },
+          {
+            value: "carolside",
+            text: "Carolside Primary School"
+          },
+          {
+            value: "crookfur",
+            text: "Crookfur Primary School"
+          },
+          {
+            value: "cross",
+            text: "Cross Arthurlie Primary School"
+          },
+          {
+            value: "eaglesham",
+            text: "Eaglesham Primary School"
+          },
+          {
+            value: "giffnock",
+            text: "Giffnock Primary School"
+          },
+          {
+            value: "hillview",
+            text: "Hillview Primary School"
+          },
+          {
+            value: "kirkhill",
+            text: "Kirkhill Primary School"
+          },
+          {
+            value: "maidenhill",
+            text: "Maidenhill Primary School"
+          },
+          {
+            value: "mearns",
+            text: "Mearns Primary School"
+          },
+          {
+            value: "neilston",
+            text: "Neilston Primary School"
+          },
+          {
+            value: "netherlee",
+            text: "Netherlee Primary School"
+          },
+          {
+            value: "our-lady",
+            text: "Our Lady of the Missions Primary School"
+          },
+          {
+            value: "cadoc",
+            text: "St Cadoc's Primary School"
+          },
+          {
+            value: "clare",
+            text: "St Clare's Primary School"
+          },
+          {
+            value: "john",
+            text: "St John's Primary School"
+          },
+          {
+            value: "joseph",
+            text: "St Joseph's Primary School"
+          },
+          {
+            value: "mark",
+            text: "St Mark's Primary School"
+          },
+          {
+            value: "thomas",
+            text: "St Thomas' Primary School"
+          },
+          {
+            value: "thornliebank",
+            text: "Thornliebank Primary School"
+          },
+          {
+            value: "uplawmoor",
+            text: "Uplawmoor Primary School"
+          }
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/defer.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

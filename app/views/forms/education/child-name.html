@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Parent or carer
+  Child name
 {% endblock %}
 
 {% block content %}
@@ -10,31 +10,39 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-          What is your name?
+          What is the P1 child name?
       </h1>
 
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Parent or carer's first name"
+          text: "Child's first name"
         },
-        id: "parent-first-name",
-        name: "parent-first-name"
+        id: "child-first-name",
+        name: "child-first-name"
       }) }}
 
       {{ govukInput({
         label: {
-          text: "Parent or carer's last name"
+          text: "Child's middle name (optional)"
         },
-        id: "parent-last-name",
-        name: "parent-last-name"
+        id: "child-middle-name",
+        name: "child-middle-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Child's last name"
+        },
+        id: "child-last-name",
+        name: "child-last-name"
       }) }}
 
 
       {{ govukButton({
         "text": "Continue",
-        href: "/forms/education/phone.html"
+        href: "/forms/education/child-dob.html"
         }) }}
 
     </div>

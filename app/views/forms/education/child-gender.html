@@ -1,0 +1,48 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Gender
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "single",
+        name: "single",
+        fieldset: {
+          legend: {
+            text: "What is the P1 child's gender?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "female",
+            text: "Female"
+          },
+          {
+            value: "male",
+            text: "Male"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/nursery.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

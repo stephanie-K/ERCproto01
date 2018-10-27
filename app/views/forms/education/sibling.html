@@ -1,0 +1,51 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Sibling
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "sibling",
+        name: "sibling",
+        fieldset: {
+          legend: {
+            text: "Will the child have sibling(s) at the school when they start?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "If you're catchment school is full, we will take this information into account."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/sibling-name.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

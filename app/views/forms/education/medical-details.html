@@ -1,0 +1,35 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Medical details
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+        {% from "textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Give details of the medical condition:",
+            classes: "govuk-!-font-size-36"
+          }
+        }) }}
+
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/school-2nd.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

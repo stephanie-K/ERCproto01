@@ -2,40 +2,33 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Parent or carer
+  Nursery
 {% endblock %}
 
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-          What is your name?
+          What is the child's current nursery?
       </h1>
 
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Parent or carer's first name"
+          text: "Enter the name of the nursery (optional)"
         },
-        id: "parent-first-name",
-        name: "parent-first-name"
+        classes: "govuk-input--width-20",
+        id: "nursery",
+        name: "nursery"
       }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Parent or carer's last name"
-        },
-        id: "parent-last-name",
-        name: "parent-last-name"
-      }) }}
-
 
       {{ govukButton({
         "text": "Continue",
-        href: "/forms/education/phone.html"
+        href: "/forms/education/denominational-or-non.html"
         }) }}
+
 
     </div>
 </div>

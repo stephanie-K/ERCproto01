@@ -138,12 +138,38 @@ body p {
     background-color : #df3034 ;
 }
 
+// ------------------------------------------- Headings ------------------------------------------------- //
+
+.govuk-heading-xl {
+    color: $erc-text-blue;
+}
+
+.govuk-heading-l {
+    color: $erc-text-blue;
+}
+
+.govuk-heading-m {
+    color: $erc-text-blue;
+}
+
+.govuk-list {
+    color: $erc-text-blue;
+}
+
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
     color: $erc-text-blue;
     margin-bottom: 2em;
+}
+
+.validated {
+    border: 2px solid #008000;
+}
+
+.input-read-only {
+background: #ececec;
 }
 
 .design-notes{
@@ -177,25 +203,7 @@ body p {
     padding: 5px;
 }
   
-  .panel-warning {
-      background-color: #c67f0f;
-  }
 
-  .panel-information {
-    background-color: #005ea5;
-    }
-
-    .panel-error {
-        background-color: #B30000;
-    }
-
-    .panel-warning {
-        background-color: #c67f0f;
-    }
-
-    .panel-info {
-        background-color: #005ea5;
-    }
 // --------------------------------------- images - videos --------------------------------------------//
 
 iframe{
@@ -286,7 +294,27 @@ img{
     }
   }
 
-//--------------------------------------- message boxes -----------------------------------------------//
+//--------------------------------------- message boxes and panels-----------------------------------------------//
+
+.panel-warning {
+    background-color: #c67f0f;
+}
+
+.panel-information {
+  background-color: #005ea5;
+  }
+
+  .panel-error {
+      background-color: #B30000;
+  }
+
+  .panel-warning {
+      background-color: #c67f0f;
+  }
+
+  .panel-info {
+      background-color: #005ea5;
+  }
 
 .ercError,
 .ercInformation,

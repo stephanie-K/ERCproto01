@@ -2,39 +2,40 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Parent or carer
+  Sibling's name
 {% endblock %}
 
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-          What is your name?
+          What is the oldest child's name?
       </h1>
+      <p>If the child will have more than one sibling at the school, enter the name of the oldest one.</p>
 
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Parent or carer's first name"
+          text: "Oldest child's first name"
         },
-        id: "parent-first-name",
-        name: "parent-first-name"
+        id: "oldest-first-name",
+        name: "oldest-first-name"
       }) }}
 
       {{ govukInput({
         label: {
-          text: "Parent or carer's last name"
+          text: "Oldest child's last name"
         },
-        id: "parent-last-name",
-        name: "parent-last-name"
+        id: "oldest-last-name",
+        name: "oldest-last-name"
       }) }}
 
 
       {{ govukButton({
         "text": "Continue",
-        href: "/forms/education/phone.html"
+        href: "/forms/education/sibling-stage.html"
         }) }}
 
     </div>
