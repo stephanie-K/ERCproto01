@@ -12,6 +12,7 @@
       <h1 class="govuk-heading-l">
           What is the oldest child's name?
       </h1>
+      <form class="form" method="post">
       <p>If the child will have more than one sibling at the school, enter the name of the oldest one.</p>
 
       {% from "input/macro.njk" import govukInput %}
@@ -21,7 +22,8 @@
           text: "Oldest child's first name"
         },
         id: "oldest-first-name",
-        name: "oldest-first-name"
+        name: "oldest-first-name",
+        value: data['oldest-first-name']
       }) }}
 
       {{ govukInput({
@@ -29,15 +31,15 @@
           text: "Oldest child's last name"
         },
         id: "oldest-last-name",
-        name: "oldest-last-name"
+        name: "oldest-last-name",
+        value: data['oldest-last-name']
       }) }}
 
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/sibling-stage.html"
+        "text": "Continue"
         }) }}
-
+      </form>
     </div>
 </div>
 

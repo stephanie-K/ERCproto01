@@ -16,7 +16,9 @@
 
     <p>Thank you for submitting your form.</p>
 
-    <p>We've sent you a confirmation email.</p>
+    {% if data['email'] %}
+    <p>We've sent you a confirmation email at: <strong>{{ data['email'] }}</strong></p>
+    {% endif %}
 
     <p>Find out <a href="#">what you need to do next</a>.</p>
 

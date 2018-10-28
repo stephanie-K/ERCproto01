@@ -12,7 +12,7 @@
       <h1 class="govuk-heading-l">
           What is the P1 child name?
       </h1>
-
+      <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
@@ -20,7 +20,8 @@
           text: "Child's first name"
         },
         id: "child-first-name",
-        name: "child-first-name"
+        name: "child-first-name",
+        value: data ['child-first-name']
       }) }}
 
       {{ govukInput({
@@ -28,7 +29,8 @@
           text: "Child's middle name (optional)"
         },
         id: "child-middle-name",
-        name: "child-middle-name"
+        name: "child-middle-name",
+        value: data ['child-middle-name']
       }) }}
 
       {{ govukInput({
@@ -36,15 +38,15 @@
           text: "Child's last name"
         },
         id: "child-last-name",
-        name: "child-last-name"
+        name: "child-last-name",
+        value: data ['child-last-name']
       }) }}
 
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/child-dob.html"
+        "text": "Continue"
         }) }}
-
+      </form>
     </div>
 </div>
 

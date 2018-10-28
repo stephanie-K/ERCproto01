@@ -9,12 +9,13 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-
+      <form class="form" method="post">
       {% from "select/macro.njk" import govukSelect %}
 
       {{ govukSelect({
         id: "sibling-stage",
         name: "sibling-stage",
+        value: data['sibling-stage'],
         label: {
           text: "Select the sibling's stage when the child starts school",
           classes: "govuk-!-font-size-36"
@@ -24,32 +25,32 @@
         },
         items: [
           {
-            value: "p1",
+            value: "P1",
             text: "P1",
             selected: true
           },
           {
-            value: "p2",
+            value: "P2",
             text: "P2"
           },
           {
-            value: "p3",
+            value: "P3",
             text: "P3"
           },
           {
-            value: "p4",
+            value: "P4",
             text: "P4"
           },
           {
-            value: "p5",
+            value: "P5",
             text: "P5"
           },
           {
-            value: "p6",
+            value: "P6",
             text: "P6"
           },
           {
-            value: "p7",
+            value: "P7",
             text: "P7"
           }
         ]
@@ -57,10 +58,10 @@
 
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/summary.html"
+        "text": "Continue"
         }) }}
 
+        </form>
 
     </div>
 </div>

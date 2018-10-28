@@ -10,13 +10,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
+      <form class="form" method="post">
       {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         classes: "govuk-radios",
         idPrefix: "defer",
         name: "defer",
+        value: data['defer'],
         fieldset: {
           legend: {
             text: "Do you want to defer the child starting school?",
@@ -37,11 +38,10 @@
       }) }}
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/sibling.html"
+        "text": "Continue"
         }) }}
 
-
+      </form>
     </div>
 </div>
 

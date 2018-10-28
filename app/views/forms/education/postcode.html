@@ -12,6 +12,8 @@
       <h1 class="govuk-heading-l">
           What is your address?
       </h1>
+
+      <form class="form" method="post">
       {% from "warning-text/macro.njk" import govukWarningText %}
       {% from "input/macro.njk" import govukInput %}
      <noscript>
@@ -31,12 +33,10 @@
         value: data['postcode']
       }) }}
 
-
-
       {{ govukButton({
-        "text": "Find my address",
-        href: "/forms/education/postcode-with-address.html"
+        "text": "Find my address"
         }) }}
+      </form>
 
     <p><a href="manual-address.html">My postcode is not recognised</a></p>
     </div>

@@ -12,7 +12,7 @@
       <h1 class="govuk-heading-l">
           What is your email address?
       </h1>
-
+      <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
@@ -24,14 +24,14 @@
         },
         id: "email",
         name: "email",
+        value: data['email'],
         type: "email"
       }) }}
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/single.html"
+        "text": "Continue"
         }) }}
-
+      </form>
 
     </div>
 </div>

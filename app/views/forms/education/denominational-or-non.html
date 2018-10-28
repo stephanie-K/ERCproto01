@@ -10,13 +10,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
+     <form class="form" method="post">
       {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "denominational-or-non",
-        name: "denominational-or-non",
+        idPrefix: "school",
+        name: "school",
         fieldset: {
           legend: {
             text: "Select one school",
@@ -29,22 +29,21 @@
         },
         items: [
           {
-            value: "denom",
+            value: "Saint school example (denominational)",
             text: "Saint school example (denominational)"
           },
           {
-            value: "non-denom",
+            value: "School example (non denominational)",
             text: "School example (non denominational)"
           }
         ]
       }) }}
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/medical.html"
+        "text": "Continue"
         }) }}
 
-
+      </form>
     </div>
 </div>
 

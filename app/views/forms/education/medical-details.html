@@ -10,12 +10,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
+        <form class="form" method="post">
         {% from "textarea/macro.njk" import govukTextarea %}
 
         {{ govukTextarea({
           name: "more-detail",
           id: "more-detail",
+          value: data['more-detail'],
           label: {
             text: "Give details of the medical condition:",
             classes: "govuk-!-font-size-36"
@@ -24,11 +25,10 @@
 
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/school-2nd.html"
+        "text": "Continue"
         }) }}
 
-
+      </form>
     </div>
 </div>
 

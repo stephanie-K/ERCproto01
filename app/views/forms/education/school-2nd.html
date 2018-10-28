@@ -9,7 +9,7 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <form class="form" method="post">
       {% from "select/macro.njk" import govukSelect %}
 
       {{ govukSelect({
@@ -24,96 +24,96 @@
         },
         items: [
           {
-            value: "braidbar",
+            value: "Braidbar Primary School",
             text: "Braidbar Primary School",
             selected: true
           },
           {
-            value: "busby",
+            value: "Busby Primary School",
             text: "Busby Primary School"
           },
           {
-            value: "carlibar",
+            value: "Carlibar Primary School",
             text: "Carlibar Primary School"
           },
           {
-            value: "carolside",
-            text: "Carolside Primary School"
+            value: "Carlibar Primary School",
+            text: "Carlibar Primary School"
           },
           {
-            value: "crookfur",
+            value: "Crookfur Primary School",
             text: "Crookfur Primary School"
           },
           {
-            value: "cross",
+            value: "Cross Arthurlie Primary School",
             text: "Cross Arthurlie Primary School"
           },
           {
-            value: "eaglesham",
+            value: "Eaglesham Primary School",
             text: "Eaglesham Primary School"
           },
           {
-            value: "giffnock",
+            value: "Giffnock Primary School",
             text: "Giffnock Primary School"
           },
           {
-            value: "hillview",
+            value: "Hillview Primary School",
             text: "Hillview Primary School"
           },
           {
-            value: "kirkhill",
+            value: "Kirkhill Primary School",
             text: "Kirkhill Primary School"
           },
           {
-            value: "maidenhill",
+            value: "Maidenhill Primary School",
             text: "Maidenhill Primary School"
           },
           {
-            value: "mearns",
+            value: "Mearns Primary School",
             text: "Mearns Primary School"
           },
           {
-            value: "neilston",
+            value: "Neilston Primary School",
             text: "Neilston Primary School"
           },
           {
-            value: "netherlee",
+            value: "Netherlee Primary School",
             text: "Netherlee Primary School"
           },
           {
-            value: "our-lady",
+            value: "Our Lady of the Missions Primary School",
             text: "Our Lady of the Missions Primary School"
           },
           {
-            value: "cadoc",
+            value: "St Cadoc's Primary School",
             text: "St Cadoc's Primary School"
           },
           {
-            value: "clare",
+            value: "St Clare's Primary School",
             text: "St Clare's Primary School"
           },
           {
-            value: "john",
+            value: "St John's Primary School",
             text: "St John's Primary School"
           },
           {
-            value: "joseph",
+            value: "St Joseph's Primary School",
             text: "St Joseph's Primary School"
           },
           {
-            value: "mark",
+            value: "St Mark's Primary School",
             text: "St Mark's Primary School"
           },
           {
-            value: "thomas",
+            value: "St Thomas' Primary School",
             text: "St Thomas' Primary School"
           },
           {
-            value: "thornliebank",
+            value: "Thornliebank Primary School",
             text: "Thornliebank Primary School"
           },
           {
-            value: "uplawmoor",
+            value: "Uplawmoor Primary School",
             text: "Uplawmoor Primary School"
           }
         ]
@@ -121,11 +121,10 @@
 
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/defer.html"
+        "text": "Continue"
         }) }}
 
-
+    </form>
     </div>
 </div>
 

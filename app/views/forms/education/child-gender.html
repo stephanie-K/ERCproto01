@@ -10,13 +10,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-
+      <form class="form" method="post">
       {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "single",
-        name: "single",
+        idPrefix: "gender",
+        name: "gender",
+        value: data['gender'],
         fieldset: {
           legend: {
             text: "What is the P1 child's gender?",
@@ -37,10 +38,9 @@
       }) }}
 
       {{ govukButton({
-        "text": "Continue",
-        href: "/forms/education/nursery.html"
+        "text": "Continue"
         }) }}
-
+      </form>
 
     </div>
 </div>
