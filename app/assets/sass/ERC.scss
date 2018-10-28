@@ -156,6 +156,22 @@ body p {
     color: $erc-text-blue;
 }
 
+a {
+    color: 	#0000ee;
+}
+a:hover {
+    color: #ffffff;
+    background: #444
+}
+
+a:visited {
+    color: #551a8b; 
+}
+a:focus, a:active {
+    background-color: #444; 
+    color: #b9ff06
+}
+
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
 // back button/link
