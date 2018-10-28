@@ -8,14 +8,193 @@
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
       <h1 class="govuk-heading-l">
-        Check your answers
+        Summary
       </h1>
-    
-      <p>This is where they would see their answers and get the possibility to modify them if needed.</p>
 
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `app-check-your-answers--short` for short questions -->
+      <!--   * `app-check-your-answers__questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <h2 class="govuk-heading-m sum-heading">Your details</h2>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            21 Forres avenue<br>
+            G46 6LH - Giffnock
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Parent or carer's name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['parent-first-name'] }}&nbsp;{{ data['parent-last-name'] }}
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Phone number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['phone'] }}
+          </dd>
+        </div>
       
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Email
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['email'] }}
+          </dd>
+        </div>
+            
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Are you a single parent or carer?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['single'] }}
+          </dd>
+        </div>      
+      </dl>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/postcode.html">Edit your details<span class="govuk-visually-hidden">Edit your details</span></a></p>
+      
+      <h2 class="govuk-heading-m sum-heading">P1 child's details</h2>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            P1 child's name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['child-first-name'] }}&nbsp;
+              {% if data['child-middle-name']%}
+                {{ date ['child-middle-name'] }}
+              {% endif %}
+              {{ data['child-last-name'] }}
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['dob-date-day'] }}/{{ data['dob-date-month'] }}/{{ data['dob-date-year'] }}
+          </dd>
+        </div>
+      
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Gender
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['gender'] }}
+          </dd>
+        </div>
+            
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+              What is the child's current nursery?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['nursery'] }}
+          </dd>
+        </div>      
+      </dl>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/child-name.html">Edit P1 child's details<span class="govuk-visually-hidden">Edit P1 child's details</span></a></p>
+
+      <h2 class="govuk-heading-m sum-heading">School</h2>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+              Select one school
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['denominational-or-non'] }}
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+              Does the child have a medical condition that needs support offered at this school?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['medical'] }}
+          </dd>
+        </div>
+        {% if  data['more-details'] %}
+        <div class="app-check-your-answers__contents sum-grey">
+            <dt class="app-check-your-answers__question">
+                Details
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['more-details'] }}
+            </dd>
+          </div>
+          {% endif %}
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Select a 2nd choice school
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['2nd-school'] }}
+          </dd>
+        </div>
+            
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+              Do you want to defer the child starting school?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['defer'] }}
+          </dd>
+        </div>      
+      </dl>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/denominational-or-non.html">Edit school details<span class="govuk-visually-hidden">Edit school details</span></a></p>
+
+      <h2 class="govuk-heading-m sum-heading">Sibling(s)</h2>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+              Will the child have sibling(s) at the school when they start?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['sibling'] }}
+          </dd>
+        </div>
+
+        {% if data['sibling'] === 'yes' %}
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            What is the oldest child's name?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['oldest-first-name'] }}&nbsp;{{ data['oldest-last-name'] }}
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Select the sibling's stage when the child starts school
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['sibling-stage'] }}
+          </dd>
+        </div>
+        {% endif %}
+     
+      </dl>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/sibling.html">Edit sibling's details<span class="govuk-visually-hidden">Edit sibling's details</span></a></p>
+
      
       <h2 class="govuk-heading-m">Now send your response</h2>
       <p>By submitting you are confirming that, to the best of your knowledge, the details you're providing are correct.</p>

@@ -12,17 +12,14 @@ $govuk-global-styles: true;
 // Import GOV.UK Frontend
 @import "node_modules/govuk-frontend/all";
 
-///////////////////////////////////////////////// from ------ >   application
 
 // Patterns that aren't in Frontend
-//@import "patterns/check-your-answers";
-//@import "patterns/task-list";
-//@import "patterns/related-items";
+@import "patterns/check-your-answers";
+@import "patterns/task-list";
+@import "patterns/related-items";
 
 // Components that aren't in Frontend
 // @import "components/cookie-banner";
-
-//////////////////////////////////////////////// end
 
 $erc-text-blue : #004269; 
 $erc-logo-blue: #0071BA;
@@ -138,7 +135,7 @@ body p {
     background-color : #df3034 ;
 }
 
-// ------------------------------------------- Headings ------------------------------------------------- //
+// ------------------------------------------- GOVUK variable changes for colours ------------------------------------------------- //
 
 .govuk-heading-xl {
     color: $erc-text-blue;
@@ -156,21 +153,35 @@ body p {
     color: $erc-text-blue;
 }
 
-a {
+.govuk-link, a {
     color: 	#0000ee;
 }
-a:hover {
-    color: #ffffff;
-    background: #444
-}
 
-a:visited {
-    color: #551a8b; 
+// not implemented as it messes up the hover and is close enough anyway
+// .govuk-link:visited, a:visited {
+//     color: #551a8b; 
+// }
+
+// not done - doesn't seem very accessible
+// .govuk-link:hover, a:hover {
+//     color: #ffffff;
+//     background: #444
+// }
+
+
+
+.govuk-error-message, .govuk-error-summary, .govuk-input--error {
+    color: #B30000 
 }
-a:focus, a:active {
-    background-color: #444; 
-    color: #b9ff06
+.govuk-form-group--error {
+    border-left: 5px solid #B30000;
 }
+// not done - doesn't seem very accessible and specific to link so not consistent
+//.govuk-link:focus, .govuk-link:active, a:focus, a:active {
+//     background-color: #444; 
+//     color: #b9ff06 important!;
+// }
+
 
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
@@ -235,6 +246,60 @@ img{
         max-width: 100%;
         height: auto;
     }
+}
+
+// ---------------------------------------- summary table ---------------------------------------------------//@at-root
+
+
+
+.sum__table{
+    width:100%;
+    border:0 solid #fff
+}
+.sum__cell{
+    width:50%;
+    vertical-align:top;
+    box-sizing:border-box;
+    padding:10px 0;
+    border:0 solid #fff
+}
+.sum__cell--value{
+    word-break:break-all
+}
+.sum__cell--multi{
+    font-weight:bold;
+    font-size:1.125rem;
+    border-bottom:1px solid #ccc;
+    padding:30px 10px 10px 0;
+    background-color:transparent
+}
+.sum__row:first-of-type .sum__cell--multi:first-of-type{
+    padding:0 10px 10px 0
+}
+.sumpagetable{
+    width:100%;
+    border:0 solid #fff
+}
+.sumlabel,.sumvalue{
+    width:50%;
+    vertical-align:top;
+    box-sizing:border-box;
+    padding:10px 0;
+    border:0 solid #fff
+}
+.sumvalue{
+    word-break:break-all
+}
+.sumcontainer{
+    font-weight:bold;
+    font-size:1.75em;
+    border:0;
+    border-bottom:1px solid #ccc;
+    padding:30px 10px 10px 0;
+    background-color:transparent
+}
+sumpagetable tr:first-of-type .sumcontainer:first-of-type{
+    padding:0 10px 10px 0
 }
 
 // ----------------------------------------  colours display--------------------------------------------------//

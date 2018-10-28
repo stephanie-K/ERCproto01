@@ -1,8 +1,13 @@
+// added
+$erc-text-blue : #004269; 
+
+
 // Recommended - Use these styles for the check your answers pattern
 .app-check-your-answers {
   @include govuk-font(19);
   margin-top: 0;
-  @include govuk-responsive-margin(9, "bottom");
+  color: $erc-text-blue;
+  // @include govuk-responsive-margin(9, "bottom");
   @include govuk-media-query($from: desktop) {
     display: table;
   }
@@ -40,13 +45,21 @@
   }
 }
 
-.app-check-your-answers__contents:first-child .app-check-your-answers__question,
-.app-check-your-answers__contents:first-child .app-check-your-answers__answer,
-.app-check-your-answers__contents:first-child .app-check-your-answers__change {
-  @include govuk-media-query($from: desktop) {
-    padding-top: 0;
-  }
+//added
+.sum-heading {
+  background-color: #eee;
+  border: 1px solid $govuk-border-colour;
+  padding: govuk-em(12, 19) govuk-em(20, 19) govuk-em(9, 19) 5px;
+  margin-bottom: 0;
 }
+
+// .app-check-your-answers__contents:first-child .app-check-your-answers__question,
+// .app-check-your-answers__contents:first-child .app-check-your-answers__answer,
+// .app-check-your-answers__contents:first-child .app-check-your-answers__change {
+//   @include govuk-media-query($from: desktop) {
+//     //padding-top: 0;
+//   }
+// }
 
 .app-check-your-answers__question,
 .app-check-your-answers__answer,
@@ -56,8 +69,14 @@
   @include govuk-media-query($from: desktop) {
     display: table-cell;
     border-bottom: 1px solid $govuk-border-colour;
-    padding: govuk-em(12, 19) govuk-em(20, 19) govuk-em(9, 19) 0;
+    border-left: 1px solid $govuk-border-colour; // added
+    padding: govuk-em(12, 19) govuk-em(20, 19) govuk-em(9, 19) 5px;
   }
+}
+
+//added
+.app-check-your-answers__answer {
+  border-right: 1px solid $govuk-border-colour;
 }
 
 .app-check-your-answers__question {
@@ -79,5 +98,27 @@
   @include govuk-media-query($from: desktop) {
     position: static;
     padding-right: 0;
+  }
+}
+
+
+//-------------------------- ERC adaptation -----------------------//
+
+.sum-grey {
+  background-color: #eee;
+}
+
+.app-check-your-answers__answer, .app-check-your-answers__question, .sum-heading  {
+  @media only screen and (max-width: 768px) { 
+    border-left: 0; 
+    border-right: 0 ;
+    margin:  0;
+    padding-left: 5px;
+  }
+}
+
+.app-check-your-answers__question  {
+  @media only screen and (max-width: 768px) { 
+    padding-top: 5px;
   }
 }
