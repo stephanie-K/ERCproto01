@@ -43,6 +43,20 @@
         classes: "govuk-input--width-20"
       }) }}
 
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        hint: {
+          text: "We’ll  use this to send you a receipt"
+        },
+        id: "email",
+        name: "email",
+        type: "email"
+      }) }}
+
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({

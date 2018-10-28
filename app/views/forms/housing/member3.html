@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Member 1
+  Member 3
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Member 1
+        Member 3
       </h1>
     
       {% from "input/macro.njk" import govukInput %}
@@ -19,15 +19,15 @@
         label: {
           text: "Their full name"
         },
-        id: "full-name-member1",
-        name: "full-name-member1"
+        id: "full-name-member2",
+        name: "full-name-member2"
       }) }}
 
       {% from "textarea/macro.njk" import govukTextarea %}
 
       {{ govukTextarea({
-        name: "previous-address-member1",
-        id: "previous-address-member1",
+        name: "previous-address-member2",
+        id: "previous-address-member2",
         label: {
           text: "What's their previous address? (if applicable)"
         }
@@ -37,16 +37,16 @@
         label: {
           text: "What's their relationship to you?"
         },
-        id: "relation-member1",
-        name: "relation-member1",
+        id: "relation-member2",
+        name: "relation-member2",
         classes: "govuk-input--width-20"
       }) }}
 
       {% from "date-input/macro.njk" import govukDateInput %}
 
       {{ govukDateInput({
-        id: "dob-member1",
-        namePrefix: "dob-member1",
+        id: "dob-member2",
+        namePrefix: "dob-member2",
         fieldset: {
           legend: {
             text: "What's their date of birth?",
@@ -62,7 +62,7 @@
 
       {{ govukButton({
         text: "Add another member",
-        href: "/forms/housing/member2.html",
+        href: "/forms/housing/member4.html",
         classes: "button-secondary"
       }) }}
       <br>
