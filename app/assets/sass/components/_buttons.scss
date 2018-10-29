@@ -1,0 +1,29 @@
+//-------------------------------------------- Buttons --------------------------------------------------- //
+
+.button-primary {
+  background-color : #518418; 
+}
+
+.govuk-button:hover.button-primary, .govuk-button:focus.button-primary  {
+  background-color : #436c14;
+}
+
+
+.button-secondary , .govuk-button:active.button-secondary, .govuk-button:link.button-secondary, .govuk-button:visited.button-secondary {
+  background-color :  #cecece ;
+  color: black;
+}
+
+.govuk-button:hover.button-secondary, .govuk-button:focus.button-secondary  {
+  background-color : #dddddd;
+  color: black;
+}
+
+
+.button-warning {
+  background-color : #b10e1e  ;
+}
+
+.govuk-button:hover.button-warning, .govuk-button:focus.button-warning  {
+  background-color : #df3034  ;
+}

@@ -1,0 +1,95 @@
+//--------------------------------------- message boxes and panels-----------------------------------------------//
+
+.panel-warning {
+    background-color: #c67f0f;
+}
+
+.panel-information {
+  background-color: #005ea5;
+  }
+
+  .panel-error {
+      background-color: #B30000;
+  }
+
+  .panel-warning {
+      background-color: #c67f0f;
+  }
+
+  .panel-info {
+      background-color: #005ea5;
+  }
+
+.ercError,
+.ercInformation,
+.ercSuccess,
+.ercWarning {
+  display: block;
+  margin: 15px !important;
+  padding: 15px 10px 15px 50px !important;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+.ercInformation {
+  color: #004269;
+  background: url(../images/ERC/erc_information.gif) 10px center no-repeat #bde5f8;
+  border: 1px solid #004269;
+}
+.ercSuccess {
+  color: #2d4f2a;
+  background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff2bf;
+  border: 1px solid #2d4f2a;
+}
+.ercWarning {
+  color: #782a06;
+  background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #feefb3;
+  border: 1px solid #782a06;
+}
+.ercError {
+  color: #333333;
+  background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
+  border: 1px solid #d8000c;
+}
+
+.ercInformation.bootstrap {
+    color: #31708f;
+    background: url(../images/ERC/erc_information.gif) 10px center no-repeat #d9edf7;
+    border: 1px solid #bcdff1;
+  }
+  .ercSuccess.bootstrap {
+    color: #3c763d ;
+    background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff0d8;
+    border: 1px solid #d0e9c6;
+  }
+  .ercWarning.bootstrap {
+    color: #8a6d3b ;
+    background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #fcf8e3;
+    border: 1px solid #faf2cc;
+  }
+  .ercError.bootstrap {
+    color: #a94442;
+    background: url(../images/ERC/erc_error.gif) 10px center no-repeat #f2dede;
+    border: 1px solid #ebcccc;
+  }
+
+  .ercInformation.no-border {
+    color: #004269;
+    background: url(../images/ERC/erc_information.gif) 10px center no-repeat #bde5f8;
+    border: 0px;
+  }
+  .ercSuccess.no-border {
+    color: #2d4f2a;
+    background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff2bf;
+    border: 0px;
+  }
+  .ercWarning.no-border {
+    color: #782a06;
+    background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #feefb3;
+    border: 0px;
+  }
+  .ercError.no-border {
+    color: #333333;
+    background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
+    border: 10px;
+  }

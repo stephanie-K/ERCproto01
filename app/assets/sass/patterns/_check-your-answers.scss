@@ -102,7 +102,7 @@ $erc-text-blue : #004269;
 }
 
 
-//-------------------------- ERC adaptation -----------------------//
+//-------------------------- ERC adaptations -----------------------//
 
 .sum-grey {
   background-color: #eee;
@@ -122,3 +122,62 @@ $erc-text-blue : #004269;
     padding-top: 5px;
   }
 }
+
+
+
+/* ****************         code that is used for the forms in ERC summary table but not reused so far 
+// ---------------------------------------- summary table ---------------------------------------------------//
+
+
+
+.sum__table{
+  width:100%;
+  border:0 solid #fff
+}
+.sum__cell{
+  width:50%;
+  vertical-align:top;
+  box-sizing:border-box;
+  padding:10px 0;
+  border:0 solid #fff
+}
+.sum__cell--value{
+  word-break:break-all
+}
+.sum__cell--multi{
+  font-weight:bold;
+  font-size:1.125rem;
+  border-bottom:1px solid #ccc;
+  padding:30px 10px 10px 0;
+  background-color:transparent
+}
+.sum__row:first-of-type .sum__cell--multi:first-of-type{
+  padding:0 10px 10px 0
+}
+.sumpagetable{
+  width:100%;
+  border:0 solid #fff
+}
+.sumlabel,.sumvalue{
+  width:50%;
+  vertical-align:top;
+  box-sizing:border-box;
+  padding:10px 0;
+  border:0 solid #fff
+}
+.sumvalue{
+  word-break:break-all
+}
+.sumcontainer{
+  font-weight:bold;
+  font-size:1.75em;
+  border:0;
+  border-bottom:1px solid #ccc;
+  padding:30px 10px 10px 0;
+  background-color:transparent
+}
+sumpagetable tr:first-of-type .sumcontainer:first-of-type{
+  padding:0 10px 10px 0
+}
+
+*/

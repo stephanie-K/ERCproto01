@@ -1,0 +1,72 @@
+// ----------------------------------------  colours display--------------------------------------------------//
+
+.app-colour-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+.app-colour-list-row {
+ display: table-row;
+ margin-bottom: 10px;
+ border-bottom: 10px solid transparent;
+}
+@media (min-width: 61.25em) {
+ .app-colour-list-row {
+   display: table-row;
+   margin: auto;
+   border-bottom: 0;
+ }
+}
+.app-colour-list-column {
+ display: block;
+ position: relative;
+ padding-left: 50px;
+}
+@media (min-width: 61.25em) {
+ .app-colour-list-column {
+   display: table-cell;
+   padding-left: 0;
+   vertical-align: middle;
+ }
+}
+.app-swatch {
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 40px;
+ height: 40px;
+ border: 1px solid transparent;
+ border-radius: 50%;
+}
+@media (min-width: 61.25em) {
+ .app-swatch {
+   display: inline-block;
+   position: static;
+   margin-top: 6px;
+   margin-right: 10px;
+   margin-bottom: 7px;
+   vertical-align: middle;
+ }
+}
+//   .app-swatch-border {
+//     border-color: #bfc1c3;
+//   }
+.app-colour-list-column--name {
+ font-weight: normal;
+ text-align: left;
+}
+@media (min-width: 61.25em) {
+ .app-colour-list-column--name {
+   width: 50%;
+ }
+}
+@media (min-width: 61.25em) {
+ .app-colour-list-column--colour {
+   width: 15%;
+ }
+}
+@media (min-width: 61.25em) {
+ .app-colour-list-column--notes {
+   width: 35%;
+ }
+}
