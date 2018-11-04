@@ -114,6 +114,9 @@ body p {
 .govuk-link, a, .govuk-link:link, a:link {
     color: 	#0000ee;
 }
+#logo-erc:focus{
+    background-color: 	#fff; // was putting a thick yellow layer at the bottom of the ERC logo
+}
 
 
 // not implemented as it messes up the hover and is close enough anyway
