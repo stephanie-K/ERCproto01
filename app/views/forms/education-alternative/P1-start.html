@@ -1,0 +1,46 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  P1 registration form start
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Apply online for primary 1 registration
+      </h1>
+      <p>This service is for Primary 1 enrolment only.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <p>Check this is the right service. You need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>have parental rights and responsibilities for the P1 child</li>
+          <li>live in East Renfrewshire</li>
+          <li>want to enrol at your catchment school</li>
+       </ul>
+
+       <p class="govuk-!-padding-top-4">You can apply to enrol even if you're:</p>
+       <ul class="govuk-list govuk-list--bullet">
+          <li>applying to defer primary 1 entry for your child</li>
+          <li>moving house later and need to apply to another school</li>
+       </ul>
+
+       <p class="govuk-!-padding-top-4">For other schools, you need to <a href="#">apply for a placing request</a>.</p>
+
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/forms/education-alternative/moving.html"
+      }) }}
+
+      <p class="govuk-!-padding-top-4">You can find out how we use your information in our <a href="/privacy.html">privacy statement</a>.</p>
+
+    </div>
+</div>
+
+{% endblock %}

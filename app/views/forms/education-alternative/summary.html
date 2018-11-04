@@ -64,7 +64,7 @@
           </dd>
         </div>  
       </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/moving.html">Edit your details<span class="govuk-visually-hidden">Edit your details</span></a></p>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education-alternative/moving.html">Edit your details<span class="govuk-visually-hidden">Edit your details</span></a></p>
       
       <h2 class="govuk-heading-m sum-heading">P1 child's details</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
@@ -116,7 +116,7 @@
             </dd>
           </div>     
       </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/child-name.html">Edit P1 child's details<span class="govuk-visually-hidden">Edit P1 child's details</span></a></p>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education-alternative/child-name.html">Edit P1 child's details<span class="govuk-visually-hidden">Edit P1 child's details</span></a></p>
 
       <h2 class="govuk-heading-m sum-heading">School</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
@@ -188,7 +188,7 @@
           </div>
           {% endif %}  
       </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/info.html">Edit school details<span class="govuk-visually-hidden">Edit school details</span></a></p>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education-alternative/info.html">Edit school details<span class="govuk-visually-hidden">Edit school details</span></a></p>
 
       <h2 class="govuk-heading-m sum-heading">Sibling(s)</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
@@ -204,7 +204,7 @@
         {% if data['sibling'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-            Oldest child's name?
+            Oldest child's name
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['oldest-first-name'] }}&nbsp;{{ data['oldest-last-name'] }}
@@ -222,14 +222,14 @@
         {% endif %}
      
       </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/sibling.html">Edit sibling's details<span class="govuk-visually-hidden">Edit sibling's details</span></a></p>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education-alternative/sibling.html">Edit sibling's details<span class="govuk-visually-hidden">Edit sibling's details</span></a></p>
 
      
       <h2 class="govuk-heading-m">Now send your response</h2>
       <p>By submitting you are confirming that, to the best of your knowledge, the details you're providing are correct.</p>
       {{ govukButton({
         text: "Accept and submit your answers",
-        href: "/forms/education/confirmation.html",
+        href: "/forms/education-alternative/confirmation.html",
         classes: "button-primary"
       }) }}
 

@@ -1,0 +1,46 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Sibling's name
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          What is your oldest child's name?
+      </h1>
+      <form class="form" method="post">
+      <p>If your child will have more than one sibling at the school, enter the name of the oldest one.</p>
+
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Oldest child's first name"
+        },
+        id: "oldest-first-name",
+        name: "oldest-first-name",
+        value: data['oldest-first-name']
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Oldest child's last name"
+        },
+        id: "oldest-last-name",
+        name: "oldest-last-name",
+        value: data['oldest-last-name']
+      }) }}
+
+
+      {{ govukButton({
+        "text": "Continue"
+        }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Single parent or carer details
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <form class="form" method="post">
+        {% from "textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "single-detail",
+          id: "single-detail",
+          value: data['single-detail'],
+          label: {
+            text: "Give details if it would help the care of your child to go to the catchment school",
+            classes: "govuk-!-font-size-36"
+          }
+        }) }}
+
+
+      {{ govukButton({
+        "text": "Continue"
+        }) }}
+
+      </form>
+    </div>
+</div>
+
+{% endblock %}

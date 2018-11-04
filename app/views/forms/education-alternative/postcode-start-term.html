@@ -1,0 +1,48 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Postcode at the start of the term
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          What will be your address at the start of the term?
+      </h1>
+
+      <form class="form" method="post">
+      {% from "warning-text/macro.njk" import govukWarningText %}
+      {% from "input/macro.njk" import govukInput %}
+     <noscript>
+        {{ govukWarningText({
+          text: "JavaScript is disabled on your device. Enable Javascript or use the link: My postcode is not recognised",
+          iconFallbackText: "Warning"
+        }) }}
+        </noscript>
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        hint: {
+          text: "This will help us find your catchment school."
+        },
+        classes: "govuk-input--width-10",
+        id: "postcode",
+        name: "postcode",
+        value: data['postcode']
+      }) }}
+
+      {{ govukButton({
+        "text": "Find my address"
+        }) }}
+      </form>
+
+    <p><a href="manual-address-start-term.html">My postcode is not recognised</a></p>
+    </div>
+</div>
+
+{% endblock %}

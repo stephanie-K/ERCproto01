@@ -1,0 +1,24 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Informaton
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          We need some further information in case your catchment school is full
+        </h1>
+      <p>We’ll ask you to provide proof of these answers later in the process.</p>
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education-alternative/school-2nd.html"
+        }) }}
+    </div>
+</div>
+
+{% endblock %}
