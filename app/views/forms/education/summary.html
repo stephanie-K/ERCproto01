@@ -20,6 +20,14 @@
       <h2 class="govuk-heading-m sum-heading">Your details</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
         <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Are you moving house before term starts?
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['moving'] }}
+            </dd>
+          </div>
+        <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Address
           </dt>
@@ -54,18 +62,9 @@
           <dd class="app-check-your-answers__answer">
               {{ data['email'] }}
           </dd>
-        </div>
-            
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Are you a single parent or carer?
-          </dt>
-          <dd class="app-check-your-answers__answer">
-              {{ data['single'] }}
-          </dd>
-        </div>      
+        </div>  
       </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/postcode.html">Edit your details<span class="govuk-visually-hidden">Edit your details</span></a></p>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/moving.html">Edit your details<span class="govuk-visually-hidden">Edit your details</span></a></p>
       
       <h2 class="govuk-heading-m sum-heading">P1 child's details</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
@@ -107,12 +106,21 @@
           <dd class="app-check-your-answers__answer">
               {{ data['nursery'] }}
           </dd>
-        </div>      
+        </div>    
+        <div class="app-check-your-answers__contents sum-grey">
+            <dt class="app-check-your-answers__question">
+                Do you want to defer the child starting school?
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['defer'] }}
+            </dd>
+          </div>     
       </dl>
       <p class="govuk-!-padding-bottom-4"><a href="/forms/education/child-name.html">Edit P1 child's details<span class="govuk-visually-hidden">Edit P1 child's details</span></a></p>
 
       <h2 class="govuk-heading-m sum-heading">School</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
+        {% if data['school'] %}
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
               Select one school
@@ -121,6 +129,26 @@
               {{ data['school'] }}
           </dd>
         </div>
+        {% endif %}
+        {% if data['catchment-school-manual'] %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+              Do you know your catchment school?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['catchment-school-manual'] }}
+          </dd>
+        </div>
+        {% endif %}
+
+        <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Select a 2nd choice school
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['2nd-school'] }}
+            </dd>
+          </div>
 
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
@@ -130,36 +158,37 @@
               {{ data['medical'] }}
           </dd>
         </div>
-        {% if  data['more-details'] %}
+        {% if  data['medical'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-                Details
+                Give details of their medical condition
             </dt>
             <dd class="app-check-your-answers__answer">
-                {{ data['more-details'] }}
+                {{ data['more-detail'] }}
             </dd>
           </div>
           {% endif %}
-
+             
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Select a 2nd choice school
+            Are you a single parent or carer?
           </dt>
           <dd class="app-check-your-answers__answer">
-              {{ data['2nd-school'] }}
+              {{ data['single'] }}
           </dd>
-        </div>
-            
+        </div>    
+        {% if  data['single'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
-          <dt class="app-check-your-answers__question">
-              Do you want to defer the child starting school?
-          </dt>
-          <dd class="app-check-your-answers__answer">
-              {{ data['defer'] }}
-          </dd>
-        </div>      
+            <dt class="app-check-your-answers__question">
+                Give details if it would help the care of your child to go to the catchment school
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['single-detail'] }}
+            </dd>
+          </div>
+          {% endif %}  
       </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/denominational-or-non.html">Edit school details<span class="govuk-visually-hidden">Edit school details</span></a></p>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/info.html">Edit school details<span class="govuk-visually-hidden">Edit school details</span></a></p>
 
       <h2 class="govuk-heading-m sum-heading">Sibling(s)</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">

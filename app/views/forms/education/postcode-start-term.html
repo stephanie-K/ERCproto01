@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Postcode
+  Postcode at the start of the term
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-          Property postcode
+          What will be your postcode at the start of the term?
       </h1>
 
       <form class="form" method="post">
@@ -24,6 +24,12 @@
         </noscript>
 
       {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        hint: {
+          text: "This will help us find your catchment school."
+        },
         classes: "govuk-input--width-10",
         id: "postcode",
         name: "postcode",
@@ -35,7 +41,7 @@
         }) }}
       </form>
 
-    <p><a href="manual-address.html">My postcode is not recognised</a></p>
+    <p><a href="manual-address-start-term.html">My postcode is not recognised</a></p>
     </div>
 </div>
 

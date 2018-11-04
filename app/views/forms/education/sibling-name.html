@@ -8,18 +8,16 @@
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">
-          What is the oldest child's name?
-      </h1>
+    <div class="govuk-grid-column-two-thirds">
       <form class="form" method="post">
-      <p>If the child will have more than one sibling at the school, enter the name of the oldest one.</p>
+        
 
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Oldest child's first name"
+          text: "Older child first name",
+          classes: "govuk-!-font-size-27"
         },
         id: "oldest-first-name",
         name: "oldest-first-name",
@@ -28,7 +26,8 @@
 
       {{ govukInput({
         label: {
-          text: "Oldest child's last name"
+          text: "Older child last name",
+          classes: "govuk-!-font-size-27"
         },
         id: "oldest-last-name",
         name: "oldest-last-name",

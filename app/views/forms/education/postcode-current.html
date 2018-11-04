@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Postcode
+  Current postcode
 {% endblock %}
 
 {% block content %}
@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-          Property postcode
+          What's your current postcode?
       </h1>
 
       <form class="form" method="post">
@@ -24,10 +24,16 @@
         </noscript>
 
       {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        hint: {
+          text: "This is where we'll send letters."
+        },
         classes: "govuk-input--width-10",
-        id: "postcode",
-        name: "postcode",
-        value: data['postcode']
+        id: "current-postcode",
+        name: "current-postcode",
+        value: data['current-postcode']
       }) }}
 
       {{ govukButton({

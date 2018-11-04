@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Medical details
+Single parent or carer details
 {% endblock %}
 
 {% block content %}
@@ -14,11 +14,11 @@
         {% from "textarea/macro.njk" import govukTextarea %}
 
         {{ govukTextarea({
-          name: "more-detail",
-          id: "more-detail",
-          value: data['more-detail'],
+          name: "single-detail",
+          id: "single-detail",
+          value: data['single-detail'],
           label: {
-            text: "Give details of their medical condition",
+            text: "Give details if it would help the care of your child to go to the catchment school",
             classes: "govuk-!-font-size-36"
           }
         }) }}

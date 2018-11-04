@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Medical
+  Moving
 {% endblock %}
 
 {% block content %}
@@ -15,18 +15,15 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "medical",
-        name: "medical",
-        value: data['medical'],
+        idPrefix: "moving",
+        name: "moving",
+        value: data['moving'],
         fieldset: {
           legend: {
-            text: "Does your child have a medical condition that needs support offered at this school?",
+            text: "Are you moving house before term starts?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
-        },
-        hint: {
-          text: "We use this information if your catchment school is full. We'll ask you for evidence of this later."
         },
         items: [
           {
@@ -43,8 +40,8 @@
       {{ govukButton({
         "text": "Continue"
         }) }}
-
       </form>
+
     </div>
 </div>
 

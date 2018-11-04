@@ -9,13 +9,15 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          What's the P1 child's name?
+      </h1>
       <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Child first name",
-          classes: "govuk-!-font-size-27"
+          text: "Child's first name"
         },
         id: "child-first-name",
         name: "child-first-name",
@@ -24,8 +26,7 @@
 
       {{ govukInput({
         label: {
-          text: "Child middle name (optional)",
-          classes: "govuk-!-font-size-27"
+          text: "Child's middle name (optional)"
         },
         id: "child-middle-name",
         name: "child-middle-name",
@@ -34,8 +35,7 @@
 
       {{ govukInput({
         label: {
-          text: "Child last name",
-          classes: "govuk-!-font-size-27"
+          text: "Child's last name"
         },
         id: "child-last-name",
         name: "child-last-name",

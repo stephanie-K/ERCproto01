@@ -9,15 +9,13 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-          What's your name?
-      </h1>
       <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Parent or carer's first name"
+          text: "Parent or carer first name",
+          classes: "govuk-!-font-size-27"
         },
         id: "parent-first-name",
         name: "parent-first-name",
@@ -26,7 +24,8 @@
 
       {{ govukInput({
         label: {
-          text: "Parent or carer's last name"
+          text: "Parent or carer last name",
+          classes: "govuk-!-font-size-27"
         },
         id: "parent-last-name",
         name: "parent-last-name",

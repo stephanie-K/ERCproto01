@@ -9,15 +9,13 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-          What's your email address?
-      </h1>
       <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Email address (optional)"
+          text: "Email (optional)",
+          classes: "govuk-!-font-size-27"
         },
         hint: {
           text: "We'll use this to confirm your application and what you need to do next."

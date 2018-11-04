@@ -2,32 +2,36 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Phone
+  Email
 {% endblock %}
 
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          What's your email address?
+      </h1>
       <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Phone",
-          classes: "govuk-!-font-size-27"
+          text: "Email address (optional)"
         },
-        id: "phone",
-        name: "phone",
-        value: data['phone'],
-        type: "tel",
-        classes: "govuk-input--width-20"
+        hint: {
+          text: "We'll use this to confirm your application and what you need to do next."
+        },
+        id: "email",
+        name: "email",
+        value: data['email'],
+        type: "email"
       }) }}
 
       {{ govukButton({
         "text": "Continue"
         }) }}
-    </form>
+      </form>
 
     </div>
 </div>
