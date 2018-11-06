@@ -9,3 +9,5 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
+#added to fix the transport font cache issue https://github.com/alphagov/govuk-prototype-kit/pull/627/files
+app/version.txt

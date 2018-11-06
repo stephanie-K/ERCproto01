@@ -9,11 +9,11 @@ var assert = require('assert')
  * Basic sanity checks on the dev server
  */
 describe('The Prototype Kit', function () {
-  it('should generate assets into the /public folder', function () {
+  it('should generate assets into the {{ publicPath }} folder', function () {
     assert.doesNotThrow(function () {
-      fs.accessSync(path.resolve(__dirname, '../../public/javascripts/application.js'))
-      fs.accessSync(path.resolve(__dirname, '../../public/images/unbranded.ico'))
-      fs.accessSync(path.resolve(__dirname, '../../public/stylesheets/application.css'))
+      fs.accessSync(path.resolve(__dirname, '../..{{ publicPath }}/javascripts/application.js'))
+      fs.accessSync(path.resolve(__dirname, '../..{{ publicPath }}/images/unbranded.ico'))
+      fs.accessSync(path.resolve(__dirname, '../..{{ publicPath }}/stylesheets/application.css'))
     })
   })
 

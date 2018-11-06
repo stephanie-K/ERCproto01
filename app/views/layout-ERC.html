@@ -35,7 +35,7 @@
 
 
 {% block head %}
-<link href="/public/stylesheets/ERC.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="{{ publicPath }}/stylesheets/ERC.css" media="screen" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block pageTitle %}
@@ -75,12 +75,12 @@ ERC Prototype from GOVUK
 {% block bodyEnd %}
   {% block scripts %}
     <!-- Javascript -->
-    <script src="/public/javascripts/jquery-1.11.3.js"></script>
+    <script src="{{ publicPath }}/javascripts/jquery-1.11.3.js"></script>
     <script src="/node_modules/govuk-frontend/all.js"></script>
-    <script src="/public/javascripts/application.js"></script>
+    <script src="{{ publicPath }}/javascripts/application.js"></script>
 
     {% if useAutoStoreData %}
-      <script src="/public/javascripts/auto-store-data.js"></script>
+      <script src="{{ publicPath }}/javascripts/auto-store-data.js"></script>
     {% endif %}
 
     {% block pageScripts %}
