@@ -1,0 +1,64 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    {% from "radios/macro.njk" import govukRadios %}
+    {% from "input/macro.njk" import govukInput %}
+    
+    {% set postcodeHtml %}
+    {{ govukInput({
+      id: "postcode",
+      name: "postcode",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Enter your postcode"
+      }
+    }) }}
+    {% endset -%}
+    
+    
+    
+    {{ govukRadios({
+      idPrefix: "has-add-conditional",
+      name: "has-add",
+      fieldset: {
+        legend: {
+          text: "Do you have a fixed address?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: "This is where you live now, even if you are living with friends, family or somewhere else."
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes",
+          conditional: {
+            html: postcodeHtml
+          }
+        },
+        {
+          value: "no",
+          text: "No, I'm homeless"
+        }
+      ]
+    }) }}
+    
+          {{ govukButton({
+            text: "Continue",
+            href: "/forms/housing/CBLcontact.html",
+            classes: "button-primary"
+          }) }}
+    </div>
+</div>
+
+{% endblock %}

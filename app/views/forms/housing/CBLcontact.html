@@ -1,0 +1,73 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        {% from "radios/macro.njk" import govukRadios %}
+        {% from "input/macro.njk" import govukInput %}
+            
+        {% set attorneyHtml %}
+        {{ govukInput({
+          id: "contact-att",
+          name: "contact-att",
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Enter the contact details of your advocate or power of attorney"
+          }
+        }) }}
+        {% endset -%}
+        
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: "How would you prefer us to contact you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "We may still contact you in anotherway if we can't reach you."
+          },
+          items: [
+            {
+              value: "email",
+              text: "Email"
+            },
+            {
+              value: "phone",
+              text: "Phone"
+            },
+            {
+              value: "post",
+              text: "Post",
+              conditional: {
+                html: textHtml
+              }
+            },
+            {
+              value: "att",
+              text: "I have an advocate or power of attorney",
+              conditional: {
+                html: attorneyHtml
+              }
+            }
+
+          ]
+        }) }}
+    
+          {{ govukButton({
+            text: "End for now - More coming soon",
+            classes: "button-primary"
+          }) }}
+    </div>
+</div>
+
+{% endblock %}
