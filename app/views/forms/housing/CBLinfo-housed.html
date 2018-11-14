@@ -1,0 +1,28 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Information
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Who will be living with you?
+          </h1>
+          <p>We'll need some information about any person who will be living with you.</p>
+          <p>Any person 16 or older can be a joint applicant (explain what it means)</p>
+          <p>Guidance about pregnancy maybe</p>
+          <p>Only add children if they live permanently with you</p>
+          <p>Any children living with you occasionally will be added later</p>
+    
+          {{ govukButton({
+            text: "End for now - More coming soon",
+            classes: "button-primary"
+          }) }}
+    </div>
+</div>
+
+{% endblock %}
