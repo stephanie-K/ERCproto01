@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Information
+  Who will be living with you
 {% endblock %}
 
 {% block content %}
@@ -19,8 +19,9 @@
           <p>Any children living with you occasionally will be added later</p>
     
           {{ govukButton({
-            text: "End for now - More coming soon",
-            classes: "button-primary"
+            text: "Continue",
+            classes: "button-primary",
+            href: "/forms/housing/CBLadd-person.html"
           }) }}
     </div>
 </div>

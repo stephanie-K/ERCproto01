@@ -1,0 +1,223 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Add person
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Who will be living with you
+      </h1>
+      <p>Enter each person who will be living with you</p>
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name-person1",
+        name: "first-name-person1",
+        classes: "govuk-!-font-size-24"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name-person1",
+        name: "last-name-person1",
+        classes: "govuk-!-font-size-24"
+      }) }}
+
+      {{ govukDateInput({
+        id: "dob-person1",
+        namePrefix: "dob-person1",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-person1-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-person1-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-person1-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {% set genderHtml %}
+      {{ govukInput({
+        id: "gender-desc",
+        name: "gender-desc",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Describe gender in another way"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "gender",
+        name: "gender",
+        fieldset: {
+          legend: {
+            text: "Gender",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "female",
+            text: "Female"
+          },
+          {
+            value: "male",
+            text: "Male"
+          },
+          {
+            value: "Another gender",
+            text: "Another gender",
+            conditional: {
+              html: genderHtml
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Do they live with you now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Relationship to you"
+        },
+        id: "telephone-number",
+        name: "telephone-number",
+        classes: "govuk-input--width-20"
+      }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Is this person a joint applicant?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      {% set babyHtml %}
+      {{ govukInput({
+        id: "baby",
+        name: "baby",
+        classes: "govuk-!-width-two-third",
+        label: {
+          text: "When is the baby due?"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Is this person pregnant?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: babyHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      {% from "button/macro.njk" import govukButton %}
+
+
+      {{ govukButton({
+        text: "Add another person",
+        classes: "button-secondary"
+      }) }}
+<br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary",
+        href: "/forms/housing/CBLbedroom.html"
+      }) }}
+
+    </div>
+</div>
+
+{% endblock %}
