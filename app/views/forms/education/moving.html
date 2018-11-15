@@ -20,7 +20,7 @@
         value: data['moving'],
         fieldset: {
           legend: {
-            text: "Are you moving house before term starts?",
+            text: "Are you currently living at a different address?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -38,10 +38,15 @@
       }) }}
 
       {{ govukButton({
-        "text": "Continue"
+        "text": "Continue",
+        href: "/forms/education/parent-name.html"
         }) }}
       </form>
-
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+          <p>content, including heading to be drafted. We will need to know their current postcode and use a texbox for it as it could be outside the UK. We will also need the date they are moving in to the new ERC address</p>
+          <p>it might all be on this page, or depending on the yes/no going to and extra page to collect the postcode and the moving in  date</p>
+      </div>
     </div>
 </div>
 

@@ -154,33 +154,34 @@ body p {
     background: #ececec;
 }
 
-.design-notes{
-    color: red;
-    font-style: italic;
-    display: none;
-  }
-  .design-notes-box{
-    border: solid 1px red;
+.govuk-tag {
     padding: 10px;
-    margin: -10px;
-    display: none
-  }
+    margin-right: 10px;
+}
+.govuk-tag.black {
+padding: 10px 10px 10px 60px;
+background: url(../images/govuk-crown.png) 10px center no-repeat #000;
+}
 
-  .govuk-tag {
-      padding: 10px;
-      margin-right: 10px;
-  }
-  .govuk-tag.black {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/govuk-crown.png) 10px center no-repeat #000;
-  }
+.govuk-tag.info {
+    background-color: $erc-logo-blue;
+}
 
-  .govuk-tag.info {
-      background-color: $erc-logo-blue;
-  }
+.govuk-tag.red {
+background-color: #b10e1e;
+margin-left: 10px;
+padding: 5px;
+}
 
-  .govuk-tag.red {
-    background-color: #b10e1e;
-    margin-left: 10px;
-    padding: 5px;
+.design-notes-box{
+border: solid 1px #ebcccc;
+border-radius: 5px;
+padding: 5px;
+margin: 5px -10px -10px -10px;
+color: #a94442 ;
+background-color: #f2dede;
+p, h3 {
+    color: #a94442;
+}
+// display: none
 }

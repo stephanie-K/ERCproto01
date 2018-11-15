@@ -23,14 +23,19 @@
         id: "email",
         name: "email",
         value: data['email'],
-        type: "email"
+        type: "email",
+        classes: "govuk-input--width-20"
       }) }}
 
       {{ govukButton({
         "text": "Continue"
         }) }}
       </form>
-
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+          <p>We are validating the email format. Could we make sure autocomplete and email type of input will be selected to hopefully reduce risk or input errors? If it's error prone, we might add a verification of the email later on</p>
+          <p><a href="https://design-system.service.gov.uk/patterns/email-addresses/" target="_blank" rel="noopener"> guidance on email address GDS</a></p>
+      </div>
     </div>
 </div>
 

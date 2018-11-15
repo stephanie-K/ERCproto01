@@ -1,0 +1,34 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Apply online for primary 1 registration
+      </h1>
+
+      <h2 class="govuk-heading-m">Declaration</h2>
+     <p>There will be a text about declaring you are saying the truth, might have GDPR declaration too - to be checked</p>
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "I agree",
+        href: "/forms/education/postcode.html"
+      }) }}
+
+  
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+          <p>content of this page to be written, it might be a tick box, or a yes/no radio button, or the button I agree</p>
+      </div>
+    </div>
+</div>
+
+{% endblock %}
