@@ -10,24 +10,64 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <form class="form" method="post">
+
+          {% from "radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "nursery",
+            name: "nursery",
+            value: data['nursery'],
+            fieldset: {
+              legend: {
+                text: "What nursery is your child attending?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "My Child is not attending nursery",
+                text: "My child is not attending nursery"
+              },
+              {
+                value: "My child is at a nursery but not in East Renfrewshire",
+                text: "My child is at a nursery but not in East Renfrewshire"
+              },
+              {
+                value: "Name of ERC nursery 1",
+                text: "Name of ERC nursery 1"
+              },
+              {
+                value: "Name of ERC nursery 2",
+                text: "Name of ERC nursery 2"
+              },
+              {
+                value: "Name of ERC nursery 3",
+                text: "Name of ERC nursery 3"
+              },
+              {
+                value: "Name of ERC nursery 4",
+                text: "Name of ERC nursery 4"
+              },
+              {
+                value: "Name of ERC nursery 5",
+                text: "Name of ERC nursery 5"
+              }
+            ]
+          }) }}
       {% from "input/macro.njk" import govukInput %}
 
-      {{ govukInput({
-        label: {
-          text: "Current nursery (optional)",
-          classes: "govuk-!-font-size-27"
-        },
-        classes: "govuk-input--width-20",
-        id: "nursery",
-        name: "nursery",
-        value: data['nursery']
-      }) }}
 
       {{ govukButton({
         "text": "Continue"
         }) }}
 
       </form>
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+          <p>This is only provisional content to illustrate. We would like to capture the name of the nursery if within ERC, and possibly have the name of the nursery if it's outside ERC (so maybe an extra page to capture the name as a free text box on an extra screen if the parent select this option here). The list of all ERC nurseries, including private ones will be listed there (about 15?). Heather will provide IT with the list.</p>    
+      </div>
     </div>
 </div>
 

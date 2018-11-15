@@ -19,7 +19,8 @@
         },
         id: "child-first-name",
         name: "child-first-name",
-        value: data ['child-first-name']
+        value: data ['child-first-name'],
+        classes: "govuk-input--width-20"
       }) }}
 
       {{ govukInput({
@@ -29,7 +30,8 @@
         },
         id: "child-middle-name",
         name: "child-middle-name",
-        value: data ['child-middle-name']
+        value: data ['child-middle-name'],
+        classes: "govuk-input--width-20"
       }) }}
 
       {{ govukInput({
@@ -39,7 +41,8 @@
         },
         id: "child-last-name",
         name: "child-last-name",
-        value: data ['child-last-name']
+        value: data ['child-last-name'],
+        classes: "govuk-input--width-20"
       }) }}
 
 
@@ -47,6 +50,12 @@
         "text": "Continue"
         }) }}
       </form>
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+          <p>We are keeping the middle name as some parents really want to have the middle name and would otherwise type it in the first name input field. As a result we will also add the middle name for the sibling for consistency.</p>
+          <p>Note that this is not used internally. It should appear on the summary, but is there any possibility that it is not transmitted to GOSS when the date is exported?</p>
+          
+      </div>
     </div>
 </div>
 

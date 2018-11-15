@@ -16,22 +16,35 @@
 
       {{ govukInput({
         label: {
-          text: "Older child first name",
+          text: "Sibling first name",
           classes: "govuk-!-font-size-27"
         },
         id: "oldest-first-name",
         name: "oldest-first-name",
-        value: data['oldest-first-name']
+        value: data['oldest-first-name'],
+        classes: "govuk-input--width-20"
       }) }}
 
       {{ govukInput({
         label: {
-          text: "Older child last name",
+          text: "Sibling middle name (optional)",
+          classes: "govuk-!-font-size-27"
+        },
+        id: "oldest-middle-name",
+        name: "oldest-middle-name",
+        value: data['oldest-middle-name'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Sibling last name",
           classes: "govuk-!-font-size-27"
         },
         id: "oldest-last-name",
         name: "oldest-last-name",
-        value: data['oldest-last-name']
+        value: data['oldest-last-name'],
+        classes: "govuk-input--width-20"
       }) }}
 
 
@@ -39,6 +52,10 @@
         "text": "Continue"
         }) }}
       </form>
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+          <p>For consistency, we ask for the middle name even though it's not needed.</p>
+      </div>
     </div>
 </div>
 

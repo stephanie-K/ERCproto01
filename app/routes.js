@@ -7,16 +7,16 @@ module.exports = router
 
 // P1 form ***********************************************************************************
 
-router.post('/forms/education/moving', function (req, res) {
-  // set a session variable to false: this will be used to see if we need to display the catchment school choice question or not
-  req.session.nocag  = false
-  // Get the answer from the query string
-  var isMoving = req.session.data['moving']
-  if (isMoving === 'yes') {
-    return res.redirect('/forms/education/postcode-start-term')
-  }
-  res.redirect('/forms/education/postcode')
-})
+// router.post('/forms/education/moving', function (req, res) {
+//   // set a session variable to false: this will be used to see if we need to display the catchment school choice question or not
+//   req.session.nocag  = false
+//   // Get the answer from the query string
+//   var isMoving = req.session.data['moving']
+//   if (isMoving === 'yes') {
+//     return res.redirect('/forms/education/postcode-start-term')
+//   }
+//   res.redirect('/forms/education/postcode')
+// })
 
 router.post('/forms/education/postcode-start-term', function (req, res) {
   res.redirect('/forms/education/postcode-current')
@@ -39,6 +39,9 @@ router.post('/forms/education/postcode', function (req, res) {
     res.redirect('/forms/education/postcode-with-address')
   })
 
+  router.post('/forms/education/moving', function (req, res) {
+      res.redirect('/forms/education/parent-name')
+  })
 
   router.post('/forms/education/parent-name', function (req, res) {
     res.redirect('/forms/education/phone')

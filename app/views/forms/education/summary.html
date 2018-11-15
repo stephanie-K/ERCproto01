@@ -17,11 +17,10 @@
       <!--   * `app-check-your-answers--short` for short questions -->
       <!--   * `app-check-your-answers__questions-long` for long questions -->
       <!--   * none for single group of q&a -->
-      <h2 class="govuk-heading-m sum-heading">Your details</h2>
       <dl class="app-check-your-answers app-check-your-answers--long">
-        <div class="app-check-your-answers__contents">
+        <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-              Are you moving house before term starts?
+              Are you currently living at a different address?
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['moving'] }}
@@ -63,19 +62,15 @@
               {{ data['email'] }}
           </dd>
         </div>  
-      </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/moving.html">Edit your details<span class="govuk-visually-hidden">Edit your details</span></a></p>
-      
-      <h2 class="govuk-heading-m sum-heading">P1 child's details</h2>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Name
+            Name of the child
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['child-first-name'] }}&nbsp;
               {% if data['child-middle-name']%}
-                {{ data ['child-middle-name'] }}
+                {{ data ['child-middle-name'] }}&nbsp;
               {% endif %}
               {{ data['child-last-name'] }}
           </dd>
@@ -101,13 +96,13 @@
             
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Current nursery
+              What nursery is your child attending?
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['nursery'] }}
           </dd>
         </div>    
-        <div class="app-check-your-answers__contents sum-grey">
+        <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
                 Do you want to defer your child starting school?
             </dt>
@@ -115,13 +110,8 @@
                 {{ data['defer'] }}
             </dd>
           </div>     
-      </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/child-name.html">Edit P1 child's details<span class="govuk-visually-hidden">Edit P1 child's details</span></a></p>
-
-      <h2 class="govuk-heading-m sum-heading">School</h2>
-      <dl class="app-check-your-answers app-check-your-answers--long">
-        {% if data['school'] %}
-        <div class="app-check-your-answers__contents">
+    
+        <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
               Select one school
           </dt>
@@ -129,21 +119,10 @@
               {{ data['school'] }}
           </dd>
         </div>
-        {% endif %}
-        {% if data['catchment-school-manual'] %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-              Do you know your catchment school?
-          </dt>
-          <dd class="app-check-your-answers__answer">
-              {{ data['catchment-school-manual'] }}
-          </dd>
-        </div>
-        {% endif %}
-
+      
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              Select a 2nd choice school
+              Select preferred alternative school
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['2nd-school'] }}
@@ -180,21 +159,17 @@
         {% if  data['single'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-                Give details if it would help the care of your child to go to the catchment school
+                Give details of how it helps childcare
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['single-detail'] }}
             </dd>
           </div>
           {% endif %}  
-      </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/info.html">Edit school details<span class="govuk-visually-hidden">Edit school details</span></a></p>
-
-      <h2 class="govuk-heading-m sum-heading">Sibling(s)</h2>
-      <dl class="app-check-your-answers app-check-your-answers--long">
+    
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Sibling(s) at the school when they start?
+              Will your child have a sibling at the school when they start?
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling'] }}
@@ -204,16 +179,20 @@
         {% if data['sibling'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-            Oldest child's name?
+            Sibling's name?
           </dt>
           <dd class="app-check-your-answers__answer">
-              {{ data['oldest-first-name'] }}&nbsp;{{ data['oldest-last-name'] }}
+              {{ data['oldest-first-name'] }}&nbsp;
+              {% if data['oldest-middle-name']%}
+              {{ data ['oldest-middle-name'] }}&nbsp;
+            {% endif %}
+            {{ data['oldest-last-name'] }}
           </dd>
         </div>
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Sibling's stage when the child starts school
+            Sibling's stage when school starts
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling-stage'] }}
@@ -222,7 +201,7 @@
         {% endif %}
      
       </dl>
-      <p class="govuk-!-padding-bottom-4"><a href="/forms/education/sibling.html">Edit sibling's details<span class="govuk-visually-hidden">Edit sibling's details</span></a></p>
+    
 
      
       <h2 class="govuk-heading-m">Now send your response</h2>
@@ -233,6 +212,13 @@
         classes: "button-primary"
       }) }}
 
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+        <p>The content will change. We maybe need a different heading at the top. Some guidance to make sure they understand it's the only place they can print the page to save what they entered. The questions a user didn't see should be removed, but we should display optional ones even if they didn't answer. Labels should be bold (only on mobile just now, not on desktop).</p>
+        <p>We decide not to make the edit possible as this is complex to make especially to make sure that we come back directly to that page. Some questions could not be edited (like the postcode as it affect the UPRN) and some questions have logic routing.</p>
+        <p>can only some of this data be passed to GOSS?</p>
+         
+      </div>
 
     </div>
 </div>

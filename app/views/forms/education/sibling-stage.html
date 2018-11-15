@@ -18,15 +18,16 @@
           name: "sibling-stage",
           fieldset: {
             legend: {
-              text: "Sibling's stage when starts school",
+              text: "Sibling's stage when school starts",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
           },
-          hint: {
-            text: "We use this information if your catchment school is full."
-          },
           items: [
+            {
+              value: "P1",
+              text: "P1"
+            },
             {
               value: "P2",
               text: "P2"
@@ -60,7 +61,10 @@
         }) }}
 
         </form>
-
+        <div class="design-notes-box">
+            <h3 class="govuk-heading-s">Design notes:</h3>
+            <p>As we have removed the term 'older' in the previous pages, we can now have the option of P1 in the list for the parents of twins, to make sure they are not stuck on this question.</p>
+        </div>
     </div>
 </div>
 
