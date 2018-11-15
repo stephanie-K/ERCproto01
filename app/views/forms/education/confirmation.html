@@ -14,15 +14,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <p>Thank you for submitting your form.</p>
+    {% from "panel/macro.njk" import govukPanel %}
+
+      {{ govukPanel({
+        titleText: "Application complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
 
     {% if data['email'] %}
     <p>We've sent you a confirmation email at: <strong>{{ data['email'] }}</strong></p>
     {% endif %}
+    <p>&nbsp;</p>
+    <h3 class="govuk-heading-m">What happens next</h3>
+    <p>Guidance here</p>
 
-    <p>Find out <a href="#">what you need to do next</a>.</p>
 
-    <p>Admissions Team.</p>
       <p class="govuk-!-margin-top-9">
         <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
       </p>
