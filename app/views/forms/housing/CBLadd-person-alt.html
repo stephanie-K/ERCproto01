@@ -139,70 +139,6 @@
         classes: "govuk-input--width-20"
       }) }}
 
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "changed-name",
-        name: "changed-name",
-        fieldset: {
-          legend: {
-            text: "Is this person a joint applicant?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-
-      {% set babyHtml %}
-      {{ govukInput({
-        id: "baby",
-        name: "baby",
-        classes: "govuk-!-width-two-third",
-        label: {
-          text: "When is the baby due?"
-        }
-      }) }}
-      {% endset -%}
-
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "changed-name",
-        name: "changed-name",
-        fieldset: {
-          legend: {
-            text: "Is this person pregnant?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            conditional: {
-              html: babyHtml
-            }
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-
       {% from "button/macro.njk" import govukButton %}
 
 
@@ -214,13 +150,13 @@
       {{ govukButton({
         text: "Continue",
         classes: "button-primary",
-        href: "/forms/housing/CBLbedroom.html"
+        href: "/forms/housing/CBLbabies.html"
       }) }}
 
 
       <div class="design-notes-box">
           <h3 class="govuk-heading-s">Design notes:</h3>
-         <p>This is too much, maybe take the joint applicant and pregnant question out of this page and ask after. We also would fail to capture someone pregnant with twins <a href="/forms/housing/CBLadd-person-alt.html">SEE ALTERNATIVE</a></p>
+         <p>We can then ask about pregnancy, and join applicant</p>
       </div>
     </div>
 </div>
