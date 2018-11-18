@@ -1,0 +1,56 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Recourse to public fonds
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Choice Base Letting
+      </h1>
+      <form class="form" method="post">
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "is-recourse",
+        name: "is-recourse",
+        fieldset: {
+          legend: {
+            text: "Have you been told you have no recourse to public fonds?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },      
+        hint: {
+          text: "This applies to someone under immigration control. It means you're not entitled to benefits, home office asylum support or public housing."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      <form class="form" method="post">
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Guidance should be under the label and above the radio buttons, as shown here</li>
+      <li>Routing to be fixed as here: if Yes then you're out and get the contact us message, if No you go through.</li>
+    </ul>
+  </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Over 16
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Choice Base Letting
+      </h1>
+      <form class="form" method="post">
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "is-16",
+        name: "is-16",
+        fieldset: {
+          legend: {
+            text: "Are you 16 or over?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      <form class="form" method="post">
+    </div>
+</div>
+
+{% endblock %}

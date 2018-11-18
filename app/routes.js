@@ -5,6 +5,24 @@ const router = express.Router()
 
 module.exports = router
 
+// CBL form **********************************************************************************
+
+router.post('/forms/housing/CBL16', function (req, res) {
+  var is16 = req.session.data['is-16']
+  if (is16 === 'yes') {
+      return res.redirect('/forms/housing/CBLimmigration')
+  }
+  res.redirect('/forms/housing/CBLout')
+})
+
+router.post('/forms/housing/CBLrecourse', function (req, res) {
+  var isrecourse = req.session.data['is-recourse']
+  if (isrecourse === 'yes') {
+      return res.redirect('/forms/housing/CBLout')
+  }
+  res.redirect('/forms/housing/CBLNI')
+})
+
 // P1 form ***********************************************************************************
 
 // router.post('/forms/education/moving', function (req, res) {

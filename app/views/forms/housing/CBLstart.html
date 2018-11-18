@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        CBL
+        Choice Base Letting
       </h1>
       <p>
           If you need help at anytime you can contact our office at ....  
@@ -19,11 +19,17 @@
       <p>
           You can find out more about how we handle this information and your rights in respect of it by going to <a href="#">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
       </p>
+      {% from "warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+        text: "At any point, if you need to go back to the previous page, DO NOT use the back button of your browser or your device. You would have to start all over again. You can use the back link on each page instead",
+        iconFallbackText: "Warning"
+      }) }}
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Start now",
-        href: "/forms/housing/CBLNI.html",
+        href: "/forms/housing/CBL16.html",
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
 
@@ -35,5 +41,14 @@
       </p>
     </div>
 </div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">General notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Guidance should be under the label and above the input field, radio buttons/checkboxes</li>
+      <li>Remove the privacy statement on every page as it's on the footer. Might have to be on this page though.</li>
+      <li>Back button: only 1 on each page and at the top</li>
+      <li>this form will be challenging to complete, no Javascript will make it even worse, might need a specific warning</li>
+    </ul>
+  </div>
 
 {% endblock %}

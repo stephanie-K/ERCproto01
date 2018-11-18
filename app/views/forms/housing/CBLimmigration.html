@@ -1,0 +1,67 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Immigration control
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Choice Base Letting
+      </h1>
+      {% from "radios/macro.njk" import govukRadios %}
+        {% from "textarea/macro.njk" import govukTextarea %}
+
+        {% set detailsHtml %}
+        {{ govukTextarea({
+          id: "details",
+          name: "details",
+          label: {
+            text: "Give details"
+          }
+        }) }}
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          idPrefix: "immigration-conditional",
+          name: "immigration",
+          fieldset: {
+            legend: {
+              text: "Are you or anyone who lives with you under immigration control?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: detailsHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary",
+        href: "/forms/housing/CBLrecourse.html"
+      }) }}
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>Should we not ask about anyone who WILL live with you instead of Who lives with you NOW?</p>
+  </div>
+{% endblock %}
