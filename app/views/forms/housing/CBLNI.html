@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-          Choice Base Letting
+          Choice Based Letting
       </h1>
     
 {% from "radios/macro.njk" import govukRadios %}
@@ -28,8 +28,8 @@
 {% endset -%}
 
 {{ govukRadios({
-  idPrefix: "has-ni-conditional",
-  name: "has-ni",
+  idPrefix: "ni-nb-conditional",
+  name: "ni-nb",
   fieldset: {
     legend: {
       text: "Do you have a National Insurance number?",
@@ -42,7 +42,7 @@
   },
   items: [
     {
-      value: "email",
+      value: "yes",
       text: "Yes",
       conditional: {
         html: niHtml
@@ -65,12 +65,15 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>the actual checkbox doesn't work (no feedback provided)</li>
+      <li>the actual single checkbox doesn't work (no feedback provided)</li>
       <li>we could use radio buttons as above with a question - to be validated by Housing and Sharon</li>
       <li>we could provide guidance about NI as above (to be validated)</li>
-      <li>CHECK if this is ok with GDPR: <a href="https://design-system.service.gov.uk/patterns/national-insurance-numbers/
-        " target="_blank" rel="noopener" >about using the NI</a>: <strong>You shouldn’t use National Insurance numbers to verify a user’s identity.</strong></li>
+      <li>CHECK if this is ok with GDPR: <a href="https://design-system.service.gov.uk/patterns/national-insurance-numbers/" target="_blank" rel="noopener" >about using the NI</a>: <strong>You shouldn’t use National Insurance numbers to verify a user’s identity.</strong></li>
     </ul>
+  </div>
+  <div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <p>On the actual page, the inputs field is too long - should be reduced</p>
   </div>
 
 

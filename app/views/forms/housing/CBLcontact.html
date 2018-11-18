@@ -9,14 +9,17 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Choice Based Letting
+        </h1>
         {% from "radios/macro.njk" import govukRadios %}
-        {% from "input/macro.njk" import govukInput %}
+        {% from "textarea/macro.njk" import govukTextarea %}
             
         {% set attorneyHtml %}
-        {{ govukInput({
+        {{ govukTextarea({
           id: "contact-att",
           name: "contact-att",
-          classes: "govuk-input--width-20",
+          classes: "govuk-!-width-two-thirds",
           label: {
             text: "Enter the contact details of your advocate or power of attorney"
           }
@@ -30,7 +33,7 @@
             legend: {
               text: "How would you prefer us to contact you?",
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
+              classes: "govuk-fieldset__legend--m"
             }
           },
           hint: {
@@ -59,7 +62,6 @@
                 html: attorneyHtml
               }
             }
-
           ]
         }) }}
     
@@ -69,6 +71,10 @@
             classes: "button-primary"
           }) }}
     </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>There is two guidance sentences at the moment, one above one below the attorney details boxes. Needs to be changed (Content decision and then IT fix)</p>
 </div>
 
 {% endblock %}

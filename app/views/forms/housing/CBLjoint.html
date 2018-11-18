@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Pregnancy
+  Joint applicant
 {% endblock %}
 
 {% block content %}
@@ -16,22 +16,22 @@
 {% from "radios/macro.njk" import govukRadios %}
 {% from "textarea/macro.njk" import govukTextarea %}
 
-{% set babyHtml %}
+{% set jointHtml %}
 {{ govukTextarea({
-  id: "baby",
-  name: "baby",
+  id: "joint",
+  name: "joint",
   label: {
-    text: "Enter their name and the date the baby/babies are due"
+    text: "Enter their name"
   }
 }) }}
 {% endset -%}
 
 {{ govukRadios({
-  idPrefix: "is-pregnant-conditional",
-  name: "is-pregnant",
+  idPrefix: "is-joint-conditional",
+  name: "is-joint",
   fieldset: {
     legend: {
-      text: "Are you or anyone living with you pregnant?",
+      text: "Is there one or more joint applicant?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -41,7 +41,7 @@
       value: "yes",
       text: "Yes",
       conditional: {
-        html: babyHtml
+        html: jointHtml
       }
     },
     {
@@ -53,7 +53,7 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/CBLjoint.html",
+        href: "/forms/housing/CBLother-children.html",
         classes: "button-primary"
       }) }}
 

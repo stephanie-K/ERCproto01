@@ -1,0 +1,31 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Info
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Choice Based Letting
+        </h1>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/housing/CBLbedroom.html"
+        }) }}
+        
+        <div class="design-notes-box">
+            <h3 class="govuk-heading-s">Design notes:</h3>
+           <p>There are more pages in the form, not recreated here - I only add a final one about counting bedrooms which would improve the form. Instead of 4 actual screens, we would only have one.</p>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

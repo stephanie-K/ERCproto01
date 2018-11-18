@@ -10,20 +10,38 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
+            Choice Based Letting
+        </h1>
+        <h2 class="govuk-heading-m">
             Who will be living with you?
-          </h1>
+          </h2>
           <p>We'll need some information about any person who will be living with you.</p>
-          <p>Any person 16 or older can be a joint applicant (explain what it means)</p>
-          <p>Guidance about pregnancy maybe</p>
-          <p>Only add children if they live permanently with you</p>
-          <p>Any children living with you occasionally will be added later</p>
-    
+          <p>Only add children if they live permanently with you.</p>
+          <p>Any children staying with you occasionally will be added later.</p>
+
           {{ govukButton({
             text: "Continue",
             classes: "button-primary",
-            href: "/forms/housing/CBLadd-person.html"
+            href: "/forms/housing/CBLadd-person-alt.html"
           }) }}
     </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>this is a possible information page to add to provide guidance about the pages coming after (info about each person living with the main applicant</li>
+      <li>the content should be drafted by sharon and agreed by Housing - Usability testing would help to see what is needed</li>
+      <li> we could add guidance about the meaning of joint applicant? pregnancy? adult / child status  for 16-18</li>
+    </ul>
+    <p><strong>There are a lot of potential flaws the moment:</strong></p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>should the main applicant add themselves here?</li>
+      <li>where do you enter children living with you permanently?</li>
+      <li>pregnancy: what if it's twins or more? teen pregnancy? main applicant is pregnant?</li>
+      <li>number for the adult label: There is an 'adult 1' on the 'pregnancy page' and the same number appear on the 'not pregnant' page = confusing!</li>
+    </ul>
+    <p><a href="http://hmrc.github.io/assets-frontend/patterns/add-to-a-list/index.html" target="_blank" rel="noopener" ><strong>There is a pattern</strong></a> which would be really good but probably not possible for IT to implement at the moment.</p>
+    <p><a href="/../..{{ publicPath }}/images/add-to-list.gif"><img src="/../..{{ publicPath }}/images/add-to-list.gif" alt="add to a list pattern displayed" style="height:400px;"></a></p>
 </div>
 
 {% endblock %}

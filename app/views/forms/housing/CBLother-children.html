@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Over 16
+  Other children
 {% endblock %}
 
 {% block content %}
@@ -10,17 +10,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-          Choice Based Letting
+        Choice Based Letting
       </h1>
       <form class="form" method="post">
       {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
-        idPrefix: "is-16",
-        name: "is-16",
+        idPrefix: "other-children",
+        name: "other-children",
         fieldset: {
           legend: {
-            text: "Are you 16 or over?",
+            text: "Do you have children staying with you occasionally?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -36,12 +36,17 @@
           }
         ]
       }) }}
-      {{ govukButton({
-        text: "Continue",
-        classes: "button-primary"
-      }) }}
-      <form class="form" method="post">
+
+            {{ govukButton({
+              text: "Continue",
+              classes: "button-primary"
+            }) }}
+      </form>
     </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+   <p>The wording would probably need to be changed by Sharon and approved by Housing</p>
 </div>
 
 {% endblock %}

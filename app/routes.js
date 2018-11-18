@@ -23,6 +23,14 @@ router.post('/forms/housing/CBLrecourse', function (req, res) {
   res.redirect('/forms/housing/CBLNI')
 })
 
+router.post('/forms/housing/CBLother-children', function (req, res) {
+  var otherChidren = req.session.data['other-children']
+  if (otherChidren === 'yes') {
+      return res.redirect('/forms/housing/CBLadd-children')
+  }
+  res.redirect('/forms/housing/CBLinfo')
+})
+
 // P1 form ***********************************************************************************
 
 // router.post('/forms/education/moving', function (req, res) {

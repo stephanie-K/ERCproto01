@@ -9,9 +9,12 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
+        <h1 class="govuk-heading-l">
+            Choice Based Letting
+        </h1>
+      <h2 class="govuk-heading-m">
         About you
-      </h1>
+      </h2>
     
       {% from "input/macro.njk" import govukInput %}
 
@@ -50,7 +53,7 @@
           text: "Email address"
         },
         hint: {
-          text: "We’ll use this to send you a receipt"
+          text: "We’ll use this to send you a receipt."
         },
         id: "email",
         name: "email",
@@ -66,13 +69,22 @@
         classes: "button-primary"
       }) }}
 
-
-      <div class="design-notes-box">
-          <h3 class="govuk-heading-s">Design notes:</h3>
-         <p>we don't capture the gender of the applicant, what if it's a woman and she is pregnant? </p>
-      </div>
-
     </div>
 </div>
-
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>we don't capture the gender of the applicant, what if it's a woman and she is pregnant?</li>
+      <li>as the form is really long, we should probably group all these questions on one page as they are easy and all related to the applicant</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:</h3>
+  <p>If we don't put all these screens on one page, then IT needs to fix the following:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>On the actual 3 pages, all the inputs fields are too long - should be reduced</li>
+      <li>on the phone page, the next button is at the wrong place</li>
+      <li>the email input page should come before the contact preferences in the flow of screens</li>
+    </ul>
+</div>
 {% endblock %}
