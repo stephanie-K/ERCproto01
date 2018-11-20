@@ -1,0 +1,44 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Nursery name
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for primary 1 August 2019
+        </h1>
+      <form class="form" method="post">
+
+        {% from "input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Enter the name and address of the nursery",
+            classes: "govuk-!-font-size-24"
+          },
+          id: "other-nursery",
+          name: "other-nursery",
+          value: data['other-nursery'],
+          classes: "govuk-input--width-30"
+        }) }}
+  
+
+
+      {{ govukButton({
+        "text": "Continue"
+        }) }}
+
+      </form>
+      <div class="design-notes-box">
+          <h3 class="govuk-heading-s">Design notes:</h3>
+          <p>This is only provisional content to illustrate. Heading and bullet points for no nursery or nursery out ERC might change</p>    
+      </div>
+    </div>
+</div>
+
+{% endblock %}

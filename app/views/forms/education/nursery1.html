@@ -14,37 +14,24 @@
         </h1>
       <form class="form" method="post">
 
-          {% from "radios/macro.njk" import govukRadios %}
-          {% from "input/macro.njk" import govukInput %}
+        {% from "select/macro.njk" import govukSelect %}
 
-
-          {% set othernurseryHtml %}
-          {{ govukInput({
-            id: "other-nursery",
-            name: "other-nursery",
-            value: data['other-nursery'],
-            label: {
-              text: "Enter the name and address of the nursery"
-            }
-          }) }}
-          {% endset -%}
-
-
-          {{ govukRadios({
-            idPrefix: "nursery-conditional",
-            name: "nursery",
-            value: data['nursery'],
-            fieldset: {
-              legend: {
-                text: "What nursery is your child attending?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
+        {{ govukSelect({
+          id: "nursery",
+          name: "nursery",
+          label: {
+            text: "What nursery is your child attending?",
+            classes: "govuk-!-font-size-24"
+          },
             items: [
               {
                 value: "My Child is not attending nursery",
-                text: "My child is not attending nursery"
+                text: "My child is not attending nursery",
+                selected: true
+              },
+              {
+                value: "My child is at a nursery but not in East Renfrewshire",
+                text: "My child is at a nursery but not in East Renfrewshire"
               },
               {
                 value: "Arthurlie Family Centre",
@@ -121,13 +108,6 @@
               {
                 value: "Thornliebank Nursery Class",
                 text: "Thornliebank Nursery Class"
-              },
-              {
-                value: "My child is at a nursery but not in East Renfrewshire",
-                text: "My child is at a nursery but not in East Renfrewshire",
-                conditional: {
-                  html: othernurseryHtml
-                }
               }
             ]
           }) }}

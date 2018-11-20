@@ -44,29 +44,41 @@ router.post('/forms/housing/CBLother-children', function (req, res) {
 //   res.redirect('/forms/education/postcode')
 // })
 
-router.post('/forms/education/postcode-start-term', function (req, res) {
-  res.redirect('/forms/education/postcode-current')
-})
+// router.post('/forms/education/postcode-start-term', function (req, res) {
+//   res.redirect('/forms/education/postcode-current')
+// })
 
-router.post('/forms/education/postcode-current', function (req, res) {
-  res.redirect('/forms/education/manual-catchment-school')
-})
+// router.post('/forms/education/postcode-current', function (req, res) {
+//   res.redirect('/forms/education/manual-catchment-school')
+// })
 
-router.post('/forms/education/manual-catchment-school', function (req, res) {
-  // set a session variable so we know if we need to display the catchment school choice question or not
-  req.session.nocag = true 
-  res.redirect('/forms/education/parent-name')
-})
+// router.post('/forms/education/manual-catchment-school', function (req, res) {
+//   // set a session variable so we know if we need to display the catchment school choice question or not
+//   req.session.nocag = true 
+//   res.redirect('/forms/education/parent-name')
+// })
 
 
 router.post('/forms/education/postcode', function (req, res) {
     // Get the answer from the query string
-    var postcode = req.session.data['postcode']
+    //var postcode = req.session.data['postcode']
     res.redirect('/forms/education/postcode-with-address')
   })
 
   router.post('/forms/education/moving', function (req, res) {
+    var isMoving = req.session.data['moving']
+    if (isMoving === 'yes') {
+        return res.redirect('/forms/education/current-address')
+    }
       res.redirect('/forms/education/parent-name')
+  })
+
+  router.post('/forms/education/current-address', function (req, res) {
+    res.redirect('/forms/education/moving-date')
+  })
+
+  router.post('/forms/education/moving-date', function (req, res) {
+    res.redirect('/forms/education/parent-name')
   })
 
   router.post('/forms/education/parent-name', function (req, res) {
@@ -97,16 +109,29 @@ router.post('/forms/education/postcode', function (req, res) {
     res.redirect('/forms/education/defer')
   })
 
-  router.post('/forms/education/defer', function (req, res) {
-    if (req.session.nocag) {
-      return res.redirect('/forms/education/info')
+  router.post('/forms/education/nursery1', function (req, res) {
+    var nursery = req.session.data['nursery']
+    if (nursery === 'My child is at a nursery but not in East Renfrewshire') {
+        return res.redirect('/forms/education/nursery-name')
     }
+    res.redirect('/forms/education/defer')
+  })
+
+  router.post('/forms/education/nursery-name', function (req, res) {
+    res.redirect('/forms/education/defer')
+  })
+
+
+  router.post('/forms/education/defer', function (req, res) {
+    // if (req.session.nocag) {
+    //   return res.redirect('/forms/education/info')
+    // }
     res.redirect('/forms/education/denominational-or-non')
   })
 
   router.post('/forms/education/denominational-or-non', function (req, res) {
     //clear the data in case a user came back to that page who previously entered a manual catchment school choice
-    req.session.data['catchment-school-manual'] = null
+    //req.session.data['catchment-school-manual'] = null
     res.redirect('/forms/education/info')
   })
 

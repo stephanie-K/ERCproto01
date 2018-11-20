@@ -23,21 +23,40 @@
       <dl class="app-check-your-answers app-check-your-answers--long">
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-              Are you currently living at a different address?
+              Address at the start of the term
             </dt>
             <dd class="app-check-your-answers__answer">
-                {{ data['moving'] }}
+              21 Forres avenue<br>
+              G46 6LH - Giffnock
             </dd>
           </div>
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Address
+            Are you currently living at a different address
           </dt>
           <dd class="app-check-your-answers__answer">
-            21 Forres avenue<br>
-            G46 6LH - Giffnock
+              {{ data['moving'] }}
           </dd>
         </div>
+        {% if data['moving'] === 'yes'%}
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+              Current address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['current-address'] }}
+          </dd>
+          </div>
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date you are moving in your new address
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['moving-date-day'] }}/{{ data['moving-date-month'] }}/{{ data['moving-date-year'] }}  
+            </dd>
+            </div>
+        {% endif %}
+
 
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
@@ -99,17 +118,17 @@
             
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              What nursery is your child attending?
+              Nursery your child is attending
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['nursery'] }}
           </dd>
         </div>    
 
-        {% if data['other-nursery'] %}
+        {% if data['nursery'] === 'My child is at a nursery but not in East Renfrewshire'%}
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-                Enter the name of the nursery
+                Name and address of the nursery
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['other-nursery'] }}
@@ -119,7 +138,7 @@
     
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Select one school
+              Preferred catchment school
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['school'] }}
@@ -128,7 +147,7 @@
       
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              Select preferred alternative school
+              Preferred alternative school
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['2nd-school'] }}
@@ -137,7 +156,7 @@
 
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Does your child have a medical condition that needs support offered at this school?
+              Does your child have a medical condition that needs support offered at this school
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['medical'] }}
@@ -156,7 +175,7 @@
              
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Are you a single parent or carer?
+            Are you a single parent or carer
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['single'] }}
@@ -175,7 +194,7 @@
     
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Will your child have a sibling at the school when they start?
+              Will your child have a sibling at the school when they start
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling'] }}
@@ -185,7 +204,7 @@
         {% if data['sibling'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-            Sibling's name?
+            Sibling's name
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['oldest-first-name'] }}&nbsp;
@@ -207,26 +226,23 @@
         {% endif %}
      
       </dl>
-    
-
-     
+  
       <h2 class="govuk-heading-m">Now send your response</h2>
       <p>By submitting you are confirming that, to the best of your knowledge, the details you're providing are correct.</p>
+
       {{ govukButton({
         text: "Accept and submit your answers",
         href: "/forms/education/confirmation.html",
         classes: "button-primary"
       }) }}
-
-      <div class="design-notes-box">
-          <h3 class="govuk-heading-s">Design notes:</h3>
-        <p>The content will change. We maybe need a different heading at the top. Some guidance to make sure they understand it's the only place they can print the page to save what they entered. The questions a user didn't see should be removed, but we should display optional ones even if they didn't answer. Labels should be bold (only on mobile just now, not on desktop).</p>
-        <p>We decide not to make the edit possible as this is complex to make especially to make sure that we come back directly to that page. Some questions could not be edited (like the postcode as it affect the UPRN) and some questions have logic routing.</p>
-        <p>can only some of this data be passed to GOSS?</p>
-         
-      </div>
-
     </div>
 </div>
 
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+  <p>The content will change. We maybe need a different heading at the top. Some guidance to make sure they understand it's the only place they can print the page to save what they entered. The questions a user didn't see should be removed, but we should display optional ones even if they didn't answer. Labels should be bold (only on mobile just now, not on desktop).</p>
+  <p>We decide not to make the edit possible as this is complex to make especially to make sure that we come back directly to that page. Some questions could not be edited (like the postcode as it affect the UPRN) and some questions have logic routing.</p>
+  <p>can only some of this data be passed to GOSS?</p>
+   
+</div>
 {% endblock %}

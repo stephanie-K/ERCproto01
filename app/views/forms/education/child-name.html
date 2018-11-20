@@ -18,7 +18,7 @@
       {{ govukInput({
         label: {
           text: "Child first name",
-          classes: "govuk-!-font-size-27"
+          classes: "govuk-!-font-size-24"
         },
         id: "child-first-name",
         name: "child-first-name",
@@ -29,7 +29,7 @@
       {{ govukInput({
         label: {
           text: "Child middle name (optional)",
-          classes: "govuk-!-font-size-27"
+          classes: "govuk-!-font-size-24"
         },
         id: "child-middle-name",
         name: "child-middle-name",
@@ -40,7 +40,7 @@
       {{ govukInput({
         label: {
           text: "Child last name",
-          classes: "govuk-!-font-size-27"
+          classes: "govuk-!-font-size-24"
         },
         id: "child-last-name",
         name: "child-last-name",
@@ -56,7 +56,7 @@
       <div class="design-notes-box">
           <h3 class="govuk-heading-s">Design notes:</h3>
           <p>We are keeping the middle name as some parents really want to have the middle name and would otherwise type it in the first name input field. As a result we will also add the middle name for the sibling for consistency.</p>
-          <p>Note that this is not used internally. It should appear on the summary, but is there any possibility that it is not transmitted to GOSS when the date is exported?</p>
+          <p>Note that this is not used internally. Scott managed to remove it from the data transmitted to GOSS when exported</p>
           
       </div>
     </div>

@@ -1,0 +1,73 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Moving date
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for primary 1 August 2019
+        </h1>
+
+      <form class="form" method="post">
+          <h1 class="govuk-heading-l">
+              
+          </h1>
+    
+          <p></p>
+    
+    {% from "date-input/macro.njk" import govukDateInput %}
+
+    {{ govukDateInput({
+      id: "moving-date",
+      namePrefix: "moving-date",
+      value: data['moving-date'],
+      fieldset: {
+        legend: {
+          text: "When are you moving in your new address?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 2019"
+      },
+      items:[
+      {
+      name: 'day',
+      value: data['moving-date-day'],
+      classes: "govuk-input--width-2"
+      },
+      {
+      name: 'month',
+      value: data['moving-date-month'],
+      classes: "govuk-input--width-2"
+      },
+      {
+      name: 'year',
+      value: data['moving-date-year'],
+      classes: "govuk-input--width-4"
+      }
+      ]
+    }) }}
+
+
+      {{ govukButton({
+        "text": "Continue"
+        }) }}
+      </form>
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>content, including heading to be drafted</li> 
+      <li>date should be validated (no 31 of February, but also not before day the person is applying and not after a deadline to be set by Education</li>
+  </ul>
+</div>
+
+{% endblock %}
