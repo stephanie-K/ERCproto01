@@ -9,9 +9,12 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
-      <h1 class="govuk-heading-l">
+        <h1 class="govuk-heading-l">
+            Apply online for primary 1 August 2019
+        </h1>
+      <h2 class="govuk-heading-m">
         Summary
-      </h1>
+      </h2>
 
       <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
       <!--   * `app-check-your-answers--short` for short questions -->
@@ -102,14 +105,17 @@
               {{ data['nursery'] }}
           </dd>
         </div>    
+
+        {% if data['other-nursery'] %}
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-                Do you want to defer your child starting school?
+                Enter the name of the nursery
             </dt>
             <dd class="app-check-your-answers__answer">
-                {{ data['defer'] }}
+                {{ data['other-nursery'] }}
             </dd>
           </div>     
+          {% endif %}
     
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
