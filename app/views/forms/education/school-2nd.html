@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Apply online for primary 1 August 2019
+            Apply online for primary 1 - August 2019
         </h1>
       <form class="form" method="post">
           {% from "radios/macro.njk" import govukRadios %}
@@ -21,10 +21,13 @@
             name: "2nd-school",
             fieldset: {
               legend: {
-                text: "Select preferred alternative school",
+                text: "Choose preferred alternative school",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--m"
               }
+            },
+            hint: {
+              text: "If you choose ‘None’ we’ll allocate a school until a place becomes available at your catchment school. We cannot guarantee a place will become available."
             },
             items: [
               {
@@ -130,7 +133,7 @@
     </form>
     <div class="design-notes-box">
         <h3 class="govuk-heading-s">Design notes:</h3>
-        <p>provide information page before making selection </p>    
+        <p>Content still being worked on</p>    
     </div>
     </div>
 </div>

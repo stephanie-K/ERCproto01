@@ -58,6 +58,13 @@ router.post('/forms/housing/CBLother-children', function (req, res) {
 //   res.redirect('/forms/education/parent-name')
 // })
 
+router.post('/forms/education/declaration', function (req, res) {
+  var agrees= req.session.data['declaration']
+  if (agrees === 'yes') {
+      return res.redirect('/forms/education/postcode')
+  }
+    res.redirect('/forms/education/out')
+})
 
 router.post('/forms/education/postcode', function (req, res) {
     // Get the answer from the query string
@@ -111,7 +118,7 @@ router.post('/forms/education/postcode', function (req, res) {
 
   router.post('/forms/education/nursery1', function (req, res) {
     var nursery = req.session.data['nursery']
-    if (nursery === 'My child is at a nursery but not in East Renfrewshire') {
+    if (nursery === 'Another nursery') {
         return res.redirect('/forms/education/nursery-name')
     }
     res.redirect('/forms/education/defer')

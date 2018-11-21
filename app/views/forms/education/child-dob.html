@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Apply online for primary 1 August 2019
+            Apply online for primary 1 - August 2019
         </h1>
 
       <form class="form" method="post">
@@ -52,12 +52,16 @@
         "text": "Continue"
         }) }}
       </form>
-      <div class="design-notes-box">
-          <h3 class="govuk-heading-s">Design notes:</h3>
-          <p>Data will be validated and need to be between: 01/03/2013 – 28/02/2015 </p>    
-          <p>Ideally we would also want some validation on the date - is a real date (not the 31 of February)</p>
-      </div>
     </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>The date should be validated. If it's not correct, only one error message should be displayed</p>
+    <ul class="govuk-list govuk-list--number">
+      <li>check the 3 fields have been completed, if not, error is: Enter your child birth date</li>
+      <li>check if the date is valid date (for example: no 31 of April), if not, error is: The date is not valid</li> 
+      <li>check the date is within the range 01/03/2013 – 28/02/2015  - <strong>content for error messages needed</strong></li>
+  </ul>
 </div>
 
 {% endblock %}

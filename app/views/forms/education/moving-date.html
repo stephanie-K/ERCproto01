@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Apply online for primary 1 August 2019
+            Apply online for primary 1 - August 2019
         </h1>
 
       <form class="form" method="post">
@@ -28,7 +28,7 @@
       value: data['moving-date'],
       fieldset: {
         legend: {
-          text: "When are you moving in your new address?",
+          text: "When do you move into your new address?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
@@ -64,9 +64,11 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>content, including heading to be drafted</li> 
-      <li>date should be validated (no 31 of February, but also not before day the person is applying and not after a deadline to be set by Education</li>
+    <p>The date should be validated. If it's not correct, only one error message should be displayed</p>
+    <ul class="govuk-list govuk-list--number">
+      <li>check the 3 fields have been completed, if not, error is: Enter the date you are moving into your new address</li>
+      <li>check if the date is valid date (for example: no 31 of April), if not, error is: The date is not valid</li> 
+      <li>check the date is within the range (to be confirmed by Education) not before day the person is applying and not after a deadline to be set by Education - content for error needed</li>
   </ul>
 </div>
 

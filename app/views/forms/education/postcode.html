@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-          Apply online for primary 1 August 2019
+          Apply online for primary 1 - August 2019
       </h1>
       <h2 class="govuk-heading-m">
           Property postcode
@@ -21,7 +21,7 @@
       {% from "input/macro.njk" import govukInput %}
      <noscript>
         {{ govukWarningText({
-          text: "JavaScript is disabled on your device. Enable Javascript or use the link: My postcode is not recognised",
+          text: "JavaScript is disabled on your device. Enable Javascript to apply",
           iconFallbackText: "Warning"
         }) }}
         </noscript>
@@ -30,7 +30,10 @@
         classes: "govuk-input--width-10",
         id: "postcode",
         name: "postcode",
-        value: data['postcode']
+        value: data['postcode'],
+        hint: {
+          text: "Use postcode of child’s address at start of term."
+        }
       }) }}
 
       {{ govukButton({

@@ -10,23 +10,54 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Apply online for primary 1 August 2019
+            Apply online for primary 1 - August 2019
         </h1>
 
       <h2 class="govuk-heading-m">Declaration</h2>
-     <p>There will be a text about declaring you are saying the truth, might have GDPR declaration too - to be checked</p>
+      <p>I confirm:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>I’ve read and understood ERC’s admission policy </li>
+        <li>the information I’ll give is full and correct </li>
+        <li>I understand if I give false information you’ll withdraw my application and may take legal action </li>
+        <li>you won’t process my application unless it’s complete </li>
+      </ul>
+      <form class="form" method="post">
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "declaration",
+        name: "declaration",
+        fieldset: {
+          legend: {
+            text: "I agree",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }} 
 
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "I agree",
-        href: "/forms/education/postcode.html"
+        text: "Continue"
       }) }}
+      </form>
     </div>
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>content of this page to be written, it might be a tick box, or a yes/no radio button, or the button I agree</p>
+    <p>This is new content - needs to be signed off by Education - <strong>we need content for the page they are redirected if they select No</strong></p>
+    <p>"you won’t process my application unless it’s complete" - They can't submit an incomplete application, can you?</p>
 </div>
 
 {% endblock %}

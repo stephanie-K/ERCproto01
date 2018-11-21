@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Apply online for primary 1 August 2019
+            Apply online for primary 1 - August 2019
         </h1>
       <form class="form" method="post">
 
@@ -36,15 +36,15 @@
             value: data['nursery'],
             fieldset: {
               legend: {
-                text: "What nursery is your child attending?",
+                text: "What nursery does your child go to?",
                 isPageHeading: true,
                 classes: "govuk-fieldset__legend--m"
               }
             },
             items: [
               {
-                value: "My Child is not attending nursery",
-                text: "My child is not attending nursery"
+                value: "None",
+                text: "None"
               },
               {
                 value: "Arthurlie Family Centre",
@@ -123,8 +123,8 @@
                 text: "Thornliebank Nursery Class"
               },
               {
-                value: "My child is at a nursery but not in East Renfrewshire",
-                text: "My child is at a nursery but not in East Renfrewshire",
+                value: "Another nursery",
+                text: "Another nursery",
                 conditional: {
                   html: othernurseryHtml
                 }
@@ -141,7 +141,8 @@
       </form>
       <div class="design-notes-box">
           <h3 class="govuk-heading-s">Design notes:</h3>
-          <p>This is only provisional content to illustrate. Heading and bullet points for no nursery or nursery out ERC might change</p>    
+          <p>New content</p>
+          <p>To view the same content but <a href="/forms/education/nursery1.html"><strong>with a dropdown list</strong></a></p>
       </div>
     </div>
 </div>

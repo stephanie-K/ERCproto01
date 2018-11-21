@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-l">
-            Apply online for primary 1 August 2019
+            Apply online for primary 1 - August 2019
         </h1>
       <h2 class="govuk-heading-m">
         Summary
@@ -32,7 +32,7 @@
           </div>
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Are you currently living at a different address
+              Do you currently live at a different address
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['moving'] }}
@@ -49,7 +49,7 @@
           </div>
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              Date you are moving in your new address
+              Date you are moving into your new address
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['moving-date-day'] }}/{{ data['moving-date-month'] }}/{{ data['moving-date-year'] }}  
@@ -118,14 +118,14 @@
             
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Nursery your child is attending
+              Nursery your child goes to
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['nursery'] }}
           </dd>
         </div>    
 
-        {% if data['nursery'] === 'My child is at a nursery but not in East Renfrewshire'%}
+        {% if data['nursery'] === 'Another nursery'%}
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
                 Name and address of the nursery
@@ -194,7 +194,7 @@
     
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Will your child have a sibling at the school when they start
+              Do you have another child at the school
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling'] }}
@@ -217,7 +217,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Sibling's stage when school starts
+            Primary they are in
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling-stage'] }}

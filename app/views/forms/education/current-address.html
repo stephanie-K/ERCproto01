@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Apply online for primary 1 August 2019
+            Apply online for primary 1 - August 2019
         </h1>
 
       <form class="form" method="post">
@@ -28,11 +28,11 @@
       classes: "govuk-!-width-one-third",
       value: data['current-address'],
       label: {
-        text: "What is your current address?",
+        text: "Enter current address",
         classes: "govuk-!-font-size-24"
       }, 
       hint: {
-        text: "This is where we'll send letters."
+        text: "We’ll write to you here until you move."
       }
     }) }}
     
@@ -44,10 +44,7 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>content, including heading to be drafted</li> 
-      <li>we are using a text box for it as it could be outside the UK, but ideally we would give the opportunity to use a postcode look up</li>
-  </ul>
+      <p>we are using a text box for it as it could be outside the UK, but ideally we would give the opportunity to use a postcode look up</p>
 </div>
 
 {% endblock %}

@@ -1,0 +1,28 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Disagree
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for primary 1 - August 2019
+        </h1>
+
+     <p>You can't apply online unless you agree the 4 previous points.</p>
+     {{ govukButton({
+      text: "Return to the declaration",
+      href: "/forms/education/declaration.html"
+    }) }}
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>This is a place holder content - we need content for this</p>
+</div>
+
+{% endblock %}
