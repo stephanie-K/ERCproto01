@@ -1,0 +1,67 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Error -  Declaration
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for primary 1 - August 2019
+        </h1>
+
+      <h2 class="govuk-heading-m">Declaration</h2>
+      <form class="form" method="post">
+
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+          {{ govukCheckboxes({
+            idPrefix: "declaration1",
+            name: "declaration1",
+            fieldset: {
+              legend: {
+                text: "I confirm:",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            errorMessage: {
+              text: "You need to confirm each statement by checking it"
+            },
+            items: [
+              {
+                value: "dec1",
+                text: "I’ve read and understood ERC’s admission policy"
+              },
+              {
+                value: "dec2",
+                text: "the information I’ll give is full and correct"
+              },
+              {
+                value: "dec3",
+                text: "I understand if I give false information you’ll withdraw my application and may take legal action"
+              },
+              {
+                value: "dec4",
+                text: "you won’t process my application unless it’s complete"
+              }
+            ]
+          }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>We need content for an error message - just a place holder for now</p>
+</div>
+
+{% endblock %}

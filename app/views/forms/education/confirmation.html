@@ -24,28 +24,27 @@
         html: "Your reference number<br><strong>1346-7895-4445-7023</strong>"
       }) }}
 
-    {% if data['email'] %}
-    <p>We've sent you a confirmation email at: <strong>{{ data['email'] }}</strong></p>
-    {% endif %}
+      <p>Thank you for submitting your form.</p>
+        {% if data['email'] %}
+        <p>We have sent an email to confirm what you need to do next at:<br>
+          <strong> {{ data['email']}}</strong></p>
+        <p>If you don't receive our email in the next 5 minutes, please check your SPAM folder.</p>
+        {% endif%}
+      <p>Admissions Team.</p>
     <p>&nbsp;</p>
     <h3 class="govuk-heading-m">What happens next</h3>
-    <p>Guidance here</p>
+    <p>You can <a href="/../..{{ publicPath }}/images/application-info.pdf" download="information-P1-application">download the information as a PDF</a> or <a href="/forms/education/information-application.html" target="_blank" rel="noopener">view it in a new tab.</a></p>
+    <p>&nbsp;</p>
 
 
-      <p class="govuk-!-margin-top-9">
-        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
-      </p>
 
       <div class="design-notes-box">
           <h3 class="govuk-heading-s">Design notes:</h3>
           <ul class="govuk-list govuk-list--bullet">
-            <li>guidance about what happen next will be drafted so we set expectations</li>
-            <li>at the moment, the text stating we have send an email only appears if an email address was entered. Could we maybe add the email address it was sent to on screen? (help the user in case they put a wrong email address and don't receive anything</li>
+            <li>guidance about what happen next will be drafted so we set expectations, it will be in a form of a pdf they can download or view on a new tab. this will also be the body of the email we sent if they had an email address (two versions, one for is specific to Maidenhill)</li>
             <li>email should be receive nearly instantly - should we mention what to do if you didn't receive it to check their spam?</li>
             <li>anything we will send in the email should also appear here as some won't receive it, and other will lose the email</li>
-            <li>personalised "letter" will be here (as a link? in full?) maybe provide guidance about how to print or save as a pdf?</li>
-            <li>do we want a quick survey link to see what they think of the service?</li>
-            <li>should have a link to the documents they need to apply + Admission policy + placing request policy + Heather</li>
+            <li>have a link to the documents they need to apply + Admission policy + placing request policy + Heather</li>
           </ul>
       </div>
     </div>

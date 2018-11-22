@@ -61,9 +61,55 @@ router.post('/forms/housing/CBLother-children', function (req, res) {
 router.post('/forms/education/declaration', function (req, res) {
   var agrees= req.session.data['declaration']
   if (agrees === 'yes') {
+    req.session.data['declaration'] = null; // clear the value
       return res.redirect('/forms/education/postcode')
+  } else {
+    if (agrees === 'no') {
+      req.session.data['declaration'] = null; // clear the value
+      return res.redirect('/forms/education/out')
+    }
   }
-    res.redirect('/forms/education/out')
+    res.redirect('/forms/education/declaration-error')
+})
+
+router.post('/forms/education/declaration-error', function (req, res) {
+  var agrees= req.session.data['declaration']
+  if (agrees === 'yes') {
+    req.session.data['declaration'] = null; // clear the value
+      return res.redirect('/forms/education/postcode')
+  } else {
+    if (agrees === 'no') {
+      req.session.data['declaration'] = null; // clear the value
+      return res.redirect('/forms/education/out')
+    }
+  }
+    res.redirect('/forms/education/declaration-error')
+})
+
+router.post('/forms/education/declaration1', function (req, res) {
+  var declaration1= req.session.data['declaration1']
+  if (declaration1 
+    && declaration1.includes('dec1') 
+    && declaration1.includes('dec2') 
+    && declaration1.includes('dec3') 
+    && declaration1.includes('dec4'))  {
+      req.session.data['declaration1'] = null; // clear the value
+    return res.redirect('/forms/education/postcode')
+  }
+    res.redirect('/forms/education/declaration1-error')
+})
+
+router.post('/forms/education/declaration1-error', function (req, res) {
+  var declaration1= req.session.data['declaration1']
+  if (declaration1 
+    && declaration1.includes('dec1') 
+    && declaration1.includes('dec2') 
+    && declaration1.includes('dec3') 
+    && declaration1.includes('dec4'))  {
+      req.session.data['declaration1'] = null; // clear the value
+    return res.redirect('/forms/education/postcode')
+  }
+    res.redirect('/forms/education/declaration1-error')
 })
 
 router.post('/forms/education/postcode', function (req, res) {
