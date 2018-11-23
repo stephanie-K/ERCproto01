@@ -25,11 +25,11 @@
       }) }}
 
       <p>Thank you for submitting your form.</p>
-        {% if data['email'] %}
+       
         <p>We have sent an email to confirm your application and what you need to do next at:<br>
-          <strong> {{ data['email']}}</strong></p>
+          <strong> parent.email@gmail.com</strong></p>
         <p>If you don't receive our email in the next 5 minutes, please check your SPAM folder.</p>
-        {% endif%}
+
       <p>Admissions Team.</p>
     <p>&nbsp;</p>
     <h3 class="govuk-heading-m">What happens next</h3>
@@ -42,7 +42,6 @@
           <h3 class="govuk-heading-s">Design notes:</h3>
           <ul class="govuk-list govuk-list--bullet">
             <li>guidance about what happen next will be drafted so we set expectations, it will be in a form of a pdf they can download or view on a new tab. this will also be the body of the email we sent if they had an email address (two versions, one for is specific to Maidenhill)</li>
-            <li><a href="/forms/education/confirmation1.html"><strong>see with an email address provided</strong></a></li>
             <li>email should be receive nearly instantly - should we mention what to do if you didn't receive it to check their spam?</li>
             <li>anything we will send in the email should also appear here as some won't receive it, and other will lose the email</li>
             <li>have a link to the documents they need to apply + Admission policy + placing request policy + Heather</li>
