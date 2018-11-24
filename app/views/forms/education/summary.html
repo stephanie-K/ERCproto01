@@ -23,7 +23,7 @@
       <dl class="app-check-your-answers app-check-your-answers--long">
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-              Address at the start of the term
+              Address at start of term
             </dt>
             <dd class="app-check-your-answers__answer">
               21 Forres avenue<br>
@@ -32,7 +32,7 @@
           </div>
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Do you currently live at a different address
+              Live at different address
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['moving'] }}
@@ -49,7 +49,7 @@
           </div>
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              Date you are moving into your new address
+              Move in date
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['moving-date-day'] }}/{{ data['moving-date-month'] }}/{{ data['moving-date-year'] }}  
@@ -87,7 +87,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Name of the child
+            Name of child
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['child-first-name'] }}&nbsp;
@@ -118,7 +118,7 @@
             
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Nursery your child goes to
+              Nursery
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['nursery'] }}
@@ -128,7 +128,7 @@
         {% if data['nursery'] === 'Another nursery'%}
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-                Name and address of the nursery
+                Name and address of nursery
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['other-nursery'] }}
@@ -156,7 +156,7 @@
 
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Does your child have a medical condition that needs support offered at this school
+              Has medical condition
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['medical'] }}
@@ -165,7 +165,7 @@
         {% if  data['medical'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-                Give details of their medical condition
+                Details of medical condition
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['more-detail'] }}
@@ -175,7 +175,7 @@
              
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Are you a single parent or carer
+            Single parent or carer
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['single'] }}
@@ -184,7 +184,7 @@
         {% if  data['single'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-                Give details of how it helps childcare
+                Details of how it helps childcare
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['single-detail'] }}
@@ -194,7 +194,7 @@
     
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Do you have another child at the school
+              Another child at the school
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling'] }}
@@ -204,7 +204,7 @@
         {% if data['sibling'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-            Sibling's name
+            Sibling name
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['oldest-first-name'] }}&nbsp;
