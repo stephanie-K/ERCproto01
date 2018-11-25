@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-
+const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 // Add your routes here - above the module.exports line
 
-module.exports = router
+
 
 // CBL form **********************************************************************************
 
@@ -179,10 +179,10 @@ router.post('/forms/education/postcode', function (req, res) {
     // if (req.session.nocag) {
     //   return res.redirect('/forms/education/info')
     // }
-    res.redirect('/forms/education/denominational-or-non')
+    res.redirect('/forms/education/school-1st')
   })
 
-  router.post('/forms/education/denominational-or-non', function (req, res) {
+  router.post('/forms/education/school-1st', function (req, res) {
     //clear the data in case a user came back to that page who previously entered a manual catchment school choice
     //req.session.data['catchment-school-manual'] = null
     res.redirect('/forms/education/info')
@@ -306,10 +306,10 @@ router.post('/forms/education-alternative/postcode', function (req, res) {
     if (req.session.nocag) {
       return res.redirect('/forms/education-alternative/info')
     }
-    res.redirect('/forms/education-alternative/denominational-or-non')
+    res.redirect('/forms/education-alternative/school-1st')
   })
 
-  router.post('/forms/education-alternative/denominational-or-non', function (req, res) {
+  router.post('/forms/education-alternative/school-1st', function (req, res) {
     //clear the data in case a user came back to that page who previously entered a manual catchment school choice
     req.session.data['catchment-school-manual'] = null
     res.redirect('/forms/education-alternative/info')
@@ -364,3 +364,5 @@ router.post('/forms/education-alternative/postcode', function (req, res) {
   router.post('/forms/education-alternative/single-details', function (req, res) {
     res.redirect('/forms/education-alternative/summary')
   })
+
+  module.exports = router
