@@ -162,6 +162,15 @@ body p {
     padding: 10px 10px 10px 60px;
     background: url(../images/govuk-crown.png) 10px center no-repeat #000;
 }
+.tag-print {
+    padding: 10px 10px 10px 60px;
+    background: url(../images/printer-icon.png) 10px center no-repeat #fff;
+    text-decoration: underline;
+    color: #551A8B ; // $erc-text-blue;
+    font-weight: 400;
+    //font-size : 19px;
+}
+
 
 .govuk-tag.info {
     background-color: $erc-logo-blue;
