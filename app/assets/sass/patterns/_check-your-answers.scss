@@ -96,10 +96,13 @@ $erc-text-blue : #004269;
   position: absolute;
   top: 0;
   right: 0;
-
+  padding-right: 8px;
+  border-right: 1px solid $govuk-border-colour;
+  border-left: 0;
   @include govuk-media-query($from: desktop) {
     position: static;
-    padding-right: 0;
+    //padding-right: 0;
+    padding-right: 8px;
   }
 }
 
@@ -110,7 +113,7 @@ $erc-text-blue : #004269;
   background-color: #eee;
 }
 
-.app-check-your-answers__answer, .app-check-your-answers__question, .sum-heading  {
+.app-check-your-answers__answer, .app-check-your-answers__question, .app-check-your-answers__change, .sum-heading  {
   @media only screen and (max-width: 768px) { 
     border-left: 0; 
     border-right: 0 ;

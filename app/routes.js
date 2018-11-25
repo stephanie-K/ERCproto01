@@ -3,7 +3,79 @@ const router = express.Router()
 const moment = require('moment'); // this is to use the Moment JavaScript library which helps manipulating dates
 // Add your routes here - above the module.exports line
 
+// Patterns *********************************************************************************
 
+router.post('/patterns/add-to-a-list/person1-name', function (req, res) {
+  var first1 = req.session.data['first-name-person1']
+  var last1 = req.session.data['last-name-person1']
+  if (first1) {
+    if (last1) {
+      return res.redirect('/patterns/add-to-a-list/person1-dob')
+    }
+      return res.redirect('/patterns/add-to-a-list/person1-name-nolast')
+  }
+  if (last1) {
+    return res.redirect('/patterns/add-to-a-list/person1-name-nofirst')
+  }
+  res.redirect('/patterns/add-to-a-list/person1-name-nofirst-nolast')
+})
+
+router.post('/patterns/add-to-a-list/person1-name-nofirst', function (req, res) {
+  var first1 = req.session.data['first-name-person1']
+  var last1 = req.session.data['last-name-person1']
+  if (first1) {
+    if (last1) {
+      return res.redirect('/patterns/add-to-a-list/person1-dob')
+    }
+      return res.redirect('/patterns/add-to-a-list/person1-name-nolast')
+  }
+  if (last1) {
+    return res.redirect('/patterns/add-to-a-list/person1-name-nofirst')
+  }
+  res.redirect('/patterns/add-to-a-list/person1-name-nofirst-nolast')
+})
+
+router.post('/patterns/add-to-a-list/person1-name-nolast', function (req, res) {
+  var first1 = req.session.data['first-name-person1']
+  var last1 = req.session.data['last-name-person1']
+  if (first1) {
+    if (last1) {
+      return res.redirect('/patterns/add-to-a-list/person1-dob')
+    }
+      return res.redirect('/patterns/add-to-a-list/person1-name-nolast')
+  }
+  if (last1) {
+    return res.redirect('/patterns/add-to-a-list/person1-name-nofirst')
+  }
+  res.redirect('/patterns/add-to-a-list/person1-name-nofirst-nolast')
+})
+
+router.post('/patterns/add-to-a-list/person1-name-nofirst-nolast', function (req, res) {
+  var first1 = req.session.data['first-name-person1']
+  var last1 = req.session.data['last-name-person1']
+  if (first1) {
+    if (last1) {
+      return res.redirect('/patterns/add-to-a-list/person1-dob')
+    }
+      return res.redirect('/patterns/add-to-a-list/person1-name-nolast')
+  }
+  if (last1) {
+    return res.redirect('/patterns/add-to-a-list/person1-name-nofirst')
+  }
+  res.redirect('/patterns/add-to-a-list/person1-name-nofirst-nolast')
+})
+
+router.post('/patterns/add-to-a-list/person1-dob', function (req, res) {
+  res.redirect('/patterns/add-to-a-list/person1-gender')
+})
+
+router.post('/patterns/add-to-a-list/person1-gender', function (req, res) {
+  res.redirect('/patterns/add-to-a-list/person1-relationship')
+})
+
+router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) {
+  res.redirect('/patterns/add-to-a-list/person1-summary')
+})
 
 // CBL form **********************************************************************************
 

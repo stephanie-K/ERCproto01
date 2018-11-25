@@ -1,0 +1,40 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Person 1 - relationship to you
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Person 1
+      </h1>
+      <h2 class="govuk-heading-m">
+          What is their relationship to you?
+        </h2>
+        <form class="form" method="post">
+          {% from "input/macro.njk" import govukInput %}
+          {{ govukInput({
+            label: {
+              text: "Relationship"
+            },
+            id: "relationship1",
+            name: "relationship1",
+            value: data['relationship1'],
+            classes: "govuk-input--width-20"
+          }) }}
+          
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+          </form>
+    </div>
+</div>
+
+{% endblock %}

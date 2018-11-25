@@ -1,0 +1,73 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Person 1 - gender
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Person 1
+      </h1>
+
+        <form class="form" method="post">
+            {% from "radios/macro.njk" import govukRadios %}
+
+            {% set genderHtml %}
+            {{ govukInput({
+              id: "gender-desc1",
+              name: "gender-desc1",
+              value: data['gender-desc1'],
+              classes: "govuk-!-width-two-thirds",
+              label: {
+                text: "Describe gender in another way"
+              }
+            }) }}
+            {% endset -%}
+      
+      
+            {{ govukRadios({
+              classes: "govuk-radios",
+              idPrefix: "gender1",
+              name: "gender1",
+              value: data['gender1'],
+              fieldset: {
+                legend: {
+                  text: "Gender",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "female",
+                  text: "Female"
+                },
+                {
+                  value: "male",
+                  text: "Male"
+                },
+                {
+                  value: "Another gender",
+                  text: "Another gender",
+                  conditional: {
+                    html: genderHtml
+                  }
+                }
+              ]
+            }) }}
+            
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+          </form>
+    </div>
+</div>
+
+{% endblock %}

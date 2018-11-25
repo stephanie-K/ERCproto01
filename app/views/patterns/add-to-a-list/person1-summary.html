@@ -1,0 +1,104 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Person 1 - Summary
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Person 1 - Summary
+      </h1>
+  
+      <dl class="app-check-your-answers app-check-your-answers--long">
+          <div class="app-check-your-answers__contents  sum-grey">
+            <dt class="app-check-your-answers__question">
+              First name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['first-name-person1']}}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="person1-name.html">Edit</a>
+            </dd>
+          </div>
+  
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Last name 
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['last-name-person1']}}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="person1-name.html">Edit</a>
+            </dd>
+          </div>
+  
+          <div class="app-check-your-answers__contents sum-grey">
+            <dt class="app-check-your-answers__question">
+              Date of birth
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['dob-person1-day']}}/{{ data['dob-person1-month']}}/{{ data['dob-person1-year']}}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="person1-dob.html">Edit</a>
+            </dd>
+          </div>
+        
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Gender
+            </dt>
+            <dd class="app-check-your-answers__answer">
+                {{ data['gender1']}}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="person1-gender.html">Edit</a>
+            </dd>
+          </div>  
+
+            {% if data['gender-desc1']%}
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Gender description
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                  {{ data['gender-desc1']}}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="person1-gender.html">Edit</a>
+              </dd>
+            </div>  
+            {% endif%}
+
+            <div class="app-check-your-answers__contents sum-grey">
+                <dt class="app-check-your-answers__question">
+                  Relationship to you
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{ data['relationship1']}}
+                </dd>
+                <dd class="app-check-your-answers__change">
+                  <a href="person1-relationship.html">Edit</a>
+                </dd>
+              </div>  
+        </dl>
+ 
+        <form class="form" method="post">
+          
+          {% from "button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "To be continued",
+            classes: "button-primary"
+          }) }}
+          </form>
+    </div>
+</div>
+
+{% endblock %}

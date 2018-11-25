@@ -1,0 +1,36 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Start
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Members of your household
+      </h1>
+      <p>
+          We need to know about you and each member of your household.  
+      </p>
+      <p>You will be able to:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>add members one after another</li>
+            <li>answer questions about each of them</li>
+            <li>check your answers before adding a member to the list</li>
+            <li>delete and change information on the list</li>
+          </ul>
+      </p>
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Add a member",
+        href: "/patterns/add-to-a-list/person1-name.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+    </div>
+</div>
+
+{% endblock %}

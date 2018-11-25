@@ -1,0 +1,39 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Add to a list
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Add to a list
+      </h1>
+      <p><strong class="govuk-tag black">HMRC Design System</strong><a href="https://design-system.service.gov.uk/components/button/" target="_blank" rel="noopener">Link for this pattern</a></p>
+      <p>This pattern lets users add information with more than one part to a list. This would be useful to add people on a form example.</p>
+      
+      <h2 class="govuk-heading-m">How it works</h2>
+      <p>Allow users to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>view a summary of what they have already added to the list</li>
+        <li>answer questions about what they are adding to the list</li>
+        <li>check their answers before adding to the list</li>
+        <li>delete and change things on the list</li>
+        </ul>
+      {% from "button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "See an example",
+          href: "/patterns/add-to-a-list/start.html"
+        }) }}
+
+      <p style="background-color:#ddebf1; padding: 10px;">
+        <a href="/../..{{ publicPath }}/images/add-to-list.gif"><img src="/../..{{ publicPath }}/images/add-to-list.gif" alt="add to a list pattern displayed" style="height:400px;"></a>
+      </p>
+    </div>
+</div>
+
+{% endblock %}
