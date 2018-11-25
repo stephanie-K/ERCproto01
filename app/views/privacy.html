@@ -1,39 +1,223 @@
-
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Privacy
+Privacy
 {% endblock %}
 
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
-        Privacy notice
-      </h1>
-      <p>
-        East Renfrewshire Council is the 'data controller' of the personal information you give us and we collect and use about you. This covers personal information of both council staff and members of the public.<br>
-        We generally use information about you to provide public services and carry out our statutory functions.
-      </p>
-      <p>We may collect information by:</p>
-      <ul class="govuk-list govuk-list--bullet">        
-        <li>paper</li>
-        <li>online form</li>
-        <li>telephone</li>
-        <li>email</li>
-        <li>CCTV</li>
-        <li>a member of our staff</li>
-        <li>an external agency acting on our behalf</li>
-      </ul>
-      <p>
-          This notice explains why we collect your information and what we use it for. It also gives more detail how different Council services use and share your information.
-      </p>
-    </div>
-</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      Privacy notice
+    </h1>
+    <p>
+      East Renfrewshire Council is the 'data controller' of the personal information you give us and we collect and use
+      about you. This covers personal information of both council staff and members of the public.<br>
+      We generally use information about you to provide public services and carry out our statutory functions.
+    </p>
+    <p>We may collect information by:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>paper</li>
+      <li>online form</li>
+      <li>telephone</li>
+      <li>email</li>
+      <li>CCTV</li>
+      <li>a member of our staff</li>
+      <li>an external agency acting on our behalf</li>
+    </ul>
+    <p>
+      This notice explains why we collect your information and what we use it for. It also gives more detail how
+      different Council services use and share your information.
+    </p>
+    <h2 class="govuk-heading-m">Contact us</h2>
+    <p>You can contact us on 0141 577 3000.</p>
+    <p>For data protection issues, email the Council's Data Protection officer at: <a href="mailto:dpo@eastrenfrewshire.gov.uk">dpo@eastrenfrewshire.gov.uk</a></p>
+    <p>If you're concerned about how we use your personal data, please first contact the Council's Data Protection
+      Officer.</p>
+    <p>If you're still unhappy, you can contact the Information Commissioner at:</p>
+    <p>Information Commissioner's Office<br>Wycliffe House<br>Water Lane<br>Wilmslow<br>Cheshire<br>SK9 5AF</p>
+    <p>Call: 0303 123 1113</p>
+    <p><a href="http://www.ico.org.uk">www.ico.org.uk</a></p>
+<hr>
 
+    {{ govukDetails({
+      summaryText: "Why we collect your information",
+      html: "<p>We need to collect and hold information about you to:</p>
+      <ul>
+        <li>deliver public services</li>
+        <li>confirm your identity to provide some services</li>
+        <li>contact you by post, email or telephone</li>
+        <li>understand your needs to provide the services you request</li>
+        <li>understand what we can do for you and inform you of other relevant services and benefits</li>
+        <li>get your opinion about our services</li>
+        <li>help us to build up a picture of how we're performing delivering services to you and what services the people of East Renfrewshire need</li>
+        <li>process financial transactions</li>
+        <li>prevent and detect fraud and corruption in the use of public funds</li>
+        <li>allow us to carry out statutory functions efficiently and effectively</li>
+        <li>make sure we meet our statutory obligations including those related to diversity and equalities</li>
+      </ul>
+      <p>We may not be able to provide you with a product or service unless we have enough information, or your
+        permission to use it.</p>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "How we use your information",
+      html: "<p>We'll use the information you provide in line with the General Data Protection Regulation and the Data
+          Protection Act 2018.</p>
+        <p>We'll process your information:</p>
+        <ul>
+          <li>for the service you request and to monitor and improve how we respond to your request</li>
+          <li>to allow us to communicate and provide services and benefits to meet your needs</li>
+          <li>to make sure we meet our legal obligations</li>
+          <li>where necessary for law enforcement</li>
+          <li>to prevent and detect fraud or crime</li>
+          <li>to process financial transactions including grants, payments and benefits involving the council</li>
+          <li>where we act on behalf of other government organisations, for example, the DWP</li>
+          <li>to collect money owed to us</li>
+          <li>to protect individuals from harm or injury</li>
+          <li>for the delivery of the service such as IT support, legal and financial advice and support and the
+            delivery of internal audit and risk management</li>
+          <li>to take decisions at the appropriate level in terms of the Council's Scheme of Administration - either
+            by full Council, Cabinet, Committee or under delegated officer authority</li>
+        </ul>",
+      classes: "erc-text-blue"
+    }) }}
+  
+  {{ govukDetails({
+      summaryText: "How long we keep your information",
+      html: "<p>We won't keep your information any longer than we need to.</p>
+      <p>In some cases, the law decides how long we need to keep your information. Because these times can vary,
+        there is no single answer to how long we keep your information.</p>
+      <p><a>Find out how long we keep your information
+          for different reasons</a></p>
+      <p>There are other factors that can affect how long we keep your information.</p>
+      <p>These include:</p>
+      <ul>
+        <li>your personal data rights</li>
+        <li>where a record including your information forms evidence gathered as part of an investigation</li>
+        <li>where a record including your information is selected for permanent preservation</li>
+      </ul>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "Information sharing",
+      html: "<p>We may need to share your information with other people and organisations that provide the service on our
+          behalf.</p>
+        <p>These organisations must keep your details secure and only use them to carry out the service.</p>
+        <p>We may share information with other partners where it's needed. This is to comply with the law or where
+          allowed under the General Data Protection Regulation/Data Protection Act. For example, where we need to
+          share information to prevent or detect crime.</p>
+        <p>We may also share information to prevent risk or harm to someone.</p>
+        <p>We provide further information of what we share with other organisations in our Council services privacy
+          notices.</p>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "International transfers",
+      html: "<p>We don't usually transfer your personal data outside the European Economic Area (EEA).</p>
+      <p>However, we may need to transfer your information outside the EEA on some occasions. For example, if you
+        use web services that are hosted outside the EEA. We'll only do this when we're satisfied both the
+        organisation who handles the data, and the country, will keep your data safe.</p>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "Your rights",
+      html: "<p>You have certain rights over your personal data. Some of these rights are only available in certain
+          circumstances. This usually depends on the legal reason we hold your information.</p>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Be told how we use your information. This notice give you the information to meet this right.</li>
+          <li>Get personal information we hold about you through a Subject Access Request. &nbsp;</li>
+        </ul>
+        <p>Download Subject Access Request form [40kb]</p>
+        <p>You can email <a>subjectaccess@eastrenfrewshire.gov.uk</a>
+          or write to us at:</p>
+        <p>Council's Records Manager<br>East Renfrewshire Council<br>Legal Services<br>Council HQ<br>Eastwood Park<br>Giffnock<br>G46
+          6UG</p>
+        <ul>
+          <li>Ask that we correct any personal data held we hold that's inaccurate. We try to make sure our records
+            are accurate at all times. But if you believe we hold information that is wrong, you can ask us to change
+            it.</li>
+          <li>Object to us processing your personal data to perform a task in the public interest or exercise of
+            public authority. We'll then need to show why we need to continue to use your data.</li>
+          <li>Ask that we stop processing your personal data for any council service. This may cause delays or stop
+            us delivering a service to you. In this case, we'll agree to your request where possible. But we may need
+            to hold or process your information by law. If you give consent for us to process your personal data, you
+            can withdraw this consent at any time. You can also ask us to erase your personal data.</li>
+        </ul>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "Fraud detection and prevention",
+      html: "<p>We're required by law to protect the public funds we administer.</p>
+      <p>We may use any of the information you give us to prevent and detect fraud.</p>
+      <p>We may also share this information with other organisations that audit and administer public funds, detect
+        and prevent fraud.</p>
+      <p>Organisations include:</p>
+      <ul>
+        <li>the Cabinet Office</li>
+        <li>DWP</li>
+        <li>other local authorities</li>
+        <li>HMRC</li>
+        <li>Audit</li>
+        <li>the Police</li>
+      </ul>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "Emergency resilience",
+      html: "<p>We may use data matching to help the council identify people who need additional support. Or if a
+          potential incident affects East Renfrewshire Council.</p>
+        <p>We may also need to share information with partner organisations to respond to the incident.</p>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "How we protect your information",
+      html: "<p>Our Information Governance Framework includes a Data Protection Policy and a set of Information Security
+          policies. They define our commitments and responsibilities to your privacy. They cover a range of
+          information and technology security areas.</p>
+        <p>We provide training to staff who handle personal information. We treat it as a disciplinary matter if they
+          misuse or don't look after your personal information.</p>
+        <p>We won't keep your information longer than we need to or where the law says how long we should keep it.
+          We'll dispose of paper records or delete electronic personal information in a secure way.</p>",
+      classes: "erc-text-blue"
+    }) }}
+
+    {{ govukDetails({
+      summaryText: "Council services privacy notices",
+      html: "<p>We have separate privacy notices for Council services. You can get these when you access the service,
+          application or enquiry.</p>",
+      classes: "erc-text-blue"
+    }) }}
+    
+    {{ govukDetails({
+      summaryText: "Changes to this privacy notice",
+      html: "<p>We'll continue to review and update this privacy notice. This is to reflect changes in our services,
+          feedback from our service users and to comply with changes in the law.</p>",
+      classes: "erc-text-blue"
+    }) }}
+  </div>
+</div>
 <div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>The real page the privacy notice is going to for Education is this one: <a href="https://www.eastrenfrewshire.gov.uk/privacy" target="_blank">https://www.eastrenfrewshire.gov.uk/privacy</a></p>
+  <h3 class="govuk-heading-s">Design notes:</h3>
+  <p>The real page the privacy notice is going to for Education is this one: <a href="https://www.eastrenfrewshire.gov.uk/privacy"
+      target="_blank">https://www.eastrenfrewshire.gov.uk/privacy</a></p>
 </div>
 {% endblock %}
+
+
+
+
+
+
+
+
+
