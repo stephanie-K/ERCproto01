@@ -22,6 +22,13 @@
        </ul>
        <p class="govuk-!-padding-top-4">You can find out how we use your information in our <a href="/privacy.html">privacy statement</a>.</p>
 
+       {% from "warning-text/macro.njk" import govukWarningText %}
+
+       {{ govukWarningText({
+         text: "At any point, if you need to go back to the previous page, DO NOT use the back button of your browser or your device. You would have to start all over again. You can use the back link on each page instead",
+         iconFallbackText: "Warning"
+       }) }}
+
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
@@ -34,8 +41,7 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li>This is new content - needs to be signed off by Education</li> 
-        <li>add a warning about only using the back link in the form, and unable to edit(?)</li>
+        <li>This content will change to something which describes all the step of the application ad enrolment - needs to be signed off by Education</li> 
     </ul>
 </div>
 

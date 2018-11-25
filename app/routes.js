@@ -114,17 +114,33 @@ router.post('/forms/education/declaration1-error', function (req, res) {
 
 router.post('/forms/education/postcode', function (req, res) {
     // Get the answer from the query string
-    //var postcode = req.session.data['postcode']
+    var postcode = req.session.data['postcode']
+    if (postcode === 'error') {
+      return res.redirect('/forms/education/postcode-error')
+  }
     res.redirect('/forms/education/postcode-with-address')
   })
 
-  router.post('/forms/education/moving', function (req, res) {
-    var isMoving = req.session.data['moving']
-    if (isMoving === 'yes') {
-        return res.redirect('/forms/education/current-address')
-    }
-      res.redirect('/forms/education/parent-name')
+  router.post('/forms/education/postcode-error', function (req, res) {
+    res.redirect('/forms/education/postcode-with-address')
   })
+
+router.post('/forms/education/postcode-js', function (req, res) {
+  // Get the answer from the query string
+  var postcode = req.session.data['postcode']
+  if (postcode === 'error') {
+    return res.redirect('/forms/education/postcode-error')
+}
+  res.redirect('/forms/education/postcode-with-address')
+})
+
+router.post('/forms/education/moving', function (req, res) {
+  var isMoving = req.session.data['moving']
+  if (isMoving === 'yes') {
+      return res.redirect('/forms/education/current-address')
+  }
+    res.redirect('/forms/education/parent-name')
+})
 
   router.post('/forms/education/current-address', function (req, res) {
     res.redirect('/forms/education/moving-date')
@@ -238,131 +254,5 @@ router.post('/forms/education/postcode', function (req, res) {
     res.redirect('/forms/education/summary')
   })
 
-/////////////////// alternative version of the P1 enrollment form ///////////////////////////
-
-  
-router.post('/forms/education-alternative/moving', function (req, res) {
-  // set a session variable to false: this will be used to see if we need to display the catchment school choice question or not
-  req.session.nocag  = false
-  // Get the answer from the query string
-  var isMoving = req.session.data['moving']
-  if (isMoving === 'yes') {
-    return res.redirect('/forms/education-alternative/postcode-start-term')
-  }
-  res.redirect('/forms/education-alternative/postcode')
-})
-
-router.post('/forms/education-alternative/postcode-start-term', function (req, res) {
-  res.redirect('/forms/education-alternative/postcode-current')
-})
-
-router.post('/forms/education-alternative/postcode-current', function (req, res) {
-  res.redirect('/forms/education-alternative/manual-catchment-school')
-})
-
-router.post('/forms/education-alternative/manual-catchment-school', function (req, res) {
-  // set a session variable so we know if we need to display the catchment school choice question or not
-  req.session.nocag = true 
-  res.redirect('/forms/education-alternative/parent-name')
-})
-
-
-router.post('/forms/education-alternative/postcode', function (req, res) {
-    // Get the answer from the query string
-    var postcode = req.session.data['postcode']
-    res.redirect('/forms/education-alternative/postcode-with-address')
-  })
-
-
-  router.post('/forms/education-alternative/parent-name', function (req, res) {
-    res.redirect('/forms/education-alternative/phone')
-  })
-
-  router.post('/forms/education-alternative/phone', function (req, res) {
-    res.redirect('/forms/education-alternative/email')
-  })
-
-  router.post('/forms/education-alternative/email', function (req, res) {
-    res.redirect('/forms/education-alternative/child-name')
-  })
-
-  router.post('/forms/education-alternative/child-name', function (req, res) {
-    res.redirect('/forms/education-alternative/child-dob')
-  })
-
-  router.post('/forms/education-alternative/child-dob', function (req, res) {
-    res.redirect('/forms/education-alternative/child-gender')
-  })
-
-  router.post('/forms/education-alternative/child-gender', function (req, res) {
-    res.redirect('/forms/education-alternative/nursery')
-  })
-
-  router.post('/forms/education-alternative/nursery', function (req, res) {
-    res.redirect('/forms/education-alternative/defer')
-  })
-
-  router.post('/forms/education-alternative/defer', function (req, res) {
-    if (req.session.nocag) {
-      return res.redirect('/forms/education-alternative/info')
-    }
-    res.redirect('/forms/education-alternative/school-1st')
-  })
-
-  router.post('/forms/education-alternative/school-1st', function (req, res) {
-    //clear the data in case a user came back to that page who previously entered a manual catchment school choice
-    req.session.data['catchment-school-manual'] = null
-    res.redirect('/forms/education-alternative/info')
-  })
-
-  // info takes everyone to school-2nd - no POST for this view
-
-  router.post('/forms/education-alternative/school-2nd', function (req, res) {
-    res.redirect('/forms/education-alternative/sibling')
-  })
-
-  router.post('/forms/education-alternative/sibling', function (req, res) {
-    var haveSibling = req.session.data['sibling']
-    if (haveSibling === 'yes') {
-        return res.redirect('/forms/education-alternative/sibling-name')
-    }
-    res.redirect('/forms/education-alternative/medical')
-  })
-
-  router.post('/forms/education-alternative/sibling-name', function (req, res) {
-    return res.redirect('/forms/education-alternative/sibling-stage')
-  })
-
-  router.post('/forms/education-alternative/sibling-stage', function (req, res) {
-    return res.redirect('/forms/education-alternative/medical')
-  })
-
-  router.post('/forms/education-alternative/medical', function (req, res) {
-    var medicalNeeded = req.session.data['medical']
-    if (medicalNeeded === 'yes') {
-        return res.redirect('/forms/education-alternative/medical-details')
-    }
-    //clear the data in case the user came back to that page and had previously given more details
-    req.session.data['medical-details'] = null;
-    res.redirect('/forms/education-alternative/single')
-  })
-
-  router.post('/forms/education-alternative/medical-details', function (req, res) {
-    res.redirect('/forms/education-alternative/single')
-  })
-
-  router.post('/forms/education-alternative/single', function (req, res) {
-    var isSingle = req.session.data['single']
-    if (isSingle=== 'yes') {
-        return res.redirect('/forms/education-alternative/single-details')
-    }
-    //clear the data in case the user came back to that page and had previously given more details
-    req.session.data['single-details'] = null;
-    res.redirect('/forms/education-alternative/summary')
-  })
-
-  router.post('/forms/education-alternative/single-details', function (req, res) {
-    res.redirect('/forms/education-alternative/summary')
-  })
 
   module.exports = router

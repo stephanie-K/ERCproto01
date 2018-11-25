@@ -19,12 +19,12 @@
       <form class="form" method="post">
       {% from "warning-text/macro.njk" import govukWarningText %}
       {% from "input/macro.njk" import govukInput %}
-     <noscript>
-        {{ govukWarningText({
-          text: "JavaScript is disabled on your device. Enable Javascript to apply",
-          iconFallbackText: "Warning"
-        }) }}
-        </noscript>
+
+      {{ govukWarningText({
+        text: "JavaScript is disabled on your device. Enable Javascript to apply",
+        iconFallbackText: "Warning"
+      }) }}
+
 
       {{ govukInput({
         classes: "govuk-input--width-10",
@@ -50,7 +50,7 @@
           <li>Maidenhill is not treated differently</li>
           <li>If the address is not found (new houses in ERC), we will have the same message for everyone: <strong>"Unfortunately, we cannot find your address. Please phone the Education Admissions Team on 0141 577 3246 for advice."</strong> to see it, enter 'error'</li>
           <li>If a user has no postcode to enter, we should display a message so they know they should call us</li>
-          <li>We should also have a specific message if the user doesn't have Javascript enabled as they won't be able to go further. <a href="/forms/education/postcode-js.html"><strong>See an example.</strong></a></li>
+          <li>We should also have a specific message if the user doesn't have Javascript enabled as they won't be able to go further. <a href="/forms/education/postcode.html"><strong>See an example without the message.</strong></a></li>
         </ul>
     </div>
     </div>

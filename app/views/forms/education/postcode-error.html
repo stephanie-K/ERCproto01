@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Postcode
+  Error - Postcode
 {% endblock %}
 
 {% block content %}
@@ -33,6 +33,9 @@
         value: data['postcode'],
         hint: {
           text: "Use postcode of child’s address at start of term."
+        },
+        errorMessage: {
+          text: "Unfortunately, we cannot find your address. Please phone the Education Admissions Team on 0141 577 3246 for advice."
         }
       }) }}
 

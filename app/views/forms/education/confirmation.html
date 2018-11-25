@@ -16,14 +16,20 @@
         <h1 class="govuk-heading-l">
             Apply online for primary 1 - August 2019
         </h1>
-
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
     {% from "panel/macro.njk" import govukPanel %}
 
       {{ govukPanel({
         titleText: "Application complete",
         html: "Your reference number<br><strong>1346-7895-4445-7023</strong>"
       }) }}
-
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
       <p>Thank you for submitting your form.</p>
         {% if data['email'] %}
         <p>We have sent an email to confirm your application and what you need to do next at:<br>
@@ -36,19 +42,18 @@
     <p>You can <a href="/../..{{ publicPath }}/images/application-info.pdf" download="information-P1-application">download the information as a PDF</a> or <a href="/forms/education/information-application.html" target="_blank" rel="noopener">view it in a new tab.</a></p>
     <p>&nbsp;</p>
 
-
-
-      <div class="design-notes-box">
-          <h3 class="govuk-heading-s">Design notes:</h3>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>guidance about what happen next will be drafted so we set expectations, it will be in a form of a pdf they can download or view on a new tab. this will also be the body of the email we sent if they had an email address (two versions, one for is specific to Maidenhill)</li>
-            <li><a href="/forms/education/confirmation1.html"><strong>see with an email address provided</strong></a></li>
-            <li>email should be receive nearly instantly - should we mention what to do if you didn't receive it to check their spam?</li>
-            <li>anything we will send in the email should also appear here as some won't receive it, and other will lose the email</li>
-            <li>have a link to the documents they need to apply + Admission policy + placing request policy + Heather</li>
-          </ul>
-      </div>
     </div>
+  </div>
+  <div class="design-notes-box">
+      <h3 class="govuk-heading-s">Design notes:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>One solution would be to simply take them back via a button to the start of the Before you start page, where we would have guidance about next step, and to send everyone a letter (personalised)</li>
+        <li>guidance about what happen next will be drafted so we set expectations, it could be in a form of a pdf they can download or view on a new tab. This will also be the body of the email we sent if they had an email address (two versions, one for is specific to Maidenhill)</li>
+        <li><a href="/forms/education/confirmation1.html">see with an email address provided</a></li>
+        <li>email should be receive nearly instantly - should we mention what to do if you didn't receive it to check their spam?</li>
+        <li>anything we will send in the email should also appear here as some won't receive it, and other will lose the email</li>
+        <li>have a link to the documents they need to apply + Admission policy + placing request policy + Heather</li>
+      </ul>
   </div>
 {% endblock %}
 
