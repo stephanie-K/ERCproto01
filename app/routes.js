@@ -276,26 +276,27 @@ router.post('/forms/education/moving', function (req, res) {
     res.redirect('/forms/education/info')
   })
 
-  // info takes everyone to school-2nd - no POST for this view
-
-  router.post('/forms/education/school-2nd', function (req, res) {
-    res.redirect('/forms/education/sibling')
-  })
-
   router.post('/forms/education/sibling', function (req, res) {
     var haveSibling = req.session.data['sibling']
     if (haveSibling === 'no') {
-        return res.redirect('/forms/education/medical')
+        return res.redirect('/forms/education/info-2nd-school')
     }
-    res.redirect('/forms/education/sibling-name')
-  })
-
-  router.post('/forms/education/sibling-name', function (req, res) {
-    return res.redirect('/forms/education/sibling-stage')
+    res.redirect('/forms/education/sibling-stage')
   })
 
   router.post('/forms/education/sibling-stage', function (req, res) {
-    return res.redirect('/forms/education/medical')
+    return res.redirect('/forms/education/sibling-name')
+  })
+
+  router.post('/forms/education/sibling-name', function (req, res) {
+    return res.redirect('/forms/education/info-2nd-school')
+  })
+
+  router.post('/forms/education/sibling-name', function (req, res) {
+    return res.redirect('/forms/education/info-2nd-school')
+  })
+  router.post('/forms/education/school-2nd', function (req, res) {
+    res.redirect('/forms/education/medical')
   })
 
   router.post('/forms/education/medical', function (req, res) {
@@ -309,6 +310,10 @@ router.post('/forms/education/moving', function (req, res) {
   })
 
   router.post('/forms/education/medical-details', function (req, res) {
+    res.redirect('/forms/education/medical-evidence')
+  })
+
+  router.post('/forms/education/medical-evidence', function (req, res) {
     res.redirect('/forms/education/single')
   })
 

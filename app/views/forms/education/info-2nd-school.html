@@ -1,0 +1,38 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Information
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for primary 1 - August 2019
+        </h1>
+            <p class="govuk-!-margin-bottom-6">If your child’s catchment school is full:</p>
+
+            <p><strong>Preferred alternative school</strong></p>
+            <p class="govuk-!-margin-bottom-6">They’ll register at the alternative school you choose. This is permanent.</p>
+            <p><strong>No preferred alternative school</strong></p>
+            <p class="govuk-!-margin-bottom-9">They’ll register at the nearest school with a place. This is until and if a place becomes available at your catchment school.</p> 
+            <p>If you need more information you can <a href="/forms/education/P1-start.html">read the full admissions policy</a></p>
+            <p>This link will take you back to the start of the form.</p>
+
+
+
+      {{ govukButton({
+        "text": "Continue",
+        href: "/forms/education/school-2nd.html"
+        }) }}
+
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>The content is new </p>
+</div>
+
+{% endblock %}

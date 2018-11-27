@@ -13,8 +13,9 @@
             Apply online for primary 1 - August 2019
         </h1>
       <h2 class="govuk-heading-m">
-        Summary
+        Application usmmary
       </h2>
+      <p>If you want to print this page do it now. You won’t see this summary once you submit the form.</p>
 
       <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
       <!--   * `app-check-your-answers--short` for short questions -->
@@ -23,7 +24,7 @@
       <dl class="app-check-your-answers app-check-your-answers--long">
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-              Address at start of term
+              Address
             </dt>
             <dd class="app-check-your-answers__answer">
               21 Forres avenue<br>
@@ -32,7 +33,7 @@
           </div>
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Live at different address
+              Living elsewhere
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['moving'] }}
@@ -41,7 +42,7 @@
         {% if data['moving'] === 'yes'%}
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Current address
+              Mailing address
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['current-address'] }}
@@ -60,7 +61,7 @@
 
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-            Parent or carer's name
+            Your name
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['parent-first-name'] }}&nbsp;{{ data['parent-last-name'] }}
@@ -69,7 +70,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Phone number
+            Phone
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['phone'] }}
@@ -87,7 +88,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Name of child
+            Child's
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['child-first-name'] }}&nbsp;
@@ -118,7 +119,7 @@
             
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Nursery
+              ERC nursery
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['nursery'] }}
@@ -128,7 +129,7 @@
         {% if data['nursery'] === 'Another nursery'%}
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-                Name and address of nursery
+                Nursery detail's
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['other-nursery'] }}
@@ -138,7 +139,7 @@
     
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Preferred catchment school
+              Catchment school
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['school'] }}
@@ -147,7 +148,7 @@
       
         <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              Preferred alternative school
+              Alternative school
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['2nd-school'] }}
@@ -156,7 +157,7 @@
 
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-              Has medical condition
+              Medical condition
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['medical'] }}
@@ -164,14 +165,22 @@
         </div>
         {% if  data['medical'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
-            <dt class="app-check-your-answers__question">
-                Details of medical condition
-            </dt>
-            <dd class="app-check-your-answers__answer">
-                {{ data['more-detail'] }}
-            </dd>
-          </div>
-          {% endif %}
+          <dt class="app-check-your-answers__question">
+              Details of medical condition
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['more-detail'] }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+              Medical evidence
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['medical-evidence'] }}
+          </dd>
+        </div>
+        {% endif %}
              
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
@@ -184,7 +193,7 @@
         {% if  data['single'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
-                Details of how it helps childcare
+                How it benefits care
             </dt>
             <dd class="app-check-your-answers__answer">
                 {{ data['single-detail'] }}
@@ -194,7 +203,7 @@
     
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Another child at the school
+              Another child at school
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling'] }}
@@ -204,7 +213,7 @@
         {% if data['sibling'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-            Sibling name
+            Child's name
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['oldest-first-name'] }}&nbsp;
@@ -217,7 +226,7 @@
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Primary they are in
+            Primary will be in
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling-stage'] }}
@@ -243,10 +252,7 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li>The content will change. Some guidance to make sure they understand it's the only place they can print the page to save what they entered.</li>
-        <li>The questions a user didn't see should be removed, but we should display optional ones even if they didn't answer. Labels should be bold (only on mobile just now, not on desktop).</li>
-        <li>We decided not to make the edit possible as this is complex to make especially to make sure that we come back directly to that page. Some questions could not be edited (like the postcode as it affect the UPRN) and some questions have logic routing.</li>
-        <li>can only some of this data be passed to GOSS?</li>
+
     </ul>
 
    

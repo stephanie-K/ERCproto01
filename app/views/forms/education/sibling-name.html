@@ -13,13 +13,12 @@
             Apply online for primary 1 - August 2019
         </h1>
       <form class="form" method="post">
-        
 
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Sibling first name",
+          text: "Child first name",
           classes: "govuk-!-font-size-24"
         },
         id: "oldest-first-name",
@@ -30,7 +29,7 @@
 
       {{ govukInput({
         label: {
-          text: "Sibling middle name (optional)",
+          text: "Child middle name (optional)",
           classes: "govuk-!-font-size-24"
         },
         id: "oldest-middle-name",
@@ -41,7 +40,7 @@
 
       {{ govukInput({
         label: {
-          text: "Sibling last name",
+          text: "Child last name",
           classes: "govuk-!-font-size-24"
         },
         id: "oldest-last-name",
@@ -59,7 +58,7 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>For consistency, we ask for the middle name even though it's not needed. Could say Other child first name etc... instead of sibling?</p>
+    <p>For consistency, we ask for the middle name even though it's not needed. Could say Other child first name etc... as this might confuse the parent?</p>
 </div>
 
 {% endblock %}
