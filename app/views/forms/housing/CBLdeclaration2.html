@@ -1,0 +1,45 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for Housing
+        </h1>
+        <h2 class="govuk-heading-m">
+                Declaration
+        </h2>
+        <p>These statements apply to you and anybody included in this application:</p> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li>I am eligible to apply for housing and i will tell you if my circumstances change</li> 
+            <li>all the information i have given on this application form is true</li> 
+            <li>I understand that if i give false information or withhold information you have asked for, my application may be cancelled</li> 
+            <li>if i am offered housing because i have given false information or have withheld information you have asked for, i understand that you may end my tenancy and evict me from my home</li> 
+        </ul>
+        <p><strong>Permission to share information:</strong></p>
+        <p>I agree that any information i have given on this application can be shared with other landlords and organisations, in order to find me suitable housing, in line with General Data Protection Regulations.</p>
+        <p>You can contact my doctor, hospital consultant, health visitor or social worker, the police or any other relevant person if you need more information for my housing application, in line with General Data Protection Regulations.</p>
+
+        <p><a href="#">Housing Services Privacy Notice for GDPR.</a></p>
+        <p>need a checkbox here</p>
+        <p>Read statement and confirm you understand and agree.</p>
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/housing/CBLconfirmation.html"
+        }) }}
+      
+
+    </div>
+</div>
+
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+</div>
+
+{% endblock %}

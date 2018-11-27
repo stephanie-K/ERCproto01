@@ -1,0 +1,116 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Connection to East Ren
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for Housing
+      </h1>
+
+{% from "radios/macro.njk" import govukRadios %}
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
+{% from "textarea/macro.njk" import govukTextarea %}
+
+{% set detailsHtml %}
+{{ govukTextarea({
+  id: "connection-details",
+  name: "connection-details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{% set connectionHtml %}
+{{ govukCheckboxes({
+  idPrefix: "reason-conditional",
+  name: "reason",
+  fieldset: {
+    legend: {
+      text: "What is your connection to East Renfrewshire?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "job",
+      text: "I have a job in the area"
+    },
+    {
+      value: "offered-job",
+      text: "I've been offered a job in the area"
+    },
+    {
+      value: "looking-for-job",
+      text: "I'm looking for a job in the area"
+    },
+    {
+      value: "support",
+      text: "Support for a from a relative who lives in area"
+    },
+    {
+      value: "social",
+      text: "Social or medical reason to live in the area including disability and mental health"
+    },
+    {
+      value: "Relative",
+      text: "Relative lives in area"
+    },
+    {
+      value: "Other",
+      text: "Other reason",
+      conditional: {
+        html: detailsHtml
+      }
+    }
+  ]
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "connection-conditional",
+  name: "connection",
+  fieldset: {
+    legend: {
+      text: "Do you currently live in East Renfrewshire?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No",
+      conditional: {
+        html: connectionHtml
+      }
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/CBLcurrent.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+
+
+{% endblock %}

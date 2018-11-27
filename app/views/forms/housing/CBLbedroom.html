@@ -103,12 +103,23 @@
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "End for now",
+        text: "Continue",
+        href: "/forms/housing/CBL5yearsadd.html",
         classes: "button-primary"
       }) }}
-
 
     </div>
 </div>
 
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+   <p>Not sure we need the textbox at the bottom, this is in case they have different sleeping arrangements</p> 
+   <p>This is grouping 4 previous screens:</p>
+   <ul class="govuk-list govuk-list--bullet">
+     <li>how many bedrooms are in your current home</li>
+     <li>how many bedrooms can your household use</li>
+     <li>how many double</li>
+     <li>how many single</li>
+   </ul>
+</div>
 {% endblock %}

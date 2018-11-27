@@ -1,0 +1,44 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for Housing
+        </h1>
+
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+                Application submitted
+            </h1>
+            <div class="govuk-panel__body">
+              Your reference number
+              <br><strong>1346-7895-4445-7023</strong><br><br>
+              {% if data['email'] %}
+              We’ve sent an email to confirm your application to <strong> {{ data['email']}}</strong>
+              {% endif%}
+            </div>
+          </div>
+          <p>Thank you for submitting your housing registration form.</p>
+          <p>We’ll contact you within x days.</p>
+          <p>Contact us on 0141 577 3002 or email housing@eastrenfrewshire.gov.uk if you need any further help.</p>
+          <p>Housing Team</p>
+
+    </div>
+</div>
+
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+</div>
+
+{% endblock %}
+
+
+

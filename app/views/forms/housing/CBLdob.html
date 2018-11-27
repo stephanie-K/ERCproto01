@@ -1,0 +1,68 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Date of Birth
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for Housing
+        </h1>
+    
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukDateInput({
+        id: "dob-applicant",
+        namePrefix: "dob-applicant",
+        fieldset: {
+          legend: {
+            text: "Your date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 11 08 1980"
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-applicant-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-applicant-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-applicant-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/CBLgender.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>To capture the DOB of the applicant</li>
+      <li>also it prepares the user to enter it that way for the other members of the household?</li>
+    </ul>
+</div>
+
+{% endblock %}

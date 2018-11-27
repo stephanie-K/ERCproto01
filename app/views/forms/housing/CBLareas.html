@@ -1,8 +1,7 @@
-
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Info
+  Areas choice
 {% endblock %}
 
 {% block content %}
@@ -13,19 +12,19 @@
             Apply online for Housing
         </h1>
 
+        <p>Area choice <strong class="govuk-tag red">coming soon</strong></p>
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
-          href: "/forms/housing/CBLbedroom.html"
+          href: "/forms/housing/CBLmonitor.html"
         }) }}
-        
-        <div class="design-notes-box">
-            <h3 class="govuk-heading-s">Design notes:</h3>
-           <p>There are more pages in the form, not recreated here - I only add a final one about counting bedrooms which would improve the form. Instead of 4 actual screens, we would only have one.</p>
-        </div>
-
+      
 
     </div>
+</div>
+
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
 </div>
 
 {% endblock %}

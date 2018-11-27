@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Joint applicant
+  Other properties
 {% endblock %}
 
 {% block content %}
@@ -16,36 +16,40 @@
 {% from "radios/macro.njk" import govukRadios %}
 {% from "textarea/macro.njk" import govukTextarea %}
 
-{% set jointHtml %}
+{% set addressHtml %}
 {{ govukTextarea({
-  id: "joint",
-  name: "joint",
+  id: "properties-details",
+  name: "properties-details",
   classes: "govuk-!-width-two-thirds",
   label: {
-    text: "Enter their name"
+    text: "Address"
   }
 }) }}
 {% endset -%}
 
 {{ govukRadios({
-  idPrefix: "is-joint-conditional",
-  name: "is-joint",
+  idPrefix: "is-properties-conditional",
+  name: "is-properties",
   fieldset: {
     legend: {
-      text: "Is there one or more joint applicant?",
+      text: "Do you own or rent any other properties other than your current home?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
   },
-  hint: {
-    text: "Joint applicant needs to be 16 or over."
-  },
   items: [
     {
-      value: "yes",
-      text: "Yes",
+      value: "yes-own",
+      text: "Yes, I own it",
       conditional: {
-        html: jointHtml
+        html: addressHtml
+      }
+    },
+    {
+      value: "yes-rent",
+      text: "Yes, I rent it",
+      conditional: {
+        html: addressHtml
       }
     },
     {
@@ -57,15 +61,12 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/CBLother-children.html",
+        href: "/forms/housing/CBLconnection-ER.html",
         classes: "button-primary"
       }) }}
 
     </div>
 </div>
-<div class="UR-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-   <p>The wording would need to be approved and maybe changed by Sharon / Housing</p>
-</div>
+
 
 {% endblock %}

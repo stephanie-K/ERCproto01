@@ -1,0 +1,40 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Monitor information
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for Housing
+        </h1>
+
+        <h2 class="govuk-heading-m">
+                How we monitor your information
+            </h2>
+
+        
+<p>We are committed to providing equal opportunities. This means we will make sure that we treat everybody who applies for housing equally.</p> 
+<p>For our policies and procedures to be effective, we need to monitor who uses our services so that we do not discriminate against anyone because of their sex, race,colour, nationality, ethnic background, disability, sexuality or age.</p> 
+<p>We will keep all the information you give us confidential. We will only use it to process your application and to create statistics to see who uses our services.</p> 
+<p>An optional Equal Opportunities Questionnaire is included at the end of this form and we would be grateful if you could complete this. You are not obliged to complete this form and any information you give us will not influence our decision.</p>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/housing/CBLdeclaration1.html"
+        }) }}
+      
+
+    </div>
+</div>
+
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>this content was not seen by Sharon</p>
+</div>
+
+{% endblock %}
