@@ -208,10 +208,10 @@ router.post('/forms/education/postcode-js', function (req, res) {
 
 router.post('/forms/education/moving', function (req, res) {
   var isMoving = req.session.data['moving']
-  if (isMoving === 'yes') {
-      return res.redirect('/forms/education/current-address')
+  if (isMoving === 'no') {
+      return res.redirect('/forms/education/parent-name')
   }
-    res.redirect('/forms/education/parent-name')
+    res.redirect('/forms/education/current-address')
 })
 
   router.post('/forms/education/current-address', function (req, res) {
@@ -284,10 +284,10 @@ router.post('/forms/education/moving', function (req, res) {
 
   router.post('/forms/education/sibling', function (req, res) {
     var haveSibling = req.session.data['sibling']
-    if (haveSibling === 'yes') {
-        return res.redirect('/forms/education/sibling-name')
+    if (haveSibling === 'no') {
+        return res.redirect('/forms/education/medical')
     }
-    res.redirect('/forms/education/medical')
+    res.redirect('/forms/education/sibling-name')
   })
 
   router.post('/forms/education/sibling-name', function (req, res) {

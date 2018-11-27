@@ -230,6 +230,18 @@ body p {
     }
     // display: none
 }
+.alt-notes-box{
+    border: solid 1px #dddddd;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px -10px -10px -10px;
+    color: #dddddd;
+    background-color: #efefef;
+    p, h3, li, a {
+        color: #dddddd;
+    }
+    // display: none
+}
 
 // -------------------------------------------- CBL------------------------------------------------- //
 
