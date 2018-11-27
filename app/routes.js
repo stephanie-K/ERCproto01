@@ -100,7 +100,7 @@ router.post('/forms/housing/CBLother-children', function (req, res) {
   if (otherChidren === 'yes') {
       return res.redirect('/forms/housing/CBLadd-children')
   }
-  res.redirect('/forms/housing/CBLinfo')
+  res.redirect('/forms/housing/CBLlegal')
 })
 
 // P1 form ***********************************************************************************
