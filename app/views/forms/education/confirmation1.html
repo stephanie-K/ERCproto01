@@ -16,41 +16,44 @@
         <h1 class="govuk-heading-l">
             Apply online for primary 1 - August 2019
         </h1>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-    {% from "panel/macro.njk" import govukPanel %}
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Application submitted
+        </h1>
+        <div class="govuk-panel__body">
+          Your reference number
+          <br><strong>1346-7895-4445-7023</strong><br><br>
+          We’ve sent an email to confirm your application to <strong> parent.email.address@gmail.com</strong>
+        </div>
+      </div>
 
-      {{ govukPanel({
-        titleText: "Application complete",
-        html: "Your reference number<br><strong>1346-7895-4445-7023</strong>"
-      }) }}
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-      <p>Thank you for submitting your form.</p>
-        <p>We have sent an email to confirm your application and what you need to do next at:<br>
-          <strong>parent.email.address@gmail.com</strong></p>
-        <p>If you don't receive our email in the next 5 minutes, please check your SPAM folder.</p>
-      <p>Admissions Team.</p>
-    <p>&nbsp;</p>
-    <h3 class="govuk-heading-m">What happens next</h3>
-    <p>You can <a href="/../..{{ publicPath }}/images/application-info.pdf" download="information-P1-application">download the information as a PDF</a> or <a href="/forms/education/information-application.html" target="_blank" rel="noopener">view it in a new tab.</a></p>
+        <!--p>If you don't receive our email in the next 5 minutes, please check your SPAM folder.</p-->
     <p>&nbsp;</p>
 
+    {% if data['defer'] === 'yes' %}
+    {{ govukButton({
+      text: "Find out the next steps when you defer",
+      href: "/forms/education/P1-start.html",
+      classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+    }) }}
+    {% else %}
+    {{ govukButton({
+      text: "Find out the next steps of the application process",
+      href: "/forms/education/P1-start.html",
+      classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+    }) }}
+    {% endif %}
+
     </div>
   </div>
-  <div class="design-notes-box">
+  <div class="alt-notes-box">
       <h3 class="govuk-heading-s">Design notes:</h3>
       <ul class="govuk-list govuk-list--bullet">
-        <li>One solution would be to simply take them back via a button to the start of the Before you start page, where we would have guidance about next step, and to send everyone a letter (personalised)</li>
-        <li><a href="/forms/education/confirmation2.html">see with a button to go back to the Before you start page</a></li>
-        <li>guidance about what happen next will be drafted so we set expectations, it could be in a form of a pdf they can download or view on a new tab. This will also be the body of the email we sent if they had an email address (two versions, one for is specific to Maidenhill)</li>
-        <li>email should be receive nearly instantly - should we mention what to do if you didn't receive it to check their spam?</li>
-        <li>anything we will send in the email should also appear here as some won't receive it, and other will lose the email</li>
-        <li>have a link to the documents they need to apply + Admission policy + placing request policy + Heather</li>
+          <p><a href="/forms/education/confirmation.html"><strong>see without an email</strong></a></p>
       </ul>
   </div>
 {% endblock %}
+
+
+
+

@@ -13,7 +13,7 @@
             Apply online for primary 1 - August 2019
         </h1>
       <h2 class="govuk-heading-m">
-        Application usmmary
+        Application summary
       </h2>
       <p>If you want to print this page do it now. You won’t see this summary once you submit the form.</p>
 
@@ -127,7 +127,7 @@
         </div>    
 
         {% if data['nursery'] === 'Another nursery'%}
-        <div class="app-check-your-answers__contents">
+        <div class="app-check-your-answers__contents sum-grey">
             <dt class="app-check-your-answers__question">
                 Nursery detail's
             </dt>
@@ -136,6 +136,15 @@
             </dd>
           </div>     
           {% endif %}
+
+          <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                Defer
+              </dt>
+              <dd class="app-check-your-answers__answer">
+                  {{ data['defer'] }}
+              </dd>
+            </div>
     
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
@@ -164,7 +173,7 @@
           </dd>
         </div>
         {% if  data['medical'] === 'yes' %}
-        <div class="app-check-your-answers__contents sum-grey">
+        <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
               Details of medical condition
           </dt>

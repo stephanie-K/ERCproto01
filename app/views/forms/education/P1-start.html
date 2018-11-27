@@ -18,11 +18,24 @@
 
       <h2 class="govuk-heading-m">Before you start</h2>
       <ul class="govuk-list govuk-list--bullet">
-          <li>you should <a href="#">read the admissions policy</a></li> 
+          <li>you should <a href="http://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=19102&p=0" target="_blank">read the admissions policy</a></li> 
           <li>you can only apply to your catchment school</li>
-          <li>you still need to apply to your catchment school if you <a href="#">make a placing request</a>, later move house or <a href="#">defer entry</a></li>
+          <li>you still need to apply to your catchment school if you <a href="https://www.eastrenfrewshire.gov.uk/article/8594/School-Placing-Request target="_blank"">make a placing request</a>, later move house or <a href="/forms/education/info-defer.html">defer entry</a></li>
           <li>closing date is 11 January 2019 at 4pm</li>
        </ul>
+       {% from "warning-text/macro.njk" import govukWarningText %}
+
+       {{ govukWarningText({
+         text: "Use the back link if you need to go to the previous page. Don't use the back button of your browser or device or you'll need to start again.",
+         iconFallbackText: "Warning"
+       }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/forms/education/declaration1.html"
+      }) }}
       
        <h2 class="govuk-heading-m govuk-!-margin-top-6" style="color: #0071AB">Step 2: Provide proof of details</h2>
        <p><strong>Date:</strong> From 14 to 18 January 2019</p>
@@ -48,25 +61,13 @@
         <p>Email: admissions@eastrenfrewshire.gov.uk</p>
 
         <h2 class="govuk-heading-m govuk-!-margin-top-6" style="color: #0071AB">Related information </h2>
-          <p><a href="#">Make a placing request</a></p>
-          <p><a href="#">Defer your child starting school</a></p>
-          <p><a href="#">How to apply for other primary stages</a></p>
+          <p><a href="https://www.eastrenfrewshire.gov.uk/article/8594/School-Placing-Request" target="_blank">Make a placing request</a></p>
+          <p><a href="/forms/education/info-defer.html">Defer your child starting school</a></p>
+          <p><a href="http://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=19102&p=0" target="_blank">How to apply for other primary stages</a></p>
 
 
        <p class="govuk-!-padding-top-4">You can find out how we use your information in our <a href="/privacy.html">privacy statement</a>.</p>
-       {% from "warning-text/macro.njk" import govukWarningText %}
 
-       {{ govukWarningText({
-         text: "Use the back link if you need to go to the previous page. Don't use the back button of your browser or device or you'll need to start again.",
-         iconFallbackText: "Warning"
-       }) }}
-
-      {% from "button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Start now",
-        href: "/forms/education/declaration1.html"
-      }) }}
 
     </div>
 </div>
