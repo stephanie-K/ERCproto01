@@ -1,0 +1,48 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  P1 registration form start
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Apply online for primary 1 - August 2019
+      </h1>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>you should read the admissions policy</li> 
+          <li>you can only apply to your catchment school</li>
+          <li>you still need to apply to your catchment school if you make a placing request, move house or defer entry</li>
+          <li>you need to provide proof of your details at a later date</li>
+       </ul>
+       <p class="govuk-!-padding-top-4">You can find out how we use your information in our <a href="/privacy.html">privacy statement</a>.</p>
+
+       {% from "warning-text/macro.njk" import govukWarningText %}
+
+       {{ govukWarningText({
+         text: "Use the back link if you need to go to the previous page. Don't use the back button of your browser or device or you'll need to start again.",
+         iconFallbackText: "Warning"
+       }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/forms/education/declaration1.html"
+      }) }}
+
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>This content will change to something which describes all the step of the application and enrolment - needs to be signed off by Education</li> 
+    </ul>
+</div>
+
+{% endblock %}
