@@ -26,7 +26,14 @@
                 classes: "govuk-fieldset__legend--m"
               }
             },
+            hint: {
+              html: "<p>If you need more information you can <a>read the full admissions policy</a></p>"
+            },
             items: [
+              {
+                value: "None",
+                text: "None"
+              },
               {
                 value: "Braidbar Primary School",
                 text: "Braidbar Primary School"
@@ -114,10 +121,6 @@
               {
                 value: "Uplawmoor Primary School",
                 text: "Uplawmoor Primary School"
-              },
-              {
-                value: "None",
-                text: "None"
               }
             ]
           }) }}
@@ -130,5 +133,11 @@
     </form>
     </div>
 </div>
-
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>No previous page, guidance at the top with a link to a reduced policy document - <strong>We want it to open in a new tab to avoid losing progress</strong> - just the part for alternative school choice - link will be provided by Heather - to be approved by Education</li> 
+        <li>None option to go at the top </li>
+    </ul>
+</div>
 {% endblock %}

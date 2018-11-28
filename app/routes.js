@@ -289,12 +289,9 @@ router.post('/forms/education/moving', function (req, res) {
   })
 
   router.post('/forms/education/sibling-name', function (req, res) {
-    return res.redirect('/forms/education/info-2nd-school')
+    return res.redirect('/forms/education/school-2nd')
   })
 
-  router.post('/forms/education/sibling-name', function (req, res) {
-    return res.redirect('/forms/education/info-2nd-school')
-  })
   router.post('/forms/education/school-2nd', function (req, res) {
     res.redirect('/forms/education/medical')
   })

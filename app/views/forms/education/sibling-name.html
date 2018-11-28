@@ -18,7 +18,7 @@
 
       {{ govukInput({
         label: {
-          text: "Child first name",
+          text: "Sibling first name",
           classes: "govuk-!-font-size-24"
         },
         id: "oldest-first-name",
@@ -29,7 +29,7 @@
 
       {{ govukInput({
         label: {
-          text: "Child middle name (optional)",
+          text: "Sibling middle name (optional)",
           classes: "govuk-!-font-size-24"
         },
         id: "oldest-middle-name",
@@ -40,7 +40,7 @@
 
       {{ govukInput({
         label: {
-          text: "Child last name",
+          text: "Sibling last name",
           classes: "govuk-!-font-size-24"
         },
         id: "oldest-last-name",
@@ -58,7 +58,7 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>For consistency, we ask for the middle name even though it's not needed. Could say Other child first name etc... as this might confuse the parent?</p>
+    <p>For consistency, we ask for the middle name even though it's not needed.</p>
 </div>
 
 {% endblock %}

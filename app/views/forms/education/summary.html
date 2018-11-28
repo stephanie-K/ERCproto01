@@ -212,7 +212,7 @@
     
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-              Another child at school
+              Sibling at school
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['sibling'] }}
@@ -222,7 +222,7 @@
         {% if data['sibling'] === 'yes' %}
         <div class="app-check-your-answers__contents sum-grey">
           <dt class="app-check-your-answers__question">
-            Child's name
+            Sibling's name
           </dt>
           <dd class="app-check-your-answers__answer">
               {{ data['oldest-first-name'] }}&nbsp;
@@ -258,12 +258,12 @@
     </div>
 </div>
 
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">User research:</h3>
     <ul class="govuk-list govuk-list--bullet">
-
+    <li>They didn't understand it's the only place they can print. Even the few who read it</li>
+    <li>they all would like an edit function and to be able to come back directly to the summary once they changed the input</li>
+    <li>no other issue</li>
     </ul>
-
-   
 </div>
 {% endblock %}
