@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  House type
+  Housing preference
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,90 @@
         <h1 class="govuk-heading-l">
             Apply online for Housing
         </h1>
-<p>Will ask what type of house is requested  and about high floor or not<strong class="govuk-tag red">coming soon</strong></p>
+
+
+{{ govukCheckboxes({
+    idPrefix: "housetype-conditional",
+    name: "housetype",
+    fieldset: {
+      legend: {
+        text: "Which house type do you want to live in?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: "Select all that apply."
+    },
+    items: [
+      {
+        value: "Tenement flat",
+        text: "Tenement flat"
+      },
+      {
+        value: "Main door flat",
+        text: "Main door flat"
+      },
+      {
+        value: "Maisonette",
+        text: "Maisonette"
+      },
+      {
+        value: "Cottage or house",
+        text: "Cottage or house"
+      },
+      {
+        value: "Bungalow",
+        text: "Bungalow"
+      },
+      {
+        value: "Sheltered housing (If you or your partner are aged 60 or over or have a disability)",
+        text: "Sheltered housing (If you or your partner are aged 60 or over or have a disability)"
+      },
+      {
+        value: "Amenity housing (If you or your partner are aged 60 or over or have a disability)",
+        text: "Amenity housing (If you or your partner are aged 60 or over or have a disability)"
+      },
+      {
+        value: "Housing adapted for people who use a wheelchair",
+        text: "Housing adapted for people who use a wheelchair"
+      }
+    ]
+  }) }}
+
+  {% from "radios/macro.njk" import govukRadios %}
+<br><br>
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "floor",
+    name: "floor",
+    fieldset: {
+      legend: {
+        text: "What's the highest floor level you want to live on?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "Ground",
+        text: "Ground"
+      },
+      {
+        value: "First",
+        text: "First"
+      },
+      {
+        value: "Second",
+        text: "Second"
+      },
+      {
+        value: "Third or higher",
+        text: "Third or higher"
+      }
+    ]
+  }) }}
+
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
@@ -22,8 +105,9 @@
     </div>
 </div>
 
-<div class="UR-notes-box">
+<div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>would need to be tested - not sure people would notice the second question</p>
 </div>
 
 {% endblock %}

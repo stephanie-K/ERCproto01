@@ -21,6 +21,7 @@
         {{ govukTextarea({
           id: "postcode",
           name: "postcode",
+          value: data['postcode'],
           classes: "govuk-!-width-two-thirds",
           label: {
             text: "Enter your address"
@@ -59,7 +60,6 @@
         
               {{ govukButton({
                 text: "Continue",
-                href: "/forms/housing/CBLcontact.html",
                 classes: "button-primary"
               }) }}
       </form>

@@ -12,6 +12,7 @@
         <h1 class="govuk-heading-l">
             Apply online for Housing
         </h1>
+        <form class="form" method="post">
         {% from "radios/macro.njk" import govukRadios %}
         {% from "textarea/macro.njk" import govukTextarea %}
             
@@ -19,6 +20,7 @@
         {{ govukTextarea({
           id: "contact-att",
           name: "contact-att",
+          value: data['contact-att'],
           classes: "govuk-!-width-two-thirds",
           label: {
             text: "Enter the contact details of your advocate or power of attorney"
@@ -41,22 +43,22 @@
           },
           items: [
             {
-              value: "email",
+              value: "Email",
               text: "Email"
             },
             {
-              value: "phone",
+              value: "Phone",
               text: "Phone"
             },
             {
-              value: "post",
+              value: "Post",
               text: "Post",
               conditional: {
                 html: textHtml
               }
             },
             {
-              value: "att",
+              value: "I have an advocate or power of attorney",
               text: "I have an advocate or power of attorney",
               conditional: {
                 html: attorneyHtml
@@ -67,12 +69,12 @@
     
           {{ govukButton({
             text: "Continue",
-            href: "/forms/housing/CBLdob.html",
             classes: "button-primary"
           }) }}
+          </form>
     </div>
 </div>
-<div class="UR-notes-box">
+<div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <p>There is two guidance sentences at the moment, one above one below the attorney details boxes. Needs to be changed (Content decision and then IT fix)</p>
 </div>

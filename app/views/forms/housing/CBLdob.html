@@ -12,7 +12,7 @@
         <h1 class="govuk-heading-l">
             Apply online for Housing
         </h1>
-    
+        <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukDateInput({
@@ -51,13 +51,12 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/CBLgender.html",
         classes: "button-primary"
       }) }}
-
+</form>
     </div>
 </div>
-<div class="UR-notes-box">
+<div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
       <li>To capture the DOB of the applicant</li>

@@ -12,13 +12,14 @@
         <h1 class="govuk-heading-l">
             Apply online for Housing
         </h1>
-    
+        <form class="form" method="post">
         {% from "radios/macro.njk" import govukRadios %}
 
         {% set genderHtml %}
         {{ govukInput({
           id: "gender-desc",
           name: "gender-desc",
+          value: data['gender-desc'],
           classes: "govuk-!-width-two-thirds",
           label: {
             text: "Describe gender in another way"
@@ -61,13 +62,12 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/CBLinfo-housed.html",
         classes: "button-primary"
       }) }}
-
+    </form>
     </div>
 </div>
-<div class="UR-notes-box">
+<div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
       <li>To capture the gender of the applicant</li>

@@ -103,6 +103,26 @@ router.post('/forms/housing/CBLother-children', function (req, res) {
   res.redirect('/forms/housing/CBLlegal')
 })
 
+router.post('/forms/housing/CBLaboutyou', function (req, res) {
+  res.redirect('/forms/housing/CBLpostcode')
+})
+
+router.post('/forms/housing/CBLpostcode', function (req, res) {
+  res.redirect('/forms/housing/CBLcontact')
+})
+
+router.post('/forms/housing/CBLcontact', function (req, res) {
+  res.redirect('/forms/housing/CBLdob')
+})
+
+router.post('/forms/housing/CBLdob', function (req, res) {
+  res.redirect('/forms/housing/CBLgender')
+})
+
+router.post('/forms/housing/CBLgender', function (req, res) {
+  res.redirect('/forms/housing/CBLsummary-aboutyou')
+})
+
 // P1 form ***********************************************************************************
 
 // router.post('/forms/education/moving', function (req, res) {

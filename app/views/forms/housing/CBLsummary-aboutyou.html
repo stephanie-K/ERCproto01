@@ -1,0 +1,129 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Summary about you
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for Housing
+        </h1>
+    
+        <h2 class="govuk-heading-m">
+            Summary - About you
+          </h2>
+          <p>Check this is correct before you continue</p>
+          <dl class="app-check-your-answers app-check-your-answers--long">
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Name
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['first-name-applicant']}}&nbsp;{{data['last-name-applicant']}}
+                </dd>
+              </div>
+      
+              <div class="app-check-your-answers__contents sum-grey">
+                <dt class="app-check-your-answers__question">
+                  Phone
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data ['telephone-number']}}
+                </dd>
+              </div>
+      
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  email
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{data['email']}}
+                </dd>
+              </div>
+            
+              <div class="app-check-your-answers__contents sum-grey">
+                <dt class="app-check-your-answers__question">
+                  Address
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {% if data['has-add'] === 'yes' %}
+                    {{ data['postcode']}}
+                    {% else %}
+                    I'm homeless
+                    {% endif %}
+                </dd>
+              </div>  
+
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Preferred contact
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                  {{ data['how-contacted']}}
+                </dd>
+              </div>
+
+              {% if data['how-contacted'] === 'att' %}
+              <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                      Advocate or power of attorney
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                    {{ data['contact-att']}}
+                  </dd>
+                </div>
+                {% endif %}
+
+                <div class="app-check-your-answers__contents sum-grey">
+                    <dt class="app-check-your-answers__question">
+                      Date of birth
+                    </dt>
+                    <dd class="app-check-your-answers__answer">
+                        {{ data['dob-applicant-day'] }}/{{ data ['dob-applicant-month'] }}/{{ data['dob-applicant-year'] }}
+                    </dd>
+                  </div>
+            
+              <div class="app-check-your-answers__contents">
+                <dt class="app-check-your-answers__question">
+                  Gender
+                </dt>
+                <dd class="app-check-your-answers__answer">
+                    {{data['gender-applicant']}}
+                </dd>
+              </div>
+              {% if data['gender-applicant'] === 'Another gender'%}
+              <div class="app-check-your-answers__contents">
+                  <dt class="app-check-your-answers__question">
+                      Describe gender
+                  </dt>
+                  <dd class="app-check-your-answers__answer">
+                      {{data['gender-desc']}}
+                  </dd>
+                </div>
+                {% endif %}
+              </dl>
+              <p class="govuk-!-padding-bottom-4"><a href="/forms/housing/CBLaboutyou.html">Edit your details</a></p>
+      
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/CBLinfo-housed.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>If we want to try to have little summary, this could be the first stage where we sum up some info
+
+      </li>
+    </ul>
+</div>
+
+{% endblock %}
