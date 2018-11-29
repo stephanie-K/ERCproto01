@@ -1,0 +1,76 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Person1
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Apply online for Housing
+      </h1>
+      <h2 class="govuk-heading-m">
+          Person 1:
+      </h2>
+      <table class=" govuk-table half-width">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person1']}}&nbsp;{{data['last-name-person1']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person1-day']}}/{{data['dob-person1-month']}}/{{data['dob-person1-year']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{{data['gender1']}}{% if data['gender1'] === 'Another gender' %}: {{data['gender-desc1']}}{% endif %}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with1']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship1']}}</td></tr>
+          </tbody>
+        </table>
+
+      <p><a href="/forms/housing/CBLadd-person1-loop.html">Edit person 1 details</a></p>
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Remove person 1",
+        classes: "button-warning",
+        href: "/forms/housing/CBLinfo-housed.html"
+      }) }}
+      <br><br>
+
+      <form class="form" method="post">
+     
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "add-person2",
+          name: "add-person2",
+          fieldset: {
+            legend: {
+              text: "Do you need to add another person?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+      {% from "button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

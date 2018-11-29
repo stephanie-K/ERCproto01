@@ -77,6 +77,7 @@ router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) 
   res.redirect('/patterns/add-to-a-list/person1-summary')
 })
 
+
 // CBL form **********************************************************************************
 
 router.post('/forms/housing/CBL16', function (req, res) {
@@ -122,6 +123,68 @@ router.post('/forms/housing/CBLdob', function (req, res) {
 router.post('/forms/housing/CBLgender', function (req, res) {
   res.redirect('/forms/housing/CBLsummary-aboutyou')
 })
+
+router.post('/forms/housing/CBLinfo-housed', function (req, res) {
+  var livingAlone= req.session.data['living-alone']
+  if (livingAlone === 'yes') {
+      return res.redirect('/forms/housing/CBLbabies')
+  }
+  res.redirect('/forms/housing/CBLadd-person1-loop')
+})
+
+router.post('/forms/housing/CBLadd-person1-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLperson1')
+})
+
+router.post('/forms/housing/CBLadd-person2-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLperson2')
+})
+
+router.post('/forms/housing/CBLadd-person3-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLperson3')
+})
+
+router.post('/forms/housing/CBLadd-person4-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLperson4')
+})
+
+router.post('/forms/housing/CBLadd-person5-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLperson5')
+})
+
+
+router.post('/forms/housing/CBLperson1', function (req, res) {
+  var addPerson2 = req.session.data['add-person2']
+  if (addPerson2 === 'yes') {
+      return res.redirect('/forms/housing/CBLadd-person2-loop')
+  }
+  res.redirect('/forms/housing/CBLbabies')
+})
+
+router.post('/forms/housing/CBLperson2', function (req, res) {
+  var addPerson3 = req.session.data['add-person3']
+  if (addPerson3 === 'yes') {
+      return res.redirect('/forms/housing/CBLadd-person3-loop')
+  }
+  res.redirect('/forms/housing/CBLbabies')
+})
+
+router.post('/forms/housing/CBLperson3', function (req, res) {
+  var addPerson3 = req.session.data['add-person4']
+  if (addPerson3 === 'yes') {
+      return res.redirect('/forms/housing/CBLadd-person4-loop')
+  }
+  res.redirect('/forms/housing/CBLbabies')
+})
+
+router.post('/forms/housing/CBLperson4', function (req, res) {
+  var addPerson3 = req.session.data['add-person5']
+  if (addPerson3 === 'yes') {
+      return res.redirect('/forms/housing/CBLadd-person5-loop')
+  }
+  res.redirect('/forms/housing/CBLbabies')
+})
+
 
 // P1 form ***********************************************************************************
 

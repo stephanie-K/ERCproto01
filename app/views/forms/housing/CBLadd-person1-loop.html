@@ -1,0 +1,169 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Add person
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Apply online for Housing
+      </h1>
+      <p class="govuk-body-l">Enter each person who will be living with you.</p>
+      <h2 class="govuk-heading-m">
+          Person 1:
+      </h2>
+      
+      <form class="form" method="post">
+
+      {% from "input/macro.njk" import govukInput %}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name-person1",
+        name: "first-name-person1",
+        value: data['first-name-person1'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name-person1",
+        name: "last-name-person1",
+        value: data['last-name-person1'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukDateInput({
+        id: "dob-person1",
+        namePrefix: "dob-person1",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-person1-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-person1-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-person1-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {% set genderHtml %}
+      {{ govukInput({
+        id: "gender-desc1",
+        name: "gender-desc1",
+        value: data['gender-desc1'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Describe gender in another way"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "gender1",
+        name: "gender1",
+        fieldset: {
+          legend: {
+            text: "Gender",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "female",
+            text: "Female"
+          },
+          {
+            value: "male",
+            text: "Male"
+          },
+          {
+            value: "Another gender",
+            text: "Another gender",
+            conditional: {
+              html: genderHtml
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "live-with1",
+        name: "live-with1",
+        fieldset: {
+          legend: {
+            text: "Do they live with you now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Relationship to you"
+        },
+        id: "relationship1",
+        name: "relationship1",
+        value: data['relationship1'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+   <p>We can then ask about pregnancy, and joint applicant after.</p>
+   <p><a href="/forms/housing/CBLadd-person.html">Try an alternative</a><strong> using javascript and adding all people on one page, this is close to what IT has developed so far</strong></p>
+   <p></p>
+</div>
+
+
+{% endblock %}

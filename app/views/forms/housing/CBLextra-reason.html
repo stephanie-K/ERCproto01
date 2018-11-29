@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Physical medical and others reasons
+Health, care, social and support needs
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,114 @@
             Apply online for Housing
         </h1>
 
-        <p>will group screens: asking for physical or medical reason, and if medical priority form done + harrassed and told the police <strong class="govuk-tag red">coming soon</strong></p>
+        {% from "radios/macro.njk" import govukRadios %}
+        {% set medicalHtml %}
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "priority",
+            name: "priority",
+            fieldset: {
+                legend: {
+                text: "Have you completed a medical priority application?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Yes"
+                },
+                {
+                value: "no",
+                text: "No"
+                }
+            ]
+            }) }}
+         
+        {% endset -%}
+
+
+        {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "medical-conditional",
+        name: "medical",
+        fieldset: {
+            legend: {
+            text: "Do you have any physical or mental health needs which are affected by your housing circumstances?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+            value: "no",
+            text: "No"
+            },
+            {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+                html: medicalHtml
+              }
+            }
+        ]
+        }) }}
+     
+ 
+        {% set policeHtml %}
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "police",
+            name: "police",
+            fieldset: {
+                legend: {
+                text: "Have you told the police?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Yes"
+                },
+                {
+                value: "no",
+                text: "No"
+                }
+            ]
+            }) }}
+         
+        {% endset -%}
+
+
+        {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "abuse-conditional",
+        name: "abuse",
+        fieldset: {
+            legend: {
+            text: "Do you need to move because you’re being harassed, threatened or abused?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+            value: "no",
+            text: "No"
+            },
+            {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+                html: policeHtml
+              }
+            }
+        ]
+        }) }}
+ 
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
@@ -23,8 +130,11 @@
     </div>
 </div>
 
-<div class="UR-notes-box">
+<div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>not sure these work with nested radio buttons... might be better to go back to 4 pages instead of grouping them - when yes, another question appears. With the IT form, it will not appear nested but under the first bullet point, might work better?</p>
+    <p>if IT can do it, the radio buttons might look better inline?</p>
+    <p><strong>need to make sure the nested radio buttons don't open something else</strong></p>
 </div>
 
 {% endblock %}

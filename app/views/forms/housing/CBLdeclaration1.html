@@ -11,19 +11,89 @@
         <h1 class="govuk-heading-l">
             Apply online for Housing
         </h1>
-<p>first declaration about knowing our councillors <strong class="govuk-tag red">coming soon</strong></p>
+
+        {% from "radios/macro.njk" import govukRadios %}
+        {% from "input/macro.njk" import govukInput %}
+        
+        {% set personHtml %}
+        {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            id: "first-name-erc",
+            name: "first-name-erc",
+            value: data['first-name-erc'],
+            classes: "govuk-input--width-20"
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            id: "last-name-erc",
+            name: "last-name-erc",
+            value: data['last-name-erc'],
+            classes: "govuk-input--width-20"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Job title"
+            },
+            id: "job-title",
+            name: "job-title",
+            value: data['job-title'],
+            classes: "govuk-input--width-20"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Relationship to you"
+            },
+            id: "rel",
+            name: "rel",
+            value: data['rel'],
+            classes: "govuk-input--width-20"
+          }) }}
+        {% endset -%}
+        
+
+
+        
+        {{ govukRadios({
+          idPrefix: "know-erc-conditional",
+          name: "know-erc",
+          fieldset: {
+            legend: {
+              text: " Are you an employee of, or related to, an employee or East Renfrewshire Council or to a Councillor?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "yes",
+              conditional: {
+                html: personHtml
+              }
+            },
+            {
+              value: "no",
+              text: "no"
+            }
+          ]
+        }) }}
+
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
           href: "/forms/housing/CBLdeclaration2.html"
         }) }}
       
-
     </div>
 </div>
 
-<div class="UR-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-</div>
+
 
 {% endblock %}

@@ -17,17 +17,42 @@
           </h2>
           <p>Only add children if they live permanently with you.</p>
           <p>Any children staying with you occasionally will be added later.</p>
+<br><br>
+          <form class="form" method="post">
+          {% from "radios/macro.njk" import govukRadios %}
 
+          {{ govukRadios({
+            idPrefix: "living-alone",
+            name: "living-alone",
+            fieldset: {
+              legend: {
+                text: "Will you be living alone?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
           {{ govukButton({
             text: "Continue",
-            classes: "button-primary",
-            href: "/forms/housing/CBLadd-person-alt.html"
+            classes: "button-primary"
           }) }}
+          </form>
     </div>
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
+      <li><strong>Can the person live alone?</strong> if so, then we should ask and bypass the next page</li>
       <li>this is a possible information page to add to provide guidance about the pages coming after (info about each person living with the main applicant)</li>
       <li>the content should be drafted by sharon and agreed by Housing - Usability testing would help to see what is needed</li>
       <li> we could add guidance about the meaning of joint applicant? pregnancy? adult / child status  for 16-18</li>

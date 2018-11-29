@@ -64,7 +64,7 @@ footer {
 
 //---------------------------------------- BODY------------------------------------------------//
 
-body p {
+body p, p.govuk-body-l{
     color: $erc-text-blue;
 }
 
@@ -106,7 +106,7 @@ body p {
     margin-bottom: 2em;
 }
 
-.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .erc-text-blue {
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .erc-text-blue , table{
     color: $erc-text-blue;
 }
 
@@ -250,4 +250,19 @@ body p {
 }
 hr.erc {
     border-top: 2px solid $erc-text-blue;
+}
+
+//tables for person data
+.no-border {
+    border: 0px;
+}
+
+.half-width {
+    @media only screen and (min-width: 750px) { 
+        width : 50%;
+    }
+}
+
+.govuk-table__cell, .govuk-table__header{
+    padding: 0;
 }

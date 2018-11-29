@@ -9,29 +9,184 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h1 class="govuk-heading-l">
-            Apply online for Housing
+            Apply online for Housing 
         </h1>
+        
+        <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years. Start with the one you are living in at the moment.<strong class="govuk-tag red">coming soon</strong></p>
+        <h2 class="govuk-heading-m">
+            Address 1:
+        </h2>
+        
+        <form class="form" method="post">
+  
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Address"
+          },
+          id: "addr1",
+          name: "addr1",
+          value: data['addr1'],
+          classes: "govuk-input--width-20"
+        }) }}
+  
+        {% from "radios/macro.njk" import govukRadios %}
+<br><br>
+        {{ govukRadios({
+          
+          idPrefix: "type1",
+          name: "type1",
+          fieldset: {
+            legend: {
+              text: "Type of residence",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Tennant",
+              text: "Tennant"
+            },
+            {
+              value: "Lodger",
+              text: "Lodger"
+            },
+            {
+              value: "Owner",
+              text: "Owner"
+            }
+          ]
+        }) }}
+<br><br>
+        {% from "date-input/macro.njk" import govukDateInput %}
 
-        <p>5 years of address<strong class="govuk-tag red">coming soon</strong></p>
+        {{ govukDateInput({
+          id: "in1",
+          namePrefix: "in1",
+          fieldset: {
+            legend: {
+              text: "Date moved in",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 11 08 2014"
+          },
+          items:[
+              {
+              name: 'day',
+              value: data['in1-day'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'month',
+              value: data['in1-month'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'year',
+              value: data['in1-year'],
+              classes: "govuk-input--width-4"
+              }
+              ]
+        }) }}
 
-        <p>Address 1 - questions asked are:</p>
-        <ul class="govuk-list govuk-list--bullet">
-      <li>Address</li><br>
-      <li><strong>Type of residence</strong></li>
-      <li>Tennant</li>
-      <li>Lodger</li>
-      <li>Owner</li>
-      <li>Date moved in</li>
-      <li>Date moved out</li><br>
-      <li><strong>Reason for leaving</strong></li>
-      <li>Eviction: rent arrears</li>
-      <li>Eviction: other reason</li>
-      <li>Asked or told to leave</li>
-      <li>Marriage breakdown</li>
-      <li>End of lease</li>
-      <li>House sale</li>
-      <li>Other</li>
-    </ul>
+        {{ govukDateInput({
+          id: "out1",
+          namePrefix: "out1",
+          fieldset: {
+            legend: {
+              text: "Date moved out",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items:[
+              {
+              name: 'day',
+              value: data['out1-day'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'month',
+              value: data['out1-month'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'year',
+              value: data['out1-year'],
+              classes: "govuk-input--width-4"
+              }
+              ]
+        }) }}
+ <br><br>
+        {% from "textarea/macro.njk" import govukTextarea %}
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "reason-other",
+          id: "reason-other",
+          classes: "govuk-!-width-two-thirds",
+          value: data['reason-other'],
+          label: {
+            text: "Give Details"
+          }
+        }) }}
+      {% endset -%}
+
+
+        {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "leave-conditional",
+          name: "leave",
+          fieldset: {
+            legend: {
+              text: "Reason for leaving",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Eviction: rent arrears",
+              text: "Eviction: rent arrears"
+            },
+            {
+              value: "Eviction: other reason",
+              text: "Eviction: other reason"
+            },
+            {
+              value: "Asked or told to leave",
+              text: "Asked or told to leave"
+            },
+            {
+              value: "Marriage breakdown",
+              text: "Marriage breakdown"
+            },
+            {
+              value: "End of lease",
+              text: "End of lease"
+            },
+            {
+              value: "House sale",
+              text: "House sale"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
@@ -45,7 +200,8 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-    <li>not ready - just for illustration of what we ask for each</li>
+    <li>not ready - just for illustration of what we ask for each - will depend on the design decision for add person </li>
+    <li>need guidance text - just placeholder just now</li>
     </ul>
 </div>
 
