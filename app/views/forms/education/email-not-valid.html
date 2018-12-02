@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Email
+  Error - Email
 {% endblock %}
 
 {% block content %}
@@ -23,6 +23,9 @@
         hint: {
           text: "We'll use this to confirm your application and what you need to do next."
         },
+        errorMessage: {
+          text: "Enter valid email address "
+        },
         id: "email",
         name: "email",
         value: data['email'],
@@ -36,10 +39,5 @@
       </form>
     </div>
 </div>
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-    <p><strong>Now mandatory - message on the before you start page and on this one?</strong></p>
-    <p>We are validating the email format. In most cases, the email will start autocomplete once you start typing it which should reduce error risks. If it's error prone, we might add a verification of the email later on</p>
-    <p><a href="https://design-system.service.gov.uk/patterns/email-addresses/" target="_blank" rel="noopener"> guidance on email address GDS</a></p>
-</div>
+
 {% endblock %}

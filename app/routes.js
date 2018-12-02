@@ -314,7 +314,51 @@ router.post('/forms/education/moving', function (req, res) {
   })
 
   router.post('/forms/education/email', function (req, res) {
-    res.redirect('/forms/education/child-name')
+    //regular expression for email validation:
+    var RFC5322 = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    var emailAdd = req.session.data['email']
+    if (emailAdd) { 
+      if (!RFC5322.test(emailAdd)) {
+        // the email is not the right format
+        return res.redirect('/forms/education/email-not-valid')
+      } 
+      //email is provided and valid format
+      return res.redirect('/forms/education/child-name')
+    }
+    // email field is empty
+    res.redirect('/forms/education/email-needed')
+  })
+
+  router.post('/forms/education/email-not-valid', function (req, res) {
+    //regular expression for email validation:
+    var RFC5322 = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    var emailAdd = req.session.data['email']
+    if (emailAdd) { 
+      if (!RFC5322.test(emailAdd)) {
+        // the email is not the right format
+        return res.redirect('/forms/education/email-not-valid')
+      } 
+      //email is provided and valid format
+      return res.redirect('/forms/education/child-name')
+    }
+    // email field is empty
+    res.redirect('/forms/education/email-needed')
+  })
+
+  router.post('/forms/education/email-needed', function (req, res) {
+    //regular expression for email validation:
+    var RFC5322 = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    var emailAdd = req.session.data['email']
+    if (emailAdd) { 
+      if (!RFC5322.test(emailAdd)) {
+        // the email is not the right format
+        return res.redirect('/forms/education/email-not-valid')
+      } 
+      //email is provided and valid format
+      return res.redirect('/forms/education/child-name')
+    }
+    // email field is empty
+    res.redirect('/forms/education/email-needed')
   })
 
   router.post('/forms/education/child-name', function (req, res) {
