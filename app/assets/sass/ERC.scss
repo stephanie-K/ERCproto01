@@ -206,7 +206,7 @@ body p, p.govuk-body-l{
     }
     // display: none
 }
-.Content-notes-box{
+.content-notes-box{
     border: solid 1px#faf2cc;
     border-radius: 5px;
     padding: 5px;
@@ -257,12 +257,17 @@ hr.erc {
     border: 0px;
 }
 
+
 .half-width {
+    max-width: 100%;
     @media only screen and (min-width: 750px) { 
         width : 50%;
     }
 }
 
 .govuk-table__cell, .govuk-table__header{
-    padding: 0;
+    padding: 4px 20px 4px 0;
+}
+th {
+    white-space: nowrap;
 }

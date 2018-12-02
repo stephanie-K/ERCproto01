@@ -17,96 +17,28 @@
             Summary - About you
           </h2>
           <p>Check this is correct before you continue</p>
-          <dl class="app-check-your-answers app-check-your-answers--long">
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Name
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  {{ data['first-name-applicant']}}&nbsp;{{data['last-name-applicant']}}
-                </dd>
-              </div>
-      
-              <div class="app-check-your-answers__contents sum-grey">
-                <dt class="app-check-your-answers__question">
-                  Phone
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  {{ data ['telephone-number']}}
-                </dd>
-              </div>
-      
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  email
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                    {{data['email']}}
-                </dd>
-              </div>
-            
-              <div class="app-check-your-answers__contents sum-grey">
-                <dt class="app-check-your-answers__question">
-                  Address
-                </dt>
-                <dd class="app-check-your-answers__answer">
+          <div style="overflow: auto;">
+          <table class=" govuk-table half-width">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{ data['first-name-applicant']}}&nbsp;{{data['last-name-applicant']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Phone:</th><td class="govuk-table__cell no-border">{{ data ['telephone-number']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Email (optional):</th><td class="govuk-table__cell no-border">{{data['email']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">
                     {% if data['has-add'] === 'yes' %}
                     {{ data['postcode']}}
                     {% else %}
                     I'm homeless
-                    {% endif %}
-                </dd>
-              </div>  
-
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Preferred contact
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                  {{ data['how-contacted']}}
-                </dd>
-              </div>
-
-              {% if data['how-contacted'] === 'att' %}
-              <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question">
-                      Advocate or power of attorney
-                  </dt>
-                  <dd class="app-check-your-answers__answer">
-                    {{ data['contact-att']}}
-                  </dd>
-                </div>
+                    {% endif %}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Preferred contact:</th><td class="govuk-table__cell no-border">{{ data['how-contacted']}}</td></tr>
+                {% if data['how-contacted'] === 'I have an advocate or power of attorney' %}
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Advocate or power of attorney:</th><td class="govuk-table__cell no-border">{{ data['contact-att']}}</td></tr>
                 {% endif %}
-
-                <div class="app-check-your-answers__contents sum-grey">
-                    <dt class="app-check-your-answers__question">
-                      Date of birth
-                    </dt>
-                    <dd class="app-check-your-answers__answer">
-                        {{ data['dob-applicant-day'] }}/{{ data ['dob-applicant-month'] }}/{{ data['dob-applicant-year'] }}
-                    </dd>
-                  </div>
-            
-              <div class="app-check-your-answers__contents">
-                <dt class="app-check-your-answers__question">
-                  Gender
-                </dt>
-                <dd class="app-check-your-answers__answer">
-                    {{data['gender-applicant']}}
-                </dd>
-              </div>
-              {% if data['gender-applicant'] === 'Another gender'%}
-              <div class="app-check-your-answers__contents">
-                  <dt class="app-check-your-answers__question">
-                      Describe gender
-                  </dt>
-                  <dd class="app-check-your-answers__answer">
-                      {{data['gender-desc']}}
-                  </dd>
-                </div>
-                {% endif %}
-              </dl>
-              <p class="govuk-!-padding-bottom-4"><a href="/forms/housing/CBLaboutyou.html">Edit your details</a></p>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{ data['dob-applicant-day'] }}/{{ data ['dob-applicant-month'] }}/{{ data['dob-applicant-year'] }}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{{data['gender-applicant']}}{% if data['gender-applicant'] === 'Another gender' %}: {{data['gender-desc']}}{% endif %}</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="govuk-!-padding-bottom-4"><a href="/forms/housing/CBLaboutyou.html">Edit your details</a></p>
       
 
       {{ govukButton({
@@ -120,9 +52,8 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>If we want to try to have little summary, this could be the first stage where we sum up some info
-
-      </li>
+      <li>If we want to try to have little summary, this could be the first stage where we sum up some info?</li>
+      <li>this also helps to mark the end of a section</li>
     </ul>
 </div>
 

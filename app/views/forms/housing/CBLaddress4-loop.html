@@ -1,0 +1,268 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Add address
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Apply online for Housing
+      </h1>
+      <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years. Start with the one you are living in at the moment.</p>
+      <h2 class="govuk-heading-m">
+          Address 1:
+      </h2>
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-day']}}/{{data['in1-month']}}/{{data['in1-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-day']}}/{{data['out1-month']}}/{{data['out1-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+              {% if data['leave1'] == 'Other'%}
+              {{data['reason1-other']}}
+              {% else %}
+              {{data['leave1']}}
+              {% endif %}
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+    <h2 class="govuk-heading-m">
+        Address 2:
+    </h2>
+    <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr2']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type2']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in2-day']}}/{{data['in2-month']}}/{{data['in2-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out2-day']}}/{{data['out2-month']}}/{{data['out2-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+              {% if data['leave2'] == 'Other'%}
+              {{data['reason2-other']}}
+              {% else %}
+              {{data['leave2']}}
+              {% endif %}
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+    <h2 class="govuk-heading-m">
+        Address 3:
+    </h2>
+    <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr3']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type3']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in3-day']}}/{{data['in3-month']}}/{{data['in3-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out3-day']}}/{{data['out3-month']}}/{{data['out3-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+              {% if data['leave3'] == 'Other'%}
+              {{data['reason3-other']}}
+              {% else %}
+              {{data['leave3']}}
+              {% endif %}
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+    <h2 class="govuk-heading-m">
+        Address 4:
+    </h2>
+
+    <form class="form" method="post">
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Address"
+          },
+          id: "addr4",
+          name: "addr4",
+          value: data['addr4'],
+          classes: "govuk-input--width-20"
+        }) }}
+  
+        {% from "radios/macro.njk" import govukRadios %}
+<br><br>
+        {{ govukRadios({
+          
+          idPrefix: "type4",
+          name: "type4",
+          fieldset: {
+            legend: {
+              text: "Type of residence",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Tennant",
+              text: "Tennant"
+            },
+            {
+              value: "Lodger",
+              text: "Lodger"
+            },
+            {
+              value: "Owner",
+              text: "Owner"
+            }
+          ]
+        }) }}
+<br><br>
+        {% from "date-input/macro.njk" import govukDateInput %}
+
+        {{ govukDateInput({
+          id: "in4",
+          namePrefix: "in4",
+          fieldset: {
+            legend: {
+              text: "Date moved in",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example, 11 08 2014"
+          },
+          items:[
+              {
+              name: 'day',
+              value: data['in4-day'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'month',
+              value: data['in4-month'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'year',
+              value: data['in4-year'],
+              classes: "govuk-input--width-4"
+              }
+              ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "out4",
+          namePrefix: "out4",
+          fieldset: {
+            legend: {
+              text: "Date moved out",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items:[
+              {
+              name: 'day',
+              value: data['out4-day'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'month',
+              value: data['out4-month'],
+              classes: "govuk-input--width-2"
+              },
+              {
+              name: 'year',
+              value: data['out4-year'],
+              classes: "govuk-input--width-4"
+              }
+              ]
+        }) }}
+ <br><br>
+        {% from "textarea/macro.njk" import govukTextarea %}
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "reason4-other",
+          id: "reason4-other",
+          classes: "govuk-!-width-two-thirds",
+          value: data['reason4-other'],
+          label: {
+            text: "Give Details"
+          }
+        }) }}
+      {% endset -%}
+
+
+        {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "leave4-conditional",
+          name: "leave4",
+          fieldset: {
+            legend: {
+              text: "Reason for leaving",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Eviction: rent arrears",
+              text: "Eviction: rent arrears"
+            },
+            {
+              value: "Eviction: other reason",
+              text: "Eviction: other reason"
+            },
+            {
+              value: "Asked or told to leave",
+              text: "Asked or told to leave"
+            },
+            {
+              value: "Marriage breakdown",
+              text: "Marriage breakdown"
+            },
+            {
+              value: "End of lease",
+              text: "End of lease"
+            },
+            {
+              value: "House sale",
+              text: "House sale"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+
+    </form>
+    </div>
+</div>
+
+
+{% endblock %}

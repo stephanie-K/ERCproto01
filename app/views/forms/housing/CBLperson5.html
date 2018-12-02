@@ -15,7 +15,8 @@
       <h2 class="govuk-heading-m">
           Person 1:
       </h2>
-      <table class=" govuk-table half-width">
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person1']}}&nbsp;{{data['last-name-person1']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person1-day']}}/{{data['dob-person1-month']}}/{{data['dob-person1-year']}}</td></tr>
@@ -24,11 +25,13 @@
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship1']}}</td></tr>
           </tbody>
         </table>
+        </div>
       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
       <h2 class="govuk-heading-m">
           Person 2:
       </h2>
-      <table class=" govuk-table half-width">
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person2']}}&nbsp;{{data['last-name-person2']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person2-day']}}/{{data['dob-person2-month']}}/{{data['dob-person2-year']}}</td></tr>
@@ -37,11 +40,13 @@
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship2']}}</td></tr>
           </tbody>
         </table>
+        </div>
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
         <h2 class="govuk-heading-m">
             Person 3:
         </h2>
-        <table class=" govuk-table half-width">
+        <div style="overflow: auto">
+          <table class=" govuk-table half-width">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person3']}}&nbsp;{{data['last-name-person3']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person3-day']}}/{{data['dob-person3-month']}}/{{data['dob-person3-year']}}</td></tr>
@@ -50,11 +55,13 @@
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship3']}}</td></tr>
           </tbody>
         </table>
+        </div>
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
         <h2 class="govuk-heading-m">
             Person 4:
         </h2>
-        <table class=" govuk-table half-width">
+        <div style="overflow: auto">
+          <table class=" govuk-table half-width">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person4']}}&nbsp;{{data['last-name-person4']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person4-day']}}/{{data['dob-person4-month']}}/{{data['dob-person4-year']}}</td></tr>
@@ -63,11 +70,13 @@
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship4']}}</td></tr>
           </tbody>
         </table>
+        </div>
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
         <h2 class="govuk-heading-m">
             Person 5:
         </h2>
-        <table class=" govuk-table half-width">
+        <div style="overflow: auto">
+          <table class=" govuk-table half-width">
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person5']}}&nbsp;{{data['last-name-person5']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person5-day']}}/{{data['dob-person5-month']}}/{{data['dob-person5-year']}}</td></tr>
@@ -76,6 +85,7 @@
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship5']}}</td></tr>
           </tbody>
         </table>
+        </div>
 
       <p><a href="/forms/housing/CBLadd-person5-loop.html">Edit person 5 details</a></p>
       {% from "button/macro.njk" import govukButton %}

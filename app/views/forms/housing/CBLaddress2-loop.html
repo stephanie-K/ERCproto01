@@ -1,32 +1,54 @@
+
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  5 years of addresses
+  Add address
 {% endblock %}
 
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l">
-            Apply online for Housing 
-        </h1>
-        
-        <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years. Start with the one you are living in at the moment.</p>
-        <h2 class="govuk-heading-m">
-            Address 1:
-        </h2>
-        
-        <form class="form" method="post">
+      <h1 class="govuk-heading-l">
+        Apply online for Housing
+      </h1>
+      <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years. Start with the one you are living in at the moment.</p>
+      <h2 class="govuk-heading-m">
+          Address 1:
+      </h2>
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-day']}}/{{data['in1-month']}}/{{data['in1-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-day']}}/{{data['out1-month']}}/{{data['ou1t-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+              {% if data['leave1'] == 'Other'%}
+              {{data['reason1-other']}}
+              {% else %}
+              {{data['leave1']}}
+              {% endif %}
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
   
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+    <h2 class="govuk-heading-m">
+        Address 2:
+    </h2>
+
+    <form class="form" method="post">
         {% from "input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
             text: "Address"
           },
-          id: "addr1",
-          name: "addr1",
-          value: data['addr1'],
+          id: "addr2",
+          name: "addr2",
+          value: data['addr2'],
           classes: "govuk-input--width-20"
         }) }}
   
@@ -34,8 +56,8 @@
 <br><br>
         {{ govukRadios({
           
-          idPrefix: "type1",
-          name: "type1",
+          idPrefix: "type2",
+          name: "type2",
           fieldset: {
             legend: {
               text: "Type of residence",
@@ -62,8 +84,8 @@
         {% from "date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
-          id: "in1",
-          namePrefix: "in1",
+          id: "in2",
+          namePrefix: "in2",
           fieldset: {
             legend: {
               text: "Date moved in",
@@ -77,25 +99,25 @@
           items:[
               {
               name: 'day',
-              value: data['in1-day'],
+              value: data['in2-day'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'month',
-              value: data['in1-month'],
+              value: data['in2-month'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'year',
-              value: data['in1-year'],
+              value: data['in2-year'],
               classes: "govuk-input--width-4"
               }
               ]
         }) }}
 
         {{ govukDateInput({
-          id: "out1",
-          namePrefix: "out1",
+          id: "out2",
+          namePrefix: "out2",
           fieldset: {
             legend: {
               text: "Date moved out",
@@ -106,17 +128,17 @@
           items:[
               {
               name: 'day',
-              value: data['out1-day'],
+              value: data['out2-day'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'month',
-              value: data['out1-month'],
+              value: data['out2-month'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'year',
-              value: data['out1-year'],
+              value: data['out2-year'],
               classes: "govuk-input--width-4"
               }
               ]
@@ -125,10 +147,10 @@
         {% from "textarea/macro.njk" import govukTextarea %}
         {% set otherHtml %}
         {{ govukTextarea({
-          name: "reason1-other",
-          id: "reason1-other",
+          name: "reason2-other",
+          id: "reason2-other",
           classes: "govuk-!-width-two-thirds",
-          value: data['reason1-other'],
+          value: data['reason2-other'],
           label: {
             text: "Give Details"
           }
@@ -139,8 +161,8 @@
         {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "leave1-conditional",
-          name: "leave1",
+          idPrefix: "leave2-conditional",
+          name: "leave2",
           fieldset: {
             legend: {
               text: "Reason for leaving",
@@ -191,24 +213,10 @@
           text: "Continue",
           classes: "button-primary"
         }) }}
-      
 
+    </form>
     </div>
 </div>
 
-<div class="content-notes-box">
-  <h3 class="govuk-heading-s">Content notes:</h3>
-  <ul class="govuk-list govuk-list--bullet">
-      <li>guidance about what we need to be re-drafted and consistent qith the before you start</li>
-
-  </ul>
-</div>
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-    <li>not ready - just for illustration of what we ask for each - will depend on the design decision for add person </li>
-    <li>need guidance text - just placeholder just now</li>
-    </ul>
-</div>
 
 {% endblock %}

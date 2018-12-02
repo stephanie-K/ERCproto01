@@ -82,10 +82,10 @@ router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) 
 
 router.post('/forms/housing/CBL16', function (req, res) {
   var is16 = req.session.data['is-16']
-  if (is16 === 'yes') {
-      return res.redirect('/forms/housing/CBLimmigration')
+  if (is16 === 'no') {
+      return res.redirect('/forms/housing/CBLout')
   }
-  res.redirect('/forms/housing/CBLout')
+  res.redirect('/forms/housing/CBLimmigration')
 })
 
 router.post('/forms/housing/CBLrecourse', function (req, res) {
@@ -161,6 +161,7 @@ router.post('/forms/housing/CBLperson1', function (req, res) {
   res.redirect('/forms/housing/CBLbabies')
 })
 
+
 router.post('/forms/housing/CBLperson2', function (req, res) {
   var addPerson3 = req.session.data['add-person3']
   if (addPerson3 === 'yes') {
@@ -185,6 +186,45 @@ router.post('/forms/housing/CBLperson4', function (req, res) {
   res.redirect('/forms/housing/CBLbabies')
 })
 
+router.post('/forms/housing/CBL5yearsadd', function (req, res) {
+  res.redirect('/forms/housing/CBLaddress1')
+})
+
+router.post('/forms/housing/CBLaddress1', function (req, res) {
+  var addAddress2 = req.session.data['add-address2']
+  if (addAddress2 === 'yes') {
+      return res.redirect('/forms/housing/CBLaddress2-loop')
+  }
+  res.redirect('/forms/housing/CBLreasons')
+})
+
+router.post('/forms/housing/CBLaddress2-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLaddress2')
+})
+
+router.post('/forms/housing/CBLaddress2', function (req, res) {
+  var addAddress2 = req.session.data['add-address3']
+  if (addAddress2 === 'yes') {
+      return res.redirect('/forms/housing/CBLaddress3-loop')
+  }
+  res.redirect('/forms/housing/CBLreasons')
+})
+
+router.post('/forms/housing/CBLaddress3-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLaddress3')
+})
+
+router.post('/forms/housing/CBLaddress3', function (req, res) {
+  var addAddress2 = req.session.data['add-address4']
+  if (addAddress2 === 'yes') {
+      return res.redirect('/forms/housing/CBLaddress4-loop')
+  }
+  res.redirect('/forms/housing/CBLreasons')
+})
+
+router.post('/forms/housing/CBLaddress4-loop', function (req, res) {
+  res.redirect('/forms/housing/CBLreasons')
+})
 
 // P1 form ***********************************************************************************
 
