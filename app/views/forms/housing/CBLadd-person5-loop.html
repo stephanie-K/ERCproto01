@@ -21,7 +21,7 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person1']}}&nbsp;{{data['last-name-person1']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person1-day']}}/{{data['dob-person1-month']}}/{{data['dob-person1-year']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{{data['gender1']}}{% if data['gender1'] === 'Another Gender' %}: {{data['gender-desc1']}}{% endif %}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender1'] === 'Another gender' %} {{data['gender-desc1']}} {% else %} {{data['gender1']}}{% endif %}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with1']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship1']}}</td></tr>
           </tbody>
@@ -37,7 +37,7 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person2']}}&nbsp;{{data['last-name-person2']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person2-day']}}/{{data['dob-person2-month']}}/{{data['dob-person2-year']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{{data['gender2']}}{% if data['gender2'] === 'Another Gender' %}: {{data['gender-desc2']}}{% endif %}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender2'] === 'Another gender' %} {{data['gender-desc2']}} {% else %} {{data['gender2']}}{% endif %}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with2']}}</td></tr>
             <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship2']}}</td></tr>
           </tbody>
@@ -52,7 +52,7 @@
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person3']}}&nbsp;{{data['last-name-person3']}}</td></tr>
               <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person3-day']}}/{{data['dob-person3-month']}}/{{data['dob-person3-year']}}</td></tr>
-              <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{{data['gender3']}}{% if data['gender3'] === 'Another Gender' %}: {{data['gender-desc3']}}{% endif %}</td></tr>
+              <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender3'] === 'Another gender' %} {{data['gender-desc3']}} {% else %} {{data['gender3']}}{% endif %}</td></tr>
               <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with3']}}</td></tr>
               <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship3']}}</td></tr>
             </tbody>
@@ -67,7 +67,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person4']}}&nbsp;{{data['last-name-person4']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person4-day']}}/{{data['dob-person4-month']}}/{{data['dob-person4-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{{data['gender4']}}{% if data['gender4'] === 'Another Gender' %}: {{data['gender-desc4']}}{% endif %}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender4'] === 'Another gender' %} {{data['gender-desc4']}} {% else %} {{data['gender4']}} {% endif %}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with4']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship4']}}</td></tr>
         </tbody>

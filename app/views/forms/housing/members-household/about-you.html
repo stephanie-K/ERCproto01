@@ -10,61 +10,157 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
+          Members of Household
+        </h1>
+      <h2 class="govuk-heading-m">
         About you
-      </h1>
+      </h2>
+    <br>
+
+    <form class="form" method="post" novalidate>
     
-      {% from "input/macro.njk" import govukInput %}
+    {{ govukInput({
+      label: {
+        text: "First name"
+      },
+      id: "first-name-applicant",
+      name: "first-name-applicant",
+      value: data['first-name-applicant'],
+      classes: "govuk-input--width-20"
+    }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Your full name"
-        },
-        id: "full-name-applicant",
-        name: "full-name-applicant"
-      }) }}
+    {{ govukInput({
+      label: {
+        text: "Last name"
+      },
+      id: "last-name-applicant",
+      name: "last-name-applicant",
+      value: data['last-name-applicant'],
+      classes: "govuk-input--width-20"
+    }) }}
 
-      {% from "textarea/macro.njk" import govukTextarea %}
+    {% from "textarea/macro.njk" import govukTextarea %}
 
-      {{ govukTextarea({
-        name: "address",
-        id: "address",
-        label: {
-          text: "What's your address?"
+    {{ govukTextarea({
+      name: "address-applicant",
+      id: "address-applicant",
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "What's your address?"
+      }
+    }) }}
+
+    {{ govukDateInput({
+      id: "dob-applicant",
+      namePrefix: "dob-applicant",
+      fieldset: {
+        legend: {
+          text: "Your date of birth",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
         }
-      }) }}
+      },
+      hint: {
+        text: "For example, 11 08 1980"
+      },
+      items:[
+          {
+          name: 'day',
+          value: data['dob-applicant-day'],
+          classes: "govuk-input--width-2"
+          },
+          {
+          name: 'month',
+          value: data['dob-applicant-month'],
+          classes: "govuk-input--width-2"
+          },
+          {
+          name: 'year',
+          value: data['dob-applicant-year'],
+          classes: "govuk-input--width-4"
+          }
+          ]
+    }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Your telephone/mobile number"
-        },
-        id: "telephone-number",
-        name: "telephone-number",
-        type: "tel",
-        classes: "govuk-input--width-20"
-      }) }}
 
-      {% from "input/macro.njk" import govukInput %}
+    {% set genderHtml %}
+    {{ govukInput({
+      id: "gender-desc",
+      name: "gender-desc",
+      value: data['gender-desc'],
+      classes: "govuk-!-width-two-thirds",
+      label: {
+        text: "Describe gender in another way"
+      }
+    }) }}
+    {% endset -%}
 
-      {{ govukInput({
-        label: {
-          text: "Email address"
+
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "gender-applicant",
+      name: "gender-applicant",
+      fieldset: {
+        legend: {
+          text: "Your gender",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+        {
+          value: "female",
+          text: "Female"
         },
-        hint: {
-          text: "We’ll  use this to send you a receipt"
+        {
+          value: "male",
+          text: "Male"
         },
-        id: "email",
-        name: "email",
-        type: "email"
-      }) }}
+        {
+          value: "Another gender",
+          text: "Another gender",
+          conditional: {
+            html: genderHtml
+          }
+        }
+      ]
+    }) }}
+
+
+    {{ govukInput({
+      label: {
+        text: "Telephone/mobile number"
+      },
+      id: "telephone-number",
+      name: "telephone-number",
+      value: data['telephone-number'],
+      type: "tel",
+      classes: "govuk-input--width-10"
+    }) }}
+
+
+    {{ govukInput({
+      label: {
+        text: "Email (optional)"
+      },
+      hint: {
+        text: "We’ll use this to send you a receipt."
+      },
+      id: "email",
+      name: "email",
+      value: data['email'],
+      type: "email",
+      classes: "govuk-input--width-20"
+    }) }}
+
 
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/member1.html",
         classes: "button-primary"
       }) }}
-
+    </form>
 
     </div>
 </div>

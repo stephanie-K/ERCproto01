@@ -1,0 +1,71 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Add a Member
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Members of Household
+      </h1>
+      <h2 class="govuk-heading-m">
+          Member 1:
+      </h2>
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['full-name-member1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{ data ['previous-address-member1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relationship to you:</th><td class="govuk-table__cell no-border">{{data['relation-member1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="govuk-table__cell no-border">{{data['dob-member1-day']}}/{{data['dob-member1-month']}}/{{data['dob-member1-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member1'] === 'Another gender' %} {{data['gender-desc1']}} {% else %}{{data['gender-member1']}} {% endif %}</td></tr>
+        </tbody>
+      </table>
+    </div>
+      <p><a href="/forms/housing/members-household/member1.html">Edit member 1 details</a></p>
+      <br><br>
+
+      <form class="form" method="post">
+     
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "add-member2",
+          name: "add-member2",
+          fieldset: {
+            legend: {
+              text: "Do you need to add another member?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+      {% from "button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -78,6 +78,47 @@ router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) 
 })
 
 
+// Members of household form *****************************************************************
+
+router.post('/forms/housing/members-household/about-you', function (req, res) {
+  res.redirect('/forms/housing/members-household/add-member1-loop')
+})
+
+router.post('/forms/housing/members-household/add-member1-loop', function (req, res) {
+  var addMember1 = req.session.data['add-member1']
+  if (addMember1 === 'no') {
+      return res.redirect('/forms/housing/members-household/member1')
+  }
+  res.redirect('/forms/housing/members-household/confirmation')
+})
+
+router.post('/forms/housing/members-household/member1', function (req, res) {
+  res.redirect('/forms/housing/members-household/add-member2-loop')
+})
+
+router.post('/forms/housing/members-household/add-member2-loop', function (req, res) {
+  var addMember2 = req.session.data['add-member2']
+  if (addMember2 === 'yes') {
+      return res.redirect('/forms/housing/members-household/member2')
+  }
+  res.redirect('/forms/housing/members-household/confirmation')
+})
+
+router.post('/forms/housing/members-household/member2', function (req, res) {
+  res.redirect('/forms/housing/members-household/add-member3-loop')
+})
+
+router.post('/forms/housing/members-household/add-member3-loop', function (req, res) {
+  var addMember3 = req.session.data['add-member3']
+  if (addMember3 === 'yes') {
+      return res.redirect('/forms/housing/members-household/member3')
+  }
+  res.redirect('/forms/housing/members-household/confirmation')
+})
+
+
+
+
 // CBL form **********************************************************************************
 
 router.post('/forms/housing/CBL16', function (req, res) {

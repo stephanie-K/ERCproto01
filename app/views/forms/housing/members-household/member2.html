@@ -9,70 +9,146 @@
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
+      <p class="govuk-body-l">Enter each person who will be living with you.</p>
+      <h2 class="govuk-heading-m">
+          Member 1:
+      </h2>
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['full-name-member1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{ data ['previous-address-member1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relationship to you:</th><td class="govuk-table__cell no-border">{{data['relation-member1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="govuk-table__cell no-border">{{data['dob-member1-day']}}/{{data['dob-member1-month']}}/{{data['dob-member1-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member1'] === 'Another gender' %} {{data['gender-desc1']}} {% else %}{{data['gender-member1']}} {% endif %}</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+      <h1 class="govuk-heading-m">
         Member 2
       </h1>
+      <form class="form" method="post">
+          {% from "input/macro.njk" import govukInput %}
     
-      {% from "input/macro.njk" import govukInput %}
-
-      {{ govukInput({
-        label: {
-          text: "Their full name"
-        },
-        id: "full-name-member2",
-        name: "full-name-member2"
-      }) }}
-
-      {% from "textarea/macro.njk" import govukTextarea %}
-
-      {{ govukTextarea({
-        name: "previous-address-member2",
-        id: "previous-address-member2",
-        label: {
-          text: "What's their previous address? (if applicable)"
-        }
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "What's their relationship to you?"
-        },
-        id: "relation-member2",
-        name: "relation-member2",
-        classes: "govuk-input--width-20"
-      }) }}
-
-      {% from "date-input/macro.njk" import govukDateInput %}
-
-      {{ govukDateInput({
-        id: "dob-member2",
-        namePrefix: "dob-member2",
-        fieldset: {
-          legend: {
-            text: "What's their date of birth?",
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: "For example, 31 3 1980"
-        }
-      }) }}
-
-      {% from "button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Add another member",
-        href: "/forms/housing/member3.html",
-        classes: "button-secondary"
-      }) }}
-      <br>
-
-      {{ govukButton({
-        text: "Continue",
-        href: "/forms/housing/summary.html",
-        classes: "button-primary"
-      }) }}
-
+          {{ govukInput({
+            label: {
+              text: "Their full name"
+            },
+            id: "full-name-member2",
+            name: "full-name-member2",
+            value: data['full-name-member2']
+          }) }}
+    
+          {% from "textarea/macro.njk" import govukTextarea %}
+    
+          {{ govukTextarea({
+            name: "previous-address-member2",
+            id: "previous-address-member2",
+            value: data['previous-address-member2'],
+            label: {
+              text: "What's their previous address? (if applicable)"
+            }
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "What's their relationship to you?"
+            },
+            id: "relation-member2",
+            name: "relation-member2",
+            value: data['relation-member2'],
+            classes: "govuk-input--width-20"
+          }) }}
+    
+          {% from "date-input/macro.njk" import govukDateInput %}
+    
+    
+          {{ govukDateInput({
+            id: "dob-member2",
+            namePrefix: "dob-member2",
+            fieldset: {
+              legend: {
+                text: "Your date of birth",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 11 08 1980"
+            },
+            items:[
+                {
+                name: 'day',
+                value: data['dob-member2-day'],
+                classes: "govuk-input--width-2"
+                },
+                {
+                name: 'month',
+                value: data['dob-member2-month'],
+                classes: "govuk-input--width-2"
+                },
+                {
+                name: 'year',
+                value: data['dob-member2-year'],
+                classes: "govuk-input--width-4"
+                }
+                ]
+          }) }}
+      
+      
+          {% set genderHtml %}
+          {{ govukInput({
+            id: "gender-desc2",
+            name: "gender-desc2",
+            value: data['gender-desc2'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "Describe gender in another way"
+            }
+          }) }}
+          {% endset -%}
+      
+      
+          {{ govukRadios({
+            classes: "govuk-radios",
+            idPrefix: "gender-member2",
+            name: "gender-member2",
+            fieldset: {
+              legend: {
+                text: "Your gender",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "female",
+                text: "Female"
+              },
+              {
+                value: "male",
+                text: "Male"
+              },
+              {
+                value: "Another gender",
+                text: "Another gender",
+                conditional: {
+                  html: genderHtml
+                }
+              }
+            ]
+          }) }}
+    
+          {% from "button/macro.njk" import govukButton %}
+    
+    
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+    
+    </form>
 
     </div>
 </div>

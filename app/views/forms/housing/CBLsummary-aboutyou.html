@@ -34,7 +34,7 @@
                 <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Advocate or power of attorney:</th><td class="govuk-table__cell no-border">{{ data['contact-att']}}</td></tr>
                 {% endif %}
                 <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{ data['dob-applicant-day'] }}/{{ data ['dob-applicant-month'] }}/{{ data['dob-applicant-year'] }}</td></tr>
-                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{{data['gender-applicant']}}{% if data['gender-applicant'] === 'Another gender' %}: {{data['gender-desc']}}{% endif %}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-applicant'] === 'Another gender' %} {{data['gender-desc']}} {% else %} {{data['gender-applicant']}} {% endif %}</td></tr>
               </tbody>
             </table>
             </div>
