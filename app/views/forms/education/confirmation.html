@@ -21,11 +21,9 @@
             Application submitted
         </h1>
         <div class="govuk-panel__body">
-          Your reference number
+          Your reference number is
           <br><strong>1346-7895-4445-7023</strong><br><br>
-          {% if data['email'] %}
-          We’ve sent an email to confirm your application to <strong> {{ data['email']}}</strong>
-          {% endif%}
+          We’ve sent an email to confirm your application and the next steps to <strong> {% if data['email'] %}{{ data['email']}}{% else %}parent.email@gmail.com{% endif%}</strong>
         </div>
       </div>
 
@@ -47,11 +45,6 @@
     {% endif %}
 
     </div>
-  </div>
-  <div class="alt-notes-box">
-      <ul class="govuk-list govuk-list--bullet">
-          <p><a href="/forms/education/confirmation1.html"><strong>see with an email</strong></a></p>
-      </ul>
   </div>
   <div class="UR-notes-box">
       <h3 class="govuk-heading-s">User research:</h3>

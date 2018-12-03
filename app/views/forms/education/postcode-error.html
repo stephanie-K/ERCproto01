@@ -21,7 +21,7 @@
       {% from "input/macro.njk" import govukInput %}
      <noscript>
         {{ govukWarningText({
-          text: "JavaScript is disabled on your device. Enable Javascript to apply",
+          text: "JavaScript is blocked on your device. You need to allow JavaScript to start the form. ",
           iconFallbackText: "Warning"
         }) }}
         </noscript>
@@ -43,9 +43,9 @@
         "text": "Find my address"
         }) }}
       </form>
-      <!--p>If you don't have a postcode, please phone the Education Admissions Team on 0141 577 3246 for advice.</p-->
+      <p>For new build homes without a postcode phone us on 0141 577 3246.</p>
 
-    <!--p><a href="manual-address.html">My postcode is not recognised</a></p-->
+
     </div>
 </div>
 
