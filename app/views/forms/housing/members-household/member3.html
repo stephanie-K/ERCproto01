@@ -20,7 +20,7 @@
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{ data ['previous-address-member1']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relationship to you:</th><td class="govuk-table__cell no-border">{{data['relation-member1']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="govuk-table__cell no-border">{{data['dob-member1-day']}}/{{data['dob-member1-month']}}/{{data['dob-member1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member1'] === 'Another gender' %} {{data['gender-desc1']}} {% else %}{{data['gender-member1']}} {% endif %}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member1'] === 'Other' %} {{data['gender-desc1']}} {% else %}{{data['gender-member1']}} {% endif %}</td></tr>
         </tbody>
       </table>
     </div>
@@ -35,7 +35,7 @@
         <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{ data ['previous-address-member2']}}</td></tr>
         <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relationship to you:</th><td class="govuk-table__cell no-border">{{data['relation-member2']}}</td></tr>
         <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="govuk-table__cell no-border">{{data['dob-member2-day']}}/{{data['dob-member2-month']}}/{{data['dob-member2-year']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member2'] === 'Another gender' %} {{data['gender-desc2']}} {% else %}{{data['gender-member2']}} {% endif %}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member2'] === 'Other' %} {{data['gender-desc2']}} {% else %}{{data['gender-member2']}} {% endif %}</td></tr>
       </tbody>
     </table>
   </div>
@@ -119,7 +119,7 @@
             value: data['gender-desc3'],
             classes: "govuk-!-width-two-thirds",
             label: {
-              text: "Describe gender in another way"
+              text: "Describe gender in another way (optional)"
             }
           }) }}
           {% endset -%}
@@ -146,8 +146,8 @@
                 text: "Male"
               },
               {
-                value: "Another gender",
-                text: "Another gender",
+                value: "Other",
+                text: "Other",
                 conditional: {
                   html: genderHtml
                 }

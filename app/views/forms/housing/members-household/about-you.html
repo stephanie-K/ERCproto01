@@ -90,7 +90,7 @@
       value: data['gender-desc'],
       classes: "govuk-!-width-two-thirds",
       label: {
-        text: "Describe gender in another way"
+        text: "Describe gender in another way (optional)"
       }
     }) }}
     {% endset -%}
@@ -117,8 +117,8 @@
           text: "Male"
         },
         {
-          value: "Another gender",
-          text: "Another gender",
+          value: "Other",
+          text: "Other",
           conditional: {
             html: genderHtml
           }

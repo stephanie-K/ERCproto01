@@ -22,7 +22,7 @@
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-applicant']}}&nbsp;{{data['last-name-applicant']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{ data ['address-applicant']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-applicant-day']}}/{{data['dob-applicant-month']}}/{{data['dob-applicant-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-applicant'] === 'Another gender' %} {{data['gender-desc']}}{% else%} {{data['gender-applicant']}}{% endif %}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-applicant'] === 'Other' %} {{data['gender-desc']}}{% else%} {{data['gender-applicant']}}{% endif %}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Phone:</th><td class="govuk-table__cell no-border">{{ data ['telephone-number']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Email (optional):</th><td class="govuk-table__cell no-border">{{data['email']}}</td></tr>
         </tbody>

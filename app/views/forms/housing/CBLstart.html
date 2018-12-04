@@ -17,7 +17,7 @@
       </p>
 
       <p>
-          You can find out more about how we handle this information and your rights in respect of it by going to <a href="#">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
+          You can find out more about how we handle this information and your rights in respect of it by going to <a href="http://www.eastrenfrewshire.gov.uk/housing-service-standards">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
       </p>
       {% from "warning-text/macro.njk" import govukWarningText %}
 
@@ -35,7 +35,11 @@
 
       <h2 class="govuk-heading-m erc-text-blue">Before you start</h2>
       <p>
-          We need to have a warning about the amount of time this form will take and the type of info they need to be able to fill in the form (5 years of addresses history for example) 
+          <ul class="govuk-list govuk-list--bullet">
+          <li>type of info they need to be able to fill in the form (5 years of addresses history for example)</li> 
+          <li>tell them they can call if they need help</li>
+          <li>maybe a message for Homeless applicants</li>
+          </ul>
       </p>
 
       </p>
@@ -45,17 +49,10 @@
   <h3 class="govuk-heading-s">Content notes:</h3>
   <ul class="govuk-list govuk-list--bullet">
     <li><strong>content for this page is needed</strong></li>
-    <li>this form will be challenging to complete, no Javascript will make it even worse, might need a specific warning</li>
+    <li>this form will be challenging to complete, no Javascript will make it even worse, might need a specific warning?</li>
+    <li>We need to have a warning about the amount of time this form will take</li>
   </ul>
 </div>
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">General notes:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Guidance should be under the label and above the input field, radio buttons/checkboxes</li>
-      <li>Remove the privacy statement on every page as it's on the footer. Might have to be on this page though.</li>
-      <li>Back button: only 1 on each page and at the top</li>
-      <li><strong>some of the changes suggested will impact the error messages. They will need to be changed too!</strong></li>
-    </ul>
-  </div>
+
 
 {% endblock %}

@@ -48,8 +48,8 @@
         text: "Bungalow"
       },
       {
-        value: "Sheltered housing (If you or your partner are aged 60 or over or have a disability)",
-        text: "Sheltered housing (If you or your partner are aged 60 or over or have a disability)"
+        value: "Sheltered housing (If you or your partner are aged 60)",
+        text: "Sheltered housing (If you or your partner are aged 60)"
       },
       {
         value: "Amenity housing (If you or your partner are aged 60 or over or have a disability)",
@@ -65,7 +65,6 @@
   {% from "radios/macro.njk" import govukRadios %}
 <br><br>
   {{ govukRadios({
-    classes: "govuk-radios--inline",
     idPrefix: "floor",
     name: "floor",
     fieldset: {
@@ -91,6 +90,10 @@
       {
         value: "Third or higher",
         text: "Third or higher"
+      },
+      {
+        value: "Any level if there is a lift",
+        text: "Any level if there is a lift"
       }
     ]
   }) }}
@@ -107,7 +110,11 @@
 
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>would need to be tested - not sure people would notice the second question</p>
+    <p>would need to be tested - not sure people would notice the second question?</p>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <p>text of checkbox  Sheltered housing changed + extra radio button for highest floor</p>
 </div>
 
 {% endblock %}

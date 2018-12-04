@@ -24,7 +24,7 @@
           value: data['postcode'],
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Enter your address"
+            text: "Enter address, including postcode"
           }
         }) }}
         {% endset -%}
@@ -68,14 +68,16 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>the actual single checkbox doesn't work (no visual feedback provided)</li>
-      <li>we could use radio buttons as above with a question - to be validated by Housing</li>
+      <li>pattern agreed by Housing - but we might need more guidance for Homeless option, here and / or on the Before you start page</li>
     </ul>
 </div>
 <div class="IT-notes-box">
   <h3 class="govuk-heading-s">IT notes:</h3>
-  <p>The postcode is not validated at the moment. As the address could be used to contact the user, I assume we need to validate the postcode + use a postcode lookup and the user needs to select their address?</p>
-  <p>But then, the applicant could potentially live anywhere at the moment. Should we just use a textarea with free text? (in case it's not a UK address)</p>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>text for address, mentions postcode now - no validation apart from the textbox not empty</li>
+  <li>if "No I'm homeless" is selected there might be more guidance and we use this answer for logic in contact details on the next screen</li>
+  <li>validation: Confirm fixed address / Enter address </li>
+  </ul>
 </div>
 
 {% endblock %}

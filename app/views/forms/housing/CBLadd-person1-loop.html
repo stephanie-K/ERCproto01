@@ -78,7 +78,7 @@
         value: data['gender-desc1'],
         classes: "govuk-!-width-two-thirds",
         label: {
-          text: "Describe gender in another way"
+          text: "Describe gender in another way (optional)"
         }
       }) }}
       {% endset -%}
@@ -105,8 +105,8 @@
             text: "Male"
           },
           {
-            value: "Another gender",
-            text: "Another gender",
+            value: "Other",
+            text: "Other",
             conditional: {
               html: genderHtml
             }
@@ -160,9 +160,22 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-   <p>We can then ask about pregnancy, and joint applicant after.</p>
-   <p><a href="/forms/housing/CBLadd-person.html">Try an alternative</a><strong> using javascript and adding all people on one page, this is close to what IT has developed so far</strong></p>
-   <p></p>
+    <ul class="govuk-list govuk-list--bullet">
+   <li>We will ask about pregnancy, and joint applicant after - agreed by Housing</li>
+   <li>Ideally we want this pattern to be used (ask one by one, and ask on a different screen if they want to add another)</li>
+   <li><strong>we need to be able to enter 10 people</strong> potentially. On the 10th at the bottom, we need an open textbox with label: Tell us about anyone you didn't enter yet (placeholder for now, content by Sharon later)</li>
+   <li><a href="/forms/housing/CBLadd-person.html">Try an alternative</a><strong> using javascript and adding all people on one page, this is close to what IT has developed so far</strong></li>
+   </ul>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Validation - name, relation are not empty: Enter first name - Enter last name  - Enter relationship</li>
+      <li>dob, 3 fields not empty: Enter date of Birth - and if possible is a valid date (not the 31 of April) - Enter valid date</li>
+      <li>need to pick one Gender, but description if Other is optional - Enter gender</li>
+      <li>pick yes or no living with you - Confirm live with you now</li>
+      <li>same for all other screen for person 2 etc....</li>
+    </ul>
 </div>
 
 

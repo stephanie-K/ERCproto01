@@ -13,9 +13,9 @@
           Apply online for Housing
       </h1>
       <h2 class="govuk-heading-m">
-        We need to know how many bedrooms your household currently use.
+        We need to know about the bedrooms in your current house.
       </h2>
-
+<br><br>
       {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
@@ -95,10 +95,110 @@
         id: "more-detail",
         classes: "govuk-!-width-two-thirds",
         label: {
-          text: "Add any other information about bedrooms we might need to know about"
+          text: "Add any other information about sleeping arrangement we might need to know about"
         }
       }) }}
   
+      <br>
+      {% set lessRoomsHtml %}
+      <p class="govuk-body-l">Now tell us only about the rooms you can use.</p>
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "double-used",
+        name: "double-used",
+        fieldset: {
+          legend: {
+            text: "How many are double bedrooms?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "0",
+            text: "0"
+          },
+          {
+            value: "1",
+            text: "1"
+          },
+          {
+            value: "2",
+            text: "2"
+          },
+          {
+            value: "3",
+            text: "3"
+          },
+          {
+            value: "4 or more",
+            text: "4 or more"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "single-used",
+        name: "single-used",
+        fieldset: {
+          legend: {
+            text: "How many are single bedrooms?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "0",
+            text: "0"
+          },
+          {
+            value: "1",
+            text: "1"
+          },
+          {
+            value: "2",
+            text: "2"
+          },
+          {
+            value: "3",
+            text: "3"
+          },
+          {
+            value: "4 or more",
+            text: "4 or more"
+          }
+        ]
+      }) }}
+      {% endset -%}
+
+          {% from "radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            idPrefix: "use-less-conditional",
+            name: "use-less",
+            fieldset: {
+              legend: {
+                text: "Can your household only use some of these rooms?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: lessRoomsHtml
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
 
       {% from "button/macro.njk" import govukButton %}
 
@@ -111,10 +211,15 @@
     </div>
 </div>
 
+<div class="content-notes-box">
+    <h3 class="govuk-heading-s">Content notes:</h3>
+   <p>content need to be reviewed by both Housing and Sharon</p> 
+</div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-   <p>Not sure we need the textbox at the bottom, this is in case they have different sleeping arrangements</p> 
-   <p>This is grouping 4 previous screens:</p>
+  <p><strong>we will need to test this, because there is a lot on this screen now</strong></p>
+   <p>Agreed by housing - They do need to know if how many bedroom in the house and how many they can use as if it's over crowded, they get an extra priority</p> 
+   <p>This is grouping instead previous screens:</p>
    <ul class="govuk-list govuk-list--bullet">
      <li>how many bedrooms are in your current home</li>
      <li>how many bedrooms can your household use</li>

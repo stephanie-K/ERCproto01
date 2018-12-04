@@ -15,7 +15,7 @@
       <h2 class="govuk-heading-m">
         About you
       </h2>
-      <form class="form" method="post">
+      <form class="form" method="post" novalidate>
       {% from "input/macro.njk" import govukInput %}
 
       {{ govukInput({
@@ -76,17 +76,16 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>we don't capture the gender or DOB of the applicant, what if it's a woman and she is pregnant?</li>
-      <li>as the form is really long, we should probably group all these questions on one page as they are easy and all related to the applicant</li>
+      <li>grouping 3 screens from the previous form here - Agree by Housing</li>
     </ul>
 </div>
 <div class="IT-notes-box">
   <h3 class="govuk-heading-s">IT notes:</h3>
-  <p>If we don't put all these screens on one page, then IT needs to fix the following:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>On the actual 3 pages, all the inputs fields are too long - should be reduced</li>
-      <li>on the phone page, the next button is at the wrong place</li>
-      <li>the email input page should come before the contact preferences in the flow of screens - it's optional - label has changed</li>
+      <li>approved so can be coded all on one page</li>
+      <li>Validation: test the email is well formed if provided - Enter valid email address</li>
+      <li>accept spaces in the phone number - if possible check the format - if not entered: Enter phone number - if not valid: Enter valid phone number</li>
+      <li>Enter first name / Enter last name</li>
     </ul>
 </div>
 {% endblock %}

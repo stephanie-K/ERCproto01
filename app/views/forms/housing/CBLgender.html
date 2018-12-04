@@ -22,7 +22,7 @@
           value: data['gender-desc'],
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Describe gender in another way"
+            text: "Describe gender in another way (optional)"
           }
         }) }}
         {% endset -%}
@@ -49,8 +49,8 @@
               text: "Male"
             },
             {
-              value: "Another gender",
-              text: "Another gender",
+              value: "Other",
+              text: "Other",
               conditional: {
                 html: genderHtml
               }
@@ -70,8 +70,10 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>To capture the gender of the applicant</li>
-      <li>also it prepares the user to enter it that way for the other members of the household?</li>
+      <li>To capture the gender of the applicant - Agreed by Housing but we change the wording and might change again - further discussion this week</li>
+      <li>prepares the user to enter it that way for the other members of the household?</li>
+      <li>Text to describe gender is not mandatory - in summary on further screens we will display the description if provided, or just display "Other" if not</li>
+      <li>Validation: none on the description - if no selection: Enter gender (?)</li>
     </ul>
 </div>
 

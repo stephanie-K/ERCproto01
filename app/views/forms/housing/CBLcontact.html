@@ -21,9 +21,8 @@
           id: "contact-att",
           name: "contact-att",
           value: data['contact-att'],
-          classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Enter the contact details of your advocate or power of attorney"
+            text: "Enter the contact details of your advocate or power of attorney, including name, phone and address"
           }
         }) }}
         {% endset -%}
@@ -76,7 +75,15 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>There is two guidance sentences at the moment, one above one below the attorney details boxes. Needs to be changed (Content decision and then IT fix)</p>
+    <p>If the person selected "I'm homeless" on the previous screen, they might still want to provide an address where to contact them.</p>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>If the person selected "I'm homeless" on the previous screen, they can still select Post, but this should open a textbox, with the same message as previously Enter address, including postcode</li>
+    <li>if no email was entered previously, could we remove the radio button on this page?</li>
+    <li>Validation: Confirm preferred contact (if none selected) - Enter address (if homeless and textbox displayed)- Enter contact details (for attorney textbox)</li>
+    </ul>
 </div>
 
 {% endblock %}

@@ -22,7 +22,7 @@
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{ data ['previous-address-member1']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relationship to you:</th><td class="govuk-table__cell no-border">{{data['relation-member1']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="govuk-table__cell no-border">{{data['dob-member1-day']}}/{{data['dob-member1-month']}}/{{data['dob-member1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member1'] === 'Another gender' %} {{data['gender-desc1']}} {% else %}{{data['gender-member1']}} {% endif %}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-member1'] === 'Other' %} {{data['gender-desc1']}} {% else %}{{data['gender-member1']}} {% endif %}</td></tr>
         </tbody>
       </table>
     </div>

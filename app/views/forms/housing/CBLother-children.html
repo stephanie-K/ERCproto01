@@ -20,7 +20,7 @@
         name: "other-children",
         fieldset: {
           legend: {
-            text: "Do you have children staying with you occasionally?",
+            text: "Do you have children from a previous relation who stay regularly overnight?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -46,8 +46,17 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-   <p>The wording would probably need to be changed by Sharon and approved by Housing</p>
-   <p><strong>Add guidance about the age of the child:  can they add children between 16- 18, older?</strong></p>
+   <p>The wording will probably be changed by Sharon but for now, it's approved by Housing- to be confirm this week though</p>
+  <p>should we had guidance about the age of the child? (16 - 18?)</p>
+  <p>if they say yes, then they will <strong>add children like we added "person" up to 5 </strong> and again we will have a box at the bottom of the 5th child, so they can add any extra children</p>
+  <p>They are only allowed an extra room max normally in the process</p>
 </div>
-
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Validation - error message : to be provided when content is drafted</li>
+      <li>if they say yes, then enter children one by one - with screen that ask if more to add yes / no </li>
+      <li>if they say no, they jump to legal questions</li>
+    </ul>
+</div>
 {% endblock %}

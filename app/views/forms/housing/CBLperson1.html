@@ -20,7 +20,7 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person1']}}&nbsp;{{data['last-name-person1']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person1-day']}}/{{data['dob-person1-month']}}/{{data['dob-person1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender1'] === 'Another gender' %} {{data['gender-desc1']}} {% else %} {{data['gender1']}}{% endif %}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender1'] === 'Other' %} {{data['gender-desc1']}} {% else %} {{data['gender1']}}{% endif %}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with1']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship1']}}</td></tr>
         </tbody>
@@ -72,6 +72,14 @@
 
     </div>
 </div>
-
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Edit person 1 details takes them back to the previous page</li>
+      <li>Remove person 1 takes them back to the screen where they select Living alone or not</li>
+      <li>Validation - Confirm need to add another person</li>
+      <li>table used for the summary can be different format, like summary page - must be responsive and display well on mobile (check summary from P1 as an example?)</li>
+    </ul>
+</div>
 
 {% endblock %}

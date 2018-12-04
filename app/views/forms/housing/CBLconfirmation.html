@@ -19,8 +19,6 @@
                 Application submitted
             </h1>
             <div class="govuk-panel__body">
-              Your reference number
-              <br><strong>1346-7895-4445-7023</strong><br><br>
               {% if data['email'] %}
               We’ve sent an email to confirm your application to <strong> {{ data['email']}}</strong>
               {% endif%}
@@ -42,6 +40,8 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <p><strong>could we have a pdf or something the user can print of download?</strong></p>
+    <p>could we prompt the user to fill in a medical priority application depending on what they selected in the form - send the pdf in the confirmation email maybe?</p>
+    <p>Housing doesn't want a reference number here, they have their own reference number</p>
 </div>
 
 {% endblock %}

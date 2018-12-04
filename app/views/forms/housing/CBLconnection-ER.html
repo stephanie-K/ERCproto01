@@ -8,7 +8,7 @@
 {% block content %}
 <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
         Apply online for Housing
       </h1>
@@ -24,6 +24,17 @@
   classes: "govuk-!-width-two-thirds",
   label: {
     text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{% set addressHtml %}
+{{ govukTextarea({
+  id: "connection-details",
+  name: "connection-details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Tell us their name and address including postcode"
   }
 }) }}
 {% endset -%}
@@ -65,7 +76,10 @@
     },
     {
       value: "Relative",
-      text: "Relative lives in area"
+      text: "Relative lives in area",
+      conditional: {
+        html: addressHtml
+      }
     },
     {
       value: "Other",
@@ -111,6 +125,19 @@
 
     </div>
 </div>
-
-
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>if they select "relative lives in area" we need a textbox for them to enter the name and address</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>can be coded</li>
+      <li>extra textbox for other reason, and relative live in area / different lablel for each though </li>
+      <li>we need at list one checked, and if open a text box, then it needs not to be empty</li>
+      <li>Select at least one - Give details - Enter name and address (to be confirmed by Sharon)</li>
+    </ul>
+</div>
 {% endblock %}

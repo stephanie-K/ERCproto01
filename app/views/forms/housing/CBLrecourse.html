@@ -16,11 +16,11 @@
       {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
-        idPrefix: "is-recourse",
+        idPrefix: "is-recourse-conditional",
         name: "is-recourse",
         fieldset: {
           legend: {
-            text: "Have you been told you have no recourse to public fonds?",
+            text: "Have you been told you have no recourse to public funds?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -36,6 +36,13 @@
           {
             value: "no",
             text: "No"
+          },
+          {
+            value: "I don't know",
+            text: "I don't know",
+            conditional: {
+              html: "<p>We could provide more guidance here</p>"
+            }
           }
         ]
       }) }}
@@ -46,11 +53,16 @@
       <form class="form" method="post">
     </div>
 </div>
+<div class="design-notes-box">
+  <h3 class="govuk-heading-s">Design notes:</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Guidance might be needed.</li>
+    <li>If guidance is needed we could maybe add it under a "I don't know" radio button? (to be discussed further with Housing)</li>
+  </ul>
+</div>
 <div class="IT-notes-box">
-    <h3 class="govuk-heading-s">IT notes:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Guidance should be under the label and above the radio buttons, as shown here</li>
-      <li>Routing to be fixed as here: if Yes then you're out and get the contact us message, if No you go through.</li>
-    </ul>
-  </div>
+  <h3 class="govuk-heading-s">IT notes:</h3>
+  <p>Not sure if we will add a 3rd radio - guidance might change</p>
+  <p>validation: Confirm if no recourse to public funds</p>
+</div>
 {% endblock %}
