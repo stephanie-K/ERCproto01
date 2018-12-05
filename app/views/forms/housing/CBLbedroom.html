@@ -88,16 +88,7 @@
         ]
       }) }}
 
-      {% from "textarea/macro.njk" import govukTextarea %}
 
-      {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
-        classes: "govuk-!-width-two-thirds",
-        label: {
-          text: "Add any other information about sleeping arrangement we might need to know about"
-        }
-      }) }}
   
       <br>
       {% set lessRoomsHtml %}
@@ -198,6 +189,17 @@
                 text: "No"
               }
             ]
+          }) }}
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            name: "more-detail",
+            id: "more-detail",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "Add any other information about sleeping arrangement we might need to know about (optional)"
+            }
           }) }}
 
       {% from "button/macro.njk" import govukButton %}
