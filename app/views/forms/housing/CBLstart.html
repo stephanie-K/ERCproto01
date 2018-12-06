@@ -6,53 +6,71 @@
 {% endblock %}
 
 {% block content %}
-<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        Apply online for Housing
+        Apply online for council housing
       </h1>
-      <p>
-          If you need help at anytime you can contact our office at ....  
-      </p>
+      <p><img src="{{ asset_path }}images/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
 
-      <p>
-          You can find out more about how we handle this information and your rights in respect of it by going to <a href="http://www.eastrenfrewshire.gov.uk/housing-service-standards">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
-      </p>
       {% from "warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
         text: "Use the back link if you need to go to the previous page. Don't use the back button of your browser or device or you'll need to start again.",
         iconFallbackText: "Warning"
       }) }}
-      {% from "button/macro.njk" import govukButton %}
 
+
+      <h2 class="govuk-heading-m erc-text-blue">Before you start</h2>
+      <p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>this form takes most people around 30 minutes to complete</li>
+            <li>you cannot save the form and go back to it</li>
+            <li>you need addresses for the last 5 years</li>
+          </ul>
+      </p>
+
+      {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
         text: "Start now",
         href: "/forms/housing/CBL16.html",
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
+ 
 
-      <h2 class="govuk-heading-m erc-text-blue">Before you start</h2>
-      <p>
-          <ul class="govuk-list govuk-list--bullet">
-          <li>type of info they need to be able to fill in the form (5 years of addresses history for example)</li> 
-          <li>tell them they can call if they need help</li>
-          <li>maybe a message for Homeless applicants</li>
-          </ul>
-      </p>
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Related information </h2>
+      <ul class="govuk-list">
+        <li><a href="" target="_blank">What happen next</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/article/1628/Homelessness" target="_blank">Homelessness</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/young-persons-housing-service" target="_blank">Young person's housing support service</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/sheltered-housing" target="_blank">Sheltered housing</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/about-housing" target="_blank">About housing services</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/article/9717/How-we-allocate-our-council-houses" target="_blank">How we allocate our council houses</a></li>
+        </ul>
 
+      <p class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+          You can find out more about how we handle this information and your rights in respect of it by going to <a href="http://www.eastrenfrewshire.gov.uk/housing-service-standards">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
       </p>
     </div>
 </div>
 <div class="content-notes-box">
   <h3 class="govuk-heading-s">Content notes:</h3>
   <ul class="govuk-list govuk-list--bullet">
-    <li><strong>content for this page is needed</strong></li>
-    <li>this form will be challenging to complete, no Javascript will make it even worse, might need a specific warning?</li>
-    <li>We need to have a warning about the amount of time this form will take</li>
+    <li>message for homeless applicants? - related link might be enough</li>
+    <li>original form: <a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0" target="_blank">https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0</a></li>
   </ul>
 </div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes: (changes on the 5/12) </h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><strong>heading changed on all pages</strong></li>
+      <li><a href="/forms/housing/CBLinfo-housed.html">who will be living with you</a></li>
+      <li><a href="/forms/housing/CBLbabies.html">pregnancy page</a></li>
+      <li><a href="/forms/housing/CBLadd-children.html">children staying occasionally</a></li>
+      <li><a href="/forms/housing/CBLjoint.html">joint applicant</a></li>
+    </ul>
+  </div>
 
 
 {% endblock %}

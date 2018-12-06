@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for Housing
+            Apply online for council housing
         </h1>
         <form class="form" method="post">
         {% from "radios/macro.njk" import govukRadios %}
@@ -27,6 +27,7 @@
         }) }}
         {% endset -%}
         
+        {% if data['email'] %}
         {{ govukRadios({
           idPrefix: "how-contacted-conditional",
           name: "how-contacted",
@@ -51,10 +52,7 @@
             },
             {
               value: "Post",
-              text: "Post",
-              conditional: {
-                html: textHtml
-              }
+              text: "Post"
             },
             {
               value: "I have an advocate or power of attorney",
@@ -65,6 +63,41 @@
             }
           ]
         }) }}
+        {% else %}
+
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: "How would you prefer us to contact you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "We may still contact you in another way if we can't reach you."
+          },
+          items: [
+            {
+              value: "Phone",
+              text: "Phone"
+            },
+            {
+              value: "Post",
+              text: "Post"
+            },
+            {
+              value: "I have an advocate or power of attorney",
+              text: "I have an advocate or power of attorney",
+              conditional: {
+                html: attorneyHtml
+              }
+            }
+          ]
+        }) }}
+
+        {% endif %}
     
           {{ govukButton({
             text: "Continue",
@@ -75,7 +108,7 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>If the person selected "I'm homeless" on the previous screen, they might still want to provide an address where to contact them.</p>
+    <p>If the person selected "I'm homeless" on the previous screen, they might still want to provide an address where to contact them. <strong>(not coded yet)</strong></p>
 </div>
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>

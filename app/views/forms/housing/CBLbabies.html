@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        Apply online for Housing
+        Apply online for council housing
       </h1>
 
 {% from "radios/macro.njk" import govukRadios %}
@@ -22,7 +22,7 @@
   name: "baby",
   classes: "govuk-!-width-two-thirds",
   label: {
-    text: "Enter their name and the date the baby/babies are due"
+    text: "Enter each name and due date"
   }
 }) }}
 {% endset -%}
@@ -32,7 +32,7 @@
   name: "is-pregnant",
   fieldset: {
     legend: {
-      text: "Are you or anyone who will live with you pregnant?",
+      text: "Is anyone on the application pregnant?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -62,11 +62,11 @@
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-   <p>The wording will be checked by Sharon - but pattern agreed by Housing</p>
+   <p>Pattern agreed by Housing - Content provided by Sharon</p>
 </div>
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
-   <p>new page</p>
+   <p>new page - <strong>content has changed </strong></p>
    <p>validation will be needed (if yes, textbox can't be empty) but will need the wording to be agreed before I can provide an error message</p>
 </div>
 

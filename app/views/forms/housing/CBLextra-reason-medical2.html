@@ -1,0 +1,56 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Health, care, social and support needs
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+
+        <form class="form" method="post">
+        {% from "radios/macro.njk" import govukRadios %}
+        {{ govukRadios({
+            idPrefix: "priority",
+            name: "priority",
+            fieldset: {
+                legend: {
+                text: "Have you completed a medical priority application?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Yes"
+                },
+                {
+                value: "no",
+                text: "No"
+                }
+            ]
+            }) }}
+
+
+ 
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/housing/CBLextra-reason-abuse.html"
+        }) }}
+      
+
+    </div>
+</div>
+
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p><strong>if they say no to medical application, then we need to prompt them to fill that form, could be guidance here and /or in the confirmation email?</strong></p>
+</div>
+
+{% endblock %}

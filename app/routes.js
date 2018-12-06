@@ -264,7 +264,23 @@ router.post('/forms/housing/CBLaddress3', function (req, res) {
 })
 
 router.post('/forms/housing/CBLaddress4-loop', function (req, res) {
-  res.redirect('/forms/housing/CBLreasons')
+  res.redirect('/forms/housing/CBLaddress4')
+})
+
+router.post('/forms/housing/CBLextra-reason-medical1', function (req, res) {
+  var medical = req.session.data['medical']
+  if (medical === 'yes') {
+      return res.redirect('/forms/housing/CBLextra-reason-medical2')
+  }
+  res.redirect('/forms/housing/CBLextra-reason-abuse')
+})
+
+router.post('/forms/housing/CBLextra-reason-abuse', function (req, res) {
+  var abuse = req.session.data['abuse']
+  if (abuse === 'yes') {
+      return res.redirect('/forms/housing/CBLextra-reason-police')
+  }
+  res.redirect('/forms/housing/CBLhouse-type')
 })
 
 // P1 form ***********************************************************************************

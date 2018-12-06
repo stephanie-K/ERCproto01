@@ -9,9 +9,9 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for Housing
+            Apply online for council housing
         </h1>
 
         <div class="govuk-panel govuk-panel--confirmation">
@@ -25,10 +25,31 @@
             </div>
           </div>
           <p>Thank you for submitting your housing registration form.</p>
-          <p>We’ll contact you within x days.</p>
-          <p>Contact us on 0141 577 3002 or email housing@eastrenfrewshire.gov.uk if you need any further help.</p>
-          <p>Housing Team</p>
 
+          <div class="govuk-warning-text govuk-!-margin-bottom-9">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-warning-text__assistive">Warning</span>
+                  <a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download the summary of your application</a>
+                </strong>
+              </div>
+
+          <h3 class="govuk-heading-m">What happens next</h3> 
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>we send you a confirmation letter with your reference number</li>
+                    <li>we send you a registration letter confirming your choices and the number of points you have</li>
+                    <li>the number of points you have will decide where we place you on the waiting list</li>
+                    <li>we award points in line with our <a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=23335&p=0" target="_blank">housing allocations policy</a>.</li>
+                </ul>
+
+        <p class="govuk-!-margin-bottom-1">&nbsp;</p>
+          <h2 class="govuk-heading-m">Contact</h2>
+          <ul class="govuk-list">
+          <li>Phone: 0141 577 3002</li>
+          <li>Email: <a href="mailto:housingadvice@eastrenfrewshire.gov.uk">housingadvice@eastrenfrewshire.gov.uk</a></li>
+            </ul>
+
+          <p class="govuk-!-margin-bottom-9">&nbsp;</p>
     </div>
 </div>
 <div class="content-notes-box">

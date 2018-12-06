@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        Apply online for Housing
+        Apply online for council housing
       </h1>
       <h2 class="govuk-heading-m">
           Person 1:
@@ -94,6 +94,20 @@
         classes: "button-warning",
         href: "/forms/housing/CBLperson4.html"
       }) }}
+
+      <br><br>
+      <h2 class="govuk-heading-m">
+          Tell us about anyone else you didn't add yet (if applicable)
+      </h2>
+      {{ govukTextarea({
+        name: "more-people-to-add",
+        id: "more-people-to-add",
+        label: {
+          text: "Name, date of birth, gender, living with you now or not, relationship to you"
+        }
+      }) }}
+
+
 
       {% from "button/macro.njk" import govukButton %}
       <br>

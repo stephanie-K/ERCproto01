@@ -1,0 +1,48 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Health, care, social and support needs
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <form class="form" method="post">
+    
+        {{ govukRadios({
+        idPrefix: "abuse",
+        name: "abuse",
+        fieldset: {
+            legend: {
+            text: "Do you need to move because you’re being harassed, threatened or abused?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+            value: "no",
+            text: "No"
+            },
+            {
+            value: "yes",
+            text: "Yes"
+            }
+        ]
+        }) }}
+ 
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+      </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

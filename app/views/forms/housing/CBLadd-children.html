@@ -10,9 +10,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        Apply online for Housing
+        Apply online for council housing
       </h1>
-      <p class="govuk-body-l">Enter each child staying with you occasionally.</p>
+      <p class="govuk-body-l">Enter each child spending part of their time living with you</p>
       <h2 class="govuk-heading-m">
           Child 1:
       </h2>
@@ -22,8 +22,8 @@
         label: {
           text: "First name"
         },
-        id: "first-name-person1",
-        name: "first-name-person1",
+        id: "first-name-child1",
+        name: "first-name-child1",
         classes: "govuk-input--width-20"
       }) }}
 
@@ -31,14 +31,14 @@
         label: {
           text: "Last name"
         },
-        id: "last-name-person1",
-        name: "last-name-person1",
+        id: "last-name-child1",
+        name: "last-name-child1",
         classes: "govuk-input--width-20"
       }) }}
 
       {{ govukDateInput({
-        id: "dob-person1",
-        namePrefix: "dob-person1",
+        id: "dob-child1",
+        namePrefix: "dob-child1",
         fieldset: {
           legend: {
             text: "Date of birth",
@@ -49,17 +49,17 @@
         items:[
             {
             name: 'day',
-            value: data['dob-person1-day'],
+            value: data['dob-child1-day'],
             classes: "govuk-input--width-2"
             },
             {
             name: 'month',
-            value: data['dob-person1-month'],
+            value: data['dob-child1-month'],
             classes: "govuk-input--width-2"
             },
             {
             name: 'year',
-            value: data['dob-person1-year'],
+            value: data['dob-child1-year'],
             classes: "govuk-input--width-4"
             }
             ]
@@ -69,8 +69,8 @@
 
       {% set genderHtml %}
       {{ govukInput({
-        id: "gender-desc1",
-        name: "gender-desc1",
+        id: "gender-desc-child1",
+        name: "gender-desc-child1",
         classes: "govuk-!-width-two-thirds",
         label: {
           text: "Describe gender in another way (optional)"
@@ -81,8 +81,8 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "gender1",
-        name: "gender1",
+        idPrefix: "gender-child1",
+        name: "gender-child1",
         fieldset: {
           legend: {
             text: "Gender",
@@ -113,8 +113,8 @@
         label: {
           text: "Relationship to you"
         },
-        id: "relationship1",
-        name: "relationship1",
+        id: "relationship-child1",
+        name: "relationship-child1",
         classes: "govuk-input--width-20"
       }) }}
 
@@ -385,7 +385,7 @@
 
       <div class="design-notes-box">
           <h3 class="govuk-heading-s">Design notes:</h3>
-          <p><strong> will be coded like add person for Monday - 5 children max + text box on the 5th</strong></p>
+          <p><strong> will be coded like add person for Monday -  NOT DONE YET - 5 children max + text box on the 5th</strong></p>
          <p>Wording will change for guidance top text, to be consistent</p>
          <p>Housing confirmed address is needed to confirm the children are really living on a regular basis. They contact other parent/carer later in the process to make sure but don't need us to ask for the name of that parent/carer at the moment </p>
       </div>

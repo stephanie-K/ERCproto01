@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
-        Apply online for Housing
+        Apply online for council housing
       </h1>
       <h2 class="govuk-heading-m">
           Address 1:
@@ -80,6 +80,12 @@
 </div>
 
       <p><a href="/forms/housing/CBLaddress3-loop.html">Edit address 3</a></p>
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Remove address 3",
+        classes: "button-warning",
+        href: "/forms/housing/CBLaddress2.html"
+      }) }}
 
       <form class="form" method="post">
      

@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Address 2
+  Address 3
 {% endblock %}
 
 {% block content %}
@@ -56,47 +56,78 @@
     </table>
   </div>
 
-      <p><a href="/forms/housing/CBLaddress2-loop.html">Edit address 2</a></p>
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+  <h2 class="govuk-heading-m">
+      Address 3:
+  </h2>
+  <div style="overflow: auto">
+    <table class=" govuk-table half-width">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr3']}}</td></tr>
+      <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type3']}}</td></tr>
+      <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in3-day']}}/{{data['in3-month']}}/{{data['in3-year']}}</td></tr>
+      <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out3-day']}}/{{data['out3-month']}}/{{data['out3-year']}}</td></tr>
+      <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+          {% if data['leave3'] == 'Other'%}
+          {{data['reason3-other']}}
+          {% else %}
+          {{data['leave3']}}
+          {% endif %}
+      </td></tr>
+    </tbody>
+  </table>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+<h2 class="govuk-heading-m">
+    Address 4:
+</h2>
+<div style="overflow: auto">
+  <table class=" govuk-table half-width">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr4']}}</td></tr>
+    <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type4']}}</td></tr>
+    <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in4-day']}}/{{data['in4-month']}}/{{data['in4-year']}}</td></tr>
+    <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out4-day']}}/{{data['out4-month']}}/{{data['out4-year']}}</td></tr>
+    <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+        {% if data['leave4'] == 'Other'%}
+        {{data['reason4-other']}}
+        {% else %}
+        {{data['leave4']}}
+        {% endif %}
+    </td></tr>
+  </tbody>
+</table>
+</div>
+      <p><a href="/forms/housing/CBLaddress4-loop.html">Edit address 4</a></p>
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Remove address 2",
+        text: "Remove address 4",
         classes: "button-warning",
-        href: "/forms/housing/CBLaddress1.html"
+        href: "/forms/housing/CBLaddress3-loop.html"
       }) }}
-      <form class="form" method="post">
-     
-        {% from "radios/macro.njk" import govukRadios %}
-
-        {{ govukRadios({
-          idPrefix: "add-address3",
-          name: "add-address3",
-          fieldset: {
-            legend: {
-              text: "Do you need to add another address?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
+      <br><br>
+      <h2 class="govuk-heading-m">
+          Add other addresses here (if applicable)
+      </h2>
+      {{ govukTextarea({
+        name: "more-address-to-add",
+        id: "more-address-to-add",
+        label: {
+          text: "Address, type of residence, date move in, date move out, reason for leaving"
+        }
+      }) }}
 
       {% from "button/macro.njk" import govukButton %}
       <br>
       {{ govukButton({
         text: "Continue",
-        classes: "button-primary"
+        classes: "button-primary",
+        href: "/forms/housing/CBLreasons.html"
       }) }}
-    </form>
+
 
     </div>
 </div>
