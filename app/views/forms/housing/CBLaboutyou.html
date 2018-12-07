@@ -20,6 +20,16 @@
 
       {{ govukInput({
         label: {
+          text: "Title"
+        },
+        id: "title-applicant",
+        name: "title-applicant",
+        value: data['title-applicant'],
+        classes: "govuk-input--width-4"
+      }) }}
+
+      {{ govukInput({
+        label: {
           text: "First name"
         },
         id: "first-name-applicant",
@@ -77,6 +87,7 @@
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
       <li>grouping 3 screens from the previous form here - Agree by Housing</li>
+      <li>We had to add a title (because of an internal system which needs it)</li>
     </ul>
 </div>
 <div class="IT-notes-box">
@@ -86,6 +97,7 @@
       <li>Validation: test the email is well formed if provided - Enter valid email address</li>
       <li>accept spaces in the phone number - if possible check the format - if not entered: Enter phone number - if not valid: Enter valid phone number</li>
       <li>Enter first name / Enter last name</li>
+      <li>We had to add a title, validation: Enter title</li>
     </ul>
 </div>
 {% endblock %}

@@ -18,6 +18,15 @@
         {% from "radios/macro.njk" import govukRadios %}
         {% from "textarea/macro.njk" import govukTextarea %}
         
+        {% set homelessHtml %}
+        <p>If you are homeless or could you soon become homeless, contact our Homeless Team without delay for advice. They will look at your situation and tell you what your housing options are.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Monday to Friday from 8.45am to 4.45pm (excluding public holidays) <strong>0141 577 3001</strong></li>
+          <li>Outwith office hours: <strong>0800 052 0180</strong></li>
+        </ul>
+
+        {% endset -%}
+
         {% set postcodeHtml %}
         {{ govukTextarea({
           id: "postcode",
@@ -54,7 +63,10 @@
             },
             {
               value: "no",
-              text: "No, I'm homeless"
+              text: "No, I'm homeless",
+              conditional: {
+                html: homelessHtml
+              }
             }
           ]
         }) }}
@@ -69,14 +81,14 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>pattern agreed by Housing - but we might need more guidance for Homeless option, here and / or on the Before you start page</li>
+      <li>pattern agreed by Housing - More guidance for Homeless option provided now here and there is a link on the Before you start page</li>
     </ul>
 </div>
 <div class="IT-notes-box">
   <h3 class="govuk-heading-s">IT notes:</h3>
   <ul class="govuk-list govuk-list--bullet">
   <li>text for address, mentions postcode now - no validation apart from the textbox not empty</li>
-  <li>if "No I'm homeless" is selected there might be more guidance and we use this answer for logic in contact details on the next screen</li>
+  <li>if "No I'm homeless" is selected there is now more guidance and we use this answer for logic in contact details on the next screen</li>
   <li>validation: Confirm fixed address / Enter address </li>
   </ul>
 </div>

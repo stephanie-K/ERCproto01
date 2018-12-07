@@ -20,7 +20,7 @@
           <div style="overflow: auto;">
           <table class=" govuk-table half-width">
               <tbody class="govuk-table__body">
-                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{ data['first-name-applicant']}}&nbsp;{{data['last-name-applicant']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['title-applicant']}}&nbsp;{{ data['first-name-applicant']}}&nbsp;{{data['last-name-applicant']}}</td></tr>
                 <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Phone:</th><td class="govuk-table__cell no-border">{{ data ['telephone-number']}}</td></tr>
                 <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Email (optional):</th><td class="govuk-table__cell no-border">{{data['email']}}</td></tr>
                 <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">
@@ -61,6 +61,7 @@
     <ul class="govuk-list govuk-list--bullet">
       <li>Edit details takes you back to the page "about you" with name , phone and email</li>
       <li>gender: display Female, or Male or Other, if description of gender is provided then display it INSTEAD of Other</li>
+      <li>the title is now added and will be at the start of the name for example: <strong>Name : Mr Bob Test</strong></li>
     </ul>
 </div>
 

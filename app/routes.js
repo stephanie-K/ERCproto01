@@ -129,6 +129,14 @@ router.post('/forms/housing/CBL16', function (req, res) {
   res.redirect('/forms/housing/CBLimmigration')
 })
 
+router.post('/forms/housing/CBLimmigration', function (req, res) {
+  var immigrationControl = req.session.data['immigration']
+  if (immigrationControl === 'no') {
+      return res.redirect('/forms/housing/CBLNI')
+  }
+  res.redirect('/forms/housing/CBLrecourse')
+})
+
 router.post('/forms/housing/CBLrecourse', function (req, res) {
   var isrecourse = req.session.data['is-recourse']
   if (isrecourse === 'yes') {
@@ -233,8 +241,12 @@ router.post('/forms/housing/CBL5yearsadd', function (req, res) {
 
 router.post('/forms/housing/CBLaddress1', function (req, res) {
   var addAddress2 = req.session.data['add-address2']
+  var hasJoint = req.session.data['is-joint']  // =========================================================================
   if (addAddress2 === 'yes') {
       return res.redirect('/forms/housing/CBLaddress2-loop')
+  }
+  if (hasJoint === 'yes'){
+    return res.redirect('/forms/housing/CBLjoint-info')
   }
   res.redirect('/forms/housing/CBLreasons')
 })
@@ -265,6 +277,18 @@ router.post('/forms/housing/CBLaddress3', function (req, res) {
 
 router.post('/forms/housing/CBLaddress4-loop', function (req, res) {
   res.redirect('/forms/housing/CBLaddress4')
+})
+
+router.post('/forms/housing/CBLaddress4', function (req, res) {
+  res.redirect('/forms/housing/CBLreasons')
+})
+
+router.post('/forms/housing/CBLjoint-info', function (req, res) {
+  var sameAddresses = req.session.data['same-addresses']
+  if (sameAddresses=== 'yes') {
+      return res.redirect('/forms/housing/CBLreasons')
+  }
+  res.redirect('/forms/housing/CBL5yearsadd-joint')
 })
 
 router.post('/forms/housing/CBLextra-reason-medical1', function (req, res) {
