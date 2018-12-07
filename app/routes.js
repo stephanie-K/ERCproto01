@@ -145,14 +145,6 @@ router.post('/forms/housing/CBLrecourse', function (req, res) {
   res.redirect('/forms/housing/CBLNI')
 })
 
-router.post('/forms/housing/CBLother-children', function (req, res) {
-  var otherChidren = req.session.data['other-children']
-  if (otherChidren === 'yes') {
-      return res.redirect('/forms/housing/CBLadd-children')
-  }
-  res.redirect('/forms/housing/CBLlegal')
-})
-
 router.post('/forms/housing/CBLaboutyou', function (req, res) {
   res.redirect('/forms/housing/CBLpostcode')
 })
@@ -233,6 +225,18 @@ router.post('/forms/housing/CBLperson4', function (req, res) {
       return res.redirect('/forms/housing/CBLadd-person5-loop')
   }
   res.redirect('/forms/housing/CBLbabies')
+})
+
+router.post('/forms/housing/CBLjoint', function (req, res) {
+  res.redirect('/forms/housing/CBLother-children')
+})
+
+router.post('/forms/housing/CBLother-children', function (req, res) {
+  var otherChidren = req.session.data['other-children']
+  if (otherChidren === 'yes') {
+      return res.redirect('/forms/housing/CBLadd-children')
+  }
+  res.redirect('/forms/housing/CBLlegal')
 })
 
 router.post('/forms/housing/CBL5yearsadd', function (req, res) {

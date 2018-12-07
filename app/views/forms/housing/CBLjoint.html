@@ -13,6 +13,7 @@
         Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
 {% from "radios/macro.njk" import govukRadios %}
 {% from "textarea/macro.njk" import govukTextarea %}
 
@@ -57,10 +58,9 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/CBLother-children.html",
         classes: "button-primary"
       }) }}
-
+    </form>
     </div>
 </div>
 <div class="design-notes-box">
