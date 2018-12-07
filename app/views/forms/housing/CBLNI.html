@@ -13,6 +13,7 @@
           Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
 {% from "radios/macro.njk" import govukRadios %}
 {% from "input/macro.njk" import govukInput %}
 
@@ -20,6 +21,7 @@
 {{ govukInput({
   id: "ni",
   name: "ni",
+  value: data['ni'],
   classes: "govuk-!-width-one-third",
   label: {
     text: "Enter your National Insurance number"
@@ -44,22 +46,24 @@
     {
       value: "yes",
       text: "Yes",
+      checked: checked("ni-nb", "yes"),
       conditional: {
         html: niHtml
       }
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+      checked: checked("ni-nb", "no")
     }
   ]
 }) }}
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/CBLaboutyou.html",
         classes: "button-primary"
       }) }}
+    </form>
     </div>
 </div>
 <div class="design-notes-box">

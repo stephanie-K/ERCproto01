@@ -1,0 +1,93 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Address 2 joint applicant
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+          Address 1 - joint applicant:
+      </h2>
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1-joint']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1-joint']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-joint-day']}}/{{data['in1-joint-month']}}/{{data['in1-joint-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-joint-day']}}/{{data['out1-joint-month']}}/{{data['out1-joint-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+              {% if data['leave1-joint'] == 'Other' %}
+              {{data['reason1-joint-other']}}
+              {% else %}
+              {{data['leave1-joint']}}
+              {% endif %}
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+    <h2 class="govuk-heading-m">
+        Address 2 - joint applicant:
+    </h2>
+    <div style="overflow: auto">
+      <table class=" govuk-table half-width">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr2-joint']}}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type2-joint']}}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in2-joint-day']}}/{{data['in2-joint-month']}}/{{data['in2-joint-year']}}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out2-joint-day']}}/{{data['out2-joint-month']}}/{{data['out2-joint-year']}}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+            {% if data['leave2-joint'] == 'Other'%}
+            {{data['reason2-joint-other']}}
+            {% else %}
+            {{data['leave2-joint']}}
+            {% endif %}
+        </td></tr>
+      </tbody>
+    </table>
+  </div>
+
+      <p><a href="/forms/housing/CBLaddress2-loop-joint.html">Edit address 2</a></p>
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Remove address 2",
+        classes: "button-warning",
+        href: "/forms/housing/CBLaddress1-joint.html"
+      }) }}
+      <form class="form" method="post">
+     
+      <h2 class="govuk-heading-m">
+          Add other addresses here (if applicable)
+      </h2>
+      {{ govukTextarea({
+        name: "more-address-to-add",
+        id: "more-address-to-add",
+        label: {
+          text: "Address, type of residence, date move in, date move out, reason for leaving"
+        }
+      }) }}
+
+
+      {% from "button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

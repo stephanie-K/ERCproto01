@@ -15,11 +15,12 @@
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% from "radios/macro.njk" import govukRadios %}
 {% from "textarea/macro.njk" import govukTextarea %}
-
+<form class="form" method="post">
 {% set babyHtml %}
 {{ govukTextarea({
   id: "baby",
   name: "baby",
+  value: data['baby'],
   classes: "govuk-!-width-two-thirds",
   label: {
     text: "Enter each name and due date"
@@ -41,23 +42,24 @@
     {
       value: "yes",
       text: "Yes",
+      checked: checked ("is-pregnant", "yes"),
       conditional: {
         html: babyHtml
       }
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+      checked: checked ("is-pregnant", "no")
     }
   ]
 }) }}
 
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/CBLjoint.html",
         classes: "button-primary"
       }) }}
-
+    </form>
     </div>
 </div>
 <div class="design-notes-box">

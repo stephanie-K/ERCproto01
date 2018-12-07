@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Add person
+  Add child
 {% endblock %}
 
 {% block content %}
@@ -12,25 +12,25 @@
         Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-      <p class="govuk-body-l">Enter each person who will be living with you.</p>
+      <p class="govuk-body-l">Enter each child spending part of their time living with you</p>
       <h2 class="govuk-heading-m">
-          Person 1:
+          Child 1:
       </h2>
       <div style="overflow: auto">
         <table class=" govuk-table half-width">
           <tbody class="govuk-table__body">
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person1']}}&nbsp;{{data['last-name-person1']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person1-day']}}/{{data['dob-person1-month']}}/{{data['dob-person1-year']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender1'] === 'Other' %} {{data['gender-desc1']}} {% else %} {{data['gender1']}}{% endif %}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with1']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship1']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-child1']}}&nbsp;{{data['last-name-child1']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-child1-day']}}/{{data['dob-child1-month']}}/{{data['dob-child1-year']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-child1'] === 'Other' %} {{data['gender-child-desc1']}} {% else %} {{data['gender-child1']}}{% endif %}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['child-relationship1']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Their address:</th><td class="govuk-table__cell no-border">{{data['child-add1']}}</td></tr>
           </tbody>
         </table>
       </div>
   
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
       <h2 class="govuk-heading-m">
-          Person 2:
+          Child 2:
       </h2>
       
       <form class="form" method="post">
@@ -40,9 +40,9 @@
         label: {
           text: "First name"
         },
-        id: "first-name-person2",
-        name: "first-name-person2",
-        value: data['first-name-person2'],
+        id: "first-name-child2",
+        name: "first-name-child2",
+        value: data['first-name-child2'],
         classes: "govuk-input--width-20"
       }) }}
 
@@ -50,15 +50,15 @@
         label: {
           text: "Last name"
         },
-        id: "last-name-person2",
-        name: "last-name-person2",
-        value: data['last-name-person2'],
+        id: "last-name-child2",
+        name: "last-name-child2",
+        value: data['last-name-child2'],
         classes: "govuk-input--width-20"
       }) }}
 
       {{ govukDateInput({
-        id: "dob-person2",
-        namePrefix: "dob-person2",
+        id: "dob-child2",
+        namePrefix: "dob-child2",
         fieldset: {
           legend: {
             text: "Date of birth",
@@ -69,17 +69,17 @@
         items:[
             {
             name: 'day',
-            value: data['dob-person2-day'],
+            value: data['dob-child2-day'],
             classes: "govuk-input--width-2"
             },
             {
             name: 'month',
-            value: data['dob-person2-month'],
+            value: data['dob-child2-month'],
             classes: "govuk-input--width-2"
             },
             {
             name: 'year',
-            value: data['dob-person2-year'],
+            value: data['dob-child2-year'],
             classes: "govuk-input--width-4"
             }
             ]
@@ -89,9 +89,9 @@
 
       {% set genderHtml %}
       {{ govukInput({
-        id: "gender-desc2",
-        name: "gender-desc2",
-        value: data['gender-desc2'],
+        id: "gender-child-desc2",
+        name: "gender-child-desc2",
+        value: data['gender-child-desc2'],
         classes: "govuk-!-width-two-thirds",
         label: {
           text: "Describe gender in another way (optional)"
@@ -102,8 +102,8 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "gender2",
-        name: "gender2",
+        idPrefix: "gender-child2",
+        name: "gender-child2",
         fieldset: {
           legend: {
             text: "Gender",
@@ -115,17 +115,17 @@
         {
           value: "female",
           text: "Female",
-          checked: checked ("gender2", "female")
+          checked: checked ("gender-child2", "female")
         },
         {
           value: "male",
           text: "Male",
-          checked: checked ("gender2", "male")
+          checked: checked ("gender-child2", "male")
         },
         {
           value: "Other",
           text: "Other",
-          checked: checked ("gender2", "Other"),
+          checked: checked ("gender-child2", "Other"),
           conditional: {
             html: genderHtml
           }
@@ -134,39 +134,24 @@
     }) }}
 
 
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "live-with2",
-        name: "live-with2",
-        fieldset: {
-          legend: {
-            text: "Do they live with you now?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-        {
-          value: "yes",
-          text: "Yes",
-          checked: checked ("live-with2", "yes")
-        },
-        {
-          value: "no",
-          text: "No",
-          checked: checked ("live-with2", "no")
-        }
-        ]
-      }) }}
-
       {{ govukInput({
         label: {
           text: "Relationship to you"
         },
-        id: "relationship2",
-        name: "relationship2",
-        value: data['relationship2'],
+        id: "child-relationship2",
+        name: "child-relationship2",
+        value: data['child-relationship2'],
         classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Enter their address"
+        },
+        id: "child-add2",
+        name: "child-add2",
+        value: data ['child-add2'],
+        classes: "govuk-input--width-30"
       }) }}
 
       {% from "button/macro.njk" import govukButton %}

@@ -12,8 +12,32 @@ Health, care, social and support needs
             Apply online for council housing
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-        <form class="form" method="post">
-    
+   
+        {% set policeHtml %}
+        {{ govukRadios({
+            idPrefix: "police",
+            name: "police",
+            fieldset: {
+                legend: {
+                text: "Have you told the police?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Yes"
+                },
+                {
+                value: "no",
+                text: "No"
+                }
+            ]
+            }) }}
+        {% endset -%}
+
+
         {{ govukRadios({
         idPrefix: "abuse",
         name: "abuse",
@@ -26,19 +50,23 @@ Health, care, social and support needs
         },
         items: [
             {
-            value: "no",
-            text: "No"
+            value: "yes",
+            text: "Yes",
+            conditional: {
+                html: policeHtml
+              }
             },
             {
-            value: "yes",
-            text: "Yes"
+            value: "no",
+            text: "No"
             }
         ]
         }) }}
  
         {{ govukButton({
           text: "Continue",
-          classes: "button-primary"
+          classes: "button-primary",
+          href: "/forms/housing/CBLhouse-type.html"
         }) }}
       </form>
 

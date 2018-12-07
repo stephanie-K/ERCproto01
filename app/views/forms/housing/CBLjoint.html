@@ -19,8 +19,9 @@
 
 {% set jointHtml %}
 {{ govukTextarea({
-  id: "joint",
-  name: "joint",
+  id: "joint-applicant",
+  name: "joint-applicant",
+  value: data['joint-applicant'],
   classes: "govuk-!-width-two-thirds",
   label: {
     text: "Enter their name"
@@ -45,13 +46,15 @@
     {
       value: "yes",
       text: "Yes",
+      checked: checked ("is-joint", "yes"),
       conditional: {
         html: jointHtml
       }
     },
     {
       value: "no",
-      text: "No"
+      text: "No",
+      checked: checked ("is-joint", "no")
     }
   ]
 }) }}

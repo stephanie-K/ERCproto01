@@ -56,7 +56,8 @@
           items: [
             {
               value: "yes",
-              text: "Yes",
+              text: "Yes", 
+              checked: checked ("has-add", "yes"),
               conditional: {
                 html: postcodeHtml
               }
@@ -64,6 +65,7 @@
             {
               value: "no",
               text: "No, I'm homeless",
+              checked: checked ("has-add", "no"),
               conditional: {
                 html: homelessHtml
               }

@@ -45,19 +45,23 @@
           items: [
             {
               value: "Email",
-              text: "Email"
+              text: "Email",
+              checked: checked ("how-contacted", "Email")
             },
             {
               value: "Phone",
-              text: "Phone"
+              text: "Phone",
+              checked: checked ("how-contacted", "Phone")
             },
             {
               value: "Post",
-              text: "Post"
+              text: "Post",
+              checked: checked ("how-contacted", "Post")
             },
             {
               value: "I have an advocate or power of attorney",
               text: "I have an advocate or power of attorney",
+              checked: checked ("how-contacted", "I have an advocate or power of attorney"),
               conditional: {
                 html: attorneyHtml
               }
@@ -82,15 +86,18 @@
           items: [
             {
               value: "Phone",
-              text: "Phone"
+              text: "Phone",
+              checked: checked ("how-contacted", "Phone")
             },
             {
               value: "Post",
-              text: "Post"
+              text: "Post",
+              checked: checked ("how-contacted", "Post")
             },
             {
               value: "I have an advocate or power of attorney",
               text: "I have an advocate or power of attorney",
+              checked: checked ("how-contacted", "I have an advocate or power of attorney"),
               conditional: {
                 html: attorneyHtml
               }

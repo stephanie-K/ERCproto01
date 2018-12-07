@@ -12,8 +12,8 @@ Health, care, social and support needs
             Apply online for council housing
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-        <form class="form" method="post">
-        {% from "radios/macro.njk" import govukRadios %}
+
+        {% set medicalHtml %}
         {{ govukRadios({
             idPrefix: "priority",
             name: "priority",
@@ -35,7 +35,33 @@ Health, care, social and support needs
                 }
             ]
             }) }}
-
+        {% endset -%}
+        
+        
+        {{ govukRadios({
+        idPrefix: "medical-conditional",
+        name: "medical",
+        fieldset: {
+            legend: {
+            text: "Do you have any physical or mental health needs which are affected by your housing circumstances?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+            value: "yes",
+            text: "Yes"
+            },
+            {
+            value: "no",
+            text: "No",
+            conditional: {
+                html: medicalHtml
+              }
+            }
+        ]
+        }) }}
 
  
         {{ govukButton({
@@ -43,14 +69,9 @@ Health, care, social and support needs
           classes: "button-primary",
           href: "/forms/housing/CBLextra-reason-abuse.html"
         }) }}
-      
+
 
     </div>
-</div>
-
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-    <p><strong>if they say no to medical application, then we need to prompt them to fill that form, could be guidance here and /or in the confirmation email?</strong></p>
 </div>
 
 {% endblock %}

@@ -43,15 +43,18 @@
           items: [
             {
               value: "female",
-              text: "Female"
+              text: "Female",
+              checked: checked ("gender-applicant", "female")
             },
             {
               value: "male",
-              text: "Male"
+              text: "Male",
+              checked: checked ("gender-applicant", "male")
             },
             {
               value: "Other",
               text: "Other",
+              checked: checked ("gender-applicant", "Other"),
               conditional: {
                 html: genderHtml
               }

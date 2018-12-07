@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Add person
+  Add child
 {% endblock %}
 
 {% block content %}
@@ -12,9 +12,9 @@
         Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-      <p class="govuk-body-l">Enter each person who will be living with you.</p>
+      <p class="govuk-body-l">Enter each child spending part of their time living with you</p>
       <h2 class="govuk-heading-m">
-          Person 1:
+          Child 1:
       </h2>
       
       <form class="form" method="post">
@@ -24,9 +24,9 @@
         label: {
           text: "First name"
         },
-        id: "first-name-person1",
-        name: "first-name-person1",
-        value: data['first-name-person1'],
+        id: "first-name-child1",
+        name: "first-name-child1",
+        value: data['first-name-child1'],
         classes: "govuk-input--width-20"
       }) }}
 
@@ -34,15 +34,15 @@
         label: {
           text: "Last name"
         },
-        id: "last-name-person1",
-        name: "last-name-person1",
-        value: data['last-name-person1'],
+        id: "last-name-child1",
+        name: "last-name-child1",
+        value: data['last-name-child1'],
         classes: "govuk-input--width-20"
       }) }}
 
       {{ govukDateInput({
-        id: "dob-person1",
-        namePrefix: "dob-person1",
+        id: "dob-child1",
+        namePrefix: "dob-child1",
         fieldset: {
           legend: {
             text: "Date of birth",
@@ -53,17 +53,17 @@
         items:[
             {
             name: 'day',
-            value: data['dob-person1-day'],
+            value: data['dob-child1-day'],
             classes: "govuk-input--width-2"
             },
             {
             name: 'month',
-            value: data['dob-person1-month'],
+            value: data['dob-child1-month'],
             classes: "govuk-input--width-2"
             },
             {
             name: 'year',
-            value: data['dob-person1-year'],
+            value: data['dob-child1-year'],
             classes: "govuk-input--width-4"
             }
             ]
@@ -71,14 +71,14 @@
 
       {% from "radios/macro.njk" import govukRadios %}
 
-      {% set genderHtml %}
+      {% set genderchildHtml %}
       {{ govukInput({
-        id: "gender-desc1",
-        name: "gender-desc1",
-        value: data['gender-desc1'],
+        id: "gender-child-desc1",
+        name: "gender-child-desc1",
+        value: data['gender-child-desc1'],
         classes: "govuk-!-width-two-thirds",
         label: {
-          text: "Describe gender in another way (optional)"
+          text: "Describe gender-child in another way (optional)"
         }
       }) }}
       {% endset -%}
@@ -86,8 +86,8 @@
 
       {{ govukRadios({
         classes: "govuk-radios",
-        idPrefix: "gender1",
-        name: "gender1",
+        idPrefix: "gender-child1",
+        name: "gender-child1",
         fieldset: {
           legend: {
             text: "Gender",
@@ -99,46 +99,20 @@
           {
             value: "female",
             text: "Female",
-            checked: checked ("gender1", "female")
+            checked: checked ("gender-child1", "female")
           },
           {
             value: "male",
             text: "Male",
-            checked: checked ("gender1", "male")
+            checked: checked ("gender-child1", "male")
           },
           {
             value: "Other",
             text: "Other",
-            checked: checked ("gender1", "Other"),
+            checked: checked ("gender-child1", "Other"),
             conditional: {
-              html: genderHtml
+              html: genderchildHtml
             }
-          }
-        ]
-      }) }}
-
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        idPrefix: "live-with1",
-        name: "live-with1",
-        fieldset: {
-          legend: {
-            text: "Do they live with you now?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            checked: checked ("live-with1", "yes")
-          },
-          {
-            value: "no",
-            text: "No",
-            checked: checked ("live-with1", "no")
           }
         ]
       }) }}
@@ -147,10 +121,20 @@
         label: {
           text: "Relationship to you"
         },
-        id: "relationship1",
-        name: "relationship1",
-        value: data['relationship1'],
+        id: "child-relationship1",
+        name: "child-relationship1",
+        value: data['child-relationship1'],
         classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Enter their address"
+        },
+        id: "child-add1",
+        name: "child-add1",
+        value: data ['child-add1'],
+        classes: "govuk-input--width-30"
       }) }}
 
       {% from "button/macro.njk" import govukButton %}
@@ -164,14 +148,13 @@
     </div>
 </div>
 <div class="alt-notes-box">
-<p><a href="/forms/housing/CBLadd-person.html">Try an alternative</a></p>
+<p><a href="/forms/housing/CBLadd-children.html">Try an alternative</a></p>
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-   <li>We will ask about pregnancy, and joint applicant after - agreed by Housing</li>
-   <li>Ideally we want this pattern to be used (ask one by one, and ask on a different screen if they want to add another)</li>
-   <li><a href="/forms/housing/CBLadd-person.html">Try an alternative</a><strong> using javascript and adding all people on one page, this is close to what IT has developed so far</strong></li>
+   <li>I only coded 2 children, for the real form it will be 5</li>
+   <li><a href="/forms/housing/CBLadd-children.html">Try an alternative</a><strong> using javascript and adding all children on one page, this is close to what IT has developed so far</strong></li>
    </ul>
 </div>
 <div class="IT-notes-box">
@@ -180,9 +163,9 @@
       <li>Validation - name, relation are not empty: Enter first name - Enter last name  - Enter relationship</li>
       <li>dob, 3 fields not empty: Enter date of Birth - and if possible is a valid date (not the 31 of April) - Enter valid date</li>
       <li>need to pick one Gender, but description if Other is optional - Enter gender</li>
-      <li>pick yes or no living with you - Confirm live with you now</li>
-      <li>same for all other screen for person 2 etc....</li>
-      <li><strong>we need to be able to enter 10 people</strong> potentially. On the 10th at the bottom, we need an open textbox with label: <a href="/forms/housing/CBLperson3">Tell us about anyone else you didn't add yet (if applicable)</a> (placeholder for now, content by Sharon later)</li>
+      <li>address - Enter their address</li>
+      <li>same for all other screen for child 2 etc....</li>
+      <li><strong>we need to be able to enter 5 children</strong> potentially. On the 5th at the bottom, we need an open textbox with label: <a href="/forms/housing/CBLchild2">Tell us about anyone else you didn't add yet (if applicable)</a> (placeholder for now, content by Sharon later)</li>
     </ul>
 </div>
 

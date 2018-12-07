@@ -1,0 +1,79 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Child 2
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+          Child 1:
+      </h2>
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-child1']}}&nbsp;{{data['last-name-child1']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-child1-day']}}/{{data['dob-child1-month']}}/{{data['dob-child1-year']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-child1'] === 'Other' %} {{data['gender-child-desc1']}} {% else %} {{data['gender-child1']}}{% endif %}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['child-relationship1']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Their address:</th><td class="govuk-table__cell no-border">{{data['child-add1']}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+      <h2 class="govuk-heading-m">
+          Child 2:
+      </h2>
+      <div style="overflow: auto">
+        <table class=" govuk-table half-width">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-child2']}}&nbsp;{{data['last-name-child2']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-child2-day']}}/{{data['dob-child2-month']}}/{{data['dob-child2-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-child2'] === 'Other' %} {{data['gender-child-desc2']}} {% else %} {{data['gender-child2']}}{% endif %}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['child-relationship2']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Their address:</th><td class="govuk-table__cell no-border">{{data['child-add2']}}</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+      <p><a href="/forms/housing/CBLadd-child2-loop.html">Edit child 2 details</a></p>
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Remove child 2",
+        classes: "button-warning",
+        href: "/forms/housing/CBLchild1.html"
+      }) }}
+      <br><br>
+      <form class="form" method="post">
+          <h2 class="govuk-heading-m">
+              Tell us about anyone else you didn't add yet (if applicable)
+          </h2>
+          {{ govukTextarea({
+            name: "more-children-to-add",
+            id: "more-children-to-add",
+            value: data['more-children-to-add'],
+            label: {
+              text: "Name, date of birth, gender, relationship to you, address"
+            }
+          }) }}
+ 
+      {% from "button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}     
+    </form>
+
+    </div>
+</div>
+
+
+{% endblock %}

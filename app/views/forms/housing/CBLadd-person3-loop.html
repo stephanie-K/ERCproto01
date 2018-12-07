@@ -128,21 +128,24 @@
           }
         },
         items: [
-          {
-            value: "female",
-            text: "Female"
-          },
-          {
-            value: "male",
-            text: "Male"
-          },
-          {
-            value: "Other",
-            text: "Other",
-            conditional: {
-              html: genderHtml
-            }
+        {
+          value: "female",
+          text: "Female",
+          checked: checked ("gender3", "female")
+        },
+        {
+          value: "male",
+          text: "Male",
+          checked: checked ("gender3", "male")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: checked ("gender3", "Other"),
+          conditional: {
+            html: genderHtml
           }
+        }
         ]
       }) }}
 
@@ -159,14 +162,16 @@
           }
         },
         items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          }
+        {
+          value: "yes",
+          text: "Yes",
+          checked: checked ("live-with3", "yes")
+        },
+        {
+          value: "no",
+          text: "No",
+          checked: checked ("live-with3", "no")
+        }
         ]
       }) }}
 

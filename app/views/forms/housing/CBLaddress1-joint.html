@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Address 1
+  Address 1 Joint applicant
 {% endblock %}
 
 {% block content %}
@@ -14,26 +14,26 @@
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <h2 class="govuk-heading-m">
-          Address 1:
+          Address 1 - joint applicant:
       </h2>
       <div style="overflow: auto">
         <table class=" govuk-table half-width">
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-day']}}/{{data['in1-month']}}/{{data['in1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-day']}}/{{data['out1-month']}}/{{data['ou1t-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1-joint']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1-joint']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-joint-day']}}/{{data['in1-joint-month']}}/{{data['in1-joint-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-joint-day']}}/{{data['out1-joint-month']}}/{{data['ou1-jointt-year']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-              {% if data['leave1'] == 'Other' %}
-              {{data['reason1-other']}}
+              {% if data['leave1-joint'] == 'Other' %}
+              {{data['reason1-joint-other']}}
               {% else %}
-              {{data['leave1']}}
+              {{data['leave1-joint']}}
               {% endif %}
           </td></tr>
         </tbody>
       </table>
     </div>
-      <p><a href="/forms/housing/CBL5yearsadd.html">Edit address 1</a></p>
+      <p><a href="/forms/housing/CBL5yearsadd-joint.html">Edit address 1</a></p>
 
 
       <form class="form" method="post">
@@ -41,8 +41,8 @@
         {% from "radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "add-address2",
-          name: "add-address2",
+          idPrefix: "add-address2-joint",
+          name: "add-address2-joint",
           fieldset: {
             legend: {
               text: "Do you need to add another address?",
@@ -54,12 +54,12 @@
             {
               value: "yes",
               text: "Yes",
-              checked: checked ("add-address2", "yes")
+              checked: checked ("add-address2-joint", "yes")
             },
             {
               value: "no",
               text: "No",
-              checked: checked ("add-address2", "no")
+              checked: checked ("add-address2-joint", "no")
             }
           ]
         }) }}

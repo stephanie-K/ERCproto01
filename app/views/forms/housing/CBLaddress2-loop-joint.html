@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Add address
+  Add address Joint applicant
 {% endblock %}
 
 {% block content %}
@@ -13,22 +13,22 @@
         Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-      <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years. Start with the one you are living in at the moment.</p>
+      <p class="govuk-body-l">Enter the addresses your joint applicant lived at for the last 5 years. Start with the one they are living in at the moment.</p>
       <h2 class="govuk-heading-m">
           Address 1:
       </h2>
       <div style="overflow: auto">
         <table class=" govuk-table half-width">
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-day']}}/{{data['in1-month']}}/{{data['in1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-day']}}/{{data['out1-month']}}/{{data['ou1t-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1-joint']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1-joint']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-joint-day']}}/{{data['in1-joint-month']}}/{{data['in1-joint-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-joint-day']}}/{{data['out1-joint-month']}}/{{data['ou1-jointt-year']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-              {% if data['leave1'] == 'Other'%}
-              {{data['reason1-other']}}
+              {% if data['leave1-joint'] == 'Other'%}
+              {{data['reason1-joint-other']}}
               {% else %}
-              {{data['leave1']}}
+              {{data['leave1-joint']}}
               {% endif %}
           </td></tr>
         </tbody>
@@ -47,9 +47,9 @@
           label: {
             text: "Address"
           },
-          id: "addr2",
-          name: "addr2",
-          value: data['addr2'],
+          id: "addr2-joint",
+          name: "addr2-joint",
+          value: data['addr2-joint'],
           classes: "govuk-input--width-20"
         }) }}
   
@@ -57,8 +57,8 @@
 <br><br>
         {{ govukRadios({
           
-          idPrefix: "type2",
-          name: "type2",
+          idPrefix: "type2-joint",
+          name: "type2-joint",
           fieldset: {
             legend: {
               text: "Type of residence",
@@ -70,17 +70,17 @@
             {
               value: "tenant",
               text: "Tenant",
-              checked: checked ("type2", "tenant")
+              checked: checked ("type2-joint", "tenant")
             },
             {
               value: "Lodger",
               text: "Lodger",
-              checked: checked ("type2", "Lodger")
+              checked: checked ("type2-joint", "Lodger")
             },
             {
               value: "Owner",
               text: "Owner",
-              checked: checked ("type2", "Owner")
+              checked: checked ("type2-joint", "Owner")
             }
           ]
         }) }}
@@ -88,8 +88,8 @@
         {% from "date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
-          id: "in2",
-          namePrefix: "in2",
+          id: "in2-joint",
+          namePrefix: "in2-joint",
           fieldset: {
             legend: {
               text: "Date moved in",
@@ -103,25 +103,25 @@
           items:[
               {
               name: 'day',
-              value: data['in2-day'],
+              value: data['in2-joint-day'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'month',
-              value: data['in2-month'],
+              value: data['in2-joint-month'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'year',
-              value: data['in2-year'],
+              value: data['in2-joint-year'],
               classes: "govuk-input--width-4"
               }
               ]
         }) }}
 
         {{ govukDateInput({
-          id: "out2",
-          namePrefix: "out2",
+          id: "out2-joint",
+          namePrefix: "out2-joint",
           fieldset: {
             legend: {
               text: "Date moved out",
@@ -132,17 +132,17 @@
           items:[
               {
               name: 'day',
-              value: data['out2-day'],
+              value: data['out2-joint-day'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'month',
-              value: data['out2-month'],
+              value: data['out2-joint-month'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'year',
-              value: data['out2-year'],
+              value: data['out2-joint-year'],
               classes: "govuk-input--width-4"
               }
               ]
@@ -151,10 +151,10 @@
         {% from "textarea/macro.njk" import govukTextarea %}
         {% set otherHtml %}
         {{ govukTextarea({
-          name: "reason2-other",
-          id: "reason2-other",
+          name: "reason2-joint-other",
+          id: "reason2-joint-other",
           classes: "govuk-!-width-two-thirds",
-          value: data['reason2-other'],
+          value: data['reason2-joint-other'],
           label: {
             text: "Give Details"
           }
@@ -165,8 +165,8 @@
         {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
         {{ govukCheckboxes({
-          idPrefix: "leave2-conditional",
-          name: "leave2",
+          idPrefix: "leave2-joint-conditional",
+          name: "leave2-joint",
           fieldset: {
             legend: {
               text: "Reason for leaving",
@@ -181,37 +181,37 @@
           {
             value: "Eviction: rent arrears",
             text: "Eviction: rent arrears",
-            checked: checked("leave2", "Eviction: rent arrears")
+            checked: checked("leave2-joint", "Eviction: rent arrears")
           },
           {
             value: "Eviction: other reason",
             text: "Eviction: other reason",
-            checked: checked("leave2", "Eviction: other reason")
+            checked: checked("leave2-joint", "Eviction: other reason")
           },
           {
             value: "Asked or told to leave",
             text: "Asked or told to leave",
-            checked: checked("leave2", "Asked or told to leave")
+            checked: checked("leave2-joint", "Asked or told to leave")
           },
           {
             value: "Marriage breakdown",
             text: "Marriage breakdown",
-            checked: checked("leave2", "Marriage breakdown")
+            checked: checked("leave2-joint", "Marriage breakdown")
           },
           {
             value: "End of lease",
             text: "End of lease",
-            checked: checked("leave2", "End of lease")
+            checked: checked("leave2-joint", "End of lease")
           },
           {
             value: "House sale",
             text: "House sale",
-            checked: checked("leave2", "House sale")
+            checked: checked("leave2-joint", "House sale")
           },
           {
             value: "Other",
             text: "Other",
-            checked: checked("leave2", "Other"),
+            checked: checked("leave2-joint", "Other"),
             conditional: {
               html: otherHtml
             }

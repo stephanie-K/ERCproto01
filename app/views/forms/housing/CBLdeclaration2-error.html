@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Declaration
+  Error - Declaration
 {% endblock %}
 
 {% block content %}
@@ -40,6 +40,9 @@
                 classes: "govuk-fieldset__legend--s"
                 }
             },
+            errorMessage: {
+                text: "You need to check the box to confirm you read, understand and agree "
+              },
             items: [
                 {
                 value: "has-read",

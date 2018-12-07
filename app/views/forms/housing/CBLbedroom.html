@@ -25,7 +25,7 @@
         name: "double",
         fieldset: {
           legend: {
-            text: "How many are double bedrooms?",
+            text: "How many are double?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -60,7 +60,7 @@
         name: "single",
         fieldset: {
           legend: {
-            text: "How many are single bedrooms?",
+            text: "How many are single?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -93,14 +93,14 @@
   
       <br>
       {% set lessRoomsHtml %}
-      <p class="govuk-body-l">Now tell us only about the rooms you can use.</p>
+      <p class="govuk-body-l">Now tell us only about the bedrooms you can use.</p>
       {{ govukRadios({
         classes: "govuk-radios--inline",
         idPrefix: "double-used",
         name: "double-used",
         fieldset: {
           legend: {
-            text: "How many are double bedrooms?",
+            text: "How many are double?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
@@ -135,7 +135,7 @@
         name: "single-used",
         fieldset: {
           legend: {
-            text: "How many are single bedrooms?",
+            text: "How many are single?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }

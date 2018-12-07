@@ -66,29 +66,16 @@
       }) }}
       <form class="form" method="post">
      
-        {% from "radios/macro.njk" import govukRadios %}
-
-        {{ govukRadios({
-          idPrefix: "add-address3",
-          name: "add-address3",
-          fieldset: {
-            legend: {
-              text: "Do you need to add another address?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
+      <h2 class="govuk-heading-m">
+          Add other addresses here (if applicable)
+      </h2>
+      {{ govukTextarea({
+        name: "more-address-to-add",
+        id: "more-address-to-add",
+        label: {
+          text: "Address, type of residence, date move in, date move out, reason for leaving"
+        }
+      }) }}
 
 
       {% from "button/macro.njk" import govukButton %}
