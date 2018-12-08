@@ -1,0 +1,70 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Equal opportunities - Gender
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Equal opportunities questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {% set genderHtml %}
+        {{ govukInput({
+          id: "gender-description",
+          name: "gender-description",
+          value: data['gender-descricption'],
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Describe gender in another way (optional)"
+          }
+        }) }}
+        {% endset -%}
+  
+  
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "gender",
+          name: "gender",
+          fieldset: {
+            legend: {
+              text: "What is your gender?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "female",
+              text: "Female"
+            },
+            {
+              value: "male",
+              text: "Male"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: genderHtml
+              }
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/age.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

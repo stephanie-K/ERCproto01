@@ -1,0 +1,66 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Equal opportunities - Age
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Equal opportunities questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "radios/macro.njk" import govukRadios %}
+  
+  
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "age",
+          name: "age",
+          fieldset: {
+            legend: {
+              text: "How old are you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "0-15",
+              text: "0 to 15"
+            },
+            {
+              value: "16-24",
+              text: "16 to 24"
+            },
+            {
+              value: "25-39",
+              text: "25 to 39"
+            },
+            {
+              value: "40-49",
+              text: "40 to 49"
+            },
+            {
+              value: "50-59",
+              text: "50 to 59"
+            },
+            {
+              value: "60-over",
+              text: "60 or over"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/disability.html"
+        }) }}
+
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,228 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Equal opportunities - Ethnic origin
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">
+            Equal opportunities questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% set otherwhiteHtml %}
+            {{ govukInput({
+            id: "other-white",
+            name: "other-white",
+            value: data['other-white'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Describe other White"
+            }
+            }) }}
+        {% endset -%}
+
+        {% set otherblackHtml %}
+        {{ govukInput({
+        id: "other-black",
+        name: "other-black",
+        value: data['other-black'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+            text: "Describe other Black"
+        }
+        }) }}
+        {% endset -%}
+
+        {% set otherasianHtml %}
+        {{ govukInput({
+        id: "other-asian",
+        name: "other-asian",
+        value: data['other-asian'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+            text: "Describe other Asian"
+        }
+        }) }}
+        {% endset -%}
+
+        {% set otherethnicHtml %}
+        {{ govukInput({
+        id: "other-ethnic",
+        name: "other-ethnic",
+        value: data['other-ethnic'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+            text: "Describe other ethnic background"
+        }
+        }) }}
+        {% endset -%}
+
+        {% set whiteHtml %}
+        {{ govukRadios({
+            idPrefix: "white",
+            name: "white",
+            items: [
+                {
+                value: "scottish",
+                text: "Scottish"
+                },
+                {
+                value: "English",
+                text: "English"
+                },
+                {
+                value: "irish",
+                text: "Irish"
+                },
+                {
+                value: "Welsh",
+                text: "Welsh"
+                },
+                {
+                value: "Gypsy or Traveller",
+                text: "Gypsy or Traveller"
+                },
+                {
+                value: "Polish",
+                text: "Polish"
+                },
+                {
+                value: "Other White",
+                text: "Other White",
+                conditional: {
+                    html: otherwhiteHtml
+                  }
+                }
+            ]
+            }) }}
+        {% endset -%}
+
+        {% set blackHtml %}
+        {{ govukRadios({
+            idPrefix: "black",
+            name: "black",
+            items: [
+                {
+                value: "african",
+                text: "African"
+                },
+                {
+                value: "caribbean",
+                text: "Caribbean"
+                },
+                {
+                value: "other black",
+                text: "Other Black",
+                conditional: {
+                    html: otherblackHtml
+                  }
+                }
+            ]
+            }) }}
+        {% endset -%}
+
+        {% set asianHtml %}
+        {{ govukRadios({
+            idPrefix: "asian",
+            name: "asian",
+            items: [
+                {
+                value: "Bangladeshi",
+                text: "Bangladeshi"
+                },
+                {
+                value: "Chinese",
+                text: "Chinese"
+                },
+                {
+                value: "Indian",
+                text: "Indian"
+                },
+                {
+                value: "Pakistani",
+                text: "Pakistani"
+                },
+                {
+                value: "other asian",
+                text: "Other Asian",
+                conditional: {
+                    html: otherasianHtml
+                  }
+                }
+            ]
+            }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+        idPrefix: "ethnic",
+        name: "ethnic",
+        fieldset: {
+            legend: {
+            text: "How do you describe your ethnic origin?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+            value: "white",
+            text: "White",
+            conditional: {
+                html: whiteHtml
+              }
+            },
+            {
+            value: "black",
+            text: "Black, Black Scottish or Black British",
+            conditional: {
+                html: blackHtml
+              }
+            },
+            {
+            value: "asian",
+            text: "Asian, Asian Scottish or Asian British",
+            conditional: {
+                html: asianHtml
+              }
+            },
+            {
+            value: "arab",
+            text: "Arab, Arab Scottish or Arab British"
+            },
+            {
+            value: "mixed",
+            text: "Mixed background"
+            },
+            {
+            value: "other ethnic",
+            text: "Other ethnic background",
+            conditional: {
+                html: otherethnicHtml
+              }
+            }
+        ]
+        }) }}
+
+ 
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/gender.html"
+        }) }}
+
+
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>This is based on the following form: <a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0" target="_blank">https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0</a></li>
+        <li><strong>This was not seen by Sharon and really just for illustration - would need to be content checked and potentially for all departments</strong></li>
+        <li>all is optional</li>
+    </ul>
+</div>
+{% endblock %}
