@@ -1,0 +1,68 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Date of birth
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+        Personal details of the person claiming Medical priority
+      </h2>
+      <br>
+      <form class="form" method="post" novalidate>
+
+        {% from "input/macro.njk" import govukInput %}
+
+      {{ govukDateInput({
+        id: "dob-medical",
+        namePrefix: "dob-medical",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 11 08 1980"
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-medical-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-medical-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-medical-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/application-details.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

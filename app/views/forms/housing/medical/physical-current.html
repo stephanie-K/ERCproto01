@@ -1,0 +1,42 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Physical health - Mobility - Current accommodation
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            name: "physical-current-acc",
+            id: "physical-current-acc",
+            label: {
+              text: "How is your current accommodation impacting your physical health / mobility?"
+            },
+            hint: {
+              text: "Provide full details"
+            }
+          }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/aids-walking.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

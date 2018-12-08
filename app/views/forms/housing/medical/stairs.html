@@ -1,0 +1,110 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Stairs
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "input/macro.njk" import govukInput %}
+          {% from "radios/macro.njk" import govukRadios %}
+      
+          {% set otherHtml %}
+          {{ govukInput({
+            id: "other-stairs",
+            name: "other-stairs",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "Give details"
+            }
+          }) }}
+          {% endset -%}
+          
+          {% set stairsHtml %}
+          {{ govukCheckboxes({
+            idPrefix: "stairs-conditional",
+            name: "stairs",
+            fieldset: {
+              legend: {
+                text: "Which apply to you?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },  
+            items: [
+              {
+                value: "I cannot climb stairs",
+                text: "I cannot climb stairs"
+              },
+              {
+                value: "I can only manage a few stairs",
+                text: "I can only manage a few stairs"
+              },
+              {
+                value: "I can manage a few stairs",
+                text: "I can manage a few stairs"
+              },
+              {
+                value: "I can manage to climb 1 or 2 flights of stairs",
+                text: "I can manage to climb 1 or 2 flights of stairs"
+              },
+              {
+                value: "other",
+                text: "Other",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+          {% endset -%}
+
+
+        {{ govukRadios({
+          idPrefix: "stairs-difficulties",
+          name: "stairs-difficulties",
+          fieldset: {
+            legend: {
+              text: "Do you have difficulties climbing stairs?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("stairs-difficulties", "yes"),
+              conditional: {
+                html: stairsHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("stairs-difficulties", "no")
+            }
+          ]
+        }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/occupational.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

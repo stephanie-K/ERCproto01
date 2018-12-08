@@ -40,7 +40,7 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "/forms/housing/members-household/about-you.html",
+        href: "/forms/housing/medical/about-you.html",
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
 
@@ -58,5 +58,12 @@
       </p>
     </div>
 </div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>this is based on the pdf form - and <strong>just for illustration</strong>. The content and design would need to be reviewes</li>
+      <li><a href="{{ asset_path }}images/medicalform.pdf" target="_blank">PDF form for it</a></li>
+    </ul>
+  </div>
 
 {% endblock %}

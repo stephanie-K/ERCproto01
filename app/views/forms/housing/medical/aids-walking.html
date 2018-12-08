@@ -1,0 +1,151 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Walking aids
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+          {% from "input/macro.njk" import govukInput %}
+          {% from "radios/macro.njk" import govukRadios %}
+      
+          {% set otherHtml %}
+          {{ govukInput({
+            id: "other-aids",
+            name: "other-aids",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "Give details"
+            }
+          }) }}
+          {% endset -%}
+          
+          {% set aidsHtml %}
+          {{ govukCheckboxes({
+            idPrefix: "aids-conditional",
+            name: "aids",
+            fieldset: {
+              legend: {
+                text: "Which do you use?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },  
+            hint: {
+              text: "Select all that apply."
+            },
+            items: [
+              {
+                value: "Walking stick",
+                text: "Walking stick"
+              },
+              {
+                value: "Walking frame",
+                text: "Walking frame"
+              },
+              {
+                value: "crutches",
+                text: "Crutches"
+              },
+              {
+                value: "Wheelchair",
+                text: "Wheelchair"
+              },
+              {
+                value: "other",
+                text: "Other",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+
+          {{ govukCheckboxes({
+            idPrefix: "when-aids",
+            name: "when-aids",
+            fieldset: {
+              legend: {
+                text: "When do you use aids for walking?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "occasionally",
+                text: "Occasionally",
+                checked: checked("when-aids", "occasionally")
+              },
+              {
+                value: "all the time",
+                text: "All the time",
+                checked: checked("when-aids", "all the time")
+              },
+              {
+                value: "indoors",
+                text: "Indoors",
+                checked: checked("when-aids", "indoors")
+              },
+              {
+                value: "outdoors",
+                text: "Outdoors",
+                checked: checked("when-aids", "outdoors")
+              }
+
+            ]
+          }) }}
+
+          {% endset -%}
+
+
+
+
+        {{ govukRadios({
+          idPrefix: "walking-aids",
+          name: "walking-aids",
+          fieldset: {
+            legend: {
+              text: "Do you use any aids for walking?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("walking-aids", "yes"),
+              conditional: {
+                html: aidsHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("walking-aids", "no")
+            }
+          ]
+        }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/stairs.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Physical health - Mobility
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "physical",
+          name: "physical",
+          fieldset: {
+            legend: {
+              text: "Do you have a physical health or mobility issue?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("physical", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("physical", "no")
+            }
+          ]
+        }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -77,6 +77,25 @@ router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) 
   res.redirect('/patterns/add-to-a-list/person1-summary')
 })
 
+// Medical Priority form *****************************************************************
+
+router.post('/forms/housing/medical/physical', function (req, res) {
+  var asPhysicalIssue = req.session.data['physical']
+  if (asPhysicalIssue === 'no') {
+      return res.redirect('/forms/housing/medical/mental')
+  }
+  res.redirect('/forms/housing/medical/physical-details')
+})
+
+router.post('/forms/housing/medical/mental', function (req, res) {
+  var asMentalIssue = req.session.data['mental']
+  if (asMentalIssue === 'no') {
+      return res.redirect('/forms/housing/medical/medication')
+  }
+  res.redirect('/forms/housing/medical/mental-details')
+})
+
+
 
 // Members of household form *****************************************************************
 

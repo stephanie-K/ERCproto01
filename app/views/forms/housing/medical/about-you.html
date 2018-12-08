@@ -1,0 +1,70 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  About you
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+        Personal details of the person claiming Medical priority
+      </h2>
+      <form class="form" method="post" novalidate>
+      {% from "input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        id: "full-name",
+        name: "full-name",
+        value: data['full-name'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Telephone/mobile number"
+        },
+        id: "telephone-number",
+        name: "telephone-number",
+        value: data['telephone-number'],
+        type: "tel",
+        classes: "govuk-input--width-10"
+      }) }}
+
+  
+      {{ govukInput({
+        label: {
+          text: "Email (optional)"
+        },
+        hint: {
+          text: "We’ll use this to send you a receipt."
+        },
+        id: "email",
+        name: "email",
+        value: data['email'],
+        type: "email",
+        classes: "govuk-input--width-20"
+      }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/dob.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}
