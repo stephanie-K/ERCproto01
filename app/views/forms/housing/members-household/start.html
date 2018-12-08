@@ -6,37 +6,15 @@
 {% endblock %}
 
 {% block content %}
-<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">
         Members of Household
       </h1>
-      <p>
+      <p><img src="{{ asset_path }}images/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
+      <p class="govuk-body-l">
           We need to know about you and each member of your household.  
       </p>
-      <p>We'll use this information to:
-          <ul class="govuk-list govuk-list--bullet">
-            <li>verify your identity where required</li>
-            <li>contact you by post, email or telephone</li>
-            <li>maintain our tenancy records</li>
-         </ul>
-      </p>
-  
-      <p>
-          If you need help at anytime you can contact our office at 0141 577 3723 or 0141 577 3726.  
-      </p>
-
-      <p>
-          You can find out more about how we handle this information and your rights in respect of it by going to <a href="#">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
-      </p>
-      {% from "button/macro.njk" import govukButton %}
-
-      {{ govukButton({
-        text: "Start now",
-        href: "/forms/housing/members-household/about-you.html",
-        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-      }) }}
 
       <h2 class="govuk-heading-m erc-text-blue">Before you start</h2>
       <p>
@@ -48,6 +26,32 @@
         <li>make sure that you tell them that you are giving their information to East Renfrewshire Council</li>
       </ul>
       <p>
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/forms/housing/members-household/about-you.html",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <p>We'll use this information to:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>verify your identity where required</li>
+            <li>contact you by post, email or telephone</li>
+            <li>maintain our tenancy records</li>
+         </ul>
+      </p>
+  
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Contact</h2>
+      <ul class="govuk-list">
+      <li>Phone: 0141 577 3001</li>
+      <li>Email: <a href="mailto:housingallocationenquiries@eastrenfrewshire.gov.uk">housingallocationenquiries@eastrenfrewshire.gov.uk</a></li>
+      </ul>
+
+      <p class="govuk-!-margin-top-9">
+          You can find out more about how we handle this information and your rights in respect of it by going to <a href="#">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
+      </p>
 
       </p>
     </div>

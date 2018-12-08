@@ -6,11 +6,15 @@
 {% endblock %}
 
 {% block content %}
-<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Member 1
+          Members of Household
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h1 class="govuk-heading-m">
+          Member 1
       </h1>
       <form class="form" method="post">
       {% from "input/macro.njk" import govukInput %}
