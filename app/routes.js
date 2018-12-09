@@ -80,22 +80,40 @@ router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) 
 // Medical Priority form *****************************************************************
 
 router.post('/forms/housing/medical/physical', function (req, res) {
-  var asPhysicalIssue = req.session.data['physical']
-  if (asPhysicalIssue === 'no') {
+  var hasPhysicalIssue = req.session.data['physical']
+  if (hasPhysicalIssue === 'no') {
       return res.redirect('/forms/housing/medical/mental')
   }
   res.redirect('/forms/housing/medical/physical-details')
 })
 
 router.post('/forms/housing/medical/mental', function (req, res) {
-  var asMentalIssue = req.session.data['mental']
-  if (asMentalIssue === 'no') {
+  var hasMentalIssue = req.session.data['mental']
+  var hasPhysicalIssue = req.session.data['physical']
+  if (hasMentalIssue === 'no') {
+    if (hasPhysicalIssue === 'no') {
+      return res.redirect('/forms/housing/medical/grounds-info')
+    }
       return res.redirect('/forms/housing/medical/medication')
   }
   res.redirect('/forms/housing/medical/mental-details')
 })
 
+router.post('/forms/housing/medical/medication', function (req, res) {
+  var hasMedic = req.session.data['medic']
+  if (hasMedic === 'no') {
+      return res.redirect('/forms/housing/medical/benefits')
+  }
+  res.redirect('/forms/housing/medical/medication-details')
+})
 
+router.post('/forms/housing/medical/benefits', function (req, res) {
+  var hasBenefit = req.session.data['benefit']
+  if (hasBenefit === 'no') {
+      return res.redirect('/forms/housing/medical/disabled')
+  }
+  res.redirect('/forms/housing/medical/benefits-details')
+})
 
 // Members of household form *****************************************************************
 

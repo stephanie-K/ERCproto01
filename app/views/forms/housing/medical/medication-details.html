@@ -1,0 +1,54 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Medication details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+
+          <h2 class="govuk-heading-m">
+              We need proof of any medication you current take
+          </h2>
+          <p class="govuk-body-l">Your application cannot be processed without it.</p>
+          <p>You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>scan or take a photo of a repeat prescription and email it to us: <a href="mailto:housingallocationenquiries@eastrenfrewshire.gov.uk" target="_blank">housingallocationenquiries@eastrenfrewshire.gov.uk</a></li>
+            <li>bring your medication to the staff at our offices to take photocopies</li>
+          </ul>
+          <br><br>
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            name: "medication-details",
+            id: "medication-details",
+            label: {
+              text: "Provide the name and dosage of your medication",
+              classes: 'govuk-!-font-size-24'
+            },
+            hint: {
+              text: "You will find this printed on the medication boxes"
+            }
+          }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/benefits.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

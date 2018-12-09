@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Mental health
+  Disability benefits
 {% endblock %}
 
 {% block content %}
@@ -17,11 +17,11 @@
         {% from "radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          idPrefix: "mental",
-          name: "mental",
+          idPrefix: "benefit",
+          name: "benefit",
           fieldset: {
             legend: {
-              text: "Do you have a mental health issue?",
+              text: "Do you receive any Disability benefits?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -30,12 +30,12 @@
             {
               value: "yes",
               text: "Yes",
-              checked: checked("mental", "yes")
+              checked: checked("benefit", "yes")
             },
             {
               value: "no",
               text: "No",
-              checked: checked("mental", "no")
+              checked: checked("benefit", "no")
             }
           ]
         }) }}

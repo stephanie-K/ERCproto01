@@ -1,0 +1,51 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Disability benefits details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+
+          <h2 class="govuk-heading-m">
+              We need proof of any disability benefits you receive
+          </h2>
+          <p class="govuk-body-l">Your application cannot be processed without it.</p>
+          <p>You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>scan or take a photo of yout DWP award letter(s) and email it to us: <a href="mailto:housingallocationenquiries@eastrenfrewshire.gov.uk" target="_blank">housingallocationenquiries@eastrenfrewshire.gov.uk</a></li>
+            <li>bring your award letter(s) to the staff at our offices to take photocopies</li>
+          </ul>
+          <br><br>
+
+          {% from "textarea/macro.njk" import govukTextarea %}
+
+          {{ govukTextarea({
+            name: "medication-details",
+            id: "medication-details",
+            label: {
+              text: "Provide full details of all the disability benefits you receive",
+              classes: 'govuk-!-font-size-24'
+            }
+          }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/disabled.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Mental health
+  Psychiatrist - Mental health
 {% endblock %}
 
 {% block content %}
@@ -15,13 +15,24 @@
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <form class="form" method="post" novalidate>
         {% from "radios/macro.njk" import govukRadios %}
+        {% from "textarea/macro.njk" import govukTextarea %}
+
+        {% set morePsyHtml %}
+        {{ govukTextarea({
+          name: "more-psy",
+          id: "more-psy",
+          label: {
+            text: "Enter their contact details"
+          }
+        }) }}
+        {% endset%}
 
         {{ govukRadios({
-          idPrefix: "mental",
-          name: "mental",
+          idPrefix: "psy-conditional",
+          name: "psy",
           fieldset: {
             legend: {
-              text: "Do you have a mental health issue?",
+              text: "Are you under the care of a Psychiatrist / Community Psychiatric Nurse (CNP)?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -30,21 +41,24 @@
             {
               value: "yes",
               text: "Yes",
-              checked: checked("mental", "yes")
+              checked: checked("psy", "yes"),
+              conditional: {
+                html: morePsyHtml
+              }
             },
             {
               value: "no",
               text: "No",
-              checked: checked("mental", "no")
+              checked: checked("psy", "no")
             }
           ]
         }) }}
-
      
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Continue",
+        href: "/forms/housing/medical/medication.html",
         classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
       </form>
