@@ -1,0 +1,54 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Support information
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "support",
+          name: "support",
+          fieldset: {
+            legend: {
+              text: "Do you receive support from family, friends, home care or nursing professionals?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("support", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("support", "no")
+            }
+          ]
+        }) }}
+
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

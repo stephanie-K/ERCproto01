@@ -1,0 +1,90 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Your current accommodation
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+
+          {% from "radios/macro.njk" import govukRadios %}
+    
+          {% set otherHtml %}
+          {{ govukInput({
+            id: "other-house",
+            name: "other-house",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "Give details"
+            }
+          }) }}
+          {% endset -%}
+
+          {{ govukRadios({
+            idPrefix: "housetype-conditional",
+            name: "housetype",
+            fieldset: {
+              legend: {
+                text: "What type of property do you currently live in?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "Flat",
+                text: "Flat"
+              },
+              {
+                value: "House",
+                text: "House"
+              },
+              {
+                value: "Bungalow",
+                text: "Bungalow"
+              },
+              {
+                value: "Sheltered housing",
+                text: "Sheltered housing"
+              },
+              {
+                value: "Other",
+                text: "Other",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+          <br><br>
+      
+    
+          {{ govukInput({
+            id: "floor",
+            name: "floor",
+            classes: "govuk-!-width-two-thirds",
+            label: {
+              text: "On what floor (if applicable)",
+              classes: "govuk-!-font-size-24"
+            }
+          }) }}
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/steps.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

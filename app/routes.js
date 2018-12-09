@@ -115,6 +115,32 @@ router.post('/forms/housing/medical/benefits', function (req, res) {
   res.redirect('/forms/housing/medical/benefits-details')
 })
 
+router.post('/forms/housing/medical/support', function (req, res) {
+  var hasBenefit = req.session.data['support']
+  if (hasBenefit === 'no') {
+      return res.redirect('/forms/housing/medical/accommodation')
+  }
+  res.redirect('/forms/housing/medical/support-details')
+})
+
+router.post('/forms/housing/medical/declaration', function (req, res) {
+  var declaration = req.session.data['declaration']
+  if (declaration && declaration.includes('has-read') 
+)  {
+    return res.redirect('/forms/housing/medical/confirmation')
+  }
+    res.redirect('/forms/housing/medical/declaration-error')
+})
+
+router.post('/forms/housing/medical/declaration-error', function (req, res) {
+  var declaration = req.session.data['declaration']
+  if (declaration && declaration.includes('has-read') 
+)  {
+    return res.redirect('/forms/housing/medical/confirmation')
+  }
+    res.redirect('/forms/housing/medical/declaration-error')
+})
+
 // Members of household form *****************************************************************
 
 router.post('/forms/housing/members-household/about-you', function (req, res) {

@@ -1,0 +1,111 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Heating
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+        {% from "radios/macro.njk" import govukRadios %}
+        {% from "textarea/macro.njk" import govukTextarea %}
+      
+
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "other-heating",
+          name: "other-heating",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Give details"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "heating-type-conditional",
+          name: "heating-type",
+          fieldset: {
+            legend: {
+              text: "What type of heating do you have?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "electric",
+              text: "Electric"
+            },
+            {
+              value: "gas",
+              text: "Gas"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+
+        {% set moreHeatingHtml %}
+        {{ govukTextarea({
+          name: "more-heating",
+          id: "more-heating",
+          label: {
+            text: "Give details about how it affects your health"
+          }
+        }) }}
+        {% endset%}
+
+        {{ govukRadios({
+          idPrefix: "heating-conditional",
+          name: "heating",
+          fieldset: {
+            legend: {
+              text: "Do you have problems with your heating, ventilation or dampness?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("heating", "yes"),
+              conditional: {
+                html: moreHeatingHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("heating", "no")
+            }
+          ]
+        }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/adaptations.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,104 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Adaptations
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+        {% from "radios/macro.njk" import govukRadios %}
+        {% from "textarea/macro.njk" import govukTextarea %}
+      
+
+        {% set adaptationsDoneHtml %}
+        {{ govukTextarea({
+          name: "done",
+          id: "done",
+          label: {
+            text: "Give details, for example: ramp, wet room, stair lift, or handrails"
+          }
+        }) }}
+        {% endset -%}
+
+
+        {% set adaptationsWantedHtml %}
+        {{ govukTextarea({
+          name: "wanted",
+          id: "wanted",
+          label: {
+            text: "Give details"
+          }
+        }) }}
+        {% endset%}
+
+        {{ govukRadios({
+          idPrefix: "adap-done-conditional",
+          name: "adap-done",
+          fieldset: {
+            legend: {
+              text: "Were adaptations done to your house?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: adaptationsDoneHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "adap-wanted-conditional",
+          name: "adap-wanted",
+          fieldset: {
+            legend: {
+              text: "Do you require aids / adaptations?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: adaptationsWantedHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/new-accommodation.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

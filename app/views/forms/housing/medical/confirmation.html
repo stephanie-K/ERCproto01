@@ -1,0 +1,38 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+              Submission complete
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number
+            <br><strong>1346-7895-4445-7023</strong><br><br>
+            We’ve sent an email to confirm your application to <strong> 
+            {% if data['email'] %}
+            {{ data['email']}}
+            {% else %}
+            applicant.email.address@gmail.com
+            {% endif%}
+            </strong>
+          </div>
+        </div>
+
+    <h3 class="govuk-heading-m">What happens next</h3>
+    <p>Your application will be heard at the Medical Priority Assessment Panel. </p>
+    <p>You will receive a letter detailing the outcome of the Medical Panel’s decision in due course. </p>
+    </div>
+</div>
+
+{% endblock %}

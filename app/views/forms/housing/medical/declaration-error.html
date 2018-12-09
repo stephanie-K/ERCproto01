@@ -1,0 +1,53 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+      <h2 class="govuk-heading-m">
+          Declaration
+      </h2>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+      <p>I confirm that the information in this medical application is correct and I give my consent to the housing staff discussing my application with the appropriate Housing, Social Work and Medical staff if required.</p>
+      <form class="form" method="post">
+          {% from "checkboxes/macro.njk" import govukCheckboxes %}
+  
+              {{ govukCheckboxes({
+              idPrefix: "declaration",
+              name: "declaration",
+              fieldset: {
+                  legend: {
+                  text: ""
+                  }
+              },
+              errorMessage: {
+                text: "You need to check the box to confirm you read, understand and agree "
+              },
+              items: [
+              {
+                value: "has-read",
+                text: "Read statement and confirm you understand and agree."
+                }
+              ]
+              }) }}
+  
+  
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

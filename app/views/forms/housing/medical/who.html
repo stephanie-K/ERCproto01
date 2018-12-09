@@ -1,0 +1,85 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Who are you
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {% set detailsHtml %}
+
+        {{ govukInput({
+          label: {
+            text: "Enter your full name"
+          },
+          id: "who-full-name",
+          name: "who-full-name",
+          value: data['who-full-name'],
+          classes: "govuk-input--width-20"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Relationship to applicant"
+          },
+          id: "relationship",
+          name: "relationship",
+          value: data['relationship'],
+          classes: "govuk-input--width-20"
+        }) }}
+
+        {% endset %}
+
+        {{ govukRadios({
+          idPrefix: "who-conditional",
+          name: "who",
+          fieldset: {
+            legend: {
+              text: "Who are you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "I'm the applicant claiming medical priority",
+              text: "I'm the applicant claiming medical priority"
+            },
+            {
+              value: "I'm completing this application on behalf of the applicant",
+              text: "I'm completing this application on behalf of the applicant",
+              conditional: {
+                html: detailsHtml
+              }
+            },
+            {
+              value: "I have Power of Attorney for the applicant",
+              text: "I have Power of Attorney for the applicant",
+              conditional: {
+                html: detailsHtml
+              }
+            }
+          ]
+        }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/about-you.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+    </div>
+</div>
+
+{% endblock %}

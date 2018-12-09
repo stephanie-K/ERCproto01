@@ -1,0 +1,42 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Support details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+          <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-size-24" for="support-details">
+                Support from family, friends, home care or nursing professionals
+              </label>
+              <br>
+              <p>Tell us:</p>
+              <ul class="govuk-list govuk-list--bullet">
+              <li>who helps</li>
+              <li>what assistance they give you</li>
+              <li>the frequency of this support (for example: daily, weekly, 3 times a weeks)</li>
+              </ul>
+              <textarea class="govuk-textarea" id="gp-details" name="support-details" rows="5" aria-describedby="support-details-hint"></textarea>
+            </div>
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/accommodation.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}

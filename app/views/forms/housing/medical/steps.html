@@ -1,0 +1,150 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Steps
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+          Medical priority application
+      </h1>
+   
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post" novalidate>
+          <h2 class="govuk-heading-m">
+            We need to know about the number of steps in the following areas:
+          </h2>
+          {% from "radios/macro.njk" import govukRadios %}
+  <br>
+
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "front",
+            name: "front",
+            fieldset: {
+              legend: {
+                text: "Steps to the front door:",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "0",
+                text: "no steps"
+              },
+              {
+                value: "1-2",
+                text: "1 to 2"
+              },
+              {
+                value: "3-5",
+                text: "3 to 5"
+              },
+              {
+                value: "6",
+                text: "6 or more"
+              }
+            ]
+          }) }}
+
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "back",
+            name: "back",
+            fieldset: {
+              legend: {
+                text: "Steps to the back door:",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "0",
+                text: "no steps"
+              },
+              {
+                value: "1-2",
+                text: "1 to 2"
+              },
+              {
+                value: "3-5",
+                text: "3 to 5"
+              },
+              {
+                value: "6",
+                text: "6 or more"
+              }
+            ]
+          }) }}
+
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "upstairs",
+            name: "upstairs",
+            fieldset: {
+              legend: {
+                text: "Steps to go upstairs:",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "0",
+                text: "no upper level"
+              },
+              {
+                value: "1-5",
+                text: "1 to 5"
+              },
+              {
+                value: "6-13",
+                text: "6 to 13"
+              },
+              {
+                value: "14",
+                text: "14 or more"
+              }
+            ]
+          }) }}
+<br><br>
+          {{ govukRadios({
+            idPrefix: "toilet",
+            name: "toilet",
+            fieldset: {
+              legend: {
+                text: "Do you need to go upstairs to access the toilet?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+          <br><br>
+      
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/medical/heating.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+      </form>
+    </div>
+</div>
+
+{% endblock %}
