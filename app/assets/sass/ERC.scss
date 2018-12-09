@@ -174,6 +174,9 @@ body p, p.govuk-body-l{
 
 .govuk-tag.info {
     background-color: $erc-logo-blue;
+    text-transform: none;
+    font-family: nta;
+    padding: 5px;
 }
 
 .govuk-tag.red {
