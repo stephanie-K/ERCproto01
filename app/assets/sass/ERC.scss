@@ -171,6 +171,29 @@ body p, p.govuk-body-l{
     //font-size : 19px;
 }
 
+.UR-tag {
+margin-left: 20px;
+padding: 5px;
+color: white;
+font-weight: 500;
+font-size:16px;
+font-family: nta;
+}
+.UR-tag.ok {
+    background-color: #518418;
+}
+.UR-tag.amber {
+    background-color: orange;
+    color: black;
+}
+.UR-tag.red {
+    background-color: #b30000;
+}
+.UR-tag.no {
+    background-color: #cccccc;
+    color: black;
+}
+
 
 .govuk-tag.info {
     background-color: $erc-logo-blue;
@@ -195,7 +218,7 @@ body p, p.govuk-body-l{
     p, h3, li {
         color: #a94442;
     }
-     display: none
+    // display: none
 }
 .IT-notes-box{
     border: solid 1px #bcdff1;
@@ -207,7 +230,7 @@ body p, p.govuk-body-l{
     p, h3, li {
         color: #31708f;
     }
-     display: none
+    // display: none
 }
 .content-notes-box{
     border: solid 1px#faf2cc;
@@ -219,7 +242,7 @@ body p, p.govuk-body-l{
     p, h3, li {
         color: #8a6d3b;
     }
-     display: none
+    // display: none
 }
 .UR-notes-box{
     border: solid 1px#d0e9c6;
@@ -231,7 +254,7 @@ body p, p.govuk-body-l{
     p, h3, li {
         color: #3c763d;
     }
-     display: none
+    // display: none
 }
 .alt-notes-box{
     border: solid 1px #dddddd;
