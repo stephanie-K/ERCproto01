@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-Equal opportunities - Disability
+Disability - Equality and diversity
 {% endblock %}
 
 {% block content %}
@@ -9,20 +9,36 @@ Equal opportunities - Disability
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Equal opportunities questionnaire
+            Equality and diversity questionnaire
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
         {% from "radios/macro.njk" import govukRadios %}
   
-  
+        {% set whoHtml %}
+        {{ govukRadios({
+            idPrefix: "who",
+            name: "who",
+            items: [
+                    {
+                    value: "me",
+                    text: "Me"
+                    },
+                    {
+                    value: "other",
+                    text: "Someone living with me"
+                    }
+                ]
+            }) }}
+        {% endset -%}
+
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "disability",
+          idPrefix: "disability-conditional",
           name: "disability",
           fieldset: {
             legend: {
-              text: "Do you have a disability?",
+              text: "Do you or anyone living with you have a disability or mental health issue?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -30,7 +46,10 @@ Equal opportunities - Disability
           items: [
             {
               value: "yes",
-              text: "Yes"
+              text: "Yes",
+              conditional: {
+                html: whoHtml
+              }
             },
             {
               value: "no",
@@ -41,10 +60,17 @@ Equal opportunities - Disability
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
-          href: "/forms/equal-opportunities/thankyou.html"
+          href: "/forms/equal-opportunities/age.html"
         }) }}
 
 
     </div>
 </div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>was: DO YOU OR DOES ANYONE IN YOUR HOUSEHOLD HAVE A DISABILITY OR MENTAL HEALTH ISSUE?</li>
+      <li>I changed as not sure everyone understand household. The whole questionnaire will need to be content checked</li>
+  
+  </div>
 {% endblock %}

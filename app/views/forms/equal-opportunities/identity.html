@@ -1,0 +1,85 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Identity - Equality and diversity 
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% set otherIdentityHtml %}
+            {{ govukInput({
+            id: "other-identity",
+            name: "other-identity",
+            value: data['other-identity'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Describe your identity"
+            }
+            }) }}
+        {% endset -%}
+
+        {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+            idPrefix: "identity",
+            name: "identity",
+            fieldset: {
+                legend: {
+                text: "What do you feel is your national identity?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            hint: {
+                text: "Select all that apply."
+              },
+            items: [
+                {
+                value: "scottish",
+                text: "Scottish"
+                },
+                {
+                value: "English",
+                text: "English"
+                },
+                {
+                value: "irish",
+                text: "Northern Irish"
+                },
+                {
+                value: "Welsh",
+                text: "Welsh"
+                },
+                {
+                value: "British",
+                text: "British"
+                },
+                {
+                value: "Other",
+                text: "Other",
+                conditional: {
+                    html: otherIdentityHtml
+                  }
+                }
+            ]
+            }) }}
+   
+ 
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/ethnic-origin.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-Gender - Equality and diversity
+Sexual orientation - Equality and diversity
 {% endblock %}
 
 {% block content %}
@@ -14,61 +14,63 @@ Gender - Equality and diversity
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
         {% from "radios/macro.njk" import govukRadios %}
+        {% from "input/macro.njk" import govukInput %}
 
-        {% set genderHtml %}
+        {% set otherHtml %}
         {{ govukInput({
-          id: "gender-description",
-          name: "gender-description",
-          value: data['gender-description'],
+          id: "orien",
+          name: "orien",
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Describe gender in another way (optional)"
+            text: "Describe your sexual orientation"
           }
         }) }}
         {% endset -%}
-  
-  
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "gender",
-          name: "gender",
+          idPrefix: "orientation-conditional",
+          name: "orientation",
           fieldset: {
             legend: {
-              text: "Which best describes your gender?",
+              text: "Which best describes your sexual orientation?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "female",
-              text: "Female"
+              value: "Heterosexual/straight",
+              text: "Heterosexual/straight"
             },
             {
-              value: "male",
-              text: "Male"
+              value: "Bi/bisexual",
+              text: "Bi/bisexual"
+            },
+            {
+              value: "Gay/lesbian",
+              text: "Gay/lesbian"
+            },
+            {
+              value: "Prefer not to say",
+              text: "Prefer not to say"
             },
             {
               value: "Other",
               text: "Other",
               conditional: {
-                html: genderHtml
+                html: otherHtml
               }
-            },
-            {
-              value: "no",
-              text: "Prefer not to say"
             }
           ]
         }) }}
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
-          href: "/forms/equal-opportunities/disability.html"
+          href: "/forms/equal-opportunities/religion.html"
         }) }}
-
 
     </div>
 </div>
+
 
 {% endblock %}

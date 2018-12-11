@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-Gender - Equality and diversity
+Relationship status - Equality and diversity
 {% endblock %}
 
 {% block content %}
@@ -14,61 +14,50 @@ Gender - Equality and diversity
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
         {% from "radios/macro.njk" import govukRadios %}
-
-        {% set genderHtml %}
-        {{ govukInput({
-          id: "gender-description",
-          name: "gender-description",
-          value: data['gender-description'],
-          classes: "govuk-!-width-two-thirds",
-          label: {
-            text: "Describe gender in another way (optional)"
-          }
-        }) }}
-        {% endset -%}
   
   
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "gender",
-          name: "gender",
+          idPrefix: "status",
+          name: "status",
           fieldset: {
             legend: {
-              text: "Which best describes your gender?",
+              text: "What is your relationship status?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "female",
-              text: "Female"
+              value: "Married",
+              text: "Married"
             },
             {
-              value: "male",
-              text: "Male"
+              value: "Civil partner",
+              text: "Civil partner"
+            },
+            {
+              value: "Separated",
+              text: "Separated"
+            },
+            {
+              value: "Single",
+              text: "Single"
             },
             {
               value: "Other",
-              text: "Other",
-              conditional: {
-                html: genderHtml
-              }
-            },
-            {
-              value: "no",
-              text: "Prefer not to say"
+              text: "Other"
             }
           ]
         }) }}
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
-          href: "/forms/equal-opportunities/disability.html"
+          href: "/forms/equal-opportunities/orientation.html"
         }) }}
-
 
     </div>
 </div>
+
 
 {% endblock %}

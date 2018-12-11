@@ -76,6 +76,16 @@ router.post('/patterns/add-to-a-list/person1-gender', function (req, res) {
 router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) {
   res.redirect('/patterns/add-to-a-list/person1-summary')
 })
+// Equality and diversity form *****************************************************************
+
+router.post('/forms/equal-opportunities/age', function (req, res) {
+  var age = req.session.data['age']
+  if (age === '0-15') {
+      return res.redirect('/forms/equal-opportunities/religion')
+  }
+  res.redirect('/forms/equal-opportunities/status')
+})
+
 
 // Medical Priority form *****************************************************************
 

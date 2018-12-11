@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-Equal opportunities - Ethnic origin
+Ethnic origin - Equality and diversity
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@ Equal opportunities - Ethnic origin
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Equal opportunities questionnaire
+            Equality and diversity questionnaire
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
@@ -24,6 +24,17 @@ Equal opportunities - Ethnic origin
             }
             }) }}
         {% endset -%}
+
+        {% set multipleHtml %}
+        {{ govukInput({
+        id: "multiple",
+        name: "multiple",
+        classes: "govuk-!-width-two-thirds",
+        label: {
+            text: "Describe Mixed or multiple ethnic group"
+        }
+        }) }}
+    {% endset -%}
 
         {% set otherblackHtml %}
         {{ govukInput({
@@ -49,14 +60,65 @@ Equal opportunities - Ethnic origin
         }) }}
         {% endset -%}
 
-        {% set otherethnicHtml %}
+        {% set otherAfricanHtml %}
+        {{ govukInput({
+        id: "other-african",
+        name: "other-african",
+        classes: "govuk-!-width-two-thirds",
+        label: {
+            text: "Describe other African"
+        }
+        }) }}
+        {% endset -%}
+
+        {% set africanHtml %}
+        {{ govukRadios({
+            idPrefix: "african",
+            name: "african",
+            items: [
+                    {
+                    value: "African",
+                    text: "African, African Scottish or African British"
+                    },
+                    {
+                    value: "other",
+                    text: "Other African",
+                    conditional: {
+                        html: otherAfricanHtml
+                        }
+                    }
+                ]
+            }) }}
+        {% endset -%}
+
+        {% set otherEthnicGroupHtml %}
+        {{ govukRadios({
+            idPrefix: "other-group",
+            name: "other-group",
+            items: [
+                    {
+                    value: "arab",
+                    text: "Arab, Arab Scottish or Arab British"
+                    },
+                    {
+                    value: "other",
+                    text: "Other",
+                    conditional: {
+                        html: otherEthnicGroupHtml
+                        }
+                    }
+                ]
+            }) }}
+        {% endset -%}
+
+        {% set otherEthnicHtml %}
         {{ govukInput({
         id: "other-ethnic",
         name: "other-ethnic",
         value: data['other-ethnic'],
         classes: "govuk-!-width-two-thirds",
         label: {
-            text: "Describe other ethnic background"
+            text: "Describe other ethnic group"
         }
         }) }}
         {% endset -%}
@@ -107,12 +169,12 @@ Equal opportunities - Ethnic origin
             name: "black",
             items: [
                 {
-                value: "african",
-                text: "African"
+                value: "black",
+                text: "Black, Black Scottish or Black British"
                 },
                 {
                 value: "caribbean",
-                text: "Caribbean"
+                text: "Caribbean, Caribbean Scottish or Caribbean British"
                 },
                 {
                 value: "other black",
@@ -132,19 +194,19 @@ Equal opportunities - Ethnic origin
             items: [
                 {
                 value: "Bangladeshi",
-                text: "Bangladeshi"
+                text: "Bangladeshi, Bangladeshi Scottish or Bangladeshi British"
                 },
                 {
                 value: "Chinese",
-                text: "Chinese"
+                text: "Chinese, Chinese Scottish or Chinese British"
                 },
                 {
                 value: "Indian",
-                text: "Indian"
+                text: "Indian, Indian Scottish or Indian British"
                 },
                 {
                 value: "Pakistani",
-                text: "Pakistani"
+                text: "Pakistani, Pakistani Scottish or Pakistani British"
                 },
                 {
                 value: "other asian",
@@ -162,7 +224,7 @@ Equal opportunities - Ethnic origin
         name: "ethnic",
         fieldset: {
             legend: {
-            text: "How do you describe your ethnic origin?",
+            text: "Which best describes your ethnic group and background?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
             }
@@ -176,33 +238,43 @@ Equal opportunities - Ethnic origin
               }
             },
             {
-            value: "black",
-            text: "Black, Black Scottish or Black British",
+            value: "African",
+            text: "African",
             conditional: {
-                html: blackHtml
+                html: africanHtml
               }
             },
             {
             value: "asian",
-            text: "Asian, Asian Scottish or Asian British",
+            text: "Asian",
             conditional: {
                 html: asianHtml
               }
             },
             {
-            value: "arab",
-            text: "Arab, Arab Scottish or Arab British"
+            value: "black",
+            text: "Black or Caribbean",
+            conditional: {
+                html: blackHtml
+                }
             },
             {
             value: "mixed",
-            text: "Mixed background"
+            text: "Mixed or multiple ethnic group",
+            conditional: {
+                html: multipleHtml
+              }
             },
             {
             value: "other ethnic",
-            text: "Other ethnic background",
+            text: "Other ethnic group",
             conditional: {
-                html: otherethnicHtml
+                html: otherEthnicGroupHtml
               }
+            },
+            {
+            value: "unknown",
+            text: "Unknown"
             }
         ]
         }) }}
@@ -217,12 +289,12 @@ Equal opportunities - Ethnic origin
 
     </div>
 </div>
+
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li>This is based on the following form: <a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0" target="_blank">https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0</a></li>
-        <li><strong>This was not seen by Sharon and really just for illustration - would need to be content checked and potentially for all departments</strong></li>
-        <li>all is optional</li>
+        <li><strong>This screen will be a mess without Javascript enabled !!! - we might need a warning</strong></li>
     </ul>
-</div>
+    </div>
+
 {% endblock %}

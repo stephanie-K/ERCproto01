@@ -1,0 +1,43 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+Equality and diversity 
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        <h2 class="govuk-heading-m">
+                This questionnaire is anonymous and optional
+        </h2>
+
+        <p>We are committed to ensuring that you are treated fairly.</p> 
+        <p>By completing this questionnaire, you help us to monitor this.</p> 
+        <p>Any information you provide will be only be used to provide statistics for monitoring purposes.</p>
+    
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/identity.html"
+        }) }}
+
+
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li><strong>you would reach that page via a link on the  confirmation page stating: Takes 30 seconds</strong></li>
+    <li>This is based on a document provided by Maureen from Housing</li>
+    <li>Ideally, we would want a questionnaire for the whole council, and probably for this page to be much shorted - content should be checked by Sharon</li>
+    <li>back to the <a href="/forms/equal-opportunities/start">proposed start page</a></li>
+    </ul>
+</div>
+{% endblock %}
