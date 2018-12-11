@@ -1,0 +1,69 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing<span class="UR-tag red">CHANGED</span>
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+          What is your current address?
+      </h2>
+      <form class="form" method="post">
+
+        {% from "textarea/macro.njk" import govukTextarea %}
+        
+   
+        {{ govukTextarea({
+          id: "postcode",
+          name: "postcode",
+          value: data['postcode'],
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Enter address, including postcode"
+          }
+        }) }}
+        <br><br>
+        <h2 class="govuk-heading-m">
+            If your are living with friends, family or somewhere else that is not really your home
+        </h2>
+        
+        {{ govukTextarea({
+          id: "details-address",
+          name: "details-address",
+          value: data['details-address'],
+          label: {
+            text: "Give details (optional)"
+          }
+        }) }}
+
+        
+              {{ govukButton({
+                text: "Continue",
+                classes: "button-primary"
+              }) }}
+      </form>
+    </div>
+</div>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">UR notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>this is provisional content following User Researcha and disussion with housing - it might changed soon</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:</h3>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>text for address, mentions postcode now - no validation apart from the top textbox not empty</li>
+  <li>validation: Enter address </li>
+  </ul>
+</div>
+
+{% endblock %}

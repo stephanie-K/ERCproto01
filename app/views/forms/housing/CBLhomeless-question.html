@@ -1,0 +1,54 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Homeless
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-third">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing<span class="UR-tag red">NEW</span>
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "homeless",
+        name: "homeless",
+        fieldset: {
+          legend: {
+            text: "Are you homeless or at risk of becoming homeless in the next 60 days?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked("homeless", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked("homeless", "no")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      <form class="form" method="post">
+    </div>
+</div>
+<div class="UR-notes-box">
+  <h3 class="govuk-heading-s">UR notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>This is a new question, and if you say yes then the next screen will explain, then will take you out of the form and make you contact Housing</li>
+    </ul>
+</div>
+
+{% endblock %}

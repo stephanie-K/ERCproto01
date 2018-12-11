@@ -76,6 +76,8 @@ router.post('/patterns/add-to-a-list/person1-gender', function (req, res) {
 router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) {
   res.redirect('/patterns/add-to-a-list/person1-summary')
 })
+
+
 // Equality and diversity form *****************************************************************
 
 router.post('/forms/equal-opportunities/age', function (req, res) {
@@ -153,6 +155,7 @@ router.post('/forms/housing/medical/declaration-error', function (req, res) {
 
 // Members of household form *****************************************************************
 
+
 router.post('/forms/housing/members-household/about-you', function (req, res) {
   res.redirect('/forms/housing/members-household/add-member1-loop')
 })
@@ -194,6 +197,25 @@ router.post('/forms/housing/members-household/add-member3-loop', function (req, 
 
 // CBL form **********************************************************************************
 
+router.post('/forms/housing/CBLdeclaration2', function (req, res) {
+  var declaration = req.session.data['declaration2']
+  if (declaration && declaration.includes('has-read') 
+)  {
+    return res.redirect('/forms/housing/CBL16')
+  }
+    res.redirect('/forms/housing/CBLdeclaration2-error')
+})
+
+router.post('/forms/housing/CBLdeclaration2-error', function (req, res) {
+  var declaration = req.session.data['declaration2']
+  if (declaration && declaration.includes('has-read') 
+)  {
+    return res.redirect('/forms/housing/CBL16')
+  }
+    res.redirect('/forms/housing/CBLdeclaration2-error')
+})
+
+
 router.post('/forms/housing/CBL16', function (req, res) {
   var is16 = req.session.data['is-16']
   if (is16 === 'no') {
@@ -223,10 +245,18 @@ router.post('/forms/housing/CBLNI', function (req, res) {
 })
 
 router.post('/forms/housing/CBLaboutyou', function (req, res) {
-  res.redirect('/forms/housing/CBLpostcode')
+  res.redirect('/forms/housing/CBLhomeless-question')
 })
 
-router.post('/forms/housing/CBLpostcode', function (req, res) {
+router.post('/forms/housing/CBLhomeless-question', function (req, res) {
+  var homeless = req.session.data['homeless']
+  if (homeless=== 'yes') {
+      return res.redirect('/forms/housing/CBLhomeless')
+  }
+  res.redirect('/forms/housing/CBLaddress')
+})
+
+router.post('/forms/housing/CBLaddress', function (req, res) {
   res.redirect('/forms/housing/CBLcontact')
 })
 
@@ -297,7 +327,7 @@ router.post('/forms/housing/CBLother-children', function (req, res) {
   if (otherChidren === 'yes') {
       return res.redirect('/forms/housing/CBLadd-child1-loop')
   }
-  res.redirect('/forms/housing/CBLlegal')
+  res.redirect('/forms/housing/CBL5yearsadd')
 })
 
 router.post('/forms/housing/CBLadd-child1-loop', function (req, res) {
@@ -309,7 +339,7 @@ router.post('/forms/housing/CBLchild1', function (req, res) {
   if (addPerson2 === 'yes') {
       return res.redirect('/forms/housing/CBLadd-child2-loop')
   }
-  res.redirect('/forms/housing/CBLlegal')
+  res.redirect('/forms/housing/CBL5yearsadd')
 })
 
 router.post('/forms/housing/CBLadd-child2-loop', function (req, res) {
@@ -317,7 +347,7 @@ router.post('/forms/housing/CBLadd-child2-loop', function (req, res) {
 })
 
 router.post('/forms/housing/CBLchild2', function (req, res) {
-  res.redirect('/forms/housing/CBLlegal')
+  res.redirect('/forms/housing/CBL5yearsadd')
 })
 
 
@@ -334,7 +364,7 @@ router.post('/forms/housing/CBLaddress1', function (req, res) {
   if (hasJoint === 'yes'){
     return res.redirect('/forms/housing/CBLjoint-info')
   }
-  res.redirect('/forms/housing/CBLreasons')
+  res.redirect('/forms/housing/CBLlegal')
 })
 
 router.post('/forms/housing/CBLaddress2-loop', function (req, res) {
@@ -346,13 +376,13 @@ router.post('/forms/housing/CBLaddress2', function (req, res) {
   if (hasJoint === 'yes'){
     return res.redirect('/forms/housing/CBLjoint-info')
   }
-  res.redirect('/forms/housing/CBLreasons')
+  res.redirect('/forms/housing/CBLlegal')
 })
 
 router.post('/forms/housing/CBLjoint-info', function (req, res) {
   var sameAddresses = req.session.data['same-addresses']
   if (sameAddresses=== 'yes') {
-      return res.redirect('/forms/housing/CBLreasons')
+      return res.redirect('/forms/housing/CBLlegal')
   }
   res.redirect('/forms/housing/CBL5yearsadd-joint')
 })
@@ -366,7 +396,7 @@ router.post('/forms/housing/CBLaddress1-joint', function (req, res) {
   if (addAddress2Joint === 'yes') {
       return res.redirect('/forms/housing/CBLaddress2-loop-joint')
   }
-  res.redirect('/forms/housing/CBLreasons')
+  res.redirect('/forms/housing/CBLlegal')
 })
 
 router.post('/forms/housing/CBLaddress2-loop-joint', function (req, res) {
@@ -374,27 +404,11 @@ router.post('/forms/housing/CBLaddress2-loop-joint', function (req, res) {
 })
 
 router.post('/forms/housing/CBLaddress2-joint', function (req, res) {
-  res.redirect('/forms/housing/CBLreasons')
+  res.redirect('/forms/housing/CBLlegal')
 })
 
 
-router.post('/forms/housing/CBLdeclaration2', function (req, res) {
-  var declaration = req.session.data['declaration2']
-  if (declaration && declaration.includes('has-read') 
-)  {
-    return res.redirect('/forms/housing/CBLconfirmation')
-  }
-    res.redirect('/forms/housing/CBLdeclaration2-error')
-})
 
-router.post('/forms/housing/CBLdeclaration2-error', function (req, res) {
-  var declaration = req.session.data['declaration2']
-  if (declaration && declaration.includes('has-read') 
-)  {
-    return res.redirect('/forms/housing/CBLconfirmation')
-  }
-    res.redirect('/forms/housing/CBLdeclaration2-error')
-})
 
 // P1 form ***********************************************************************************
 

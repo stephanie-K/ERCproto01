@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing<span class="UR-tag ok">ok</span>
+            Apply online for council housing<span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <form class="form" method="post">
@@ -28,6 +28,17 @@
         }) }}
         {% endset -%}
         
+        {% set otheraddHtml %}
+        {{ govukTextarea({
+          id: "other-add",
+          name: "other-add",
+          value: data['other-add'],
+          label: {
+            text: "Enter other address, including postcode"
+          }
+        }) }}
+        {% endset -%}
+
         {% if data['email'] %}
         {{ govukRadios({
           idPrefix: "how-contacted-conditional",
@@ -54,9 +65,17 @@
               checked: checked ("how-contacted", "Phone")
             },
             {
-              value: "Post",
-              text: "Post",
-              checked: checked ("how-contacted", "Post")
+              value: "Post at my current address",
+              text: "Post at my current address",
+              checked: checked ("how-contacted", "Post current")
+            },
+            {
+              value: "Post at a different address",
+              text: "Post at a different address",
+              checked: checked ("how-contacted", "Post else"),
+              conditional: {
+                html: otheraddHtml
+              }
             },
             {
               value: "I have an advocate or power of attorney",
@@ -90,9 +109,17 @@
               checked: checked ("how-contacted", "Phone")
             },
             {
-              value: "Post",
-              text: "Post",
-              checked: checked ("how-contacted", "Post")
+              value: "Post at my current address",
+              text: "Post at my current address",
+              checked: checked ("how-contacted", "Post current")
+            },
+            {
+              value: "Post at a different address",
+              text: "Post at a different address",
+              checked: checked ("how-contacted", "Post else"),
+              conditional: {
+                html: otheraddHtml
+              }
             },
             {
               value: "I have an advocate or power of attorney",
@@ -114,16 +141,16 @@
           </form>
     </div>
 </div>
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>If the person selected "I'm homeless" on the previous screen, they might still want to provide an address where to contact them. <strong>(not coded yet)</strong></p>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">UR notes:</h3>
+    <p>We want the person to be able to add a different address if for whatever reason they don't want to use their home address</p>
 </div>
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-    <li>If the person selected "I'm homeless" on the previous screen, they can still select Post, but this should open a textbox, with the same message as previously Enter address, including postcode</li>
     <li>if no email was entered previously, could we remove the radio button on this page?</li>
-    <li>Validation: Confirm preferred contact (if none selected) - Enter address (if homeless and textbox displayed)- Enter contact details (for attorney textbox)</li>
+    <li>new field to ask for another address if option selected - two buttons have wording changed</li>
+    <li>Validation: Confirm preferred contact (if none selected) - Enter other address - Enter contact details (for attorney textbox)</li>
     </ul>
 </div>
 

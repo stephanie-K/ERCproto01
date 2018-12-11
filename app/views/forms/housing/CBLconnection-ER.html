@@ -10,10 +10,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Apply online for council housing<span class="UR-tag ok">ok</span>
+        Apply online for council housing<span class="UR-tag red">CHANGED</span>
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-{% from "radios/macro.njk" import govukRadios %}
 {% from "checkboxes/macro.njk" import govukCheckboxes %}
 {% from "textarea/macro.njk" import govukTextarea %}
 
@@ -39,7 +38,7 @@
 }) }}
 {% endset -%}
 
-{% set connectionHtml %}
+
 {{ govukCheckboxes({
   idPrefix: "reason-conditional",
   name: "reason",
@@ -55,6 +54,10 @@
   },
   items: [
     {
+      value: "I live in East Renfrewshire",
+      text: "I live in East Renfrewshire"
+    },
+    {
       value: "job",
       text: "I have a job in the area"
     },
@@ -68,7 +71,10 @@
     },
     {
       value: "support",
-      text: "Support for or from a relative who lives in area"
+      text: "Support for or from a relative who lives in area",
+      conditional: {
+        html: addressHtml
+      }
     },
     {
       value: "social",
@@ -87,35 +93,14 @@
       conditional: {
         html: detailsHtml
       }
-    }
-  ]
-}) }}
-{% endset -%}
-
-{{ govukRadios({
-  idPrefix: "connection-conditional",
-  name: "connection",
-  fieldset: {
-    legend: {
-      text: "Do you currently live in East Renfrewshire?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "yes",
-      text: "Yes"
     },
     {
-      value: "no",
-      text: "No",
-      conditional: {
-        html: connectionHtml
-      }
+      value: "I have no connection to East Renfrewshire",
+      text: "I have no connection to East Renfrewshire"
     }
   ]
 }) }}
+
 
       {{ govukButton({
         text: "Continue",
@@ -128,15 +113,15 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>if they select "relative lives in area" we need a textbox for them to enter the name and address</li>
+      <li>if they select "relative lives in area" , or "Support to or from a relative" we need a textbox for them to enter the name and address</li>
     </ul>
 </div>
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>can be coded - one change for support for a or from a relative</li>
-      <li>extra textbox for other reason, and relative live in area / different lablel for each though </li>
-      <li>we need at list one checked, and if open a text box, then it needs not to be empty</li>
+      <li>can be coded - one change for support for a or from a relative and was radio button question with reveal before - not anymore</li>
+      <li>extra textbox for other reason, and relative live in area / different label for each though </li>
+      <li>we need at least one checked, and if open a text box, then it needs not to be empty</li>
       <li>Select at least one - Give details - Enter name and address (to be confirmed by Sharon)</li>
     </ul>
 </div>

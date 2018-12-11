@@ -9,7 +9,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing <span class="UR-tag amber">amber</span>
+            Apply online for council housing <span class="UR-tag amber">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
@@ -62,17 +62,19 @@
     ]
   }) }}
 
-  {% from "radios/macro.njk" import govukRadios %}
 <br><br>
-  {{ govukRadios({
+{{ govukCheckboxes({
     idPrefix: "floor",
     name: "floor",
     fieldset: {
       legend: {
-        text: "What's the highest floor level you want to live on?",
+        text: "What floor level would you want to live on?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
+    },
+    hint: {
+      text: "Select all that apply."
     },
     items: [
       {
@@ -108,13 +110,11 @@
     </div>
 </div>
 
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-    <p>would need to be tested - not sure people would notice the second question?</p>
-</div>
+
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
     <p>text of checkbox  Sheltered housing changed + extra radio button for highest floor</p>
+    <p>second question as a different wording and is not checkboxes instead of radio buttons</p>
 </div>
 
 {% endblock %}
