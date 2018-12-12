@@ -327,7 +327,7 @@ router.post('/forms/housing/CBLother-children', function (req, res) {
   if (otherChidren === 'yes') {
       return res.redirect('/forms/housing/CBLadd-child1-loop')
   }
-  res.redirect('/forms/housing/CBL5yearsadd')
+  res.redirect('/forms/housing/CBLcurrent-address')
 })
 
 router.post('/forms/housing/CBLadd-child1-loop', function (req, res) {
@@ -339,7 +339,7 @@ router.post('/forms/housing/CBLchild1', function (req, res) {
   if (addPerson2 === 'yes') {
       return res.redirect('/forms/housing/CBLadd-child2-loop')
   }
-  res.redirect('/forms/housing/CBL5yearsadd')
+  res.redirect('/forms/housing/CBLcurrent-address')
 })
 
 router.post('/forms/housing/CBLadd-child2-loop', function (req, res) {
@@ -347,11 +347,11 @@ router.post('/forms/housing/CBLadd-child2-loop', function (req, res) {
 })
 
 router.post('/forms/housing/CBLchild2', function (req, res) {
-  res.redirect('/forms/housing/CBL5yearsadd')
+  res.redirect('/forms/housing/CBLcurrent-address')
 })
 
 
-router.post('/forms/housing/CBL5yearsadd', function (req, res) {
+router.post('/forms/housing/CBLcurrent-address', function (req, res) {
   res.redirect('/forms/housing/CBLaddress1')
 })
 
