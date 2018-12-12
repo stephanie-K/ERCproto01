@@ -350,6 +350,17 @@ router.post('/forms/housing/CBLchild2', function (req, res) {
   res.redirect('/forms/housing/CBLcurrent-address')
 })
 
+router.post('/forms/housing/CBL5yearsadd-question', function (req, res) {
+  var addAddress = req.session.data['add-address']
+  var hasJoint = req.session.data['is-joint']
+  if (addAddress === 'yes') {
+      return res.redirect('/forms/housing/CBL5yearsadd')
+  }
+  if (hasJoint === 'yes'){
+    return res.redirect('/forms/housing/CBLjoint-info')
+  }
+  res.redirect('/forms/housing/CBLlegal')
+})
 
 router.post('/forms/housing/CBL5yearsadd', function (req, res) {
   res.redirect('/forms/housing/CBLaddress1')
@@ -407,6 +418,13 @@ router.post('/forms/housing/CBLaddress2-joint', function (req, res) {
   res.redirect('/forms/housing/CBLlegal')
 })
 
+router.post('/forms/housing/CBLdeclaration1', function (req, res) {
+  var know = req.session.data['know-erc']
+  if (know === 'yes') {
+      return res.redirect('/forms/housing/CBLdeclaration1-details')
+  }
+  res.redirect('/forms/housing/CBLend')
+})
 
 
 

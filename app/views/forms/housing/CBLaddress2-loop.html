@@ -13,26 +13,32 @@
         Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-      <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years. Start with the one you are living in at the moment.</p>
+      <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years.</p>
       <h2 class="govuk-heading-m">
           Address 1:
       </h2>
       <div style="overflow: auto">
-        <table class=" govuk-table half-width">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-day']}}/{{data['in1-month']}}/{{data['in1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-day']}}/{{data['out1-month']}}/{{data['ou1t-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-              {% if data['leave1'] == 'Other'%}
-              {{data['reason1-other']}}
-              {% else %}
-              {{data['leave1']}}
-              {% endif %}
-          </td></tr>
-        </tbody>
-      </table>
+          <table class=" govuk-table half-width">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">
+                    {% if data['type1'] == 'Other' %}
+                    {{data['type1-other']}}
+                    {% else %}
+                    {{data['type1']}}
+                    {% endif %}
+                </td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+                    {% if data['leave1'] == 'Other' %}
+                    {{data['reason1-other']}}
+                    {% else %}
+                    {{data['leave1']}}
+                    {% endif %}
+                </td></tr>
+              </tbody>
+            </table>
     </div>
   
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
@@ -50,18 +56,29 @@
           id: "addr2",
           name: "addr2",
           value: data['addr2'],
-          classes: "govuk-input--width-20"
+          classes: "govuk-!-width-three-quarters"
         }) }}
   
         {% from "radios/macro.njk" import govukRadios %}
-<br><br>
+<br>
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "type2-other",
+          id: "type2-other",
+          classes: "govuk-!-width-two-thirds",
+          value: data['type2-other'],
+          label: {
+            text: "Give Details"
+          }
+        }) }}
+        {% endset -%}
         {{ govukRadios({
           
           idPrefix: "type2",
           name: "type2",
           fieldset: {
             legend: {
-              text: "Type of residence",
+              text: "Were you a:",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -81,73 +98,46 @@
               value: "Owner",
               text: "Owner",
               checked: checked ("type2", "Owner")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked ("type2", "Other"),
+              conditional: {
+                html: otherHtml
+              }
             }
           ]
         }) }}
-<br><br>
-        {% from "date-input/macro.njk" import govukDateInput %}
-
-        {{ govukDateInput({
-          id: "in2",
-          namePrefix: "in2",
-          fieldset: {
-            legend: {
-              text: "Date moved in",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+<br>
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved in",
+            classes: 'govuk-!-font-size-24'
           },
           hint: {
-            text: "For example, 11 08 2014"
+            text: "Can be estimated dates"
           },
-          items:[
-              {
-              name: 'day',
-              value: data['in2-day'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'month',
-              value: data['in2-month'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'year',
-              value: data['in2-year'],
-              classes: "govuk-input--width-4"
-              }
-              ]
+          id: "in2",
+          name: "in2",
+          value: data['in2'],
+          classes: "govuk-input--width-10"
         }) }}
 
-        {{ govukDateInput({
-          id: "out2",
-          namePrefix: "out2",
-          fieldset: {
-            legend: {
-              text: "Date moved out",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved out",
+            classes: 'govuk-!-font-size-24'
           },
-          items:[
-              {
-              name: 'day',
-              value: data['out2-day'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'month',
-              value: data['out2-month'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'year',
-              value: data['out2-year'],
-              classes: "govuk-input--width-4"
-              }
-              ]
+          id: "out2",
+          name: "out2",
+          value: data['out2'],
+          classes: "govuk-input--width-10"
         }) }}
- <br><br>
+
+<br>
         {% from "textarea/macro.njk" import govukTextarea %}
         {% set otherHtml %}
         {{ govukTextarea({

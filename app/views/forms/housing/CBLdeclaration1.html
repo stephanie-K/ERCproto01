@@ -9,59 +9,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing<span class="UR-tag amber">WILL CHANGED</span>
+            Apply online for council housing<span class="UR-tag amber">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post">
         {% from "radios/macro.njk" import govukRadios %}
-        {% from "input/macro.njk" import govukInput %}
-        
-        {% set personHtml %}
-        {{ govukInput({
-            label: {
-              text: "First name"
-            },
-            id: "first-name-erc",
-            name: "first-name-erc",
-            value: data['first-name-erc'],
-            classes: "govuk-input--width-20"
-          }) }}
-    
-          {{ govukInput({
-            label: {
-              text: "Last name"
-            },
-            id: "last-name-erc",
-            name: "last-name-erc",
-            value: data['last-name-erc'],
-            classes: "govuk-input--width-20"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Job title"
-            },
-            id: "job-title",
-            name: "job-title",
-            value: data['job-title'],
-            classes: "govuk-input--width-20"
-          }) }}
-
-          {{ govukInput({
-            label: {
-              text: "Relationship to you"
-            },
-            id: "rel",
-            name: "rel",
-            value: data['rel'],
-            classes: "govuk-input--width-20"
-          }) }}
-        {% endset -%}
-        
-
-
         
         {{ govukRadios({
-          idPrefix: "know-erc-conditional",
+          idPrefix: "know-erc",
           name: "know-erc",
           fieldset: {
             legend: {
@@ -73,10 +28,7 @@
           items: [
             {
               value: "yes",
-              text: "Yes",
-              conditional: {
-                html: personHtml
-              }
+              text: "Yes"
             },
             {
               value: "no",
@@ -87,18 +39,18 @@
 
         {{ govukButton({
           text: "Continue",
-          classes: "button-primary",
-          href: "/forms/housing/CBLend.html"
+          classes: "button-primary"
         }) }}
-      
+      </form>
     </div>
 </div>
 
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-    <li>OK - can be coded, flow changed though, monitor info is removed</li>
+    <li>flow changed: monitor info is removed</li>
     <li>word changed: of East Renfrewshire, instead of 'or'</li>
+    <li>this is now just a yes no question, if yes, goes to another screen where we will collect more details</li>
     </ul>
 </div>
 

@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Error - Declaration
+  Declaration
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing
+            Apply online for council housing <span class="UR-tag red">MOVED TO THE START</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <h2 class="govuk-heading-m">
@@ -17,13 +17,13 @@
         </h2>
         <p>These statements apply to you and anybody included in this application:</p> 
         <ul class="govuk-list govuk-list--bullet">
-            <li>I am eligible to apply for housing and I will tell you if my circumstances change</li> 
-            <li>all the information I have given on this application form is true</li> 
+            <li>I'm eligible to apply for housing and I will tell you if my circumstances change</li> 
+            <li>all the information I will give on this application form is true</li> 
             <li>I understand that if I give false information or withhold information you have asked for, my application may be cancelled</li> 
-            <li>if I am offered housing because I have given false information or have withheld information you have asked for, I understand that you may end my tenancy and evict me from my home</li> 
+            <li>if I'm offered housing because I have given false information or have withheld information you've asked for, I understand that you may end my tenancy and evict me from my home</li> 
         </ul>
         <p><strong>Permission to share information:</strong></p>
-        <p>I agree that any information I have given on this application can be shared with other landlords and organisations, in order to find me suitable housing, in line with General Data Protection Regulations.</p>
+        <p>I agree that any information I will give on this application can be shared with other landlords and organisations, in order to find me suitable housing, in line with General Data Protection Regulations.</p>
         <p>You can contact my doctor, hospital consultant, health visitor or social worker, the police or any other relevant person if you need more information for my housing application, in line with General Data Protection Regulations.</p>
 
         <p><a href="https://www.eastrenfrewshire.gov.uk/housing-service-standards">Housing Services Privacy Notice for GDPR</a></p>
@@ -64,10 +64,16 @@
 <div class="content-notes-box">
     <h3 class="govuk-heading-s">Content notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li><strong>this content was not seen by Sharon - there is too much </strong></li>
-        <li>people won't read it especially considering how long this form takes to fill in</li>
-        <li>need the link to the privacy policy?</li>
+        <li><strong>this content was not seen by Sharon - there is too much  - but tested ok for now</strong></li>
+        <li>as this is now at the beginning, I've change "I have given" to "I will give" twice</li>
     </ul>
 </div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><strong>Screen moved at the start to avoid loosing too much progress if they click on the link to view the GDPR</strong></li>
+    </ul>
+</div>
+    
 
 {% endblock %}

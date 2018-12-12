@@ -17,21 +17,27 @@
           Address 1:
       </h2>
       <div style="overflow: auto">
-        <table class=" govuk-table half-width">
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-day']}}/{{data['in1-month']}}/{{data['in1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-day']}}/{{data['out1-month']}}/{{data['out1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-              {% if data['leave1'] == 'Other' %}
-              {{data['reason1-other']}}
-              {% else %}
-              {{data['leave1']}}
-              {% endif %}
-          </td></tr>
-        </tbody>
-      </table>
+          <table class=" govuk-table half-width">
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">
+                    {% if data['type1'] == 'Other' %}
+                    {{data['type1-other']}}
+                    {% else %}
+                    {{data['type1']}}
+                    {% endif %}
+                </td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1']}}</td></tr>
+                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+                    {% if data['leave1'] == 'Other' %}
+                    {{data['reason1-other']}}
+                    {% else %}
+                    {{data['leave1']}}
+                    {% endif %}
+                </td></tr>
+              </tbody>
+            </table>
     </div>
 
     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
@@ -40,21 +46,27 @@
         Address 2:
     </h2>
     <div style="overflow: auto">
-      <table class=" govuk-table half-width">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr2']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type2']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in2-day']}}/{{data['in2-month']}}/{{data['in2-year']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out2-day']}}/{{data['out2-month']}}/{{data['out2-year']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-            {% if data['leave2'] == 'Other'%}
-            {{data['reason2-other']}}
-            {% else %}
-            {{data['leave2']}}
-            {% endif %}
-        </td></tr>
-      </tbody>
-    </table>
+        <table class=" govuk-table half-width">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr2']}}</td></tr>
+              <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">
+                  {% if data['type2'] == 'Other' %}
+                  {{data['type2-other']}}
+                  {% else %}
+                  {{data['type2']}}
+                  {% endif %}
+              </td></tr>
+              <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in2']}}</td></tr>
+              <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out2']}}</td></tr>
+              <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+                  {% if data['leave1'] == 'Other' %}
+                  {{data['reason2-other']}}
+                  {% else %}
+                  {{data['leave2']}}
+                  {% endif %}
+              </td></tr>
+            </tbody>
+          </table>
   </div>
 
       <p><a href="/forms/housing/CBLaddress2-loop.html">Edit address 2</a></p>
@@ -67,7 +79,7 @@
       <form class="form" method="post">
      
       <h2 class="govuk-heading-m">
-          Add other addresses here (if applicable)
+          Add other past addresses here (if applicable)
       </h2>
       {{ govukTextarea({
         name: "more-address-to-add",

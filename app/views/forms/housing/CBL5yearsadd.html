@@ -8,10 +8,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing <span class="UR-tag red">WILL CHANGE - SCREEN MOVED EARLIER</span>
+            Apply online for council housing <span class="UR-tag red">CHANGED - SCREEN MOVED EARLIER</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-        <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years.</p>
+        <p class="govuk-body-l">Enter previous addresses you lived at for the last 5 years.</p>
         <h2 class="govuk-heading-m">
             Address 1:
         </h2>
@@ -26,18 +26,29 @@
           id: "addr1",
           name: "addr1",
           value: data['addr1'],
-          classes: "govuk-input--width-20"
+          classes: "govuk-!-width-three-quarters"
         }) }}
   
         {% from "radios/macro.njk" import govukRadios %}
-<br><br>
+<br>
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "type1-other",
+          id: "type1-other",
+          classes: "govuk-!-width-two-thirds",
+          value: data['type1-other'],
+          label: {
+            text: "Give Details"
+          }
+        }) }}
+        {% endset -%}
         {{ govukRadios({
           
           idPrefix: "type1",
           name: "type1",
           fieldset: {
             legend: {
-              text: "Type of residence",
+              text: "Were you a:",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -57,73 +68,46 @@
               value: "Owner",
               text: "Owner",
               checked: checked ("type1", "Owner")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked ("type1", "Other"),
+              conditional: {
+                html: otherHtml
+              }
             }
           ]
         }) }}
-<br><br>
-        {% from "date-input/macro.njk" import govukDateInput %}
-
-        {{ govukDateInput({
-          id: "in1",
-          namePrefix: "in1",
-          fieldset: {
-            legend: {
-              text: "Date moved in",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+<br>
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved in",
+            classes: 'govuk-!-font-size-24'
           },
           hint: {
-            text: "For example, 11 08 2014"
+            text: "Can be estimated dates"
           },
-          items:[
-              {
-              name: 'day',
-              value: data['in1-day'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'month',
-              value: data['in1-month'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'year',
-              value: data['in1-year'],
-              classes: "govuk-input--width-4"
-              }
-              ]
+          id: "in1",
+          name: "in1",
+          value: data['in1'],
+          classes: "govuk-input--width-10"
         }) }}
 
-        {{ govukDateInput({
-          id: "out1",
-          namePrefix: "out1",
-          fieldset: {
-            legend: {
-              text: "Date moved out",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved out",
+            classes: 'govuk-!-font-size-24'
           },
-          items:[
-              {
-              name: 'day',
-              value: data['out1-day'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'month',
-              value: data['out1-month'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'year',
-              value: data['out1-year'],
-              classes: "govuk-input--width-4"
-              }
-              ]
+          id: "out1",
+          name: "out1",
+          value: data['out1'],
+          classes: "govuk-input--width-10"
         }) }}
- <br><br>
+      
+ <br>
         {% from "textarea/macro.njk" import govukTextarea %}
         {% set otherHtml %}
         {{ govukTextarea({
@@ -209,16 +193,14 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-    <li>we use the same pattern as for adding person or children </li>
-    <li>agreed by Housing - need 6 addresses and <a href="/forms/housing/CBLaddress2">textbox on the last one if the applicant need to add more addresses</a> I only coded 2</li>
+    <li>need 5 addresses and <a href="/forms/housing/CBLaddress2">textbox on the last one if the applicant need to add more addresses</a> I only coded 2</li>
     </ul>
 </div>
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-    <li>For the first address, date moved out doesn't need to be filled in, but it's needed for the other pages</li>
+    <li>For the first previous address, date needs to be provided but can be estimated - so just need not to be empty</li>
     <li>need to enter an address (textbox not empty) + need to pick a type + need at least one reason for leaving (if Other then need a description)</li>
-    <li>Dates: need to have input and to be numbers but no other validation is needed</li>
     </ul>
 </div>
 

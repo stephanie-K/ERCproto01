@@ -19,17 +19,23 @@
       <div style="overflow: auto">
         <table class=" govuk-table half-width">
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1-joint']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1-joint']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-joint-day']}}/{{data['in1-joint-month']}}/{{data['in1-joint-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-joint-day']}}/{{data['out1-joint-month']}}/{{data['out1-joint-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-              {% if data['leave1-joint'] == 'Other' %}
-              {{data['reason1-joint-other']}}
-              {% else %}
-              {{data['leave1-joint']}}
-              {% endif %}
-          </td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1-joint']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">
+                {% if data['type1-joint'] == 'Other' %}
+                {{data['type1-other-joint']}}
+                {% else %}
+                {{data['type1-joint']}}
+                {% endif %}
+            </td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-joint']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-joint']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+                {% if data['leave1-joint'] == 'Other' %}
+                {{data['reason1-other-joint']}}
+                {% else %}
+                {{data['leave1-joint']}}
+                {% endif %}
+            </td></tr>
         </tbody>
       </table>
     </div>
@@ -41,18 +47,24 @@
     </h2>
     <div style="overflow: auto">
       <table class=" govuk-table half-width">
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr2-joint']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type2-joint']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in2-joint-day']}}/{{data['in2-joint-month']}}/{{data['in2-joint-year']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out2-joint-day']}}/{{data['out2-joint-month']}}/{{data['out2-joint-year']}}</td></tr>
-        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-            {% if data['leave2-joint'] == 'Other'%}
-            {{data['reason2-joint-other']}}
-            {% else %}
-            {{data['leave2-joint']}}
-            {% endif %}
-        </td></tr>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr2-joint']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">
+                {% if data['type2-joint'] == 'Other' %}
+                {{data['type2-other-joint']}}
+                {% else %}
+                {{data['type2-joint']}}
+                {% endif %}
+            </td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in2-joint']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out2-joint']}}</td></tr>
+            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
+                {% if data['leave2-joint'] == 'Other' %}
+                {{data['reason2-other-joint']}}
+                {% else %}
+                {{data['leave2-joint']}}
+                {% endif %}
+            </td></tr>
       </tbody>
     </table>
   </div>
@@ -67,7 +79,7 @@
       <form class="form" method="post">
      
       <h2 class="govuk-heading-m">
-          Add other addresses here (if applicable)
+          Add other past addresses here (if applicable)
       </h2>
       {{ govukTextarea({
         name: "more-address-to-add",

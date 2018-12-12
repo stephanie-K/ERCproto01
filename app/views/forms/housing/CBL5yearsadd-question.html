@@ -1,0 +1,73 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  5 years of addresses
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing <span class="UR-tag red">NEW</span>
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <p class="govuk-body-l">We need to know about all the addresses you lived at for the last 5 years.</p>
+        
+        <form class="form" method="post">
+     
+            {% from "radios/macro.njk" import govukRadios %}
+    
+            {{ govukRadios({
+              idPrefix: "add-address",
+              name: "add-address",
+              fieldset: {
+                legend: {
+                  text: "Do you need to add a past address?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  checked: checked ("add-address", "yes")
+                },
+                {
+                  value: "no",
+                  text: "No",
+                  checked: checked ("add-address", "no")
+                }
+              ]
+            }) }}
+    
+    
+          {% from "button/macro.njk" import govukButton %}
+          <br>
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+        </form>
+
+    </div>
+</div>
+
+
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>This is a new screen</li>
+    <li>the applicant might have lived at the same address for the last 5 years and might not have any other addresses to add</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>Validation: Confirm need to add past address</li>
+    <li>if yes, goes to ask first previous address</li>
+    <li>if no, then if there is no joint applicant, goes to the legal questions, if there is one then ask about same addresses for the joint or not</li>
+    </ul>
+</div>
+
+{% endblock %}

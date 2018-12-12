@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Apply online for council housing<span class="UR-tag red">red</span>
+        Apply online for council housing<span class="UR-tag red">CHANGED</span>
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <h2 class="govuk-heading-m">
@@ -20,9 +20,15 @@
         <table class=" govuk-table half-width">
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">{{data['type1']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1-day']}}/{{data['in1-month']}}/{{data['in1-year']}}</td></tr>
-          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1-day']}}/{{data['out1-month']}}/{{data['ou1t-year']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">
+              {% if data['type1'] == 'Other' %}
+              {{data['type1-other']}}
+              {% else %}
+              {{data['type1']}}
+              {% endif %}
+          </td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1']}}</td></tr>
+          <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1']}}</td></tr>
           <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
               {% if data['leave1'] == 'Other' %}
               {{data['reason1-other']}}
@@ -75,6 +81,11 @@
 
     </div>
 </div>
-
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>saying 'past address' now instead of just 'address'</li>
+    </ul>
+</div>
 
 {% endblock %}

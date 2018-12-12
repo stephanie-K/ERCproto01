@@ -8,7 +8,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing 
+            Apply online for council housing <span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <p class="govuk-body-l">Enter the addresses your joint applicant lived at for the last 5 years. Start with the one they are living in at the moment.</p>
@@ -26,18 +26,29 @@
           id: "addr1-joint",
           name: "addr1-joint",
           value: data['addr1-joint'],
-          classes: "govuk-input--width-20"
+          classes: "govuk-!-width-three-quarters"
         }) }}
   
         {% from "radios/macro.njk" import govukRadios %}
-<br><br>
+<br>
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "type1-other-joint",
+          id: "type1-other-joint",
+          classes: "govuk-!-width-two-thirds",
+          value: data['type1-other-joint'],
+          label: {
+            text: "Give Details"
+          }
+        }) }}
+        {% endset -%}
         {{ govukRadios({
           
           idPrefix: "type1-joint",
           name: "type1-joint",
           fieldset: {
             legend: {
-              text: "Type of residence",
+              text: "Were they a:",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -57,73 +68,45 @@
               value: "Owner",
               text: "Owner",
               checked: checked ("type1-joint", "Owner")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked ("type1-joint", "Other"),
+              conditional: {
+                html: otherHtml
+              }
             }
           ]
         }) }}
-<br><br>
-        {% from "date-input/macro.njk" import govukDateInput %}
-
-        {{ govukDateInput({
-          id: "in1-joint",
-          namePrefix: "in1-joint",
-          fieldset: {
-            legend: {
-              text: "Date moved in",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+<br>
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved in",
+            classes: 'govuk-!-font-size-24'
           },
           hint: {
-            text: "For example, 11 08 2014"
+            text: "Can be estimated dates"
           },
-          items:[
-              {
-              name: 'day',
-              value: data['in1-joint-day'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'month',
-              value: data['in1-joint-month'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'year',
-              value: data['in1-joint-year'],
-              classes: "govuk-input--width-4"
-              }
-              ]
+          id: "in1-joint",
+          name: "in1-joint",
+          value: data['in1-joint'],
+          classes: "govuk-input--width-10"
         }) }}
 
-        {{ govukDateInput({
-          id: "out1-joint",
-          namePrefix: "out1-joint",
-          fieldset: {
-            legend: {
-              text: "Date moved out",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
+        {% from "input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved out",
+            classes: 'govuk-!-font-size-24'
           },
-          items:[
-              {
-              name: 'day',
-              value: data['out1-joint-day'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'month',
-              value: data['out1-joint-month'],
-              classes: "govuk-input--width-2"
-              },
-              {
-              name: 'year',
-              value: data['out1-joint-year'],
-              classes: "govuk-input--width-4"
-              }
-              ]
+          id: "out1-joint",
+          name: "out1-joint",
+          value: data['out1-joint'],
+          classes: "govuk-input--width-10"
         }) }}
- <br><br>
+<br>
         {% from "textarea/macro.njk" import govukTextarea %}
         {% set otherHtml %}
         {{ govukTextarea({
