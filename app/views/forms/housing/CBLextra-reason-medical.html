@@ -12,10 +12,14 @@ Health, care, social and support needs
             Apply online for council housing<span class="UR-tag ok">ok</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        {% set medicalFormHtml %}
+        <p>You will need to complete a separate Medical Priority Assessment Form.</p>
+        <p>We will provide a link to it once you submit this form.</p>
+        {% endset %}
 
         {% set medicalHtml %}
         {{ govukRadios({
-            idPrefix: "priority",
+            idPrefix: "priority-conditional",
             name: "priority",
             fieldset: {
                 legend: {
@@ -31,7 +35,10 @@ Health, care, social and support needs
                 },
                 {
                 value: "no",
-                text: "No"
+                text: "No",
+                conditional: {
+                    html: medicalFormHtml
+                  }
                 }
             ]
             }) }}
@@ -70,11 +77,10 @@ Health, care, social and support needs
           href: "/forms/housing/CBLextra-reason-abuse.html"
         }) }}
 
-
     </div>
 </div>
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
-    <p><strong>we will need a bit of guidance if they say no to medical priority</strong></p>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <p><strong>guidance added if they say no to the medical form question</strong></p>
 </div>
 {% endblock %}

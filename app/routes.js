@@ -272,6 +272,10 @@ router.post('/forms/housing/CBLgender', function (req, res) {
   res.redirect('/forms/housing/CBLsummary-aboutyou')
 })
 
+router.post('/forms/housing/CBLwho-moving', function (req, res) {
+  res.redirect('/forms/housing/CBLinfo-housed')
+})
+
 router.post('/forms/housing/CBLinfo-housed', function (req, res) {
   var livingAlone= req.session.data['living-alone']
   if (livingAlone === 'yes') {
@@ -416,6 +420,14 @@ router.post('/forms/housing/CBLaddress2-loop-joint', function (req, res) {
 
 router.post('/forms/housing/CBLaddress2-joint', function (req, res) {
   res.redirect('/forms/housing/CBLlegal')
+})
+
+router.post('/forms/housing/CBLbedroom', function (req, res) {
+  var notMoving = req.session.data['who-not-moving']
+  if (notMoving === 'yes') {
+      return res.redirect('/forms/housing/CBLbedroom-used')
+  }
+  res.redirect('/forms/housing/CBLreasons')
 })
 
 router.post('/forms/housing/CBLdeclaration1', function (req, res) {

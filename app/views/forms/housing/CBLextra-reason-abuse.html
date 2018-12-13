@@ -12,10 +12,12 @@ Health, care, social and support needs
             Apply online for council housing <span class="UR-tag ok">ok</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-   
+        {% set policeGuidanceHtml %}
+        <p>We will contact you for more details and will confirm with the police once we have the reporting details.</p>
+        {% endset %}
         {% set policeHtml %}
         {{ govukRadios({
-            idPrefix: "police",
+            idPrefix: "police-conditional",
             name: "police",
             fieldset: {
                 legend: {
@@ -27,7 +29,10 @@ Health, care, social and support needs
             items: [
                 {
                 value: "yes",
-                text: "Yes"
+                text: "Yes",
+                conditional: {
+                    html: policeGuidanceHtml
+                    }
                 },
                 {
                 value: "no",
@@ -72,10 +77,10 @@ Health, care, social and support needs
 
     </div>
 </div>
-<div class="design-notes-box">
-        <h3 class="govuk-heading-s">Design notes:</h3>
-        <p><strong>we will need a bit of guidance if they say why we ask about the police</strong></p>
-    </div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <p><strong>guidance added if they say yes to the police question</strong></p>
+</div>
 
 
 {% endblock %}

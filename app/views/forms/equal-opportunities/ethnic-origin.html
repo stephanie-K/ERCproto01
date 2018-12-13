@@ -91,6 +91,18 @@ Ethnic origin - Equality and diversity
             }) }}
         {% endset -%}
 
+        {% set otherEthnicHtml %}
+        {{ govukInput({
+        id: "other-ethnic",
+        name: "other-ethnic",
+        value: data['other-ethnic'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+            text: "Describe other ethnic group"
+        }
+        }) }}
+        {% endset -%}
+
         {% set otherEthnicGroupHtml %}
         {{ govukRadios({
             idPrefix: "other-group",
@@ -104,24 +116,13 @@ Ethnic origin - Equality and diversity
                     value: "other",
                     text: "Other",
                     conditional: {
-                        html: otherEthnicGroupHtml
+                        html: otherEthnicHtml
                         }
                     }
                 ]
             }) }}
         {% endset -%}
 
-        {% set otherEthnicHtml %}
-        {{ govukInput({
-        id: "other-ethnic",
-        name: "other-ethnic",
-        value: data['other-ethnic'],
-        classes: "govuk-!-width-two-thirds",
-        label: {
-            text: "Describe other ethnic group"
-        }
-        }) }}
-        {% endset -%}
 
         {% set whiteHtml %}
         {{ govukRadios({

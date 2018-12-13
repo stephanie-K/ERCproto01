@@ -2,7 +2,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Bedrooms
+  Bedrooms used
 {% endblock %}
 
 {% block content %}
@@ -10,11 +10,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-          Apply online for council housing<span class="UR-tag red">CHANGED</span>
+          Apply online for council housing<span class="UR-tag red">NEW</span>
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <h2 class="govuk-heading-m">
-        We need to know about the bedrooms at your current address.
+          You told us that you are currently living with people who won't be moving with you
       </h2>
 <br><br>
       <form class="form" method="post">
@@ -22,17 +22,14 @@
 
       {{ govukRadios({
         classes: "govuk-radios--inline",
-        idPrefix: "double",
-        name: "double",
+        idPrefix: "double-other",
+        name: "double-other",
         fieldset: {
           legend: {
-            text: "How many are double?",
+            text: "How many double bedrooms are used by people not moving with you?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
-        },
-        hint: {
-          text: "You can fit in a double bed, a wardrobe and a chest of drawers."
         },
         items: [
           {
@@ -60,17 +57,14 @@
 
       {{ govukRadios({
         classes: "govuk-radios--inline",
-        idPrefix: "single",
-        name: "single",
+        idPrefix: "single-other",
+        name: "single-other",
         fieldset: {
           legend: {
-            text: "How many are single?",
+            text: "How many single bedrooms are used by people not moving with you?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--s"
           }
-        },
-        hint: {
-          text: "You cannot fit in a double bed, a wardrobe and a chest of drawers."
         },
         items: [
           {
@@ -96,23 +90,12 @@
         ]
       }) }}
 
-<br><br>
-      {% from "textarea/macro.njk" import govukTextarea %}
-
-      {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
-        classes: "govuk-!-width-two-thirds",
-        label: {
-          text: "Add any other information about sleeping arrangements we might need to know about (optional)",
-          classes:"govuk-!-font-size-24"
-        }
-      }) }}
 
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
         text: "Continue",
+        href: "/forms/housing/CBLreasons.html",
         classes: "button-primary"
       }) }}
       </form>
@@ -123,8 +106,7 @@
 
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
-   <p>This screen was routing to the 5 years of addresses previously, but this screen has moved to earlier in the form</p> 
-   <p>If they said they were sharing with other not moving with them, then they will see another question about bed used, if not they move to reasons for leaving</p>
+   <p>Only seen if they said they were sharing with other not moving with them, next they move to reasons for leaving</p>
 </div>
 
 {% endblock %}

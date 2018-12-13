@@ -30,19 +30,6 @@
             text: "Enter address, including postcode"
           }
         }) }}
-        <br><br>
-        <h2 class="govuk-heading-m">
-            If your are living with friends, family or somewhere else that is not really your home
-        </h2>
-        
-        {{ govukTextarea({
-          id: "details-address",
-          name: "details-address",
-          value: data['details-address'],
-          label: {
-            text: "Give details (optional)"
-          }
-        }) }}
 
         
               {{ govukButton({
@@ -51,12 +38,6 @@
               }) }}
       </form>
     </div>
-</div>
-<div class="UR-notes-box">
-    <h3 class="govuk-heading-s">UR notes:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>this is provisional content following User Research and disussion with housing - it might changed soon</li>
-    </ul>
 </div>
 <div class="IT-notes-box">
   <h3 class="govuk-heading-s">IT notes:</h3>
