@@ -227,7 +227,7 @@ router.post('/forms/housing/CBL16', function (req, res) {
 router.post('/forms/housing/CBLimmigration', function (req, res) {
   var immigrationControl = req.session.data['immigration']
   if (immigrationControl === 'no') {
-      return res.redirect('/forms/housing/CBLNI')
+      return res.redirect('/forms/housing/CBLhomeless-question')
   }
   res.redirect('/forms/housing/CBLrecourse')
 })
@@ -237,14 +237,6 @@ router.post('/forms/housing/CBLrecourse', function (req, res) {
   if (isrecourse === 'yes') {
       return res.redirect('/forms/housing/CBLout')
   }
-  res.redirect('/forms/housing/CBLNI')
-})
-
-router.post('/forms/housing/CBLNI', function (req, res) {
-  res.redirect('/forms/housing/CBLaboutyou')
-})
-
-router.post('/forms/housing/CBLaboutyou', function (req, res) {
   res.redirect('/forms/housing/CBLhomeless-question')
 })
 
@@ -257,8 +249,17 @@ router.post('/forms/housing/CBLhomeless-question', function (req, res) {
 })
 
 router.post('/forms/housing/CBLaddress', function (req, res) {
+  res.redirect('/forms/housing/CBLNI')
+})
+
+router.post('/forms/housing/CBLNI', function (req, res) {
+  res.redirect('/forms/housing/CBLaboutyou')
+})
+
+router.post('/forms/housing/CBLaboutyou', function (req, res) {
   res.redirect('/forms/housing/CBLcontact')
 })
+
 
 router.post('/forms/housing/CBLcontact', function (req, res) {
   res.redirect('/forms/housing/CBLdob')
@@ -435,7 +436,7 @@ router.post('/forms/housing/CBLdeclaration1', function (req, res) {
   if (know === 'yes') {
       return res.redirect('/forms/housing/CBLdeclaration1-details')
   }
-  res.redirect('/forms/housing/CBLend')
+  res.redirect('/forms/housing/CBLextra-reason-abuse')
 })
 
 
