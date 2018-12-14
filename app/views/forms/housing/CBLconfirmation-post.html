@@ -24,13 +24,27 @@
           </div>
           <p>Thank you for submitting your housing registration form.</p>
 
-          <div class="govuk-warning-text govuk-!-margin-bottom-9">
-                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                <strong class="govuk-warning-text__text">
-                  <span class="govuk-warning-text__assistive">Warning</span>
-                  <a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download the summary of your application</a>
-                </strong>
-              </div>
+          {% if data['priority'] == 'no'%}
+          <div class="govuk-warning-text govuk-!-margin-bottom-5">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Make sure you:
+              </strong>
+            </div>
+            <ul class="govuk-list govuk-list--number">
+              <li><a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download the summary of your application</a></li>
+              <li><a href="" download="Medical-Priority-Assessment-Form.pdf">Download a Medical Priority Assessment Form</a></li>
+            </ul>
+          {% else %}
+          <div class="govuk-warning-text govuk-!-margin-bottom-5">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              <a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download the summary of your application</a>
+            </strong>
+          </div>
+          {% endif%}
 
               <p class="govuk-!-margin-bottom-9">Could you complete our <a href="/forms/equal-opportunities/start1.html">Equality and diversity questionnaire</a>? (takes less than 1 minute)</p>
           

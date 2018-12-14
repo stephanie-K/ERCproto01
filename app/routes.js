@@ -439,6 +439,9 @@ router.post('/forms/housing/CBLdeclaration1', function (req, res) {
   res.redirect('/forms/housing/CBLextra-reason-abuse')
 })
 
+router.post('/forms/housing/CBLextra-reason-medical', function (req, res) {
+  res.redirect('/forms/housing/CBLend')
+})
 
 
 // P1 form ***********************************************************************************

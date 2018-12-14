@@ -12,6 +12,7 @@ Health, care, social and support needs
             Apply online for council housing<span class="UR-tag ok">ok</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post">
         {% set medicalFormHtml %}
         <p>You will need to complete a separate Medical Priority Assessment Form.</p>
         <p>We will provide a link to it once you submit this form.</p>
@@ -73,9 +74,9 @@ Health, care, social and support needs
  
         {{ govukButton({
           text: "Continue",
-          classes: "button-primary",
-          href: "/forms/housing/CBLend.html"
+          classes: "button-primary"
         }) }}
+    </form>
 
     </div>
 </div>
