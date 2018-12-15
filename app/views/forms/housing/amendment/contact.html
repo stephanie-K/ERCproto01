@@ -1,0 +1,59 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Contact details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
+      
+      <h2 class="govuk-heading-m">
+          How to contact you
+      </h2>
+    
+      <form class="form" method="post" novalidate>
+          {% from "input/macro.njk" import govukInput %}
+    
+          {{ govukInput({
+            label: {
+              text: "Telephone/mobile number"
+            },
+            id: "telephone-number",
+            name: "telephone-number",
+            value: data['telephone-number'],
+            type: "tel",
+            classes: "govuk-input--width-10"
+          }) }}
+    
+      
+          {{ govukInput({
+            label: {
+              text: "Email (optional)"
+            },
+            hint: {
+              text: "We’ll use this to send you a receipt."
+            },
+            id: "email",
+            name: "email",
+            value: data['email'],
+            type: "email",
+            classes: "govuk-input--width-20"
+          }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/amendment/housing-details.html",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

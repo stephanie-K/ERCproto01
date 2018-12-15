@@ -1,0 +1,65 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Your name
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
+      
+      <h2 class="govuk-heading-m">
+          About you
+      </h2>
+    
+      <form class="form" method="post" novalidate>
+          {% from "input/macro.njk" import govukInput %}
+    
+          {{ govukInput({
+            label: {
+              text: "Title"
+            },
+            id: "title-applicant",
+            name: "title-applicant",
+            value: data['title-applicant'],
+            classes: "govuk-input--width-4"
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "First name"
+            },
+            id: "first-name-applicant",
+            name: "first-name-applicant",
+            value: data['first-name-applicant'],
+            classes: "govuk-input--width-20"
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "Last name"
+            },
+            id: "last-name-applicant",
+            name: "last-name-applicant",
+            value: data['last-name-applicant'],
+            classes: "govuk-input--width-20"
+          }) }}
+    
+
+
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/amendment/contact.html",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

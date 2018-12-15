@@ -1,0 +1,55 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Housing details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
+      
+      <h2 class="govuk-heading-m">
+          Housing application details
+        </h2>
+        <p class="govuk-!-margin-bottom-9">We need information from the Housing application form</p>
+        <form class="form" method="post" novalidate>
+        {% from "input/macro.njk" import govukInput %}
+  
+        {{ govukInput({
+          label: {
+            text: "Name of the main applicant(s)"
+          },
+          id: "full-name",
+          name: "full-name",
+          value: data['full-name'],
+          classes: "govuk-input--width-20"
+        }) }}
+  
+  
+        {{ govukInput({
+          label: {
+            text: "Housing application Ref Number"
+          },
+          id: "ref-number",
+          name: "ref-number",
+          value: data['ref-number'],
+          classes: "govuk-input--width-10"
+        }) }}
+
+        
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/amendment/menu.html",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

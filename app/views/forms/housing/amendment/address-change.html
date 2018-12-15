@@ -1,0 +1,43 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Change your address
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
+      
+      <h2 class="govuk-heading-m">
+          Change your address
+      </h2>
+    
+      <form class="form" method="post" novalidate>
+ <p>Will be coded using similar screens and consistent content to CBL</p>
+ <ul class="govuk-list govuk-list--bullet">
+   <li>new address</li>
+   <li>date moved in</li>
+   <li>house type</li>
+   <li>floor level</li>
+   <li>How many bedrooms, double / single</li>
+   <li>who is living with you but won't be rehoused</li>
+   <li>how many used if sharing (depend on previous point)</li>
+   <li>housing circumstances, with conditional asking for more info depending on circumstances</li>
+   
+   </ul>
+
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

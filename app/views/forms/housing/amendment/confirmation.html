@@ -1,0 +1,48 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+   
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+            Submission complete
+        </h1>
+        <div class="govuk-panel__body">
+          Your reference number
+          <br><strong>1346-7895-4445-7023</strong><br><br>
+          We’ve sent an email to confirm your amendment to <strong> 
+          {% if data['email'] %}
+          {{ data['email']}}
+          {% else %}
+          applicant.email.address@gmail.com
+          {% endif%}
+          </strong>
+        </div>
+      </div>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p>to be added with housing</p>
+
+    <p class="govuk-!-margin-bottom-1">&nbsp;</p>
+    <h2 class="govuk-heading-m">Contact</h2>
+    <ul class="govuk-list">
+    <li>Phone: 0141 577 3001</li>
+    <li>Email: <a href="mailto:housingallocationenquiries@eastrenfrewshire.gov.uk">housingallocationenquiries@eastrenfrewshire.gov.uk</a></li>
+      </ul>
+    <p class="govuk-!-margin-top-9"><strong class="tag-print">Print this page</strong></p>
+    <p class="govuk-!-margin-bottom-9">&nbsp;</p>
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -2,29 +2,29 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Medical Priority Application - start
+  Amendment of housing application - start
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-          Medical priority application
+          Amendment of Housing application
       </h1>
       <p><img src="{{ asset_path }}images/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
+
       <p class="govuk-body-l">
-          If you are applying for Medical Priority for more than one person, a separate Medical Priority Application Form must be completed for each applicant.  
+          Use this form if your name or your address have changed, or if you need to add or remove a person from your application
       </p>
 
       <h2 class="govuk-heading-m erc-text-blue">Before you start</h2>
       <p>
-        You need to have (if applicable):
+        You need to have:
       </p>
       <ul class="govuk-list govuk-list--bullet">
         <li>your Housing application number</li>
-        <li>the name and dosage of your medication</li>
-        <li>your Disability benefit details</li>
-        <li>the name and address of your doctor and any consultant or clinic you attend</li>
+        <li>your new address (if applicable)</li>
+        <li>the name and of date of birth of person to add or remove (if applicable)</li>
       </ul>
       <p>
      
@@ -32,7 +32,7 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "/forms/housing/medical/start-warning.html",
+        href: "/forms/housing/amendment/start-warning.html",
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
 
@@ -53,8 +53,8 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>this a very first draft based on the pdf form - and <strong>just for illustration</strong>. The content and design would need to be reviewed</li>
-      <li><a href="{{ asset_path }}images/medicalform.pdf" target="_blank">PDF form for it</a></li>
+      <li>this a very first draft based on the paper form - and <strong>just for illustration</strong>. The content and design would need to be reviewed</li>
+      <li><a href="{{ asset_path }}images/amendment.pdf" target="_blank">PDF form for it</a></li>
     </ul>
   </div>
 

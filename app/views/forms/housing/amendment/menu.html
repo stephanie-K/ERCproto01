@@ -1,0 +1,59 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Housing details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
+      
+        <form class="form" method="post" novalidate>
+      
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "what",
+          name: "what",
+          fieldset: {
+            legend: {
+              text: "What do you need to change?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "name",
+              text: "My name"
+            },
+            {
+              value: "address",
+              text: "My current address"
+            },
+            {
+              value: "add",
+              text: "Add a person who will be living with me"
+            },
+            {
+              value: "remove",
+              text: "Remove a person"
+            }
+          ]
+        }) }}
+        
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

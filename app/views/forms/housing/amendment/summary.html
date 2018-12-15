@@ -1,0 +1,74 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Summary
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-l">
+            Amendment of Housing application
+        </h1>
+      <h2 class="govuk-heading-m">
+        Summary of change
+      </h2>
+      <p>If you want to print this page do it now. You won’t see this summary once you submit the form.</p>
+
+
+      {% if data['original']%}
+      <h3 class="govuk-heading-m">
+          Change of name
+        </h3>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents sum-grey">
+            <dt class="app-check-your-answers__question">
+              Original name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{data['original']}}
+            </dd>
+          </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+              New name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['new-name'] }}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Reason for the change
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{data['reason']}}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Date of change
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{data['date-change-day']}}/{{data['date-change-month']}}/{{data['date-change-year']}}
+          </dd>
+        </div>
+      </dl>
+      {% endif %}
+  
+      <h2 class="govuk-heading-m">Now send your response</h2>
+      <p>By submitting you are confirming that, to the best of your knowledge, the details you're providing are correct.</p>
+
+      {{ govukButton({
+        text: "Accept and submit your changes",
+        href: "/forms/housing/amendment/confirmation.html",
+        classes: "button-primary"
+      }) }}
+
+      <p><strong class="tag-print">Print this page</strong></p>
+    </div>
+</div>
+
+{% endblock %}

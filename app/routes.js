@@ -88,6 +88,45 @@ router.post('/forms/equal-opportunities/age', function (req, res) {
   res.redirect('/forms/equal-opportunities/status')
 })
 
+// Amendment form *****************************************************************
+
+router.post('/forms/housing/amendment/menu', function (req, res) {
+  var what = req.session.data['what']
+  if (what === 'name') {
+      return res.redirect('/forms/housing/amendment/name-change')
+  }
+  if (what === 'address') {
+    return res.redirect('/forms/housing/amendment/address-change')
+}
+if (what === 'add') {
+  return res.redirect('/forms/housing/amendment/add-change')
+}
+  res.redirect('/forms/housing/amendment/remove-change')
+})
+
+router.post('/forms/housing/amendment/change-more', function (req, res) {
+  var moreChange = req.session.data['more-change']
+  if (moreChange === 'yes') {
+      return res.redirect('/forms/housing/amendment/menu')
+  }
+  res.redirect('/forms/housing/amendment/declaration')
+})
+
+router.post('/forms/housing/amendment/name-change', function (req, res) {
+  res.redirect('/forms/housing/amendment/change-more')
+})
+
+router.post('/forms/housing/amendment/address-change', function (req, res) {
+  res.redirect('/forms/housing/amendment/change-more')
+})
+
+router.post('/forms/housing/amendment/add-change', function (req, res) {
+  res.redirect('/forms/housing/amendment/change-more')
+})
+
+router.post('/forms/housing/amendment/remove-change', function (req, res) {
+  res.redirect('/forms/housing/amendment/change-more')
+})
 
 // Medical Priority form *****************************************************************
 
