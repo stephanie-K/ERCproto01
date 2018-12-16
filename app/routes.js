@@ -90,6 +90,18 @@ router.post('/forms/equal-opportunities/age', function (req, res) {
 
 // Amendment form *****************************************************************
 
+router.post('/forms/housing/amendment/name', function (req, res) {
+  res.redirect('/forms/housing/amendment/contact')
+})
+
+router.post('/forms/housing/amendment/contact', function (req, res) {
+  res.redirect('/forms/housing/amendment/housing-details')
+})
+
+router.post('/forms/housing/amendment/housing-details', function (req, res) {
+  res.redirect('/forms/housing/amendment/menu')
+})
+
 router.post('/forms/housing/amendment/menu', function (req, res) {
   var what = req.session.data['what']
   if (what === 'name') {
@@ -125,6 +137,26 @@ router.post('/forms/housing/amendment/add-change', function (req, res) {
 })
 
 router.post('/forms/housing/amendment/remove-change', function (req, res) {
+  res.redirect('/forms/housing/amendment/remove-change-more1')
+})
+
+router.post('/forms/housing/amendment/remove-change-more1', function (req, res) {
+  var removeMore1 = req.session.data['remove-more1']
+  if (removeMore1=== 'yes') {
+      return res.redirect('/forms/housing/amendment/remove-change1')
+  }
+  res.redirect('/forms/housing/amendment/change-more')
+})
+
+router.post('/forms/housing/amendment/remove-change1', function (req, res) {
+  res.redirect('/forms/housing/amendment/remove-change-more2')
+})
+
+router.post('/forms/housing/amendment/remove-change-more2', function (req, res) {
+  var removeMore1 = req.session.data['remove-more2']
+  if (removeMore1=== 'yes') {
+      return res.redirect('/forms/housing/amendment/remove-change2')
+  }
   res.redirect('/forms/housing/amendment/change-more')
 })
 

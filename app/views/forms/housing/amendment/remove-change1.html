@@ -13,7 +13,7 @@
       <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
       
       <h2 class="govuk-heading-l">
-          Remove a person
+          Remove a person - person 2
       </h2>
       <p class="govuk-body-l">Enter the details of the person who won't be living with you.</p>
 
@@ -25,15 +25,15 @@
             text: "Full name",
             classes: "govuk-!-font-size-24"
           },
-          id: "full-name-person-remove1",
-          name: "full-name-person-remove1",
-          value: data['full-name-person-remove1'],
+          id: "full-name-person-remove2",
+          name: "full-name-person-remove2",
+          value: data['full-name-person-remove2'],
           classes: "govuk-input--width-20"
         }) }}
   
         {{ govukDateInput({
           id: "dob-person-remove1",
-          namePrefix: "dob-person-remove1",
+          namePrefix: "dob-person-remove2",
           fieldset: {
             legend: {
               text: "Date of birth",
@@ -44,17 +44,17 @@
           items:[
               {
               name: 'day',
-              value: data['dob-person-remove1-day'],
+              value: data['dob-person-remove2-day'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'month',
-              value: data['dob-person-remove1-month'],
+              value: data['dob-person-remove2-month'],
               classes: "govuk-input--width-2"
               },
               {
               name: 'year',
-              value: data['dob-person-remove1-year'],
+              value: data['dob-person-remove2-year'],
               classes: "govuk-input--width-4"
               }
               ]
@@ -64,9 +64,9 @@
   
         {% set genderHtml %}
         {{ govukInput({
-          id: "gender-desc-remove1",
-          name: "gender-desc-remove1",
-          value: data['gender-desc-remove1'],
+          id: "gender-desc-remove2",
+          name: "gender-desc-remove2",
+          value: data['gender-desc-remove2'],
           classes: "govuk-!-width-two-thirds",
           label: {
             text: "Describe gender in another way (optional)"
@@ -77,8 +77,8 @@
   
         {{ govukRadios({
           classes: "govuk-radios",
-          idPrefix: "gender-remove1",
-          name: "gender-remove1",
+          idPrefix: "gender-remove2",
+          name: "gender-remove2",
           fieldset: {
             legend: {
               text: "Gender",
@@ -90,17 +90,17 @@
             {
               value: "female",
               text: "Female",
-              checked: checked ("gender-remove1", "female")
+              checked: checked ("gender-remove2", "female")
             },
             {
               value: "male",
               text: "Male",
-              checked: checked ("gender-remove1", "male")
+              checked: checked ("gender-remove2", "male")
             },
             {
               value: "Other",
               text: "Other",
-              checked: checked ("gender-remove1", "Other"),
+              checked: checked ("gender-remove2", "Other"),
               conditional: {
                 html: genderHtml
               }
@@ -114,9 +114,9 @@
             text: "Relationship to you",
             classes: "govuk-!-font-size-24"
           },
-          id: "relationship-remove1",
-          name: "relationship-remove1",
-          value: data['relationship-remove1'],
+          id: "relationship-remove2",
+          name: "relationship-remove2",
+          value: data['relationship-remove2'],
           classes: "govuk-input--width-20"
         }) }}
 

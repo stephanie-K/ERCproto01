@@ -1,0 +1,64 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Remove more
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
+      <h2 class="govuk-heading-m">
+        Person 1:
+      </h2>
+    <div style="overflow: auto">
+      <table class=" govuk-table half-width">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['full-name-person-remove1']}}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person-remove1-day']}}/{{data['dob-person-remove1-month']}}/{{data['dob-person-remove1-year']}}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-remove1'] === 'Other' %} {{data['gender-desc-remove1']}} {% else %} {{data['gender-remove1']}}{% endif %}</td></tr>
+        <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship-remove1']}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+    <p><a href="/forms/housing/amendment/remove-change.html">Edit person 1 details</a></p>
+        <form class="form" method="post" novalidate>
+      
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "remove-more1",
+          name: "remove-more1",
+          fieldset: {
+            legend: {
+              text: "Do you need to remove another person?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+        
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -23,9 +23,9 @@
           label: {
             text: "Name of the main applicant(s)"
           },
-          id: "full-name",
-          name: "full-name",
-          value: data['full-name'],
+          id: "full-name-applicant",
+          name: "full-name-applicant",
+          value: data['full-name-applicant'],
           classes: "govuk-input--width-20"
         }) }}
   
@@ -44,7 +44,6 @@
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
         text: "Continue",
-        href: "/forms/housing/amendment/menu.html",
         classes: "button-primary"
       }) }}
       </form>

@@ -17,6 +17,53 @@
       </h2>
       <p>If you want to print this page do it now. You won’t see this summary once you submit the form.</p>
 
+      <h3 class="govuk-heading-m">
+        Your details
+      </h3>
+    <dl class="app-check-your-answers app-check-your-answers--long">
+      <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{data['title-applicant']}}&nbsp;{{data['first-name-applicant']}}&nbsp;{{data['last-name-applicant']}}
+          </dd>
+        </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+            Phone
+        </dt>
+        <dd class="app-check-your-answers__answer">
+            {{ data['telephone-number']}}
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents sum-grey">
+        <dt class="app-check-your-answers__question">
+          Email
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{data['email']}}
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Name of main applicant
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{data['full-name-applicant']}}
+        </dd>
+      </div>
+      <div class="app-check-your-answers__contents sum-grey">
+        <dt class="app-check-your-answers__question">
+          Housing application ref number
+        </dt>
+        <dd class="app-check-your-answers__answer">
+          {{data['ref-number']}}
+        </dd>
+      </div>
+    </dl>
+    <p class="govuk-!-padding-bottom-4"><a href="/forms/housing/amendment/name.html">Edit your details</a></p>
+
 
       {% if data['original']%}
       <h3 class="govuk-heading-m">
@@ -47,7 +94,7 @@
             {{data['reason']}}
           </dd>
         </div>
-        <div class="app-check-your-answers__contents sum-grey">
+        <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Date of change
           </dt>
@@ -56,6 +103,92 @@
           </dd>
         </div>
       </dl>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/housing/amendment/name-change.html">Edit name change</a></p>
+      {% endif %}
+
+
+      {% if data['full-name-person-remove1']%}
+      <h3 class="govuk-heading-m">
+          Remove person 1
+        </h3>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents sum-grey">
+            <dt class="app-check-your-answers__question">
+              Full name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{data['full-name-person-remove1']}}
+            </dd>
+          </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+              Data of birth
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{data['dob-person-remove1-day']}}/{{data['dob-person-remove1-month']}}/{{data['dob-person-remove1-year']}}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Gender
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% if data['gender-remove1'] === 'Other' %} {{data['gender-desc-remove1']}} {% else %} {{data['gender-remove1']}}{% endif %}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Relation to you
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{data['relationship-remove1']}}
+          </dd>
+        </div>
+      </dl>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/housing/amendment/remove-change.html">Edit person 1 to remove</a></p>
+      {% endif %}
+
+
+
+      {% if data['full-name-person-remove2']%}
+      <h3 class="govuk-heading-m">
+          Remove person 2
+        </h3>
+      <dl class="app-check-your-answers app-check-your-answers--long">
+        <div class="app-check-your-answers__contents sum-grey">
+            <dt class="app-check-your-answers__question">
+              Full name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{data['full-name-person-remove2']}}
+            </dd>
+          </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+              Data of birth
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{data['dob-person-remove2-day']}}/{{data['dob-person-remove2-month']}}/{{data['dob-person-remove2-year']}}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents sum-grey">
+          <dt class="app-check-your-answers__question">
+            Gender
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% if data['gender-remove2'] === 'Other' %} {{data['gender-desc-remove2']}} {% else %} {{data['gender-remove2']}}{% endif %}
+          </dd>
+        </div>
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Relation to you
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{data['relationship-remove2']}}
+          </dd>
+        </div>
+      </dl>
+      <p class="govuk-!-padding-bottom-4"><a href="/forms/housing/amendment/remove-change.html">Edit person 2 to remove</a></p>
       {% endif %}
   
       <h2 class="govuk-heading-m">Now send your response</h2>

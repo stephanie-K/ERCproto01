@@ -1,0 +1,31 @@
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Remove a person
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Amendment of Housing application
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)" >Back</a>
+      
+      <h2 class="govuk-heading-m">
+          Remove a person - person 3
+      </h2>
+    
+<p>only coded for removing for 2 people for now</p>
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/amendment/change-more.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+
+
+{% endblock %}
