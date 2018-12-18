@@ -674,7 +674,7 @@ router.post('/forms/education/moving', function (req, res) {
   router.post('/forms/education/school-1st', function (req, res) {
     //clear the data in case a user came back to that page who previously entered a manual catchment school choice
     //req.session.data['catchment-school-manual'] = null
-    res.redirect('/forms/education/info')
+    res.redirect('/forms/education/info1')
   })
 
   router.post('/forms/education/sibling', function (req, res) {

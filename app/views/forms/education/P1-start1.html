@@ -13,36 +13,53 @@
           Apply online for primary 1 - August 2019
       </h1>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
+
+
+      <p style="background-color: #e0e0e0 ; padding: 5px">Your child must register at the catchment school if they turn 5 between 1 March 2014 and 28 February 2015.</p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-6" >Step 1: Apply online</h2>
+
+      <h2 class="govuk-heading-s">Before you start</h2>
       <ul class="govuk-list govuk-list--bullet">
-          <li>you should read the admissions policy</li> 
-          <li>you can only apply to your catchment school</li>
-          <li>you still need to apply to your catchment school if you make a placing request, move house or defer entry</li>
-          <li>you need to provide proof of your details at a later date</li>
+        <li>you must read our <a href="https://www.eastrenfrewshire.gov.uk/admissionsinfo" target="_blank">School admissions information</a></li> 
+        <li>you can only apply to the catchment school</li>
+        <li>you need an email address to use this form</li>
+        <li>you still need to apply to your catchment school now if you make a <a href="https://www.eastrenfrewshire.gov.uk/placingrequest" target="_blank">placing request</a> or <a href="https://www.eastrenfrewshire.gov.uk/article/9914/Deferring-entry-to-primary-school" target="_blank">defer entry</a></li>
        </ul>
-       <p class="govuk-!-padding-top-4">You can find out how we use your information in our <a href="/privacy.html">privacy statement</a>.</p>
-
-       {% from "warning-text/macro.njk" import govukWarningText %}
-
-       {{ govukWarningText({
-         text: "Use the back link if you need to go to the previous page. Don't use the back button of your browser or device or you'll need to start again.",
-         iconFallbackText: "Warning"
-       }) }}
 
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
-        text: "Start now",
+        text: "Apply online for primary 1",
         href: "/forms/education/declaration1.html"
       }) }}
+      
+      <h2 class="govuk-heading-m govuk-!-margin-top-6">Closing date for online applications</h2>
+      <p>11 January 2019 at 4pm</p>
+
+       <h2 class="govuk-heading-m govuk-!-margin-top-6">Step 2: provide proof of circumstances</h2>
+       <p><a href="https://www.eastrenfrewshire.gov.uk/article/9948/Apply-for-primary-1-proof-of-circumstances" target="_blank">Apply for primary 1: step 2 proof of circumstances</a></p>
+      
+        
+        <h2 class="govuk-heading-m" >Contact</h2>
+        <p>Phone: 0141 577 3246</p>
+        <p>Email: <a href="mailto:admissions@eastrenfrewshire.gov.uk" target="_blank"></a>admissions@eastrenfrewshire.gov.uk</p>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-6">Related information </h2>
+          <p><a href="https://www.eastrenfrewshire.gov.uk/article/6772/Jewish-education" target="_blank">Jewish education</a></p>
+          <p class="govuk-!-margin-bottom-9"><a href="https://www.eastrenfrewshire.gov.uk/article/7180/How-to-apply-to-a-secondary-school" target="_blank">Apply for other primary stages or throughout the school year</a></p>
+
+
 
     </div>
 </div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li>This content will change to something which describes all the step of the application and enrolment - needs to be signed off by Education</li> 
+        <li><a href="https://www.eastrenfrewshire.gov.uk/applyforp1" target="_blank">see the actual page</a> now live since the 17/12/18</li> 
+        <li><a href="/forms/education/P1-start.html">see the page</a> we used for last Usability testing session</li>
     </ul>
 </div>
+
 
 {% endblock %}
