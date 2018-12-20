@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Apply online for council housing<span class="UR-tag red">CHANGED</span>
+        Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% from "checkboxes/macro.njk" import govukCheckboxes %}
@@ -44,7 +44,7 @@
   name: "reason",
   fieldset: {
     legend: {
-      text: "What is your connection to East Renfrewshire?",
+      text: "What's your connection to East Renfrewshire?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--m"
     }
@@ -71,7 +71,7 @@
     },
     {
       value: "support",
-      text: "Support for or from a relative who lives in area",
+      text: "Support from or for East Renfrewshire resident",
       conditional: {
         html: addressHtml
       }
@@ -82,7 +82,7 @@
     },
     {
       value: "Relative",
-      text: "Relative lives in area",
+      text: "Family lives in area",
       conditional: {
         html: addressHtml
       }
@@ -113,17 +113,18 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>if they select "relative lives in area" , or "Support to or from a relative" we need a textbox for them to enter the name and address</li>
+      <li>if they select "family lives in area" , or "Support to or from a resident" we need a textbox for them to enter the name and address</li>
+      <li></li>
     </ul>
 </div>
 <div class="IT-notes-box">
-    <h3 class="govuk-heading-s">IT notes:</h3>
+    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>can be coded - one change for support for a or from a relative and was radio button question with reveal before - not anymore</li>
+      <li><strong>sill not sure of some terms here : relation, resident - family, need to check with Housing</strong></li>
       <li>extra textbox for other reason, and another for relative live in area / different label for each though </li>
       <li>we need at least one checked, and if open a text box, then it needs not to be empty</li>
-      <li>there are two more checkboxes in the list (at the top and one at the bottom)</li>
-      <li>Select at least one - Give details - Enter name and address (to be confirmed by Sharon)</li>
+      <li>there are two new checkboxes in the list (at the top and one at the bottom) and some content changes on the existing ones</li>
+      <li>validation: <span class="govuk-error-message">Select at least one connection - Give details - Enter name and address</span></li>
     </ul>
 </div>
 {% endblock %}

@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing<span class="UR-tag ok">ok</span>
+            Apply online for council housing
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <form class="form" method="post">
@@ -73,7 +73,7 @@
               },
               {
                 value: "other",
-                text: "Different type of property",
+                text: "Other",
                 conditional: {
                   html: otherHtml
                 }
@@ -91,6 +91,11 @@
 
     </div>
 </div>
-
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>validation: <span class="govuk-error-message">Select at least one type of property - Give details of property</span></li>
+  </ul>
+</div>
 
 {% endblock %}

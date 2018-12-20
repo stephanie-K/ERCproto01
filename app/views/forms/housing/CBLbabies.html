@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Apply online for council housing<span class="UR-tag ok">ok</span>
+        Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% from "radios/macro.njk" import govukRadios %}
@@ -63,9 +63,9 @@
     </div>
 </div>
 <div class="IT-notes-box">
-    <h3 class="govuk-heading-s">IT notes:</h3>
+    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
    <p>new page - <strong>content has changed </strong></p>
-   <p>validation will be needed: Confirm if anyone pregnant (if yes, textbox can't be empty - Enter name and due date) </p>
+   <p>validation will be needed: <span class="govuk-error-message">Confirm if anyone pregnant</span> if yes, textbox can't be empty - <span class="govuk-error-message">Enter name and due date</span></p>
 </div>
 
 {% endblock %}

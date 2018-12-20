@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Apply online for council housing<span class="UR-tag ok">ok</span>
+        Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% from "checkboxes/macro.njk" import govukCheckboxes %}
@@ -76,7 +76,7 @@
     },
     {
       value: "different",
-      text: "Different living situation",
+      text: "Other",
       conditional: {
         html: detailsHtml
       }
@@ -94,14 +94,13 @@
     </div>
 </div>
 <div class="IT-notes-box">
-    <h3 class="govuk-heading-s">IT notes:</h3>
+    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>can be coded</li>
       <li>extra textbox for Different living situation</li>
       <li>we need at list one checked, and if open a text box, then it needs not to be empty</li>
-      <li>Select at least one - Give details (for Different living situation) (to be confirmed by Sharon)</li>
-      <li>word association added after housing in 2nd checkbox
-      </li>
+      <li>Select at least one - Give details (for Other)</li>
+      <li>word association added after housing in 2nd checkbox</li>
+      <li>validation: <span class="govuk-error-message">Select at least one- Give details of current living situation</span></li>
     </ul>
 </div>
 

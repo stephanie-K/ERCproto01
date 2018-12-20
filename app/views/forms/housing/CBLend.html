@@ -13,18 +13,18 @@
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       
       <h2 class="govuk-heading-m">
-          You are about to submit your application
+          You're about to submit your application
       </h2>
     
  
       {% from "warning-text/macro.njk" import govukWarningText %}
 
       {{ govukWarningText({
-        html: "We will NOT send you a summary by letter or email. ",
+        html: "We won’t send you the summary by letter or email.  ",
         iconFallbackText: "Warning"
       }) }}
 
-     <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-9 govuk-!-margin-top-9">On the next page, you can download your application summary and save it for future reference.</p>
+     <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-9 govuk-!-margin-top-5">On the next page you can download your application summary and save it. </p>
    
 
       {% from "button/macro.njk" import govukButton %}
@@ -45,6 +45,9 @@
     <ul class="govuk-list govuk-list--bullet">
       <li><strong>NEW SCREEN</strong> possible design to make sure they realise they should download on the next page </li>
     </ul>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
 </div>
 
 {% endblock %}

@@ -8,7 +8,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing <span class="UR-tag red">NEW</span>
+            Apply online for council housing
         </h1>
 
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
@@ -26,11 +26,11 @@
         {% from "input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "When did you move in this address?",
+            text: "Date moved into this address",
             classes: 'govuk-!-font-size-24'
           },
           hint: {
-            text: "If you don't know the exact day or month, you can give us an estimated date"
+            text: "If you don’t know give an estimated date. "
           },
           id: "current-address",
           name: "current-address",
@@ -58,7 +58,7 @@
           name: "type",
           fieldset: {
             legend: {
-              text: "Are you a:",
+              text: "Which are you? ",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -108,13 +108,15 @@
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
     <li>possible way to start asking for 5 years of addresses. We give more explanations on this page so the user understand how this work for the other addresses. On the next we ask for past addresses</li>
-    <li>as we don't ask for a precise date with 3 boxes anymore, we can't test if they have been at this address for more than 5 years so can't by pass the next page...</li>
+    <li>as we don't ask for a precise date with 3 boxes anymore, we can't test if they have been at this address for more than 5 years so can't bypass the next page...</li>
     </ul>
 </div>
 <div class="IT-notes-box">
-    <h3 class="govuk-heading-s">IT notes:</h3>
+    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag amber">should be ok to code</span></h3>
     <ul class="govuk-list govuk-list--bullet">
   <li>this is a new page</li>
+  <li>display the address captured previously after homeless question </li>
+  <li>validation: <span class="govuk-error-message">Enter move in date / Confirm occupant type / Provide details about occupant type</span></li>
     </ul>
 </div>
 

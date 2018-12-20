@@ -9,7 +9,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing<span class="UR-tag ok">ok</span>
+            Apply online for council housing
         </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <h2 class="govuk-heading-m">
@@ -65,7 +65,7 @@
           text: "Email (optional)"
         },
         hint: {
-          text: "We’ll use this to send you a receipt."
+          text: "We’ll use this to send you a confirmation."
         },
         id: "email",
         name: "email",
@@ -86,18 +86,15 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>grouping 3 screens from the previous form here - Agree by Housing</li>
-      <li>We had to add a title (because of an internal system which needs it)</li>
+      <li>to check with Housing if title is really needed to send letters</li>
     </ul>
 </div>
 <div class="IT-notes-box">
-  <h3 class="govuk-heading-s">IT notes:</h3>
+  <h3 class="govuk-heading-s">IT notes: <span class="UR-tag ok">ok to code</span></h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>approved so can be coded all on one page</li>
-      <li>Validation: test the email is well formed if provided - Enter valid email address</li>
-      <li>accept spaces in the phone number - if possible check the format - if not entered: Enter phone number - if not valid: Enter valid phone number</li>
-      <li>Enter first name / Enter last name</li>
-      <li>We had to add a title, validation: Enter title</li>
+      <li>Validation: test the email is well formed if provided - <span class="govuk-error-message">Enter valid email address</span></li>
+      <li>accept spaces in the phone number - if possible check the format - if not entered: <span class="govuk-error-message">Enter phone number</span> - if not valid: <span class="govuk-error-message">Enter valid phone number</span></li>
+      <li><span class="govuk-error-message">Enter first name / Enter last name / Enter title</span></li>
     </ul>
 </div>
 {% endblock %}

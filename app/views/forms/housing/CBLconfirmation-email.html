@@ -19,7 +19,7 @@
                 Application submitted
             </h1>
             <div class="govuk-panel__body">
-                We’ve sent an email to confirm your application to <strong>applicant.email@gmail.com</strong>
+                We’ll send you confirmation of this by email to  <strong>applicant.email@gmail.com</strong>
             </div>
           </div>
           <p>Thank you for submitting your housing registration form.</p>
@@ -33,15 +33,15 @@
               </strong>
             </div>
             <ul class="govuk-list govuk-list--number">
-              <li><a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download the summary of your application</a></li>
-              <li><a href="" download="Medical-Priority-Assessment-Form.pdf">Download a Medical Priority Assessment Form</a></li>
+              <li><a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download summary of your application</a></li>
+              <li><a href="" download="Medical-Priority-Assessment-Form.pdf">Download Medical Priority Assessment Form</a></li>
             </ul>
           {% else %}
           <div class="govuk-warning-text govuk-!-margin-bottom-5">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              <a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download the summary of your application</a>
+              <a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download summary of your application</a>
             </strong>
           </div>
           {% endif%}
@@ -49,12 +49,12 @@
               <p class="govuk-!-margin-bottom-9">Could you complete our <a href="/forms/equal-opportunities/start1.html">Equality and diversity questionnaire</a>? (takes less than 1 minute)</p>
           
               <h3 class="govuk-heading-m">What happens next</a></h3> 
-              <p>We will:</p>
+              <p>We'll:</p>
               <ul class="govuk-list govuk-list--bullet">
-                <li>assess your priority for housing within 21 working days of receiving your form if we have all the information needed</li>
-                <li>confirm your Priority Pass and that you have been added to the housing register</li>
-                <li>explain how to bid for available properties</li>
-                <li>invite you to discuss your options and chances of being housed by us</li>
+                <li>process your application within 21 days of getting all the information we need</li>
+                <li>let you know where you are on the priority list</li>
+                <li>explain how to bid for available homes</li>
+                <li>invite you to discuss your chances of getting a house and your options</li>
               </ul>
     
             
@@ -72,17 +72,12 @@
 <div class="alt-notes-box">
 <p><a href="/forms/housing/CBLconfirmation-email">see with an email</a> - - - <a href="/forms/housing/CBLconfirmation-post">see when we send by post</a></p>
 </div>
-<div class="content-notes-box">
-    <h3 class="govuk-heading-s">Content notes:</h3>
-    <ul class="govuk-list govuk-list--bullet">
-        <li>only provisional content - will need to be reviewed with Sharon and Housing</li>
-    </ul>
-</div>
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
-    <p><strong>could we have a pdf or something the user can print of download?</strong></p>
+    <p><strong>could we have a pdf or something the user can print or download?</strong></p>
     <p>could we prompt the user to fill in a medical priority application depending on what they selected in the form - send the pdf in the confirmation email maybe?</p>
     <p>Housing doesn't want a reference number here, they have their own reference number</p>
+    <p>might to say they will receive information via MAIL</p>
 </div>
 
 {% endblock %}

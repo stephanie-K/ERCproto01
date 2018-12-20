@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-          Apply online for council housing<span class="UR-tag red">CHANGED</span>
+          Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <h2 class="govuk-heading-m">
@@ -104,7 +104,7 @@
         id: "more-detail",
         classes: "govuk-!-width-two-thirds",
         label: {
-          text: "Add any other information about sleeping arrangements we might need to know about (optional)",
+          text: "Tell us anything else you want us to know about sleeping arrangements. (optional)",
           classes:"govuk-!-font-size-24"
         }
       }) }}
@@ -122,9 +122,10 @@
 
 
 <div class="IT-notes-box">
-    <h3 class="govuk-heading-s">IT notes:</h3>
+    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
    <p>This screen was routing to the 5 years of addresses previously, but this screen has moved to earlier in the form</p> 
    <p>If they said they were sharing with other not moving with them, then they will see another question about bed used, if not they move to reasons for leaving</p>
+   <p>validation: <span class="govuk-error-message">Confirm how many double bedrooms / Confirm how many single bedrooms</span></p>
 </div>
 
 {% endblock %}

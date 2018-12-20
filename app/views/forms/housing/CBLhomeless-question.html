@@ -8,7 +8,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-          Apply online for council housing<span class="UR-tag red">NEW</span>
+          Apply online for council housing
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <form class="form" method="post">
@@ -19,13 +19,13 @@
         name: "homeless",
         fieldset: {
           legend: {
-            text: "Are you homeless or at risk of becoming homeless?",
+            text: "Are you homeless or at risk of being made homeless soon?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "This means you do not have a permanent place to live."
+          text: "This means you don't have a permanent place to live."
         },
         items: [
           {
@@ -53,5 +53,11 @@
       <li>This is a new question, and if you say yes then the next screen will explain, then will take you out of the form and make you contact Housing</li>
     </ul>
 </div>
-
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>validation: <span class="govuk-error-message">Confirm homeless or at risk of being made homeless</span></li>
+      <li>yes goes to information screen and the stop you, no let you go through to current address question</li>
+    </ul>
+</div>
 {% endblock %}
