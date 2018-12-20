@@ -31,7 +31,7 @@ Ethnic origin - Equality and diversity
         name: "multiple",
         classes: "govuk-!-width-two-thirds",
         label: {
-            text: "Describe Mixed"
+            text: "Describe Mixed or multiple ethnic group"
         }
         }) }}
     {% endset -%}
@@ -60,6 +60,36 @@ Ethnic origin - Equality and diversity
         }) }}
         {% endset -%}
 
+        {% set otherAfricanHtml %}
+        {{ govukInput({
+        id: "other-african",
+        name: "other-african",
+        classes: "govuk-!-width-two-thirds",
+        label: {
+            text: "Describe other African"
+        }
+        }) }}
+        {% endset -%}
+
+        {% set africanHtml %}
+        {{ govukRadios({
+            idPrefix: "african",
+            name: "african",
+            items: [
+                    {
+                    value: "African",
+                    text: "African, African Scottish or African British"
+                    },
+                    {
+                    value: "other",
+                    text: "Other African",
+                    conditional: {
+                        html: otherAfricanHtml
+                        }
+                    }
+                ]
+            }) }}
+        {% endset -%}
 
         {% set otherEthnicHtml %}
         {{ govukInput({
@@ -68,9 +98,29 @@ Ethnic origin - Equality and diversity
         value: data['other-ethnic'],
         classes: "govuk-!-width-two-thirds",
         label: {
-            text: "Describe Other"
+            text: "Describe other ethnic group"
         }
         }) }}
+        {% endset -%}
+
+        {% set otherEthnicGroupHtml %}
+        {{ govukRadios({
+            idPrefix: "other-group",
+            name: "other-group",
+            items: [
+                    {
+                    value: "arab",
+                    text: "Arab, Arab Scottish or Arab British"
+                    },
+                    {
+                    value: "other",
+                    text: "Other",
+                    conditional: {
+                        html: otherEthnicHtml
+                        }
+                    }
+                ]
+            }) }}
         {% endset -%}
 
 
@@ -120,16 +170,12 @@ Ethnic origin - Equality and diversity
             name: "black",
             items: [
                 {
-                value: "african",
-                text: "African"
-                },
-                {
                 value: "black",
-                text: "Black"
+                text: "Black, Black Scottish or Black British"
                 },
                 {
                 value: "caribbean",
-                text: "Caribbean"
+                text: "Caribbean, Caribbean Scottish or Caribbean British"
                 },
                 {
                 value: "other black",
@@ -149,19 +195,19 @@ Ethnic origin - Equality and diversity
             items: [
                 {
                 value: "Bangladeshi",
-                text: "Bangladeshi"
+                text: "Bangladeshi, Bangladeshi Scottish or Bangladeshi British"
                 },
                 {
                 value: "Chinese",
-                text: "Chinese"
+                text: "Chinese, Chinese Scottish or Chinese British"
                 },
                 {
                 value: "Indian",
-                text: "Indian"
+                text: "Indian, Indian Scottish or Indian British"
                 },
                 {
                 value: "Pakistani",
-                text: "Pakistani"
+                text: "Pakistani, Pakistani Scottish or Pakistani British"
                 },
                 {
                 value: "other asian",
@@ -179,54 +225,57 @@ Ethnic origin - Equality and diversity
         name: "ethnic",
         fieldset: {
             legend: {
-            text: "How do you describe yourself?",
+            text: "Which best describes your ethnic group and background?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
             }
         },
         items: [
             {
-            value: "Arab",
-            text: "Arab"
+            value: "white",
+            text: "White",
+            conditional: {
+                html: whiteHtml
+              }
+            },
+            {
+            value: "African",
+            text: "African",
+            conditional: {
+                html: africanHtml
+              }
             },
             {
             value: "asian",
             text: "Asian",
             conditional: {
                 html: asianHtml
-                }
+              }
             },
             {
             value: "black",
-            text: "Black",
+            text: "Black or Caribbean",
             conditional: {
                 html: blackHtml
                 }
             },
             {
-            value: "white",
-            text: "White",
-            conditional: {
-                html: whiteHtml
-                }
-            },
-            {
             value: "mixed",
-            text: "Mixed",
+            text: "Mixed or multiple ethnic group",
             conditional: {
                 html: multipleHtml
               }
             },
             {
             value: "other ethnic",
-            text: "Other",
+            text: "Other ethnic group",
             conditional: {
-                html: otherEthnicHtml
+                html: otherEthnicGroupHtml
               }
             },
             {
-            value: "no",
-            text: "Prefer not to say"
+            value: "unknown",
+            text: "Unknown"
             }
         ]
         }) }}
@@ -241,22 +290,18 @@ Ethnic origin - Equality and diversity
 
     </div>
 </div>
-<br>
-<br>
+
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li><strong>This screen will be  hard to read without Javascript enabled! - we probably need a warning</strong></li>
-        <li>original version was longer with more sub categories - <a href="/forms/equal-opportunities/ethnic-origin1">see here</a></li>
+        <li><strong>This screen will be very hard to read without Javascript enabled! - we probably need a warning</strong></li>
     </ul>
 </div>
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li>lots of sub sections with Radio buttons, not sure how this will look on Goss as it opens at the bottom of the radio buttons</li>
-        <li>all 'Other' buttons opens a text box, No validation of the textboxes or that a button has been selected</li>
+        <li>lots of sub sections with Radio buttons, not sure how this will look - all other buttons opens a text box, No validation of the textboxes or that a button as been selected</li>
     </ul>
 </div>
-
 
 {% endblock %}

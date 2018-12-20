@@ -15,6 +15,17 @@ Relationship status - Equality and diversity
 
         {% from "radios/macro.njk" import govukRadios %}
   
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "status-description-conditional",
+          name: "status-description",
+          value: data['status-description'],
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Describe relationship status"
+          }
+        }) }}
+        {% endset -%}
   
         {{ govukRadios({
           classes: "govuk-radios",
@@ -29,6 +40,10 @@ Relationship status - Equality and diversity
           },
           items: [
             {
+              value: "in relation",
+              text: "In a relationship"
+            },
+            {
               value: "Married",
               text: "Married"
             },
@@ -41,12 +56,23 @@ Relationship status - Equality and diversity
               text: "Separated"
             },
             {
+              value: "widow",
+              text: "Widow/widower"
+            },
+            {
               value: "Single",
               text: "Single"
             },
             {
               value: "Other",
-              text: "Other"
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            },
+            {
+              value: "no",
+              text: "Prefer not to say"
             }
           ]
         }) }}
