@@ -336,6 +336,10 @@ router.post('/forms/housing/CBLcontact', function (req, res) {
   res.redirect('/forms/housing/CBLdob')
 })
 
+router.post('/forms/housing/CBLcontact1', function (req, res) {
+  res.redirect('/forms/housing/CBLdob')
+})
+
 router.post('/forms/housing/CBLdob', function (req, res) {
   res.redirect('/forms/housing/CBLgender')
 })
