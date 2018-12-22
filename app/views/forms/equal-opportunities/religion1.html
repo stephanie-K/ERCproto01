@@ -26,6 +26,23 @@ Religion - Equality and diversity
           }
         }) }}
         {% endset -%}
+
+        {% set christianHtml %}
+        {{ govukRadios({
+            idPrefix: "christian",
+            name: "christian",
+            items: [
+                {
+                value: "catholic",
+                text: "Roman Catholic"
+                },
+                {
+                value: "other Christian",
+                text: "Other Christian"
+                }
+            ]
+            }) }}
+        {% endset -%}
   
         {{ govukRadios({
           classes: "govuk-radios",
@@ -52,12 +69,11 @@ Religion - Equality and diversity
               text: "Buddhist"
             },
             {
-              value: "Catholic",
-              text: "Catholic"
-            },
-            {
-              value: "Other Christian",
-              text: "Other Christian"
+              value: "Christian",
+              text: "Christian",
+              conditional: {
+                html: christianHtml
+              }
             },
             {
               value: "Hindu",
@@ -97,16 +113,17 @@ Religion - Equality and diversity
     </div>
 </div>
 <div class="design-notes-box">
-  <h3 class="govuk-heading-s">Design notes:</h3>
-  <ul class="govuk-list govuk-list--bullet">
-  <li>see original <a href="/forms/equal-opportunities/religion">version</a></li>
-  </ul>
-</div>
-<div class="IT-notes-box">
-  <h3 class="govuk-heading-s">IT notes:</h3>
-  <ul class="govuk-list govuk-list--bullet">
-  <li>no validation at all, just a textbox opens if select: another religion</li>
-  </ul>
-</div>
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>see original <a href="/forms/equal-opportunities/religion">version</a></li>
+    <li>sorted in alphabetical order, and if you select Christian, then you get a choice of Roman Catholic or Other Christian, another religion also opens a textbox</li>
+    </ul>
+  </div>
+  <div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>no validation at all, just a textbox opens if select: another religion, and two radios buttons for Christian</li>
+    </ul>
+  </div>
 
 {% endblock %}

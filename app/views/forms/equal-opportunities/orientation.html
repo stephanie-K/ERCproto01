@@ -39,20 +39,16 @@ Sexual orientation - Equality and diversity
           },
           items: [
             {
-              value: "Heterosexual/straight",
-              text: "Heterosexual/straight"
-            },
-            {
               value: "Bi/bisexual",
-              text: "Bi/bisexual"
+              text: "Bisexual"
             },
             {
               value: "Gay/lesbian",
               text: "Gay/lesbian"
             },
             {
-              value: "Prefer not to say",
-              text: "Prefer not to say"
+              value: "Heterosexual/straight",
+              text: "Heterosexual/straight"
             },
             {
               value: "Other",
@@ -60,6 +56,10 @@ Sexual orientation - Equality and diversity
               conditional: {
                 html: otherHtml
               }
+            },
+            {
+              value: "Prefer not to say",
+              text: "Prefer not to say"
             }
           ]
         }) }}
@@ -71,6 +71,17 @@ Sexual orientation - Equality and diversity
 
     </div>
 </div>
-
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>sorted in alphabetical order - to test</li>
+    </ul>
+  </div>
+  <div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>no validation at all, just a textbox opens if select: Other</li>
+    </ul>
+  </div>
 
 {% endblock %}
