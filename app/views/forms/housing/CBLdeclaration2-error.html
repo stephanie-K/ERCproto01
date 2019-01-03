@@ -9,22 +9,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing <span class="UR-tag red">MOVED TO THE START</span>
+            Apply online for council housing <span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <h2 class="govuk-heading-m">
                 Declaration
         </h2>
-        <p>These statements apply to you and anybody included in this application:</p> 
+        <p>Applies to you and anyone on the application:</p> 
         <ul class="govuk-list govuk-list--bullet">
-            <li>I'm eligible to apply for housing and I will tell you if my circumstances change</li> 
-            <li>all the information I will give on this application form is true</li> 
-            <li>I understand that if I give false information or withhold information you have asked for, my application may be cancelled</li> 
-            <li>if I'm offered housing because I have given false information or have withheld information you've asked for, I understand that you may end my tenancy and evict me from my home</li> 
+            <li>I’m eligible to apply for housing</li> 
+            <li>I’ll tell you if my circumstances change</li> 
+            <li>I’ll give true information on this application</li> 
+            <li>I understand you’ll cancel my application if I give false information or withhold information</li>
+            <li>I understand you may end my tenancy and evict me if you offer me a house based on false or withheld information</li> 
         </ul>
-        <p><strong>Permission to share information:</strong></p>
-        <p>I agree that any information I will give on this application can be shared with other landlords and organisations, in order to find me suitable housing, in line with General Data Protection Regulations.</p>
-        <p>You can contact my doctor, hospital consultant, health visitor or social worker, the police or any other relevant person if you need more information for my housing application, in line with General Data Protection Regulations.</p>
 
         <p><a href="https://www.eastrenfrewshire.gov.uk/housing-service-standards">Housing Services Privacy Notice for GDPR</a></p>
         <form class="form" method="post">
@@ -41,17 +39,16 @@
                 }
             },
             errorMessage: {
-                text: "You need to check the box to confirm you read, understand and agree "
+                text: "Check box to confirm you understand and agree "
               },
             items: [
                 {
                 value: "has-read",
-                text: "Read statement and confirm you understand and agree.",
+                text: "I’ve read statement and agree.",
                 checked: checked ("declaration2", "has-read")
                 }
             ]
             }) }}
-
 
         {{ govukButton({
           text: "Continue",
@@ -64,16 +61,16 @@
 <div class="content-notes-box">
     <h3 class="govuk-heading-s">Content notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-        <li><strong>this content was not seen by Sharon yet</strong> - there is too much and the medical and social mentions might need to be taken out or changed?</li>
-        <li>as this is now at the beginning, I've change "I have given" to "I will give" twice</li>
+        <li>Done by Sharon, not seen yet by housing</li>
     </ul>
 </div>
 <div class="IT-notes-box">
-    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag red">text will change but checkbox and structure ok</span></h3>
+    <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">OK to code now (03/01)</span></h3>
     <ul class="govuk-list govuk-list--bullet">
         <li><strong>Screen moved at the start to avoid losing too much progress if they click on the link to view the GDPR</strong></li>
     </ul>
 </div>
+    
     
 
 {% endblock %}

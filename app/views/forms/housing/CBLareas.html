@@ -9,7 +9,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing
+            Apply online for council housing <span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <div class="govuk-form-group">
@@ -19,8 +19,11 @@
                     Which areas do you want to live in?
                 </h2>
                 </legend>
+                <span id="area-hint" class="govuk-hint ">
+                    Your choices here won’t affect what areas you can bid for later. 
+                </span>
                 <span id="area-hint" class="govuk-hint govuk-!-margin-bottom-8">
-                    Your choices don’t stop you from bidding for homes in other areas. 
+                    We use these choices to match you with available houses from other housing providers. 
                 </span>
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     <h2 class="govuk-fieldset__heading">
@@ -200,6 +203,7 @@
     <li> Giffnock has been added. It was missing from the form and also 3 checkboxes for Neilston</li>
     <li>Select at least one</li>
     <li>Guidance added at the top</li>
+    <li>validation: <span class="govuk-error-message">Select at least one area</span></li>
     </ul>
 </div>
 

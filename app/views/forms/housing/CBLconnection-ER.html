@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Apply online for council housing
+        Apply online for council housing <span class="UR-tag red">CHANGED</span>
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 {% from "checkboxes/macro.njk" import govukCheckboxes %}
@@ -82,7 +82,7 @@
     },
     {
       value: "Relative",
-      text: "Relative lives in area",
+      text: "Relative lives in East Renfrewshire",
       conditional: {
         html: addressHtml
       }
@@ -124,7 +124,7 @@
       <li>extra textbox for other reason, and another for relative live in area / different label for each though </li>
       <li>we need at least one checked, and if open a text box, then it needs not to be empty</li>
       <li>there are two new checkboxes in the list (at the top and one at the bottom) and some content changes on the existing ones</li>
-      <li>validation: <span class="govuk-error-message">Select at least one connection - Give details - Enter name, relationship to you and address</span></li>
+      <li>validation: <span class="govuk-error-message">Select at least one connection - Enter details of relative - Enter details of other connection</span> <span class="UR-tag red">CHANGED</span></li>
     </ul>
 </div>
 {% endblock %}

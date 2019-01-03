@@ -8,7 +8,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing
+            Apply online for council housing <span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <p class="govuk-body-l">Tell us the addresses you’ve lived at for the past 5 years. </p>
@@ -21,7 +21,7 @@
         {% from "input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Address, including postcode"
+            text: "Enter address including postcode"
           },
           id: "addr1",
           name: "addr1",
@@ -38,7 +38,7 @@
           classes: "govuk-!-width-two-thirds",
           value: data['type1-other'],
           label: {
-            text: "Give Details"
+            text: "Give details about occupant type"
           }
         }) }}
         {% endset -%}
@@ -119,7 +119,7 @@
           classes: "govuk-!-width-two-thirds",
           value: data['reason1-other'],
           label: {
-            text: "Give Details"
+            text: "Give details"
           }
         }) }}
       {% endset -%}
@@ -203,7 +203,7 @@
     <ul class="govuk-list govuk-list--bullet">
     <li>For the first previous address, date needs to be provided but can be estimated - so just need not to be empty</li>
     <li>need to enter an address (textbox not empty) + need to pick a type + need at least one reason for leaving (if Other then need a description)</li>
-    <li>Validation: <span class="govuk-error-message">Enter address / Confirm occupant type / Enter date moved in / Enter date moved out / Select reason for leaving</span></li>
+    <li>Validation: <span class="govuk-error-message">Enter address / Confirm occupant type / Give details about occupant type / Enter date moved in / Enter date moved out / Select reason for leaving</span></li>
     </ul>
 </div>
 

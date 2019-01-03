@@ -21,7 +21,7 @@
         {% from "input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Address, including postcode"
+            text: "Enter address including postcode"
           },
           id: "addr1-joint",
           name: "addr1-joint",
@@ -38,7 +38,7 @@
           classes: "govuk-!-width-two-thirds",
           value: data['type1-other-joint'],
           label: {
-            text: "Give Details"
+            text: "Give details about occupant type"
           }
         }) }}
         {% endset -%}
@@ -118,7 +118,7 @@
           classes: "govuk-!-width-two-thirds",
           value: data['reason1-joint-other'],
           label: {
-            text: "Give Details"
+            text: "Give details"
           }
         }) }}
       {% endset -%}

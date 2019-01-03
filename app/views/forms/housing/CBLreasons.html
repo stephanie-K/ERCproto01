@@ -9,7 +9,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing
+            Apply online for council housing <span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <div class="govuk-form-group">
@@ -20,7 +20,7 @@
                 </h1>
                 </legend>
                 <span id="reason-hint" class="govuk-hint govuk-!-margin-bottom-8">
-                Select all that apply.
+                Select any that apply.
                 </span>
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     <h2 class="govuk-fieldset__heading">
@@ -172,14 +172,14 @@
           name: "reason-other",
           id: "reason-other",
           label: {
-            text: "Give Details"
+            text: "Give details"
           }
         }) }}
         
         {{ govukButton({
           text: "Continue",
           classes: "button-primary",
-          href: "/forms/housing/CBLpreferences-info.html"
+          href: "/forms/housing/CBLhouse-type.html"
         }) }}
       
 
@@ -192,7 +192,7 @@
     <li>one wording change for homeless</li>
     <li>need at least one checked: Select at least one reason - or need to have a text in the "Other" textbox</li>
     <li>routing changed: now going to house type instead of medical question</li>    
-    <li>validation: <span class="govuk-error-message">Select at least one reason or give details</span></li>
+    <li>validation: <span class="govuk-error-message">Select at least one reason for applying </span> <span class="UR-tag red">CHANGED</span></li>
 </ul>
 </div>
 

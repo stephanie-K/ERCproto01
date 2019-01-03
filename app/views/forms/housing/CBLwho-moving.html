@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-          Apply online for council housing
+          Apply online for council housing <span class="UR-tag red">CHANGED</span>
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <form class="form" method="post">
@@ -24,7 +24,7 @@
           value: data['actual-details'],
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Provide details of your actual situation"
+            text: "Give details of your situation"
           }
         }) }}
         {{ govukTextarea({
@@ -32,7 +32,7 @@
           name: "people-details",
           value: data['people-details'],
           label: {
-            text: "Tell us about anyone NOT moving with you: their name, date of birth and relationship to you"
+            text: "Give details of anyone not moving with you. Tell us their name, date of birth and relationship to you."
           }
         }) }}
         {% endset %}
@@ -48,7 +48,7 @@
             }
           },
           hint: {
-            text: "For example: shared accommodation, living with family or friends."
+            text: "For example shared accommodation, living with family or friends."
           },
           items: [
             {
@@ -78,7 +78,7 @@
   <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
   <ul class="govuk-list govuk-list--bullet">
   <li>if yes, then we need information in textboxes display</li>
-  <li>validation: <span class="govuk-error-message"> Confirm if people not moving / Give details of actual situation / Give details of anyone not moving</span></li>
+  <li>validation: <span class="govuk-error-message"> Confirm if you live with people who won’t be moving with you / Give details of situation / Give details of anyone not moving</span> <span class="UR-tag red">CHANGED</span></li>
   </ul>
 </div>
 
