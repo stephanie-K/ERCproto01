@@ -14,34 +14,6 @@
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <p class="govuk-body-l">Enter the addresses you lived at for the last 5 years.</p>
-      <h2 class="govuk-heading-m">
-          Address 1:
-      </h2>
-      <div style="overflow: auto">
-          <table class=" govuk-table half-width">
-              <tbody class="govuk-table__body">
-                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Address:</th><td class="govuk-table__cell no-border">{{data['addr1']}}</td></tr>
-                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Type of residence:</th><td class="ngovuk-table__cell o-border">
-                    {% if data['type1'] == 'Other' %}
-                    {{data['type1-other']}}
-                    {% else %}
-                    {{data['type1']}}
-                    {% endif %}
-                </td></tr>
-                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved in:</th><td class="govuk-table__cell no-border">{{data['in1']}}</td></tr>
-                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date moved out:</th><td class="govuk-table__cell no-border">{{data['out1']}}</td></tr>
-                <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Reason for leaving:</th><td class="govuk-table__cell no-border">
-                    {% if data['leave1'] == 'Other' %}
-                    {{data['reason1-other']}}
-                    {% else %}
-                    {{data['leave1']}}
-                    {% endif %}
-                </td></tr>
-              </tbody>
-            </table>
-    </div>
-  
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
 
     <h2 class="govuk-heading-m">
         Address 2:
@@ -212,6 +184,20 @@
           ]
         }) }}
 
+        
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+    <h2 class="govuk-heading-m">
+        Add other past addresses here (if applicable)
+    </h2>
+    {{ govukTextarea({
+      name: "more-address-to-add",
+      id: "more-address-to-add",
+      label: {
+        text: "Address, type of residence, date move in, date move out, reason for leaving"
+      }
+    }) }}
+    
 
         {{ govukButton({
           text: "Continue",

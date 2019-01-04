@@ -180,6 +180,32 @@
             }
           ]
         }) }}
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+        
+
+        {{ govukRadios({
+          idPrefix: "add-address2-joint",
+          name: "add-address2-joint",
+          fieldset: {
+            legend: {
+              text: "Do you need to add a past address?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked ("add-address2-joint", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked ("add-address2-joint", "no")
+            }
+          ]
+        }) }}
 
 
         {{ govukButton({

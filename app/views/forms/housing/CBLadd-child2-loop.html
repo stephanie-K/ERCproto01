@@ -13,22 +13,7 @@
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <p class="govuk-body-l">Enter each child spending part of their time living with you.</p>
-      <h2 class="govuk-heading-m">
-          Child 1:
-      </h2>
-      <div style="overflow: auto">
-        <table class=" govuk-table half-width">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-child1']}}&nbsp;{{data['last-name-child1']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-child1-day']}}/{{data['dob-child1-month']}}/{{data['dob-child1-year']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender-child1'] === 'Other' %} {{data['gender-child-desc1']}} {% else %} {{data['gender-child1']}}{% endif %}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['child-relationship1']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Their address:</th><td class="govuk-table__cell no-border">{{data['child-add1']}}</td></tr>
-          </tbody>
-        </table>
-      </div>
-  
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
       <h2 class="govuk-heading-m">
           Child 2:
       </h2>
@@ -153,6 +138,21 @@
         value: data ['child-add2'],
         classes: "govuk-input--width-30"
       }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+      
+      <h2 class="govuk-heading-m">
+          Tell us about anyone else you didn't add yet (if applicable)
+      </h2>
+      {{ govukTextarea({
+        name: "more-children-to-add",
+        id: "more-children-to-add",
+        value: data['more-children-to-add'],
+        label: {
+          text: "Name, date of birth, gender, relationship to you, address"
+        }
+      }) }}
+
 
       {% from "button/macro.njk" import govukButton %}
       <br>

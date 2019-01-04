@@ -13,22 +13,7 @@
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
       <p class="govuk-body-l">Enter each person who will be living with you.</p>
-      <h2 class="govuk-heading-m">
-          Person 1:
-      </h2>
-      <div style="overflow: auto">
-        <table class=" govuk-table half-width">
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Name:</th><td class="govuk-table__cell no-border">{{data['first-name-person1']}}&nbsp;{{data['last-name-person1']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Date of birth:</th><td class="ngovuk-table__cell o-border">{{data['dob-person1-day']}}/{{data['dob-person1-month']}}/{{data['dob-person1-year']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Gender:</th><td class="govuk-table__cell no-border">{% if data['gender1'] === 'Other' %} {{data['gender-desc1']}} {% else %} {{data['gender1']}}{% endif %}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Living with you now:</th><td class="govuk-table__cell no-border">{{data['live-with1']}}</td></tr>
-            <tr class="govuk-table__row"><th  class="govuk-table__header no-border">Relation to you:</th><td class="govuk-table__cell no-border">{{data['relationship1']}}</td></tr>
-          </tbody>
-        </table>
-      </div>
-  
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
       <h2 class="govuk-heading-m">
           Person 2:
       </h2>
@@ -167,6 +152,33 @@
         name: "relationship2",
         value: data['relationship2'],
         classes: "govuk-input--width-20"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+      
+      {{ govukRadios({
+        idPrefix: "add-person3",
+        name: "add-person3",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Do you need to add another person?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked ("add-person3", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked ("add-person3", "no")
+          }
+        ]
       }) }}
 
       {% from "button/macro.njk" import govukButton %}

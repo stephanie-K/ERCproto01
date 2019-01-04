@@ -182,6 +182,32 @@
           ]
         }) }}
 
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+        {{ govukRadios({
+          idPrefix: "add-address2",
+          name: "add-address2",
+          fieldset: {
+            legend: {
+              text: "Do you need to add a past address?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked ("add-address2", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked ("add-address2", "no")
+            }
+          ]
+        }) }}
+
 
         {{ govukButton({
           text: "Continue",
@@ -204,6 +230,7 @@
     <li>For the first previous address, date needs to be provided but can be estimated - so just need not to be empty</li>
     <li>need to enter an address (textbox not empty) + need to pick a type + need at least one reason for leaving (if Other then need a description)</li>
     <li>Validation: <span class="govuk-error-message">Enter address / Confirm occupant type / Give details about occupant type / Enter date moved in / Enter date moved out / Select reason for leaving</span></li>
+    <li>Validation: <span class="govuk-error-message">Confirm if need to add past address </span></li>
     </ul>
 </div>
 
