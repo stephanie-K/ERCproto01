@@ -9,7 +9,7 @@ Relationship status - Equality and diversity
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Equality and diversity questionnaire <span class="UR-tag red">NOT ASKED ON PAPER FORM</span>
+            Equality and diversity questionnaire
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
@@ -33,12 +33,16 @@ Relationship status - Equality and diversity
           name: "status",
           fieldset: {
             legend: {
-              text: "What is your relationship status?",
+              text: "Relationship status",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
+            {
+              value: "Civil partner",
+              text: "Civil partnership"
+            },
             {
               value: "in relation",
               text: "In a relationship"
@@ -47,21 +51,18 @@ Relationship status - Equality and diversity
               value: "Married",
               text: "Married"
             },
-            {
-              value: "Civil partner",
-              text: "Civil partner"
-            },
+  
             {
               value: "Separated",
               text: "Separated"
             },
             {
-              value: "widow",
-              text: "Widow/widower"
-            },
-            {
               value: "Single",
               text: "Single"
+            },
+            {
+              value: "widow",
+              text: "Widowed"
             },
             {
               value: "Other",

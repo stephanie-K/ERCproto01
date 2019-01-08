@@ -83,7 +83,7 @@ router.post('/patterns/add-to-a-list/person1-relationship', function (req, res) 
 router.post('/forms/equal-opportunities/age', function (req, res) {
   var age = req.session.data['age']
   if (age === '0-15') {
-      return res.redirect('/forms/equal-opportunities/religion')
+      return res.redirect('/forms/equal-opportunities/religion1')
   }
   res.redirect('/forms/equal-opportunities/status')
 })

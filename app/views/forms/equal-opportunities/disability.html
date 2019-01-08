@@ -38,7 +38,7 @@ Disability - Equality and diversity
           name: "disability",
           fieldset: {
             legend: {
-              text: "Do you or anyone living with you have a disability or mental health issue?",
+              text: "Do you have a disability or mental health issue?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -46,10 +46,7 @@ Disability - Equality and diversity
           items: [
             {
               value: "yes",
-              text: "Yes",
-              conditional: {
-                html: whoHtml
-              }
+              text: "Yes"
             },
             {
               value: "no",
@@ -70,11 +67,10 @@ Disability - Equality and diversity
 
     </div>
 </div>
-<div class="IT-notes-box">
+<!--div class="IT-notes-box">
   <h3 class="govuk-heading-s">IT notes:</h3>
   <ul class="govuk-list govuk-list--bullet">
-      <li>yes opens a new set of two radio buttons</li>
       <li>No validation of the radio buttons</li>
   </ul>
-</div>
+</div-->
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-Ethnic origin - Equality and diversity
+Ethnic group - Equality and diversity
 {% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@ Ethnic origin - Equality and diversity
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Equality and diversity questionnaire <span class="UR-tag red">NEW simplified</span>
+            Equality and diversity questionnaire
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
@@ -21,7 +21,7 @@ Ethnic origin - Equality and diversity
         name: "multiple",
         classes: "govuk-!-width-two-thirds",
         label: {
-            text: "Describe Mixed"
+            text: "Describe mixed"
         }
         }) }}
     {% endset -%}
@@ -34,7 +34,7 @@ Ethnic origin - Equality and diversity
         value: data['other-ethnic'],
         classes: "govuk-!-width-two-thirds",
         label: {
-            text: "Describe Other ethnic group"
+            text: "Describe other"
         }
         }) }}
         {% endset -%}
@@ -45,7 +45,7 @@ Ethnic origin - Equality and diversity
         name: "ethnic",
         fieldset: {
             legend: {
-            text: "How do you describe your ethic group?",
+            text: "Ethic group",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
             }
@@ -100,7 +100,7 @@ Ethnic origin - Equality and diversity
 </div>
 <br>
 <br>
-<div class="design-notes-box">
+<!--div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
         <li><strong>This is a simplified screen - we were asking more in subcategories which were mixing identity and ethnic group for White but not for others  - This screen would require keeping the previous screen on identity</strong></li>
@@ -113,7 +113,7 @@ Ethnic origin - Equality and diversity
     <ul class="govuk-list govuk-list--bullet">
         <li>all 'Other' buttons opens a text box, No validation of the textboxes or that a button has been selected</li>
     </ul>
-</div>
+</div-->
 
 
 {% endblock %}

@@ -9,7 +9,7 @@ Sexual orientation - Equality and diversity
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Equality and diversity questionnaire <span class="UR-tag red">NOT ASKED ON PAPER FORM</span>
+            Equality and diversity questionnaire 
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
@@ -22,7 +22,7 @@ Sexual orientation - Equality and diversity
           name: "orien",
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Describe your sexual orientation"
+            text: "Describe sexual orientation"
           }
         }) }}
         {% endset -%}
@@ -32,23 +32,23 @@ Sexual orientation - Equality and diversity
           name: "orientation",
           fieldset: {
             legend: {
-              text: "Which best describes your sexual orientation?",
+              text: "Sexual orientation",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
           },
           items: [
             {
-              value: "Bi/bisexual",
+              value: "Bisexual",
               text: "Bisexual"
             },
             {
-              value: "Gay/lesbian",
-              text: "Gay/lesbian"
+              value: "Gay or lesbian",
+              text: "Gay or lesbian"
             },
             {
-              value: "Heterosexual/straight",
-              text: "Heterosexual/straight"
+              value: "Heterosexual",
+              text: "Heterosexual"
             },
             {
               value: "Other",
@@ -71,7 +71,7 @@ Sexual orientation - Equality and diversity
 
     </div>
 </div>
-<div class="design-notes-box">
+<!--div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
     <li>sorted in alphabetical order - to test</li>
@@ -82,6 +82,6 @@ Sexual orientation - Equality and diversity
     <ul class="govuk-list govuk-list--bullet">
     <li>no validation at all, just a textbox opens if select: Other</li>
     </ul>
-  </div>
+  </div-->
 
 {% endblock %}

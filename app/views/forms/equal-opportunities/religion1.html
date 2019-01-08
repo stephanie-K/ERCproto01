@@ -9,7 +9,7 @@ Religion - Equality and diversity
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Equality and diversity questionnaire <span class="UR-tag red">NOT ASKED ON PAPER FORM</span>
+            Equality and diversity questionnaire
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
 
@@ -22,7 +22,7 @@ Religion - Equality and diversity
           name: "rel",
           classes: "govuk-!-width-two-thirds",
           label: {
-            text: "Describe your religion"
+            text: "Describe religion"
           }
         }) }}
         {% endset -%}
@@ -50,7 +50,7 @@ Religion - Equality and diversity
           name: "status",
           fieldset: {
             legend: {
-              text: "What is your religion?",
+              text: "Religion",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--m"
             }
@@ -70,10 +70,7 @@ Religion - Equality and diversity
             },
             {
               value: "Christian",
-              text: "Christian",
-              conditional: {
-                html: christianHtml
-              }
+              text: "Christian"
             },
             {
               value: "Hindu",
@@ -86,6 +83,10 @@ Religion - Equality and diversity
             {
               value: "Muslim",
               text: "Muslim"
+            },
+            {
+              value: "Roman Catholic",
+              text: "Roman Catholic"
             },
             {
               value: "Sikh",
@@ -112,7 +113,7 @@ Religion - Equality and diversity
 
     </div>
 </div>
-<div class="design-notes-box">
+<!--div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
     <li>see original <a href="/forms/equal-opportunities/religion">version</a></li>
@@ -124,6 +125,6 @@ Religion - Equality and diversity
     <ul class="govuk-list govuk-list--bullet">
     <li>no validation at all, just a textbox opens if select: another religion, and two radios buttons for Christian</li>
     </ul>
-  </div>
+  </div-->
 
 {% endblock %}
