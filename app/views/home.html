@@ -2,24 +2,38 @@
 {% extends "layout-ERC.html" %}
 
 {% block pageTitle %}
-  Forms
+  Homepage ERC
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Choice base letting form
+        Homepage
       </h1>
-      <p>This form is not the final version but this is close enough</p>
-
-
-      <p><a href="forms/housing/CBLstart.html" class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-bold">See the form</a></p>
-
-
+      <p>
+        We can create forms, patterns and show our work. <br><span style="color:#b10e1e ">By clicking/tapping on the ERC logo on any page</span>, you will get back to this homepage.
+      </p>
+    
+      <h2 class="govuk-heading-m">From here you can access:</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="components/menu-components.html">a list components</a></li>
+        <li><a href="patterns/menu-patterns.html">a list patterns</a></li>
+        <li><a href="forms/menu-forms.html">a list of forms</a></li>
+        <li><a href="colours.html">colours</a></li>
+        <li><a href="useful-links.html">useful links</a></li>
+        <li><a href="support.html">supporting documents</a></li>
+      </ul>
 
     </div>
 </div>
+
+<script src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js"></script>
+<script>
+  var myLandbotLivechat = new LandbotLivechat({
+    index: 'https://landbot.io/u/H-97262-YRS0QP9AAV8IXYGH/index.html',
+  });
+</script>
 
 {% endblock %}
