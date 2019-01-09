@@ -60,20 +60,6 @@
       }) }}
 
 
-      {{ govukInput({
-        label: {
-          text: "Email (optional)"
-        },
-        hint: {
-          text: "We’ll use this to send you confirmation."
-        },
-        id: "email",
-        name: "email",
-        value: data['email'],
-        type: "email",
-        classes: "govuk-input--width-20"
-      }) }}
-
       {% from "button/macro.njk" import govukButton %}
 
       {{ govukButton({
@@ -83,16 +69,17 @@
       </form>
     </div>
 </div>
-<div class="design-notes-box">
-    <h3 class="govuk-heading-s">Design notes:</h3>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">UR notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
       <li>title is needed to send letters - internal backend system makes this field mandatory</li>
+      <li>this was hard to use for Syrian participants because they don't use this normally</li>
+      <li>email is removed as a lot of users don't have an email or don't want to give it. This was optional but some user didn't know what "optional" meant - we are now asking for it on the next page</li>
     </ul>
 </div>
 <div class="IT-notes-box">
-  <h3 class="govuk-heading-s">IT notes: <span class="UR-tag ok">ok to code</span></h3>
+  <h3 class="govuk-heading-s">IT notes: <span class="UR-tag red">Email removed</span></h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>Validation: test the email is well formed if provided - <span class="govuk-error-message">Enter valid email address</span></li>
       <li>accept spaces in the phone number - if possible check the format - if not entered: <span class="govuk-error-message">Enter phone number</span> - if not valid: <span class="govuk-error-message">Enter valid phone number</span></li>
       <li><span class="govuk-error-message">Enter first name / Enter last name / Enter title</span></li>
     </ul>

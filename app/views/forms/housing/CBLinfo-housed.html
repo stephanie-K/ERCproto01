@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing
+            Apply online for council housing <span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <h2 class="govuk-heading-m">
@@ -18,35 +18,11 @@
           </h2>
           <p class="govuk-!-margin-bottom-6">In the next questions, only add children who live with you all the time. You can add children later who live with you sometimes. </p>
          
-          <form class="form" method="post">
-          {% from "radios/macro.njk" import govukRadios %}
-
-          {{ govukRadios({
-            idPrefix: "living-alone",
-            name: "living-alone",
-            fieldset: {
-              legend: {
-                text: "Will you be living alone?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-              {
-                value: "yes",
-                text: "Yes",
-                checked: checked ("living-alone", "yes")
-              },
-              {
-                value: "no",
-                text: "No",
-                checked: checked ("living-alone", "no")
-              }
-            ]
-          }) }}
+    
           {{ govukButton({
             text: "Continue",
-            classes: "button-primary"
+            classes: "button-primary",
+            href: "/forms/housing/CBLadd-person1-loop.html"
           }) }}
           </form>
     </div>
@@ -54,8 +30,7 @@
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li>if they say they live alone, they jump to the pregnancy question - if no, then they will go to the first screen to add person</li>
-      <li>Validation - <span class="govuk-error-message">Confirm if living alone</span> <span class="UR-tag red">CHANGED</span></li>
+      <li>it was one page before with the question about living alone or not is on the next screen now</li>
     </ul>
 </div>
 

@@ -16,6 +16,19 @@
         <form class="form" method="post">
         {% from "radios/macro.njk" import govukRadios %}
         {% from "textarea/macro.njk" import govukTextarea %}
+        {% from "input/macro.njk" import govukInput %}
+  
+        {% set emailHtml %}
+        {{ govukInput({
+          label: {
+            text: "Enter email"
+          },
+          id: "emailadd",
+          name: "emailadd",
+          value: data['emailadd'],
+          classes: "govuk-input--width-20"
+        }) }}
+        {% endset -%}
             
         {% set attorneyHtml %}
         {{ govukTextarea({
@@ -34,12 +47,13 @@
           name: "other-add",
           value: data['other-add'],
           label: {
-            text: "Enter other Enter address including postcode"
+            text: "Enter other address. Including postcode if you know it."
           }
         }) }}
         {% endset -%}
 
-        {% if data['email'] %}
+
+
         {{ govukRadios({
           idPrefix: "how-contacted-conditional",
           name: "how-contacted",
@@ -55,9 +69,12 @@
           },
           items: [
             {
-              value: "Email",
-              text: "Email",
-              checked: checked ("how-contacted", "Email")
+              value: "email",
+              text: "email",
+              checked: checked ("how-contacted", "email"),
+              conditional: {
+                html: emailHtml
+              }
             },
             {
               value: "Phone",
@@ -87,52 +104,6 @@
             }
           ]
         }) }}
-        {% else %}
-
-        {{ govukRadios({
-          idPrefix: "how-contacted-conditional",
-          name: "how-contacted",
-          fieldset: {
-            legend: {
-              text: "How would you prefer us to contact you?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "We may still contact you in another way if we can't reach you."
-          },
-          items: [
-            {
-              value: "Phone",
-              text: "Phone",
-              checked: checked ("how-contacted", "Phone")
-            },
-            {
-              value: "Post at my current address",
-              text: "Post at my current address",
-              checked: checked ("how-contacted", "Post current")
-            },
-            {
-              value: "Post at a different address",
-              text: "Post at a different address",
-              checked: checked ("how-contacted", "Post else"),
-              conditional: {
-                html: otheraddHtml
-              }
-            },
-            {
-              value: "I have an advocate or power of attorney",
-              text: "I have an advocate or power of attorney",
-              checked: checked ("how-contacted", "I have an advocate or power of attorney"),
-              conditional: {
-                html: attorneyHtml
-              }
-            }
-          ]
-        }) }}
-
-        {% endif %}
     
           {{ govukButton({
             text: "Continue",
@@ -145,7 +116,6 @@
     <h3 class="govuk-heading-s">Design notes:</h3>
     <p>One feedback about phone was to be able to have a landline or a mobile (would impact previous screen as we just ask for Phone)</p>
     <p>Accessibility: if mobile, then a deaf person will feel better selecting phone if we ask if they prefer calls or text</p>
-    <p><a href="/forms/housing/CBLcontact1">see an alternative</a></p>
 </div>
 <div class="UR-notes-box">
     <h3 class="govuk-heading-s">UR notes:</h3>
@@ -154,8 +124,9 @@
 <div class="IT-notes-box">
     <h3 class="govuk-heading-s">IT notes:<span class="UR-tag ok">ok to code</span></h3>
     <ul class="govuk-list govuk-list--bullet">
-    <li>if no email was entered previously, could we remove the radio button on this page?</li>
     <li>new field to ask for another address if option selected - two buttons have wording changed</li>
+    <li>email now shown all the time and if selected we asked them to enter it</li>
+    <li>test the email is well formed if provided <span class="govuk-error-message">Enter valid email address</span></li>
     <li>Validation: <span class="govuk-error-message">Confirm preferred way to contact you</span> (if none selected) <span class="UR-tag red">CHANGED</span><br> <span class="govuk-error-message">Enter other address - Enter contact details of advocate or power of attorney</span> (for attorney textbox) <span class="UR-tag red">CHANGED</span></li>
     </ul>
 </div>

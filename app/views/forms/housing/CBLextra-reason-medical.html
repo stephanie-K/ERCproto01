@@ -9,7 +9,7 @@ Health, care, social and support needs
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing
+            Apply online for council housing <span class="UR-tag red">CHANGED</span>
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <form class="form" method="post">
@@ -51,11 +51,14 @@ Health, care, social and support needs
         name: "medical",
         fieldset: {
             legend: {
-            text: "Do you or anyone who will be living with you have any physical or mental health needs which are affected by your housing circumstances?",
+            text: "Do you or anyone who will be living with you have any medical condition which is affected by your housing circumstances? ",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
             }
         },
+        hint: {
+            text: "This includes mental health conditions."
+          },
         items: [
             {
             value: "yes",

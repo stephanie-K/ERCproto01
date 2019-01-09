@@ -23,7 +23,7 @@
         {% from "input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter address including postcode"
+            text: "Enter address. Including postcode if you know it."
           },
           id: "addr2",
           name: "addr2",
@@ -62,9 +62,9 @@
               checked: checked ("type2", "tenant")
             },
             {
-              value: "Lodger",
-              text: "Lodger",
-              checked: checked ("type2", "Lodger")
+              value: "Living with parents",
+              text: "Living with parents",
+              checked: checked ("type2", "Living with parents")
             },
             {
               value: "Owner",
@@ -159,9 +159,9 @@
             checked: checked("leave2", "Asked or told to leave")
           },
           {
-            value: "Relationship breakdown",
-            text: "Relationship breakdown",
-            checked: checked("leave2", "Relationship breakdown")
+            value: "Relationship or family breakdown",
+            text: "Relationship or family breakdown",
+            checked: checked("leave2", "Relationship or family breakdown")
           },
           {
             value: "End of lease",

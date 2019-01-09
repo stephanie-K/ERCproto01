@@ -268,6 +268,32 @@ router.post('/forms/housing/members-household/add-member3-loop', function (req, 
 
 // CBL form **********************************************************************************
 
+router.post('/forms/housing/CBLapplicant', function (req, res) {
+  var isApplicant = req.session.data['is-applicant']
+  if (isApplicant === 'no') {
+      return res.redirect('/forms/housing/CBLrep-info')
+  }
+  res.redirect('/forms/housing/CBLdeclaration2')
+})
+
+router.post('/forms/housing/CBLrep-info', function (req, res) {
+  var repInfo = req.session.data['permission']
+  if (repInfo && repInfo.includes('agreed') 
+)  {
+    return res.redirect('/forms/housing/CBLdeclaration2')
+  }
+    res.redirect('/forms/housing/CBLrep-info-error')
+})
+
+router.post('/forms/housing/CBLrep-info-error', function (req, res) {
+  var repInfo = req.session.data['permission']
+  if (repInfo && repInfo.includes('agreed') 
+)  {
+    return res.redirect('/forms/housing/CBLdeclaration2')
+  }
+    res.redirect('/forms/housing/CBLrep-info-error')
+})
+
 router.post('/forms/housing/CBLdeclaration2', function (req, res) {
   var declaration = req.session.data['declaration2']
   if (declaration && declaration.includes('has-read') 
@@ -345,12 +371,16 @@ router.post('/forms/housing/CBLgender', function (req, res) {
 })
 
 router.post('/forms/housing/CBLwho-moving', function (req, res) {
-  res.redirect('/forms/housing/CBLinfo-housed')
+  res.redirect('/forms/housing/CBLliving-alone')
 })
 
-router.post('/forms/housing/CBLinfo-housed', function (req, res) {
-  var livingAlone= req.session.data['living-alone']
+router.post('/forms/housing/CBLliving-alone', function (req, res) {
+  var livingAlone = req.session.data['living-alone']
+  var gender = req.session.data['gender-applicant']
   if (livingAlone === 'yes') {
+    if (gender === 'male') {
+      return res.redirect('/forms/housing/CBLcurrent-address')
+    }
       return res.redirect('/forms/housing/CBLbabies')
   }
   res.redirect('/forms/housing/CBLadd-person1-loop')
@@ -377,6 +407,10 @@ router.post('/forms/housing/CBLadd-person3-loop', function (req, res) {
 })
 
 router.post('/forms/housing/CBLbabies', function (req, res) {
+  var livingAlone = req.session.data['living-alone']
+  if (livingAlone === 'yes') {
+    return res.redirect('/forms/housing/CBLcurrent-address')
+}
   res.redirect('/forms/housing/CBLjoint')
 })
 

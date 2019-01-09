@@ -104,7 +104,7 @@
         id: "more-detail",
         classes: "govuk-!-width-two-thirds",
         label: {
-          text: "Tell us anything else you want us to know about sleeping arrangements (optional)",
+          text: "Tell us anything else you want us to know about sleeping arrangements",
           classes:"govuk-!-font-size-24"
         }
       }) }}
@@ -126,6 +126,7 @@
    <p>This screen was routing to the 5 years of addresses previously, but this screen has moved to earlier in the form</p> 
    <p>If they said they were sharing with other not moving with them, then they will see another question about bed used, if not they move to reasons for leaving</p>
    <p>validation: <span class="govuk-error-message">Confirm how many double bedrooms / Confirm how many single bedrooms</span></p>
+   <p>There is no validation in the last big textbox, it's optional and can stay empty. We just don't mention "optional" anymore as some users would not even read if they see "optional"</p>
 </div>
 
 {% endblock %}
