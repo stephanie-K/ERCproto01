@@ -20,7 +20,8 @@
             </h1>
             <div class="govuk-panel__body">
               {% if data['email'] %}
-              We’ll send you confirmation of this by email to <strong> {{ data['email']}}</strong>
+              We’ll send you confirmation of this by email to <strong> {{ data['email']}}</strong><br><br>
+              If you don’t get a confirmation email check your spam or junk folder.
               {% else %}
               We’ll send you confirmation of this by post within <strong>3 working days</strong>
               {% endif%}

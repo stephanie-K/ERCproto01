@@ -383,7 +383,7 @@ router.post('/forms/housing/CBLliving-alone', function (req, res) {
     }
       return res.redirect('/forms/housing/CBLbabies')
   }
-  res.redirect('/forms/housing/CBLadd-person1-loop')
+  res.redirect('/forms/housing/CBLinfo-housed')
 })
 
 router.post('/forms/housing/CBLadd-person1-loop', function (req, res) {
