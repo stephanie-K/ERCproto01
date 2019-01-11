@@ -8,7 +8,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">
-            Apply online for council housing <span class="UR-tag red">CHANGED</span>
+            Apply online for council housing 
         </h1>
         <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
         <p class="govuk-body-l">Tell us the UK addresses you’ve lived at for the past 5 years. </p>
@@ -21,7 +21,7 @@
         {% from "input/macro.njk" import govukInput %}
         {{ govukInput({
           label: {
-            text: "Enter address. Including postcode if you know it."
+            text: "Enter address. Include postcode if you know it."
           },
           id: "addr1",
           name: "addr1",
@@ -222,7 +222,7 @@
 <div class="design-notes-box">
     <h3 class="govuk-heading-s">Design notes:</h3>
     <ul class="govuk-list govuk-list--bullet">
-    <li>need 5 addresses and <a href="/forms/housing/CBLaddress2">textbox on the last one if the applicant need to add more addresses</a> I only coded 2</li>
+    <li>need 5 addresses and textbox on the last one if the applicant need to add more addresses I only coded 2</li>
     </ul>
 </div>
 <div class="IT-notes-box">

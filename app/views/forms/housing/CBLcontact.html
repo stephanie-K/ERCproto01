@@ -47,7 +47,7 @@
           name: "other-add",
           value: data['other-add'],
           label: {
-            text: "Enter other address. Including postcode if you know it."
+            text: "Enter other address. Include postcode if you know it."
           }
         }) }}
         {% endset -%}
@@ -70,7 +70,7 @@
           items: [
             {
               value: "email",
-              text: "email",
+              text: "Email",
               checked: checked ("how-contacted", "email"),
               conditional: {
                 html: emailHtml
@@ -127,7 +127,7 @@
     <li>new field to ask for another address if option selected - two buttons have wording changed</li>
     <li>email now shown all the time and if selected we asked them to enter it</li>
     <li>test the email is well formed if provided <span class="govuk-error-message">Enter valid email address</span></li>
-    <li>Validation: <span class="govuk-error-message">Confirm preferred way to contact you</span> (if none selected) <span class="UR-tag red">CHANGED</span><br> <span class="govuk-error-message">Enter other address - Enter contact details of advocate or power of attorney</span> (for attorney textbox) <span class="UR-tag red">CHANGED</span></li>
+    <li>Validation: <span class="govuk-error-message">Confirm preferred way to contact you</span> (if none selected)<span class="govuk-error-message">Enter other address - Enter contact details of advocate or power of attorney</span> (for attorney textbox) </li>
     </ul>
 </div>
 
