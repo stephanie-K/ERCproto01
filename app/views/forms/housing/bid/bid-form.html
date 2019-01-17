@@ -1,0 +1,91 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Bid - Available properties
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Available properties 
+      </h1>
+
+      <h2 class="govuk-heading-m">
+          Bid for this property
+      </h2>
+
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="ref-number">
+            Reference number
+          </label>
+          <span id="ref-number-hint" class="govuk-hint">
+              You’ll find this on your housing registration letter or card.<br> Phone 0141 577 3001 if you need help with this.
+          </span>
+          <input class="govuk-input govuk-input--width-10" id="ref-number" name="ref-number" type="text" aria-describedby="ref-number-hint">
+        </div>
+
+      {% from "input/macro.njk" import govukInput %}
+
+
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name-applicant",
+        name: "first-name-applicant",
+        value: data['first-name-applicant'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name-applicant",
+        name: "last-name-applicant",
+        value: data['last-name-applicant'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Property"
+        },
+        classes: "govuk-input--width-20 validated input-read-only",
+        id: "name",
+        name: "name", 
+        value: "Montgomerie court"
+      }) }}
+
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Next",
+        href: "/forms/housing/bid/confirmation.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+ 
+    </div>
+</div>
+
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>the email field was optional, based on user research for the CBL form, optional is not always understood correctly and users don't always want or can provide one</li>
+    <li>we assume the way to contact the users would come from the contact preferences enteredto the CBL form and Housing would have that data stored?</li>
+    <li>is a phone number to contact housing a good thing? in case the user lost their housing registration letter or card?</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes: <span class="UR-tag red">Email removed</span></h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Property field is prefilled by the choice from the previous page (radio button choice)</li>
+      <li><span class="govuk-error-message">Enter first name / Enter last name</span></li>
+    </ul>
+</div>
+
+{% endblock %}

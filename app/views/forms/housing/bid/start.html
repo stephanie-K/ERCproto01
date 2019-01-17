@@ -1,0 +1,62 @@
+
+{% extends "layout-ERC.html" %}
+
+{% block pageTitle %}
+  Available properties - start
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Available properties 
+      </h1>
+      <p><img src="{{ asset_path }}images/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
+
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Properties you can bid for",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Some guidance on closing day for bids?"
+        },
+        items: [
+          {
+            value: "property 1",
+            text: "property 1"
+          },
+          {
+            value: "property 2",
+            text: "property 2"
+          },
+          {
+            value: "property 3",
+            text: "Montgomerie court"
+          }
+        ]
+      }) }}
+     
+      {% from "button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Next",
+        href: "/forms/housing/bid/bid-form.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+ 
+    </div>
+</div>
+
+
+{% endblock %}
