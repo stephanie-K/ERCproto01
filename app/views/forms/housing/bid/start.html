@@ -22,13 +22,13 @@
         name: "changed-name",
         fieldset: {
           legend: {
-            text: "Properties you can bid for",
+            text: "Properties open to bids",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "Some guidance on closing day for bids?"
+          text: "The closing date is 14 January 2019."
         },
         items: [
           {
@@ -57,6 +57,11 @@
  
     </div>
 </div>
-
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes: <span class="UR-tag ok">ok to code</span> </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><strong>Validation if no property selected: </strong><span class="govuk-error-message">Select a property</span></li>
+      </ul>
+  </div>
 
 {% endblock %}
