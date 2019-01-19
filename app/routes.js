@@ -386,6 +386,16 @@ router.post('/forms/housing/CBLliving-alone', function (req, res) {
   res.redirect('/forms/housing/CBLinfo-housed')
 })
 
+
+router.post('/forms/housing/CBLinfo-housed2', function (req, res) {
+  var needAdd = req.session.data['need-add']
+  if (needAdd ==='no') {
+    return res.redirect('/forms/housing/CBLother-children')
+  }
+  return res.redirect('/forms/housing/CBLadd-person1-loop')
+})
+
+
 router.post('/forms/housing/CBLadd-person1-loop', function (req, res) {
   var addPerson2 = req.session.data['add-person2']
   if (addPerson2 === 'yes') {
