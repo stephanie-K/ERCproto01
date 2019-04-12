@@ -1,6 +1,14 @@
 # GOV.UK Prototype Kit · used unbranded for ERC
 
+For more information, you can check [my portfolio] (https://stephanie.chezleskrus.com/erc.html)
 Go to the [GOV.UK Prototype Kit site](https://govuk-prototype-kit.herokuapp.com/docs) to download the latest version and read the documentation.
+
+## Applying to Council Housing - filling in the start of the form
+
+
+## Equality and Diversity questionnaire
+
+
 
 ## About the Prototype Kit
 
@@ -8,20 +16,10 @@ The Prototype Kit provides a simple way to make interactive prototypes that look
 
 Read the [project principles](https://govuk-prototype-kit.herokuapp.com/docs/principles).
 
-## Security
-
-If you publish your prototypes online, they **must** be protected by a [username and password](https://govuk-prototype-kit.herokuapp.com/docs/publishing-on-heroku). This is to prevent members of the public finding prototypes and thinking they are real services.
-
-You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
 
 ## Installation instructions
 
 - [Installation guide for new users (non technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/introduction)
 - [Installation guide for developers (technical)](https://govuk-prototype-kit.herokuapp.com/docs/install/developer-install-instructions)
 
-## Community
 
-We have two Slack channels for the Prototype Kit. You'll need a government email address to join them.
-
-* [Slack channel for users of the Prototype Kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
-* [Slack channel for developers of the Prototype Kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit-dev/)
