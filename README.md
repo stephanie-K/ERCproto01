@@ -1,6 +1,6 @@
 # GOV.UK Prototype Kit · used unbranded for ERC
 
-For more information, you can check [my portfolio](https://stephanie.chezleskrus.com/erc.html)
+**For more information, you can check [my portfolio](https://stephanie.chezleskrus.com/erc.html)**
 
 Go to the [GOV.UK Prototype Kit site](https://govuk-prototype-kit.herokuapp.com/docs) to download the latest version and read the documentation.
 
