@@ -5,10 +5,10 @@ For more information, you can check [my portfolio](https://stephanie.chezleskrus
 Go to the [GOV.UK Prototype Kit site](https://govuk-prototype-kit.herokuapp.com/docs) to download the latest version and read the documentation.
 
 ## Applying to Council Housing - filling in the start of the form
-[Applying to Council Housing - filling in the start of the form](https://github.com/stephanie-K/ERCproto01/blob/master/CBL.gif "housing form in action")
+![Applying to Council Housing - filling in the start of the form](https://github.com/stephanie-K/ERCproto01/blob/master/CBL.gif "housing form in action")
 
 ## Equality and Diversity questionnaire
-[Equality and Diversity questionnaire](https://github.com/stephanie-K/ERCproto01/blob/master/equality.gif "Equality and diversity questionnaire in action")
+![Equality and Diversity questionnaire](https://github.com/stephanie-K/ERCproto01/blob/master/equality.gif "Equality and diversity questionnaire in action")
 
 
 ## About the Prototype Kit
